@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.text-gradient {
+  background: linear-gradient(90deg, #4ca5ff, #b573f8);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient__orange {
+  background: linear-gradient(90deg, #ff7170 -50.34%, #ffe57f 100.78%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
