@@ -6,6 +6,8 @@ type BlogPost = {
 
 type Option = {
   title: string;
+  servingSize?: any;
+  sugars?: number;
   kcal?: number;
   protein: number;
   carbs: number;

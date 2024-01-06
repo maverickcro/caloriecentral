@@ -49,6 +49,7 @@ export default function Calculator() {
   });
   const [selectedExtras, setSelectedExtras] = useState<Option[]>([]);
   const handleNext = () => {
+    window.scrollTo(0, 0);
     setStep(step + 1);
   };
 
