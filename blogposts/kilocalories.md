@@ -1,6 +1,7 @@
 ---
 title: "Calories?! You are saying it wrong!"
 date: "2023-12-24"
+featuredImage: "/calories.jpg"
 ---
 
 Have you ever wondered why the term "calories" on your food labels seems somewhat misleading? It's a common misconception that the calories we count in our daily diets are the same as the units used in chemistry and physics. In the realm of nutrition, what we commonly refer to as "calories" are, in fact, kilocalories. Let's unravel this nutritional mystery and understand why.

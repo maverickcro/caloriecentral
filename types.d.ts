@@ -2,6 +2,7 @@ type BlogPost = {
   id: string;
   title: string;
   date: string;
+  featuredImage: any;
 };
 
 type Option = {

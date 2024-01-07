@@ -1,6 +1,7 @@
 ---
 title: "McDonalds calories"
 date: "2023-12-29"
+featuredImage: "/mcdonalds.jpg"
 ---
 
 # McDonald's Calorie Guide
