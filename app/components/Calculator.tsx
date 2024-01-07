@@ -306,7 +306,7 @@ export default function Calculator() {
             ))}
           </div>
 
-          <div ref={buttonRef} className="my-2">
+          <div className="my-2">
             <CustomButton
               type="previous"
               onClick={handlePrevious}

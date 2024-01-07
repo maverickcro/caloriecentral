@@ -6,7 +6,11 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontSize: {
+        xs2: "0.5rem", // You can name this key as you like
+      },
+    },
   },
   plugins: [require("@tailwindcss/typography")],
 };

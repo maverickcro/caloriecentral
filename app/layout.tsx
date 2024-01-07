@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
-  title: "Calorie pal",
+  title: "CaloriePal",
   description: "When did calories become a bad thing?",
 };
 
