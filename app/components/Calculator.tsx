@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   breadOptions,
   cheeseOptions,
@@ -11,6 +11,7 @@ import {
 import CustomButton from "./CustomButton";
 
 export default function Calculator() {
+  const buttonRef = useRef<HTMLDivElement>(null);
   const [step, setStep] = useState(1);
   const [selectedBread, setSelectedBread] = useState<Option>({
     title: "",
@@ -147,6 +148,19 @@ export default function Calculator() {
     );
   };
 
+  useEffect(() => {
+    if (buttonRef.current) {
+      buttonRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [
+    selectedBread,
+    selectedCheese,
+    selectedMeat,
+    selectedSauce,
+    selectedExtras,
+    selectedBreadLength,
+  ]);
+
   const getCompleteOrder = () => {
     return (
       <>
@@ -215,13 +229,23 @@ export default function Calculator() {
     });
     setStep(1);
   };
-
+  const isNormalBread: boolean =
+    selectedBread.title === "Artisan Flatbread" ||
+    selectedBread.title === "Artisan Italian Bread" ||
+    selectedBread.title === "Hearty Multigrain Bread" ||
+    selectedBread.title === "Italian Herbs & Cheese Bread" ||
+    selectedBread.title === "Jalapeño Cheddar Bread";
   return (
-    <section className="my-6 mx-auto prose prose-xl prose-slate">
-      {step < 7 && (
-        <p className="text-md font-bold text-gradient">Step {step}/6</p>
-      )}
-      {step == 1 && (
+    <section className="my-6 mx-auto prose prose-md prose-slate">
+      {isNormalBread
+        ? step < 7 && (
+            <p className="text-md font-bold text-gradient">Step {step}/6</p>
+          )
+        : step < 6 && (
+            <p className="text-md font-bold text-gradient">Step {step}/5</p>
+          )}
+      {}
+      {step == 6 && isNormalBread && (
         <div>
           <p className="text-lg text-black">
             Which sub size did you get? Please choose below.
@@ -230,7 +254,7 @@ export default function Calculator() {
             {breadLength.map((bread, index) => (
               <div
                 key={index}
-                className={`p-2 md:p-4 m-2 mb-0 border rounded-md cursor-pointer text-black ${
+                className={`p-2  m-2 mb-0 border rounded-md cursor-pointer text-black ${
                   selectedBreadLength.title === bread.title
                     ? "border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 hover:text-white"
                     : "border-gray-300 hover:border-blue-500 hover:bg-gradient-to-br hover:from-purple-600 hover:to-blue-500 hover:text-white"
@@ -249,12 +273,8 @@ export default function Calculator() {
             ))}
           </div>
 
-          <div className="my-2">
-            <CustomButton
-              type="previous"
-              onClick={handlePrevious}
-              disabled={true}
-            />
+          <div ref={buttonRef} className="my-2">
+            <CustomButton type="previous" onClick={handlePrevious} />
             <CustomButton
               type="next"
               onClick={() => handleNext()}
@@ -263,7 +283,7 @@ export default function Calculator() {
           </div>
         </div>
       )}
-      {step == 2 && (
+      {step == 1 && (
         <div>
           <p className="text-lg font-bold text-black">
             Please choose your bread option.
@@ -272,7 +292,7 @@ export default function Calculator() {
             {breadOptions.map((bread, index) => (
               <div
                 key={index}
-                className={`p-2 md:p-4 m-2 mb-0 border rounded-md cursor-pointer text-black ${
+                className={`p-2  m-2 mb-0 border rounded-md cursor-pointer text-black ${
                   selectedBread.title === bread.title
                     ? "border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 hover:text-white"
                     : "border-gray-300 hover:border-blue-500 hover:bg-gradient-to-br hover:from-purple-600 hover:to-blue-500 hover:text-white"
@@ -284,8 +304,12 @@ export default function Calculator() {
             ))}
           </div>
 
-          <div className="my-2">
-            <CustomButton type="previous" onClick={handlePrevious} />
+          <div ref={buttonRef} className="my-2">
+            <CustomButton
+              type="previous"
+              onClick={handlePrevious}
+              disabled={true}
+            />
             <CustomButton
               type="next"
               onClick={() => handleNext()}
@@ -294,7 +318,7 @@ export default function Calculator() {
           </div>
         </div>
       )}
-      {step == 3 && (
+      {step == 2 && (
         <div>
           <p className="text-lg font-bold text-black">
             Please choose your cheese option.
@@ -303,7 +327,7 @@ export default function Calculator() {
             {cheeseOptions.map((cheese, index) => (
               <div
                 key={index}
-                className={`p-2 md:p-4 m-2 mb-0 border rounded-md cursor-pointer text-black ${
+                className={`p-2  m-2 mb-0 border rounded-md cursor-pointer text-black ${
                   selectedCheese.title === cheese.title
                     ? "border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 hover:text-white"
                     : "border-gray-300 hover:border-blue-500 hover:bg-gradient-to-br hover:from-purple-600 hover:to-blue-500 hover:text-white"
@@ -314,7 +338,7 @@ export default function Calculator() {
               </div>
             ))}
           </div>
-          <div className="my-2">
+          <div ref={buttonRef} className="my-2">
             <CustomButton type="previous" onClick={handlePrevious} />
             <CustomButton
               type="next"
@@ -324,16 +348,16 @@ export default function Calculator() {
           </div>
         </div>
       )}
-      {step == 4 && (
+      {step == 3 && (
         <div>
           <p className="text-lg font-bold text-black">
-            Please choose your meat option.
+            Please choose your protein option.
           </p>
           <div className="min-h-[40vh] my-[30px]">
             {meatOptions.map((meat, index) => (
               <div
                 key={index}
-                className={`p-2 md:p-4 m-2 border rounded-md cursor-pointer text-black ${
+                className={`p-2  m-2 border rounded-md cursor-pointer text-black ${
                   selectedMeat.title === meat.title
                     ? "border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 hover:text-white"
                     : "border-gray-300 hover:border-blue-500 hover:bg-gradient-to-br hover:from-purple-600 hover:to-blue-500 hover:text-white"
@@ -344,7 +368,7 @@ export default function Calculator() {
               </div>
             ))}
           </div>
-          <div className="my-2">
+          <div ref={buttonRef} className="my-2">
             <CustomButton type="previous" onClick={handlePrevious} />
             <CustomButton
               type="next"
@@ -354,7 +378,7 @@ export default function Calculator() {
           </div>
         </div>
       )}
-      {step == 5 && (
+      {step == 4 && (
         <div>
           <p className="text-lg font-bold text-black">
             Which sauce did you get?
@@ -363,7 +387,7 @@ export default function Calculator() {
             {sauceOptions.map((sauce, index) => (
               <div
                 key={index}
-                className={`p-2 md:p-4 m-2 border rounded-md cursor-pointer text-black ${
+                className={`p-2  m-2 border rounded-md cursor-pointer text-black ${
                   selectedSauce.title === sauce.title
                     ? "border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 hover:text-white"
                     : "border-gray-300 hover:border-blue-500 hover:bg-gradient-to-br hover:from-purple-600 hover:to-blue-500 hover:text-white"
@@ -374,7 +398,7 @@ export default function Calculator() {
               </div>
             ))}
           </div>
-          <div className="my-2">
+          <div ref={buttonRef} className="my-2">
             <CustomButton type="previous" onClick={handlePrevious} />
             <CustomButton
               type="next"
@@ -384,7 +408,7 @@ export default function Calculator() {
           </div>
         </div>
       )}
-      {step == 6 && (
+      {step == 5 && (
         <div>
           <p className="text-lg font-bold text-black">
             Anything extra with your sub? You can choose{" "}
@@ -394,7 +418,7 @@ export default function Calculator() {
             {extraOptions.map((extra, index) => (
               <div
                 key={index}
-                className={`p-2 md:p-4 m-2 border rounded-md cursor-pointer text-black ${
+                className={`p-2 m-2 border rounded-md cursor-pointer text-black ${
                   selectedExtras.some((e) => e.title === extra.title)
                     ? "border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 hover:text-white"
                     : "border-gray-300 hover:border-blue-500 hover:bg-gradient-to-br hover:from-purple-600 hover:to-blue-500 hover:text-white"
@@ -405,7 +429,7 @@ export default function Calculator() {
               </div>
             ))}
           </div>
-          <div className="my-2">
+          <div ref={buttonRef} className="my-2">
             <CustomButton type="previous" onClick={handlePrevious} />
             <CustomButton
               type="next"
@@ -415,16 +439,27 @@ export default function Calculator() {
           </div>
         </div>
       )}
-      {step == 7 && (
-        <div>
-          {getCompleteOrder()}
-          {getCaloriesAndMacros()}
-          <div className="my-2">
-            <CustomButton type="previous" onClick={handlePrevious} />
-            <CustomButton type="finish" onClick={finish} />
-          </div>
-        </div>
-      )}
+      {isNormalBread
+        ? step == 7 && (
+            <div>
+              {getCompleteOrder()}
+              {getCaloriesAndMacros()}
+              <div className="my-2">
+                <CustomButton type="previous" onClick={handlePrevious} />
+                <CustomButton type="finish" onClick={finish} />
+              </div>
+            </div>
+          )
+        : step == 6 && (
+            <div>
+              {getCompleteOrder()}
+              {getCaloriesAndMacros()}
+              <div className="my-2">
+                <CustomButton type="previous" onClick={handlePrevious} />
+                <CustomButton type="finish" onClick={finish} />
+              </div>
+            </div>
+          )}
     </section>
   );
 }
