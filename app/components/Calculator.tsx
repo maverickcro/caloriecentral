@@ -169,8 +169,10 @@ export default function Calculator() {
         </p>
         <ul>
           <li>
-            {selectedBreadLength.title}&nbsp;{selectedBread.title}
-            &nbsp;Bread&nbsp;
+            {isNormalBread
+              ? `${selectedBreadLength.title} ${selectedBread.title}`
+              : `${selectedBread.title}`}
+            &nbsp;&nbsp;
           </li>
           <li>
             {selectedCheese.title}&nbsp;Cheese&nbsp;and&nbsp;
@@ -256,7 +258,7 @@ export default function Calculator() {
                 key={index}
                 className={`p-2  m-2 mb-0 border rounded-md cursor-pointer text-black ${
                   selectedBreadLength.title === bread.title
-                    ? "border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 hover:text-white"
+                    ? "border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 text-white hover:text-white"
                     : "border-gray-300 hover:border-blue-500 hover:bg-gradient-to-br hover:from-purple-600 hover:to-blue-500 hover:text-white"
                 }`}
                 onClick={() =>
@@ -294,7 +296,7 @@ export default function Calculator() {
                 key={index}
                 className={`p-2  m-2 mb-0 border rounded-md cursor-pointer text-black ${
                   selectedBread.title === bread.title
-                    ? "border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 hover:text-white"
+                    ? "border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 text-white hover:text-white"
                     : "border-gray-300 hover:border-blue-500 hover:bg-gradient-to-br hover:from-purple-600 hover:to-blue-500 hover:text-white"
                 }`}
                 onClick={() => setSelectedBread(bread)}
@@ -329,7 +331,7 @@ export default function Calculator() {
                 key={index}
                 className={`p-2  m-2 mb-0 border rounded-md cursor-pointer text-black ${
                   selectedCheese.title === cheese.title
-                    ? "border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 hover:text-white"
+                    ? "border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 text-white hover:text-white"
                     : "border-gray-300 hover:border-blue-500 hover:bg-gradient-to-br hover:from-purple-600 hover:to-blue-500 hover:text-white"
                 }`}
                 onClick={() => setSelectedCheese(cheese)}
@@ -359,7 +361,7 @@ export default function Calculator() {
                 key={index}
                 className={`p-2  m-2 border rounded-md cursor-pointer text-black ${
                   selectedMeat.title === meat.title
-                    ? "border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 hover:text-white"
+                    ? "border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 text-white hover:text-white"
                     : "border-gray-300 hover:border-blue-500 hover:bg-gradient-to-br hover:from-purple-600 hover:to-blue-500 hover:text-white"
                 }`}
                 onClick={() => setSelectedMeat(meat)}
@@ -389,7 +391,7 @@ export default function Calculator() {
                 key={index}
                 className={`p-2  m-2 border rounded-md cursor-pointer text-black ${
                   selectedSauce.title === sauce.title
-                    ? "border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 hover:text-white"
+                    ? "border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 text-white hover:text-white"
                     : "border-gray-300 hover:border-blue-500 hover:bg-gradient-to-br hover:from-purple-600 hover:to-blue-500 hover:text-white"
                 }`}
                 onClick={() => setSelectedSauce(sauce)}
@@ -420,7 +422,7 @@ export default function Calculator() {
                 key={index}
                 className={`p-2 m-2 border rounded-md cursor-pointer text-black ${
                   selectedExtras.some((e) => e.title === extra.title)
-                    ? "border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 hover:text-white"
+                    ? "border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 text-white hover:text-white"
                     : "border-gray-300 hover:border-blue-500 hover:bg-gradient-to-br hover:from-purple-600 hover:to-blue-500 hover:text-white"
                 }`}
                 onClick={() => handleSelectExtra(extra)}
