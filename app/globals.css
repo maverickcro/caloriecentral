@@ -13,3 +13,19 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+/* Add to your global CSS file */
+html,
+body {
+  height: 100%;
+}
+
+#__next {
+  /* This is the ID of the root div in Next.js applications */
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+main {
+  flex: 1; /* This will make the main content expand to fill the available space */
+}

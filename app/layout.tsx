@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -16,9 +15,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-gray-100">
+      <body
+        className="bg-gray-100"
+        style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}
+      >
         <Navbar />
-        {children}
+        <div style={{ flex: 1 }}>{children}</div>
         <Footer />
       </body>
     </html>
