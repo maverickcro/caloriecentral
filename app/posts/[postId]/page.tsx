@@ -38,7 +38,6 @@ export default async function Post({ params }: { params: { postId: string } }) {
   const { title, date, contentHtml, featuredImage } = await getPostData(postId);
 
   const pubDate = getFormattedDate(date);
-  console.log("featuredImage", featuredImage);
   return (
     <main className="px-6 prose prose-xl prose-slate mx-auto">
       {featuredImage && (

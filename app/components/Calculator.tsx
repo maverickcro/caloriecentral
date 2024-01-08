@@ -200,6 +200,13 @@ export default function Calculator() {
   };
 
   const finish = () => {
+    setSelectedBread({
+      title: "",
+      kcal: 0,
+      protein: 0,
+      carbs: 0,
+      fats: 0,
+    });
     setSelectedExtras([]);
     setSelectedSauce({
       title: "",
