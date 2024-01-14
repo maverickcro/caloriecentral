@@ -36,6 +36,13 @@ export default function Home() {
         src="/calorie-deficit.png"
         alt="Calorie Deficit Calculator"
       />
+      <CalculatorsSection
+        title="Body Recomposition Calculator"
+        href="/body-recomposition-calculator"
+        description="Did you know you can BUILD muscle and BURN fat at the same time? Check calories and body recomposition macros here."
+        src="/body-recomposition.png"
+        alt="Body Recomposition Calculator"
+      />
     </main>
   );
 }
