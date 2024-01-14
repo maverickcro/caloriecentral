@@ -13,6 +13,19 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.blog-post:hover h2 {
+  background: linear-gradient(90deg, #4ca5ff, #b573f8);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navbar-link:hover {
+  background: linear-gradient(90deg, #4ca5ff, #b573f8);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 /* Add to your global CSS file */
 html,
 body {

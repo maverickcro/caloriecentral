@@ -3,6 +3,7 @@ type BlogPost = {
   title: string;
   date: string;
   featuredImage: any;
+  category: string;
 };
 
 type Option = {

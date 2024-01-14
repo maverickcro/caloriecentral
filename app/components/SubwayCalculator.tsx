@@ -245,7 +245,7 @@ export default function Calculator() {
     selectedBread.title === "Italian Herbs & Cheese Bread" ||
     selectedBread.title === "Jalapeño Cheddar Bread";
   return (
-    <section className="my-6 mx-auto prose prose-md prose-slate">
+    <section className="my-6 mx-auto prose  max-w-4xl prose-md prose-slate">
       {isNormalBread
         ? step < 7 && (
             <p className="text-md font-bold text-gradient">Step {step}/6</p>
@@ -455,7 +455,11 @@ export default function Calculator() {
               {getCaloriesAndMacros()}
               <div className="my-2">
                 <CustomButton type="previous" onClick={handlePrevious} />
-                <CustomButton type="finish" onClick={finish} />
+                <CustomButton
+                  type="finish"
+                  onClick={finish}
+                  label="Reset to default"
+                />
               </div>
             </div>
           )
@@ -465,7 +469,11 @@ export default function Calculator() {
               {getCaloriesAndMacros()}
               <div className="my-2">
                 <CustomButton type="previous" onClick={handlePrevious} />
-                <CustomButton type="finish" onClick={finish} />
+                <CustomButton
+                  type="finish"
+                  onClick={finish}
+                  label="Reset to default"
+                />
               </div>
             </div>
           )}

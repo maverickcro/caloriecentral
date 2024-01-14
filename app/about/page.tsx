@@ -3,37 +3,37 @@ import ProfilePic from "../components/ProfilePic";
 
 export default function About() {
   return (
-    <section className="mt-6 mx-auto px-6 prose prose-xl prose-slate">
+    <main className="mt-6 mx-auto px-6 prose max-w-4xl prose-xl prose-slate">
       <h1 className="text-2xl font-bold text-gradient mb-2">About</h1>
       <div className="text-md text-black">
         <p>
-          Hey guys! My name is Marko, and welcome to my humble little blog.
-          I&apos;ve been into sports since forever, and for a hot minute, I even
-          tried my hand at being a soccer pro.
+          Hello everyone! I&apos;m Marko, and this is my blog. My journey with
+          sports began at a young age, and for a while, I even pursued soccer
+          professionally.
         </p>
         <ProfilePic />
         <p>
-          So, here&apos;s the deal. I was always fit &apos;cause of all the
-          sports, and I never really bothered about what or how much I ate. But
-          then, life hit me with a curveball when I dove into the world of
-          Computer Science. Between coding marathons and deadlines, my active
-          routine took a nosedive. Suddenly, all those pizzas and burgers caught
-          up with me. I gained 20 pounds, struggled to fit into my jeans, and my
-          stomach was like, &apos;Dude, what are you doing?&apos; Looking in the
-          mirror got real awkward, real quick.
+          My life took an interesting turn when I ventured into Computer
+          Science. This new path was exciting, but it also meant long hours of
+          coding and meeting tight deadlines. As a result, my regular sports
+          routine suffered. During this time, my diet, which was never a concern
+          before, started to show its effects. I gained weight, felt less
+          comfortable in my own clothes, and realized that something needed to
+          change.
         </p>
         <br />
         <p>
-          So, one day, I decided enough was enough. I tried all sorts of
-          diets—vegan, meat-only, protein overload, you name it. Guess what? It
-          all comes down to knowing how calories work. In just 2023, I dropped
-          15 pounds, got some muscle on, and I&apos;m feeling like a million
-          bucks. Now, I&apos;m here to spill the beans on dieting and share all
-          the cool tricks I picked up about counting calories and doing it the
-          right way! Oh, and about food? I love it all. Forget this good or bad
-          food nonsense. My blog is all about breaking those rules.
+          That&apos;s when I made a decision to take control. I experimented
+          with various diets – vegan, carnivore, high-protein – and along the
+          way, I learned the importance of understanding calories. By 2023, I
+          had lost 15 pounds and gained muscle, feeling better than ever. Now,
+          I&apos;m eager to share my insights on dieting, especially the
+          practical aspects of calorie counting and how to approach it
+          effectively. My philosophy is simple: enjoy food without categorizing
+          it as good or bad. In this blog, I&apos;m all about exploring and
+          breaking the traditional dieting rules.
         </p>
       </div>
-    </section>
+    </main>
   );
 }

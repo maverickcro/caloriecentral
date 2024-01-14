@@ -2,9 +2,8 @@
 title: "McDonalds calories"
 date: "2023-12-29"
 featuredImage: "/mcdonalds.jpg"
+category: "Fast food"
 ---
-
-# McDonald's Calorie Guide
 
 McDonald's, one of the world's most popular fast-food chains, offers a variety of items that cater to diverse tastes. However, with the growing awareness of health and nutrition, it's crucial to understand the calorie content of the meals we consume. This article explores the calorie content in some of McDonald's popular items and offers insights for those mindful of their calorie intake.
 

@@ -35,22 +35,23 @@ export default async function Post({ params }: { params: { postId: string } }) {
 
   if (!posts.find((post) => post.id === postId)) notFound();
 
-  const { title, date, contentHtml, featuredImage } = await getPostData(postId);
+  const { title, date, contentHtml, featuredImage, category } =
+    await getPostData(postId);
 
   const pubDate = getFormattedDate(date);
   return (
-    <main className="px-6 prose prose-xl prose-slate mx-auto">
+    <main className="px-6 prose prose-xl mt-6 mx-auto max-w-4xl">
       {featuredImage && (
         <Image
           src={featuredImage}
           alt={`Cover image for ${title}`}
-          layout="responsive" // This makes the image respond to the size of the parent
           width={700} // These should be the dimensions of your image
           height={475} // These should be the dimensions of your image
-          objectFit="cover" // This is similar to 'cover' in background-size in CSS
+          style={{ objectFit: "cover" }}
         />
       )}
-      <h1 className="text-3xl mt-4 mb-0">{title}</h1>
+      <p className="font-bold my-0">{category}</p>
+      <h1 className="text-4xl mb-0">{title}</h1>
       <p className="mt-0">{pubDate}</p>
       <article>
         <section dangerouslySetInnerHTML={{ __html: contentHtml }} />

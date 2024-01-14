@@ -1,17 +1,18 @@
-import CalculatorsSection from "./components/CalculatorsSection";
-<Posts />;
-import Posts from "./components/Posts";
-export default function Home() {
+import React from "react";
+import CalculatorsSection from "../components/CalculatorsSection";
+
+export default function PostList() {
   return (
     <main className="mt-6 mx-auto px-6 max-w-4xl">
       <p className="mt-12 mb-12 text-3xl text-center text-black">
         <span className="whitespace-nowrap">
-          All.&nbsp;<span className="font-bold text-gradient">Calories</span>
-          .&nbsp;
+          Macros?&nbsp;
+          <span className="font-bold text-gradient">Calories?</span>
+          &nbsp;Weight?&nbsp;
         </span>
-        Everything.
+        We Have All Kinds Of{" "}
+        <span className="font-bold text-gradient">Calculators</span>.
       </p>
-      <Posts />
       <h1 className="text-4xl text-center font-bold text-gradient mb-2">
         Nutrition Calculators
       </h1>
