@@ -1,9 +1,9 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 import CustomButton from "./CustomButton"; // Assuming you have a CustomButton component
-import { activityLevels } from "../../lib/data";
+import { activityLevels, goals } from "../../lib/data";
 
-export default function BodyRecompositionCalculator() {
+export default function TDEECalculator() {
   const resultRef = useRef<HTMLDivElement>(null);
   const [age, setAge] = useState(0);
   const [gender, setGender] = useState("male"); // default to male
@@ -13,16 +13,13 @@ export default function BodyRecompositionCalculator() {
   const [heightInches, setHeightInches] = useState(0);
   const [bodyFat, setBodyFat] = useState(0);
   const [measurementSystem, setMeasurementSystem] = useState("metric"); // default to metric
-  const [recompGoal, setRecompGoal] = useState("2");
-  const [trainingDaysTotalCalories, setTrainingDaysTotalCalories] = useState(0);
-  const [restDaysTotalCalories, setRestDaysTotalCalories] = useState(0);
-  const [trainingCarbs, setTrainingCarbs] = useState(0);
-  const [trainingProtein, setTrainingProtein] = useState(0);
-  const [trainingFat, setTrainingFat] = useState(0);
-  const [restCarbs, setRestCarbs] = useState(0);
-  const [restProtein, setRestProtein] = useState(0);
-  const [restFat, setRestFat] = useState(0);
-
+  const [activityLevel, setActivityLevel] = useState(activityLevels[0]); // default to first activity level
+  const [goal, setGoal] = useState("2");
+  const [goalCalories, setGoalCalories] = useState(0);
+  const [weightPerWeek, setWeightPerWeek] = useState("1");
+  const [protein, setProtein] = useState(0);
+  const [fat, setFat] = useState(0);
+  const [carbs, setCarbs] = useState(0);
   const [calculated, setCalculated] = useState(false);
 
   const isValid: boolean =
@@ -35,19 +32,19 @@ export default function BodyRecompositionCalculator() {
     }
   }, [calculated]);
 
-  const calculateBodyRecomp = () => {
+  const calculateMacros = () => {
     // Convert height to centimeters if the user has selected imperial
-    let heightInCm: number =
+    let heightInCm =
       measurementSystem === "metric"
         ? heightCm
         : heightFeet * 30.48 + heightInches * 2.54;
 
     // Convert weight to kilograms if the user has selected imperial
-    let weightInKg: number =
+    let weightInKg =
       measurementSystem === "metric" ? weight : weight * 0.453592;
 
     // Define a variable to store BMR
-    let BMR: number;
+    let BMR;
 
     // Check if body fat percentage is entered to decide which formula to use
     if (bodyFat > 0) {
@@ -64,66 +61,82 @@ export default function BodyRecompositionCalculator() {
     }
 
     // Calculate TDEE based on activity level
-    let calculatedTdee: number = BMR * 1.2;
-    // Adjust TDEE for training and rest days based on recomp goal
-    let trainingDaysCalories: number = 0;
-    let restDaysCalories: number = 0;
+    let calculatedTdee = BMR * activityLevel.value;
+    let mildWeightLoss: number = 0;
+    let mildWeightGain: number = 0;
+    let extremeWeightLoss: number = 0;
+    let extremeWeightGain: number = 0;
+    let weightLoss: number = 0,
+      weightGain: number = 0;
 
-    switch (recompGoal) {
-      case "1": // Fat loss
-        trainingDaysCalories = calculatedTdee * 1.1; // +10% on training days
-        restDaysCalories = calculatedTdee * 0.85; // -15% on rest days
+    switch (weightPerWeek) {
+      case "1": //0.25kg
+        mildWeightLoss = calculatedTdee - (7700 * 0.25) / 7;
+        mildWeightGain = calculatedTdee + (7700 * 0.25) / 7;
         break;
-      case "2": // Balanced
-        trainingDaysCalories = calculatedTdee * 1.15; // No change on training days
-        restDaysCalories = calculatedTdee * 0.9; // No change on rest days
+      case "2": //0.5kg
+        weightLoss = calculatedTdee - (7700 * 0.5) / 7;
+        weightGain = calculatedTdee + (7700 * 0.5) / 7;
         break;
-      case "3": // Muscle gain
-        trainingDaysCalories = calculatedTdee * 1.2; // +20% on training days
-        restDaysCalories = calculatedTdee * 0.95; // -5% on rest days
+      case "3": //0.75kg
+        extremeWeightLoss = calculatedTdee - (7700 * 0.75) / 7;
+        extremeWeightGain = calculatedTdee + (7700 * 0.75) / 7;
         break;
-      default:
-        // Handle default case or error
+      default: // Optional default case
+        console.log("Invalid weight per week option");
         break;
     }
 
-    // Calculate macros for both training and rest days
-    let proteinGrams: number = weightInKg * 1.6; // Default protein amount
-    let fatCaloriesTraining: number = trainingDaysCalories * 0.3;
-    let carbsCaloriesTraining: number = trainingDaysCalories * 0.4; // 40% on training days
-    let proteinCaloriesTraining: number = proteinGrams * 4; // per gram of protein
+    switch (goal) {
+      case "1": //weight loss
+        if (weightPerWeek === "1") setGoalCalories(mildWeightLoss);
+        else if (weightPerWeek === "2") setGoalCalories(weightLoss);
+        else if (weightPerWeek === "3") setGoalCalories(extremeWeightLoss);
+        break;
+      case "2": //maintain weight
+        setGoalCalories(calculatedTdee);
+        break;
+      case "3": //gain weight
+        if (weightPerWeek === "1") setGoalCalories(mildWeightGain);
+        else if (weightPerWeek === "2") setGoalCalories(weightGain);
+        else if (weightPerWeek === "3") setGoalCalories(extremeWeightGain);
+        break;
+      default:
+        console.log("Invalid goal option");
+        break;
+    }
 
-    let fatCaloriesRest: number = restDaysCalories * 0.3;
-    let carbsCaloriesRest: number = restDaysCalories * 0.3; // 30% on rest days
-    // Protein is higher on rest days hence using remaining calories after fats and carbs
-    let proteinCaloriesRest: number =
-      restDaysCalories - (fatCaloriesRest + carbsCaloriesRest);
-
-    let fatGramsTraining: number = fatCaloriesTraining / 9; // per gram of fat
-    let carbsGramsTraining: number = carbsCaloriesTraining / 4; // per gram of carbs
-    let proteinGramsTraining: number = proteinCaloriesTraining / 4; // adjusted protein for training
-
-    let fatGramsRest: number = fatCaloriesRest / 9; // per gram of fat
-    let carbsGramsRest: number = carbsCaloriesRest / 4; // per gram of carbs
-    let proteinGramsRest: number = proteinCaloriesRest / 4; // adjusted protein for rest days (since it's higher)
-
-    // Set state with the new values
-    setTrainingDaysTotalCalories(Number(trainingDaysCalories.toFixed(2)));
-    setRestDaysTotalCalories(Number(restDaysCalories.toFixed(2)));
-    setTrainingCarbs(Number(carbsGramsTraining.toFixed(2)));
-    setTrainingProtein(Number(proteinGramsTraining.toFixed(2)));
-    setTrainingFat(Number(fatGramsTraining.toFixed(2)));
-    setRestCarbs(Number(carbsGramsRest.toFixed(2)));
-    setRestProtein(Number(proteinGramsRest.toFixed(2)));
-    setRestFat(Number(fatGramsRest.toFixed(2)));
+    let fat: number = (0.23 * goalCalories) / 9;
+    let proteinMore = (0.35 * goalCalories) / 4;
+    let proteinNormal = (0.3 * goalCalories) / 4;
+    let proteinLess = (0.25 * goalCalories) / 4;
+    switch (goal) {
+      case "1":
+        setProtein(proteinMore);
+        setFat(fat);
+        setCarbs((0.42 * goalCalories) / 4);
+        break;
+      case "2":
+        setProtein(proteinNormal);
+        setFat(fat);
+        setCarbs((0.47 * goalCalories) / 4);
+        break;
+      case "3":
+        setProtein(proteinLess);
+        setFat(fat);
+        setCarbs((0.52 * goalCalories) / 4);
+        break;
+    }
 
     setCalculated(true);
+    return;
   };
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
-    calculateBodyRecomp();
+    calculateMacros();
   };
+
   return (
     <section className="my-6 mx-auto max-w-4xl">
       <div className="min-h-screen bg-gray-200 to-gray-200 py-16 px-2">
@@ -310,15 +323,29 @@ export default function BodyRecompositionCalculator() {
           </div>
           {/* activity */}
           <div className="group w-[70%]">
+            <label
+              htmlFor="10"
+              className="inline-block w-full text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+            >
+              Activity level
+            </label>
             <div className="relative flex flex-col items-center">
-              <p className="inline-block w-full text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400">
-                The optimal number of workouts is 3 weight exercise workouts per
-                week. Each workout should last at least 30
-                minutes.(!!!reference!!!)
-              </p>
+              {activityLevels.map((activity, index) => (
+                <div
+                  key={index}
+                  className={`p-2 m-2 mb-0 w-full text-base border rounded-md cursor-pointer text-black ${
+                    activityLevel.label === activity.label
+                      ? "border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 text-white hover:text-white"
+                      : "border-gray-300 hover:border-blue-500 hover:bg-gradient-to-br hover:from-purple-600 hover:to-blue-500 hover:text-white"
+                  }`}
+                  onClick={() => setActivityLevel(activity)}
+                >
+                  {activity.label}
+                </div>
+              ))}
             </div>
           </div>
-          {/* recompGoal */}
+          {/* goal */}
           <div className="group relative w-[70%]">
             <label
               htmlFor="3"
@@ -328,39 +355,89 @@ export default function BodyRecompositionCalculator() {
             </label>
             <div className="relative flex flex-row items-center">
               <button
-                onClick={() => setRecompGoal("1")}
+                onClick={() => setGoal("1")}
                 className={`w-1/2 h-10 rounded-md text-xs font-semibold transition-all duration-200 ease-in-out ${
-                  recompGoal === "1"
+                  goal === "1"
                     ? "border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 text-white"
                     : "bg-blue-200 group-hover:bg-blue-400 text-black"
                 }`}
               >
-                Prefer Fat Loss
+                Weight loss
               </button>
               &nbsp;
               <button
-                onClick={() => setRecompGoal("2")}
+                onClick={() => setGoal("2")}
                 className={`w-1/2 h-10 rounded-md text-xs font-semibold transition-all duration-200 ease-in-out ${
-                  recompGoal === "2"
+                  goal === "2"
                     ? "border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 text-white"
                     : "bg-blue-200 group-hover:bg-blue-400 text-black"
                 }`}
               >
-                Balanced
+                Maintain weight
               </button>
               &nbsp;
               <button
-                onClick={() => setRecompGoal("3")}
+                onClick={() => setGoal("3")}
                 className={`w-1/2 h-10 rounded-md text-xs font-semibold transition-all duration-200 ease-in-out ${
-                  recompGoal === "3"
+                  goal === "3"
                     ? "border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 text-white"
                     : "bg-blue-200 group-hover:bg-blue-400 text-black"
                 }`}
               >
-                Prefer Muscle Gain
+                Weight gain
               </button>
             </div>
           </div>
+          {/* weightPerWeek */}
+          {(goal === "1" || goal == "3") && (
+            <div className="group relative w-[70%]">
+              <label
+                htmlFor="3"
+                className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+              >
+                How much per week?
+              </label>
+              <div className="relative flex flex-row items-center">
+                <button
+                  onClick={() => setWeightPerWeek("1")}
+                  className={`w-1/2 h-10 rounded-md text-xs font-semibold transition-all duration-200 ease-in-out ${
+                    weightPerWeek === "1"
+                      ? "border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 text-white"
+                      : "bg-blue-200 group-hover:bg-blue-400 text-black"
+                  }`}
+                >
+                  Mild -{" "}
+                  {measurementSystem === "metric" ? "0.25 kg" : "0.55 lbs"} per
+                  week
+                </button>
+                &nbsp;
+                <button
+                  onClick={() => setWeightPerWeek("2")}
+                  className={`w-1/2 h-10 rounded-md text-xs font-semibold transition-all duration-200 ease-in-out ${
+                    weightPerWeek === "2"
+                      ? "border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 text-white"
+                      : "bg-blue-200 group-hover:bg-blue-400 text-black"
+                  }`}
+                >
+                  {measurementSystem === "metric" ? "0.50 kg" : "1.10 lbs"} per
+                  week
+                </button>
+                &nbsp;
+                <button
+                  onClick={() => setWeightPerWeek("3")}
+                  className={`w-1/2 h-10 rounded-md text-xs font-semibold transition-all duration-200 ease-in-out ${
+                    weightPerWeek === "3"
+                      ? "border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 text-white"
+                      : "bg-blue-200 group-hover:bg-blue-400 text-black"
+                  }`}
+                >
+                  Extreme -{" "}
+                  {measurementSystem === "metric" ? "0.50 kg" : "1.10 lbs"} per
+                  week
+                </button>
+              </div>
+            </div>
+          )}
           <div className="group w-[70%]">
             <CustomButton
               type="finish"
@@ -375,28 +452,18 @@ export default function BodyRecompositionCalculator() {
           </div>
         </div>
       </div>
-      {restFat > 0 && (
+      {goalCalories > 0 && (
         <div
           ref={resultRef}
           className="group w-[70%] mx-auto group flex flex-col"
         >
           <div className="text-lg font-bold">
-            <h1 className="text-gradient mb-0">TRAINING DAYS:</h1>
-            <p className="text-gradient__orange">
-              Total calories: {trainingDaysTotalCalories} kcal
-            </p>
-            <p>Carbs: {trainingCarbs} g</p>
-            <p>Protein: {trainingProtein}g</p>
-            <p>Fat: {trainingFat}g</p>
-          </div>
-          <div className="text-lg font-bold">
-            <h1 className="text-gradient mb-0">REST DAYS:</h1>
-            <p className="text-gradient__orange">
-              Total calories: {restDaysTotalCalories} kcal
-            </p>
-            <p>Carbs: {restCarbs}g</p>
-            <p>Protein: {restProtein}g</p>
-            <p>Fat: {restFat}g</p>
+            <h1 className="text-gradient mb-0">MACRO BREAKDOWN:</h1>
+            Total calories:{" "}
+            <h1 className="text-gradient mb-0">{goalCalories.toFixed(2)}</h1>
+            <p>Carbs: {carbs.toFixed(2)} kcal</p>
+            <p>Protein: {protein.toFixed(2)}g</p>
+            <p>Fat: {fat.toFixed(2)}g</p>
           </div>
         </div>
       )}

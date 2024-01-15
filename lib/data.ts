@@ -600,6 +600,16 @@ const activityLevels = [
   { label: "Very active (exercise 6-7 days/week)", value: 1.725 },
 ];
 
+const goals = [
+  { label: "Maintain weight" },
+  { label: "Mild weight loss of 0.5 lb (0.25 kg) per week" },
+  { label: "Weight loss of 1 lb (0.5 kg) per week" },
+  { label: "Extreme weight loss of 2 lb (1 kg) per week" },
+  { label: "Mild weight gain of 0.5 lb (0.25 kg) per week" },
+  { label: "Weight gain of 1 lb (0.5 kg) per week" },
+  { label: "Extreme weight gain of 2 lb (1 kg) per week" },
+];
+
 export {
   breadOptions,
   cheeseOptions,
@@ -608,4 +618,5 @@ export {
   sauceOptions,
   extraOptions,
   activityLevels,
+  goals,
 };

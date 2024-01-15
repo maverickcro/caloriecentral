@@ -43,6 +43,13 @@ export default function Home() {
         src="/body-recomposition.png"
         alt="Body Recomposition Calculator"
       />
+      <CalculatorsSection
+        title="Macro Calculator"
+        href="/macro-calculator"
+        description="Optimize your protein, carbohydrate, and fat intake simultaneously for maximum muscle gain and fat loss by using our Macro Calculator to fine-tune your diet and enhance your performance."
+        src="/macro-calculator.png"
+        alt="Macro Calculatorr"
+      />
     </main>
   );
 }
