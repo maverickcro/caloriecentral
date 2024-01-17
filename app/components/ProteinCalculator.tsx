@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 import CustomButton from "./CustomButton"; // Assuming you have a CustomButton component
-import { activityLevels, goals } from "../../lib/data";
+import { activityLevels } from "../../lib/data";
 
 export default function ProteinCalculator() {
   const resultRef = useRef<HTMLDivElement>(null);
@@ -78,10 +78,6 @@ export default function ProteinCalculator() {
         setProtein(((calculatedTdee + suficitPerDay) * 0.3) / 4);
         break;
     }
-
-    //ADA
-
-    //CDC
 
     setCalculated(true);
     return;

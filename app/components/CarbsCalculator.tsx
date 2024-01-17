@@ -1,9 +1,9 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 import CustomButton from "./CustomButton"; // Assuming you have a CustomButton component
-import { activityLevels, goals } from "../../lib/data";
+import { activityLevels } from "../../lib/data";
 
-export default function ProteinCalculator() {
+export default function CarbsCalculator() {
   const resultRef = useRef<HTMLDivElement>(null);
   const [age, setAge] = useState(0);
   const [gender, setGender] = useState("male"); // default to male
@@ -15,8 +15,9 @@ export default function ProteinCalculator() {
   const [measurementSystem, setMeasurementSystem] = useState("metric"); // default to metric
   const [activityLevel, setActivityLevel] = useState(activityLevels[0]); // default to first activity level
   const [goal, setGoal] = useState("2");
+  const [deficitLevel, setDeficitLevel] = useState("1");
   const [tdee, setTdee] = useState(0);
-  const [protein, setProtein] = useState(0);
+  const [carbs, setCarbs] = useState(0);
   const [calculated, setCalculated] = useState(false);
 
   const isValid: boolean =
@@ -29,7 +30,7 @@ export default function ProteinCalculator() {
     }
   }, [calculated]);
 
-  const calculateMacros = () => {
+  const calculateCarbs = () => {
     // Convert height to centimeters if the user has selected imperial
     let heightInCm =
       measurementSystem === "metric"
@@ -59,17 +60,46 @@ export default function ProteinCalculator() {
 
     // Calculate TDEE based on activity level
     let calculatedTdee = BMR * activityLevel.value;
-    setTdee(calculatedTdee);
+    let deficitPerDay: number = 0;
+    let suficitPerDay: number = 0;
+    switch (goal) {
+      case "1": //weight loss
+        deficitPerDay = deficitPerday(deficitLevel);
+        setTdee(calculatedTdee - deficitPerDay);
+        setCarbs(((calculatedTdee - deficitPerDay) * 0.4) / 4);
+        break;
+      case "2": //maintain weight
+        setTdee(calculatedTdee);
+        setCarbs((calculatedTdee * 0.4) / 4);
+        break;
+      case "3":
+        suficitPerDay = deficitPerday(deficitLevel);
+        setTdee(calculatedTdee + suficitPerDay);
+        setCarbs(((calculatedTdee + suficitPerDay) * 0.4) / 4);
+        break;
+    }
 
     setCalculated(true);
     return;
   };
 
-  const handleSubmit = (event: any) => {
-    event.preventDefault();
-    calculateMacros();
+  const deficitPerday = (deficitLevel: string) => {
+    switch (deficitLevel) {
+      case "1":
+        return 1925 / 7;
+      case "2":
+        return 3850 / 7;
+      case "3":
+        return 5775 / 7;
+      default:
+        return 0;
+    }
   };
 
+  const handleSubmit = (event: any) => {
+    event.preventDefault();
+    calculateCarbs();
+  };
   return (
     <section className="my-6 mx-auto max-w-4xl">
       <div className="min-h-screen bg-gray-200 to-gray-200 py-16 px-2">
@@ -321,7 +351,52 @@ export default function ProteinCalculator() {
               </button>
             </div>
           </div>
-
+          {(goal === "1" || goal === "3") && (
+            <div className="group relative w-[70%]">
+              <label
+                htmlFor="3"
+                className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+              >
+                {goal === "1"
+                  ? "How much weight you want to lose per week?"
+                  : "How much weight you want to gain per week?"}
+              </label>
+              <div className="relative flex flex-row items-center">
+                <button
+                  onClick={() => setDeficitLevel("1")}
+                  className={`w-1/2 h-10 rounded-md text-xs font-semibold transition-all duration-200 ease-in-out ${
+                    deficitLevel === "1"
+                      ? "border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 text-white"
+                      : "bg-blue-200 group-hover:bg-blue-400 text-black"
+                  }`}
+                >
+                  {measurementSystem === "metric" ? "0.25 kg" : "0.55 lbs"}
+                </button>
+                &nbsp;
+                <button
+                  onClick={() => setDeficitLevel("2")}
+                  className={`w-1/2 h-10 rounded-md text-xs font-semibold transition-all duration-200 ease-in-out ${
+                    deficitLevel === "2"
+                      ? "border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 text-white"
+                      : "bg-blue-200 group-hover:bg-blue-400 text-black"
+                  }`}
+                >
+                  {measurementSystem === "metric" ? "0.50 kg" : "1.10 lbs"}
+                </button>
+                &nbsp;
+                <button
+                  onClick={() => setDeficitLevel("3")}
+                  className={`w-1/2 h-10 rounded-md text-xs font-semibold transition-all duration-200 ease-in-out ${
+                    deficitLevel === "3"
+                      ? "border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 text-white"
+                      : "bg-blue-200 group-hover:bg-blue-400 text-black"
+                  }`}
+                >
+                  {measurementSystem === "metric" ? "0.75 kg" : "1.65 lbs"}
+                </button>
+              </div>
+            </div>
+          )}
           <div className="group w-[70%]">
             <CustomButton
               type="finish"
@@ -342,8 +417,34 @@ export default function ProteinCalculator() {
           className="group w-[70%] mx-auto group flex flex-col"
         >
           <div className="text-lg font-bold">
-            <p>Total calories: </p>
-            <h1 className="text-gradient mb-0">{protein.toFixed(2)}</h1>
+            <p>
+              {goal === "1"
+                ? `Since your goal is weight loss, that would mean a calorie deficit of ${deficitPerday(
+                    deficitLevel
+                  )} kcal per day. Your carbs intake should be:`
+                : goal === "2"
+                ? `Since your goal is to maintain your current weight, your carbs intake should be:`
+                : `Since your goal is weight gain, that would mean a calorie suficit of ${deficitPerday(
+                    deficitLevel
+                  )} kcal per day. Your carbs intake should be:`}
+            </p>
+            <h1 className="text-gradient mb-0">{carbs.toFixed(2)}g per day.</h1>
+            <p>{`According to The Institute of Medicine): ${(
+              (tdee * 0.4) /
+              4
+            ).toFixed(2)} - ${((tdee * 0.65) / 4).toFixed(
+              2
+            )} grams per day.`}</p>
+            <p>{`According to Food and Agriculture Organization and the World Health Organization: ${(
+              (tdee * 0.55) /
+              4
+            ).toFixed(2)} - ${((tdee * 0.75) / 4).toFixed(
+              2
+            )} grams per day, but only ${((tdee * 0.1) / 4).toFixed(
+              2
+            )} grams from sugars.`}</p>
+            <p>Your total daily calories should be:</p>
+            <h1 className="text-gradient mb-0">{tdee.toFixed(2)} kcal.</h1>
           </div>
         </div>
       )}
