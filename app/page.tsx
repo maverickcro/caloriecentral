@@ -72,6 +72,24 @@ export default function Home() {
           src="/fat-calculator.png"
           alt="Fat Intake Calculator"
         />
+        <CalculatorsSection
+          title="Fasting Calculator"
+          href="/fasting-calculator"
+          description="Fasting is popular for various reasons: Weight loss, health
+          benefits and much more. Let's calculate the calories behind it."
+          src="/fasting-calculator.png"
+          alt="Fasting Calculator"
+        />
+        <CalculatorsSection
+          title="Anorexic BMI Calculator"
+          href="/anorexic-calculator"
+          description="
+          Accurately assess your health with our Anorexia BMI Calculator, a
+          critical resource for identifying potential anorexia nervosa based on
+          BMI."
+          src="/anorexic-calculator.jpg"
+          alt="Anorexic BMI Calculator"
+        />
       </div>
     </main>
   );

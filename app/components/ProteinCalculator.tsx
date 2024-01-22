@@ -102,7 +102,7 @@ export default function ProteinCalculator() {
   };
   return (
     <section className="my-6 mx-auto max-w-4xl">
-      <div className="min-h-screen bg-gray-200 to-gray-200 py-16 px-2">
+      <div className="bg-gray-200 to-gray-200 py-16 px-2">
         <div className="grid w-full grid-cols-1 place-items-center space-y-6">
           {/* measurement system */}
           <div className="group relative w-[70%]">

@@ -1,9 +1,9 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 import CustomButton from "./CustomButton"; // Assuming you have a CustomButton component
-import { activityLevels } from "../../lib/data";
+import { activityLevels, fastingMethods } from "../../lib/data";
 
-export default function TDEECalculator() {
+export default function FastingCalculator() {
   const resultRef = useRef<HTMLDivElement>(null);
   const [age, setAge] = useState(0);
   const [gender, setGender] = useState("male"); // default to male
@@ -14,6 +14,7 @@ export default function TDEECalculator() {
   const [bodyFat, setBodyFat] = useState(0);
   const [measurementSystem, setMeasurementSystem] = useState("metric"); // default to metric
   const [activityLevel, setActivityLevel] = useState(activityLevels[0]); // default to first activity level
+  const [method, setMethod] = useState("16/8 Split Diet");
   const [tdee, setTdee] = useState(0);
   const [calculated, setCalculated] = useState(false);
 
@@ -27,7 +28,7 @@ export default function TDEECalculator() {
     }
   }, [calculated]);
 
-  const calculateTDEE = () => {
+  const calculateFasting = () => {
     // Convert height to centimeters if the user has selected imperial
     let heightInCm =
       measurementSystem === "metric"
@@ -57,20 +58,16 @@ export default function TDEECalculator() {
 
     // Calculate TDEE based on activity level
     let calculatedTdee = BMR * activityLevel.value;
-
-    // Update the TDEE state
     setTdee(calculatedTdee);
-    setCalculated(true);
 
-    // Return the dynamic sentence and the TDEE calculation
+    setCalculated(true);
     return;
   };
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
-    calculateTDEE();
+    calculateFasting();
   };
-
   return (
     <section className="my-6 mx-auto max-w-4xl">
       <div className="bg-gray-200 to-gray-200 py-16 px-2">
@@ -279,6 +276,30 @@ export default function TDEECalculator() {
               ))}
             </div>
           </div>
+          {/* goal */}
+          <div className="group w-[70%]">
+            <label
+              htmlFor="10"
+              className="inline-block w-full text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+            >
+              Which fasting method?
+            </label>
+            <div className="relative flex flex-col items-center">
+              {fastingMethods.map((fastingMethod, index) => (
+                <div
+                  key={index}
+                  className={`p-2 m-2 mb-0 w-full text-base border rounded-md cursor-pointer text-black ${
+                    method === fastingMethod.label
+                      ? "border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 text-white hover:text-white"
+                      : "border-gray-300 hover:border-blue-500 hover:bg-gradient-to-br hover:from-purple-600 hover:to-blue-500 hover:text-white"
+                  }`}
+                  onClick={() => setMethod(fastingMethod.label)}
+                >
+                  {fastingMethod.label}
+                </div>
+              ))}
+            </div>
+          </div>
           <div className="group w-[70%]">
             <CustomButton
               type="finish"
@@ -296,13 +317,130 @@ export default function TDEECalculator() {
       {tdee > 0 && (
         <div
           ref={resultRef}
-          className="group w-[70%] mx-auto group flex flex-col"
+          className="group w-[90%] mx-auto group flex flex-col justify-center"
         >
-          <p className="text-lg font-bold">
-            To maintain your weight:{" "}
-            <h1 className="text-gradient mb-0">{tdee.toFixed(2)}</h1> kcal
-            daily.
-          </p>
+          <h1 className="text-gradient mb-0">{method}</h1>
+          {method === "5/2 Split Diet" ? (
+            <table className="w-full border-collapse border border-blue-500 max-w-xl mt-16 mx-auto">
+              <thead>
+                <tr className="bg-blue-500">
+                  <th className="py-2 px-4 text-white text-left">Day</th>
+                  <th className="py-2 px-4 text-white text-left">Diet</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="bg-white border-b border-blue-500">
+                  <td className="py-2 px-4">Day 1</td>
+                  <td className="py-2 px-4">650 kcal</td>
+                </tr>
+                <tr className="bg-white border-b border-blue-500">
+                  <td className="py-2 px-4">Day 2</td>
+                  <td className="py-2 px-4">Maintanence calories - TDEE</td>
+                </tr>
+                <tr className="bg-white border-b border-blue-500">
+                  <td className="py-2 px-4">Day 3</td>
+                  <td className="py-2 px-4">Maintanence calories - TDEE</td>
+                </tr>
+                <tr className="bg-white border-b border-blue-500">
+                  <td className="py-2 px-4">Day 4</td>
+                  <td className="py-2 px-4">650 kcal</td>
+                </tr>
+                <tr className="bg-white border-b border-blue-500">
+                  <td className="py-2 px-4">Day 5</td>
+                  <td className="py-2 px-4">Maintanence calories - TDEE</td>
+                </tr>
+                <tr className="bg-white border-b border-blue-500">
+                  <td className="py-2 px-4">Day 6</td>
+                  <td className="py-2 px-4">Maintanence calories - TDEE</td>
+                </tr>
+                <tr className="bg-white border-b border-blue-500">
+                  <td className="py-2 px-4">Day 7</td>
+                  <td className="py-2 px-4">Maintanence calories - TDEE</td>
+                </tr>
+              </tbody>
+            </table>
+          ) : method === "Alternate day Fasting" ? (
+            <table className="w-full border-collapse border border-blue-500 max-w-xl mt-16 mx-auto">
+              <thead>
+                <tr className="bg-blue-500">
+                  <th className="py-2 px-4 text-white text-left">Day</th>
+                  <th className="py-2 px-4 text-white text-left">Diet</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="bg-white border-b border-blue-500">
+                  <td className="py-2 px-4">Day 1</td>
+                  <td className="py-2 px-4">Maintanence calories - TDEE</td>
+                </tr>
+                <tr className="bg-white border-b border-blue-500">
+                  <td className="py-2 px-4">Day 2</td>
+                  <td className="py-2 px-4">24-hour fasting</td>
+                </tr>
+                <tr className="bg-white border-b border-blue-500">
+                  <td className="py-2 px-4">Day 3</td>
+                  <td className="py-2 px-4">Maintanence calories - TDEE</td>
+                </tr>
+                <tr className="bg-white border-b border-blue-500">
+                  <td className="py-2 px-4">Day 4</td>
+                  <td className="py-2 px-4">24-hour fasting</td>
+                </tr>
+                <tr className="bg-white border-b border-blue-500">
+                  <td className="py-2 px-4">Day 5</td>
+                  <td className="py-2 px-4">Maintanence calories - TDEE</td>
+                </tr>
+                <tr className="bg-white border-b border-blue-500">
+                  <td className="py-2 px-4">Day 6</td>
+                  <td className="py-2 px-4">24-hour fasting</td>
+                </tr>
+                <tr className="bg-white border-b border-blue-500">
+                  <td className="py-2 px-4">Day 7</td>
+                  <td className="py-2 px-4">Maintanence calories - TDEE</td>
+                </tr>
+              </tbody>
+            </table>
+          ) : (
+            <>
+              <p>
+                You should eat one to three meals per day in a 8-hour window.{" "}
+              </p>
+              <table className="w-full border-collapse border border-blue-500 max-w-xl mt-16 mx-auto">
+                <thead>
+                  <tr className="bg-blue-500">
+                    <th className="py-2 px-4 text-white text-left">
+                      Prefered times
+                    </th>
+                    <th className="py-2 px-4 text-white text-left">
+                      Eating timeframe
+                    </th>
+                    <th className="py-2 px-4 text-white text-left">
+                      Fasting timeframe
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="bg-white border-b border-blue-500">
+                    <td className="py-2 px-4">Early in day</td>
+                    <td className="py-2 px-4">8 AM - 4 PM</td>
+                    <td className="py-2 px-4">4 PM - 8 AM next day</td>
+                  </tr>
+                  <tr className="bg-white border-b border-blue-500">
+                    <td className="py-2 px-4">Later in day</td>
+                    <td className="py-2 px-4">3 PM - 11 PM</td>
+                    <td className="py-2 px-4">11 PM - 7 AM next day</td>
+                  </tr>
+                  <tr className="bg-white border-b border-blue-500">
+                    <td className="py-2 px-4">Standard</td>
+                    <td className="py-2 px-4">Noon - 8 PM</td>
+                    <td className="py-2 px-4">8 PM - Noon next day</td>
+                  </tr>
+                </tbody>
+              </table>
+            </>
+          )}
+          <div className="text-lg font-bold">
+            <p>Your TDEE is:</p>
+            <h1 className="text-gradient mb-0">{tdee.toFixed(2)} kcal.</h1>
+          </div>
         </div>
       )}
     </section>

@@ -610,6 +610,12 @@ const goals = [
   { label: "Extreme weight gain of 2 lb (1 kg) per week" },
 ];
 
+const fastingMethods = [
+  { label: "16/8 Split Diet" },
+  { label: "5/2 Split Diet" },
+  { label: "Alternate day Fasting" },
+];
+
 export {
   breadOptions,
   cheeseOptions,
@@ -619,4 +625,5 @@ export {
   extraOptions,
   activityLevels,
   goals,
+  fastingMethods,
 };
