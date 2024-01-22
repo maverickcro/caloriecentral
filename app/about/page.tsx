@@ -5,7 +5,7 @@ export default function About() {
   return (
     <main className="mt-6 mx-auto px-6 prose max-w-4xl prose-xl prose-slate">
       <h1 className="text-2xl font-bold text-gradient mb-2">About</h1>
-      <div className="text-md text-black">
+      <div className="text-base text-black">
         <p>
           Hello everyone! I&apos;m Marko, and this is my blog. My journey with
           sports began at a young age, and for a while, I even pursued soccer

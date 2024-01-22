@@ -238,7 +238,7 @@ export default function AnorexicBMICalculator() {
         >
           <p className="text-lg font-bold">
             Your BMI is:{" "}
-            <h1 className="text-gradient mb-0">{bmi.toFixed(2)}</h1>
+            <h1 className="text-gradient mb-0">{bmi.toFixed(2)} kg/m2</h1>
           </p>
         </div>
       )}
