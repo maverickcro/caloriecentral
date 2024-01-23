@@ -25,10 +25,11 @@ export default function Footer() {
         {/* Navigation links */}
         <div className="flex justify-center space-x-4 mb-4">
           <Link
-            href="/privacy"
+            href="/disclaimer
+            "
             className="text-black/90 hover:text-black/50 no-underline"
           >
-            Privacy Policy
+            Disclaimer
           </Link>
           <Link
             href="/about"
