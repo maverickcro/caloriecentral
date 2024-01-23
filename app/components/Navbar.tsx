@@ -9,7 +9,7 @@ export default function Navbar() {
             CaloriePal
           </Link>
         </h1>
-        <div className="flex flex-row justify-center sm:justify-evenly sm:items-center gap-4 text-black text-md lg:text-lg">
+        <div className="flex flex-row justify-center sm:justify-evenly sm:items-center gap-4 text-black text-base lg:text-lg">
           <Link
             className="font-bold no-underline navbar-link"
             href="/calculators"

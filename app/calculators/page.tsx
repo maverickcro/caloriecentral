@@ -93,6 +93,14 @@ export default function PostList() {
           src="/anorexic-calculator.jpg"
           alt="Anorexic BMI Calculator"
         />
+        <CalculatorsSection
+          title="Sugar Calculator"
+          href="/sugar-calculator"
+          description="
+          How much sugar are you allowed to eat per day. This comes handy if you are on a weight loss."
+          src="/sugar-calculator.png"
+          alt="Sugar Calculator"
+        />
       </div>
     </main>
   );

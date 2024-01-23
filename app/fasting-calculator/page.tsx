@@ -10,7 +10,7 @@ export default function Calculator() {
       <span className="block pt-1 text-xs font-semibold text-gray-500">
         Updated: Jan 20, 2024
       </span>
-      <p className="text-md text-black">
+      <p className="text-base text-black">
         Intermittent fasting has become increasingly popular for various
         reasons, and people fast for different goals. Weight loss, health
         benefits and much more. Let&apos;s calculate the calories behind it.

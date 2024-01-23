@@ -22,7 +22,7 @@ export default function Contact() {
   return (
     <main className="mt-6 mx-auto px-6 prose max-w-4xl prose-xl prose-slate">
       <h1 className="text-2xl font-bold text-gradient mb-2">Contact</h1>
-      <div className="text-md text-black">
+      <div className="text-base text-black">
         <p>
           Have an idea or a question? Share it here! Even if you prefer to stay
           anonymous, I&apos;m all ears.

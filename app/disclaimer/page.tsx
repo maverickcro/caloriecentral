@@ -27,7 +27,7 @@ export default function Contact() {
       <span className="block pt-1 text-xs font-semibold text-gray-500">
         Updated: Jan 23, 2024
       </span>
-      <div className="text-md text-black">
+      <div className="text-base text-black">
         <p>
           The information contained on https://www.calorie-pal.com (the
           &apos;Service&apos;) website is for general information purposes only.

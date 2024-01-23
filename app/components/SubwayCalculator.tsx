@@ -248,10 +248,10 @@ export default function Calculator() {
     <section className="my-6 mx-auto prose  max-w-4xl prose-md prose-slate">
       {isNormalBread
         ? step < 7 && (
-            <p className="text-md font-bold text-gradient">Step {step}/6</p>
+            <p className="text-base font-bold text-gradient">Step {step}/6</p>
           )
         : step < 6 && (
-            <p className="text-md font-bold text-gradient">Step {step}/5</p>
+            <p className="text-base font-bold text-gradient">Step {step}/5</p>
           )}
       {}
       {step == 6 && isNormalBread && (

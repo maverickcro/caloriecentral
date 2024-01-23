@@ -10,7 +10,7 @@ export default function Calculator() {
       <span className="block pt-1 text-xs font-semibold text-gray-500">
         Updated: Jan 17, 2024
       </span>
-      <p className="text-md text-black">
+      <p className="text-base text-black">
         We will calculate how much carbs you need per day or at least should be
         taking during weight loss, maintenance or weight gain.
       </p>

@@ -10,7 +10,7 @@ export default function Calculator() {
       <span className="block pt-1 text-xs font-semibold text-gray-500">
         Updated: Jan 15, 2024
       </span>
-      <p className="text-md text-black">
+      <p className="text-base text-black">
         Fine-tune your diet for peak performance with our Macro Calculator,
         optimizing your intake of proteins, carbs, and fats for simultaneous
         muscle gain and fat loss.

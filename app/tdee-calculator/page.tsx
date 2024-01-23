@@ -8,7 +8,7 @@ export default function Calculator() {
       <span className="block pt-1 text-xs font-semibold text-gray-500">
         Updated: Jan 14, 2024
       </span>
-      <p className="text-md text-black">
+      <p className="text-base text-black">
         TDEE, or Total Daily Energy Expenditure, is a measure of how many
         calories your body requires in a day to maintain its current weight,
         factoring in all physical activities and bodily functions. It&apos;s
