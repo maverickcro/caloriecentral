@@ -9,7 +9,7 @@ export default function PostList() {
           Simplifying <span className="font-bold text-gradient">Nutrition</span>
           .&nbsp;
         </span>
-        One Bite at a Time.
+        One Calorie at a Time.
       </p>
       <Posts />
     </main>

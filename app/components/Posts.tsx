@@ -17,7 +17,7 @@ export default function Posts() {
             href={`/posts/${post.id}`}
             passHref
             key={post.id}
-            className="group flex flex-col blog-post bg-transparent rounded-lg shadow-md overflow-hidden transform transition-transform duration-300 ease-in-out hover:scale-[1.03]"
+            className="group flex flex-col blog-post bg-white rounded-lg shadow-md overflow-hidden transform transition-transform duration-300 ease-in-out hover:scale-[1.03]"
           >
             <div className="relative w-full h-48 cursor-pointer">
               <Image

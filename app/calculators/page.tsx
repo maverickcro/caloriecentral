@@ -5,8 +5,8 @@ import Image from "next/image";
 
 export default function PostList() {
   return (
-    <main className="mt-6 mx-auto px-6 max-w-4xl">
-      <p className="mt-12 mb-12 text-3xl text-center text-black">
+    <main className="mt-6 mx-auto px-6 max-w-4xl text-center">
+      <h1 className="mt-12 mb-16 text-4xl  text-black">
         <span className="whitespace-nowrap">
           Macros?&nbsp;
           <span className="font-bold text-gradient">Calories?</span>
@@ -14,43 +14,20 @@ export default function PostList() {
         </span>
         We Have All Kinds Of{" "}
         <span className="font-bold text-gradient">Calculators</span>.
-      </p>
-      <h1 className="text-4xl text-center font-bold text-gradient mb-2">
-        Nutrition Calculators
       </h1>
+      <h1 className="text-gradient text-4xl font-bold mb-2">
+        macros and calories calculators
+      </h1>
+      <span className="block pt-1 text-base">
+        This group of calculators simplifies diet tracking for health and
+        fitness, offering easy management of daily macros and sugar intake.
+        Perfect for anyone focused on effective nutrition and weight control.
+      </span>
       <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 py-12">
-        <CalculatorsSection
-          title="Subway Calorie Calculator"
-          href="/subway-calculator"
-          description="Calculate the nutrition of your favorite Subway sandwich."
-          src="/subway-calculator.jpg"
-          alt="Subway calorie nutrition calculator"
-        />
-        <CalculatorsSection
-          title="TDEE Calculator"
-          href="/tdee-calculator"
-          description="Learn How Many Calories You Burn Every Day Just For Existing."
-          src="/tdee-calculator.png"
-          alt="TDEE calculator"
-        />
-        <CalculatorsSection
-          title="Calorie Deficit Calculator"
-          href="/calorie-deficit-calculator"
-          description="Efficiently calculate your daily calorie needs for healthy weight management with our user-friendly Calorie Deficit Calculator."
-          src="/calorie-deficit.png"
-          alt="Calorie Deficit Calculator"
-        />
-        <CalculatorsSection
-          title="Body Recomposition Calculator"
-          href="/body-recomposition-calculator"
-          description="Did you know you can BUILD muscle and BURN fat at the same time? Check calories and body recomposition macros here."
-          src="/body-recomposition.png"
-          alt="Body Recomposition Calculator"
-        />
         <CalculatorsSection
           title="Macro Calculator"
           href="/macro-calculator"
-          description="Optimize your protein, carbohydrate, and fat intake simultaneously for maximum muscle gain and fat loss by using our Macro Calculator to fine-tune your diet and enhance your performance."
+          description="Optimize your protein, carbohydrate, and fat intake simultaneously for maximum muscle gain and fat loss."
           src="/macro-calculator.png"
           alt="Macro Calculator"
         />
@@ -76,6 +53,55 @@ export default function PostList() {
           alt="Fat Intake Calculator"
         />
         <CalculatorsSection
+          title="Sugar Calculator"
+          href="/sugar-calculator"
+          description="
+          How much sugar are you allowed to eat per day. This comes handy if you are on a weight loss."
+          src="/sugar-calculator.png"
+          alt="Sugar Calculator"
+        />
+      </div>
+      <h1 className="text-gradient text-4xl font-bold mb-2">
+        weight management calculators
+      </h1>
+      <span className="block pt-1 text-base">
+        These calculators are ideal for individuals aiming to lose, gain, or
+        maintain weight. They provide insights into daily calorie needs,
+        deficits for weight loss, and body composition changes.
+      </span>
+      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 py-12">
+        <CalculatorsSection
+          title="TDEE Calculator"
+          href="/tdee-calculator"
+          description="Learn How Many Calories You Burn Every Day Just For Existing."
+          src="/tdee-calculator.png"
+          alt="TDEE calculator"
+        />
+        <CalculatorsSection
+          title="Calorie Deficit Calculator"
+          href="/calorie-deficit-calculator"
+          description="Efficiently calculate your daily calorie needs for healthy weight management with our user-friendly Calorie Deficit Calculator."
+          src="/calorie-deficit.png"
+          alt="Calorie Deficit Calculator"
+        />
+        <CalculatorsSection
+          title="Body Recomposition Calculator"
+          href="/body-recomposition-calculator"
+          description="Did you know you can BUILD muscle and BURN fat at the same time? Check calories and body recomposition macros here."
+          src="/body-recomposition.png"
+          alt="Body Recomposition Calculator"
+        />
+      </div>
+      <h1 className="text-gradient text-4xl font-bold mb-2">
+        health and nutrition calculators
+      </h1>
+      <span className="block pt-1 text-base">
+        This category includes calculators tailored for specific health-related
+        contexts, like monitoring calories in fast-food meals, fasting periods,
+        and assessing BMI in the context of anorexia.
+      </span>
+      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 py-12">
+        <CalculatorsSection
           title="Fasting Calculator"
           href="/fasting-calculator"
           description="Fasting is popular for various reasons: Weight loss, health
@@ -94,12 +120,11 @@ export default function PostList() {
           alt="Anorexic BMI Calculator"
         />
         <CalculatorsSection
-          title="Sugar Calculator"
-          href="/sugar-calculator"
-          description="
-          How much sugar are you allowed to eat per day. This comes handy if you are on a weight loss."
-          src="/sugar-calculator.png"
-          alt="Sugar Calculator"
+          title="Subway Calorie Calculator"
+          href="/subway-calculator"
+          description="Calculate the nutrition of your favorite Subway sandwich."
+          src="/subway-calculator.jpg"
+          alt="Subway calorie nutrition calculator"
         />
       </div>
     </main>
