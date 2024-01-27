@@ -11,7 +11,6 @@ export default function Footer() {
           </Link>
         </h1>
 
-        {/* Text paragraph */}
         <p className="text-center text-xs2 mt-2 mb-4">
           FDA compliance: the information on this website has not been evaluated
           by the Food & Drug Administration or any other medical body. We do not
@@ -22,24 +21,23 @@ export default function Footer() {
           condition.
         </p>
 
-        {/* Navigation links */}
         <div className="flex justify-center space-x-4 mb-4">
           <Link
             href="/disclaimer
             "
-            className="text-black/90 hover:text-black/50 no-underline"
+            className="text-black/90 hover:text-black/50 no-underline navbar-link"
           >
             Disclaimer
           </Link>
           <Link
             href="/about"
-            className="text-black/90 hover:text-black/50 no-underline"
+            className="text-black/90 hover:text-black/50 no-underline navbar-link"
           >
             About
           </Link>
           <Link
-            href="/contact"
-            className="text-black/90 hover:text-black/50 no-underline"
+            href="mailto:mav3ricktv@gmail.com"
+            className="text-black/90 hover:text-black/50 no-underline navbar-link"
           >
             Contact
           </Link>

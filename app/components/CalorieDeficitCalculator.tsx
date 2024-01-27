@@ -334,12 +334,12 @@ export default function CalorieDeficitCalculator() {
           ref={resultRef}
           className="group w-[70%] mx-auto group flex flex-col"
         >
-          <p className="text-lg font-bold">
+          <p className="text-2xl font-bold">
             To maintain your weight:{" "}
             <h1 className="text-gradient mb-0">{tdee.toFixed(2)}</h1> kcal
             daily.
           </p>
-          <div className="text-lg font-bold">
+          <div className="text-2xl font-bold">
             You should consume:{" "}
             <h1 className="text-gradient mb-0">
               {(tdee - deficit).toFixed(2)}

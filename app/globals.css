@@ -53,3 +53,18 @@ main {
 h1 {
   line-height: 1.5;
 }
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.logo-animation {
+  animation: fadeInDown 0.5s ease-out forwards;
+}

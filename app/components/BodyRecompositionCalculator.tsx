@@ -380,7 +380,7 @@ export default function BodyRecompositionCalculator() {
           ref={resultRef}
           className="group w-[70%] mx-auto group flex flex-col"
         >
-          <div className="text-lg font-bold">
+          <div className="text-2xl font-bold">
             <h1 className="text-gradient mb-0">TRAINING DAYS:</h1>
             <p className="text-gradient__orange">
               Total calories: {trainingDaysTotalCalories} kcal
@@ -389,7 +389,7 @@ export default function BodyRecompositionCalculator() {
             <p>Protein: {trainingProtein}g</p>
             <p>Fat: {trainingFat}g</p>
           </div>
-          <div className="text-lg font-bold">
+          <div className="text-2xl font-bold">
             <h1 className="text-gradient mb-0">REST DAYS:</h1>
             <p className="text-gradient__orange">
               Total calories: {restDaysTotalCalories} kcal

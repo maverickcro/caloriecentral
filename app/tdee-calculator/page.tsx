@@ -4,7 +4,9 @@ import CalculatorComponent from "../components/TdeeCalculator";
 export default function Calculator() {
   return (
     <section className="mt-6 mx-auto px-6 prose  max-w-4xl prose-xl prose-slate">
-      <h1 className="text-2xl font-bold text-gradient mb-0">TDEE Calculator</h1>
+      <h1 className="text-2xl font-bold text-gradient mb-0">
+        Cal Calc - TDEE Calculator
+      </h1>
       <span className="block pt-1 text-xs font-semibold text-gray-500">
         Updated: Jan 14, 2024
       </span>

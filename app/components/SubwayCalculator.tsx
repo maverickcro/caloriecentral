@@ -132,7 +132,7 @@ export default function Calculator() {
 
     return (
       <>
-        <p className="text-lg font-bold text-gradient__orange">
+        <p className="text-2xl font-bold text-gradient__orange">
           Nutritional facts:
         </p>
         <ul>
@@ -164,7 +164,7 @@ export default function Calculator() {
   const getCompleteOrder = () => {
     return (
       <>
-        <p className="text-lg font-bold text-gradient__orange">
+        <p className="text-2xl font-bold text-gradient__orange">
           Your complete Subway order:
         </p>
         <ul>
@@ -256,7 +256,7 @@ export default function Calculator() {
       {}
       {step == 6 && isNormalBread && (
         <div>
-          <p className="text-lg text-black">
+          <p className="text-2xl text-black">
             Which sub size did you get? Please choose below.
           </p>
           <div className="lg:min-h-[40vh] my-[20px]">
@@ -294,7 +294,7 @@ export default function Calculator() {
       )}
       {step == 1 && (
         <div>
-          <p className="text-lg font-bold text-black">
+          <p className="text-2xl font-bold text-black">
             Please choose your bread option.
           </p>
           <div className="min-h-[40vh] my-[30px]">
@@ -329,7 +329,7 @@ export default function Calculator() {
       )}
       {step == 2 && (
         <div>
-          <p className="text-lg font-bold text-black">
+          <p className="text-2xl font-bold text-black">
             Please choose your cheese option.
           </p>
           <div className="min-h-[40vh] my-[30px]">
@@ -359,7 +359,7 @@ export default function Calculator() {
       )}
       {step == 3 && (
         <div>
-          <p className="text-lg font-bold text-black">
+          <p className="text-2xl font-bold text-black">
             Please choose your protein option.
           </p>
           <div className="min-h-[40vh] my-[30px]">
@@ -389,7 +389,7 @@ export default function Calculator() {
       )}
       {step == 4 && (
         <div>
-          <p className="text-lg font-bold text-black">
+          <p className="text-2xl font-bold text-black">
             Which sauce did you get?
           </p>
           <div className="min-h-[40vh] my-[30px]">
@@ -419,7 +419,7 @@ export default function Calculator() {
       )}
       {step == 5 && (
         <div>
-          <p className="text-lg font-bold text-black">
+          <p className="text-2xl font-bold text-black">
             Anything extra with your sub? You can choose{" "}
             <span className="text-gradient__orange">multiple</span> options.
           </p>

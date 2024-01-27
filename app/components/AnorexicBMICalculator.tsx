@@ -236,7 +236,7 @@ export default function AnorexicBMICalculator() {
           ref={resultRef}
           className="group w-[70%] mx-auto group flex flex-col"
         >
-          <p className="text-lg font-bold">
+          <p className="text-2xl font-bold">
             Your BMI is:{" "}
             <h1 className="text-gradient mb-0">{bmi.toFixed(2)} kg/m2</h1>
           </p>

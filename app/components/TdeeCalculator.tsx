@@ -298,7 +298,7 @@ export default function TDEECalculator() {
           ref={resultRef}
           className="group w-[70%] mx-auto group flex flex-col"
         >
-          <p className="text-lg font-bold">
+          <p className="text-2xl font-bold">
             To maintain your weight:{" "}
             <h1 className="text-gradient mb-0">{tdee.toFixed(2)}</h1> kcal
             daily.

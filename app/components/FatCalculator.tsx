@@ -416,7 +416,7 @@ export default function FatCalculator() {
           ref={resultRef}
           className="group w-[70%] mx-auto group flex flex-col"
         >
-          <div className="text-lg font-bold">
+          <div className="text-2xl font-bold">
             <p>
               {goal === "1"
                 ? `Since your goal is weight loss, that would mean a calorie deficit of ${deficitPerday(

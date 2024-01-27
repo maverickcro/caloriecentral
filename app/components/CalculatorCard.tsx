@@ -1,24 +1,24 @@
 import Link from "next/link";
 import Image from "next/image";
 
-type CalculatorSectionProps = {
+type CalculatorCardProps = {
   [x: string]: string;
 };
 
-export default function CalculatorsSection({
+export default function CalculatorCard({
   title,
   description,
   src,
   alt,
   href,
-}: CalculatorSectionProps) {
+}: CalculatorCardProps) {
   return (
     <>
       <Link
         href={`${href}`}
         passHref
         key={`${href}`}
-        className="group flex flex-col blog-post bg-white rounded-lg shadow-md overflow-hidden transform transition-transform duration-300 ease-in-out hover:scale-[1.03]"
+        className="group flex flex-col blog-post bg-white shadow-md overflow-hidden transform transition-transform duration-300 ease-in-out hover:scale-[1.03]"
       >
         <div className="relative w-full h-48 cursor-pointer">
           <Image

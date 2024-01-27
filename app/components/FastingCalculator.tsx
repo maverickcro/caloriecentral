@@ -437,7 +437,7 @@ export default function FastingCalculator() {
               </table>
             </>
           )}
-          <div className="text-lg font-bold">
+          <div className="text-2xl font-bold">
             <p>Your TDEE is:</p>
             <h1 className="text-gradient mb-0">{tdee.toFixed(2)} kcal.</h1>
           </div>

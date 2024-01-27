@@ -457,7 +457,7 @@ export default function TDEECalculator() {
           ref={resultRef}
           className="group w-[70%] mx-auto group flex flex-col"
         >
-          <div className="text-lg font-bold">
+          <div className="text-2xl font-bold">
             <h1 className="text-gradient mb-0">MACRO BREAKDOWN:</h1>
             Total calories:{" "}
             <h1 className="text-gradient mb-0">{goalCalories.toFixed(2)}</h1>
