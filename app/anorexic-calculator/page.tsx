@@ -18,17 +18,19 @@ export default function Calculator() {
       </p>
 
       <CalculatorComponent />
-      <span className="text-sm">
-        Reference:
-        <Link
-          rel="nofollow"
-          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8837073/"
-        >
-          Toppino, Federica, et al. &quot;Body Mass Index Specifiers in Anorexia
-          Nervosa: Anything below the &apos;Extreme&apos;?&quot; Journal of
-          Clinical Medicine, vol. 11, no. 3, 2022, p. 542.
-        </Link>
-      </span>
+      <span className="font-bold text-sm">References:</span>
+      <ul className="text-sm">
+        <li>
+          <Link
+            rel="nofollow"
+            href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8837073/://www.ahajournals.org/doi/full/10.1161/01.cir.0000019552.77778.04"
+          >
+            Toppino, Federica, et al. &quot;Body Mass Index Specifiers in
+            Anorexia Nervosa: Anything below the &apos;Extreme&apos;?&quot;
+            Journal of Clinical Medicine, vol. 11, no. 3, 2022, p. 542.
+          </Link>
+        </li>
+      </ul>
       <AboutMeSection />
     </section>
   );

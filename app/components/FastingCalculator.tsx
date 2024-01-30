@@ -1,7 +1,9 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
-import CustomButton from "./CustomButton"; // Assuming you have a CustomButton component
+import CustomButton from "./CustomButton";
+import GoToTop from "./GoToTop";
 import { activityLevels, fastingMethods } from "../../lib/data";
+import Link from "next/link";
 
 export default function FastingCalculator() {
   const resultRef = useRef<HTMLDivElement>(null);
@@ -20,6 +22,25 @@ export default function FastingCalculator() {
 
   const isValid: boolean =
     age > 0 && weight > 0 && (heightCm > 0 || heightFeet > 0);
+
+  useEffect(() => {
+    // Load all values from localStorage
+    const savedAge = localStorage.getItem("age");
+    const savedGender = localStorage.getItem("gender");
+    const savedWeight = localStorage.getItem("weight");
+    const savedHeightCm = localStorage.getItem("heightCm");
+    const savedHeightFeet = localStorage.getItem("heightFeet");
+    const savedHeightInches = localStorage.getItem("heightInches");
+    const savedMeasurementSystem = localStorage.getItem("measurementSystem");
+
+    if (savedAge) setAge(Number(savedAge));
+    if (savedGender) setGender(savedGender);
+    if (savedWeight) setWeight(Number(savedWeight));
+    if (savedHeightCm) setHeightCm(Number(savedHeightCm));
+    if (savedHeightFeet) setHeightFeet(Number(savedHeightFeet));
+    if (savedHeightInches) setHeightInches(Number(savedHeightInches));
+    if (savedMeasurementSystem) setMeasurementSystem(savedMeasurementSystem);
+  }, []);
 
   useEffect(() => {
     if (calculated && resultRef.current) {
@@ -113,6 +134,7 @@ export default function FastingCalculator() {
               Age
             </label>
             <input
+              value={age}
               id="3"
               min="1"
               max="100"
@@ -163,6 +185,7 @@ export default function FastingCalculator() {
             </label>
             <div className="relative flex items-center">
               <input
+                value={weight}
                 id="9"
                 type="number"
                 min="1"
@@ -185,7 +208,7 @@ export default function FastingCalculator() {
             {measurementSystem === "metric" ? (
               <div className="relative flex items-center">
                 <input
-                  id="9"
+                  value={heightCm}
                   min="40"
                   type="number"
                   onChange={(e: any) => setHeightCm(e.target.value)}
@@ -199,6 +222,7 @@ export default function FastingCalculator() {
               <div className="flex items-center space-x-2">
                 <div className="relative w-1/2">
                   <input
+                    value={heightFeet}
                     id="9"
                     type="number"
                     min="1"
@@ -214,6 +238,7 @@ export default function FastingCalculator() {
                 &nbsp;
                 <div className="relative w-1/2">
                   <input
+                    value={heightInches}
                     id="9"
                     type="number"
                     min="0"
@@ -314,135 +339,396 @@ export default function FastingCalculator() {
           </div>
         </div>
       </div>
-      {tdee > 0 && (
-        <div
-          ref={resultRef}
-          className="group w-[90%] mx-auto group flex flex-col justify-center"
-        >
-          <h1 className="text-gradient mb-0">{method}</h1>
-          {method === "5/2 Split Diet" ? (
-            <table className="w-full border-collapse border border-blue-500 max-w-xl mt-16 mx-auto">
-              <thead>
-                <tr className="bg-blue-500">
-                  <th className="py-2 px-4 text-white text-left">Day</th>
-                  <th className="py-2 px-4 text-white text-left">Diet</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="bg-white border-b border-blue-500">
-                  <td className="py-2 px-4">Day 1</td>
-                  <td className="py-2 px-4">650 kcal</td>
-                </tr>
-                <tr className="bg-white border-b border-blue-500">
-                  <td className="py-2 px-4">Day 2</td>
-                  <td className="py-2 px-4">Maintanence calories - TDEE</td>
-                </tr>
-                <tr className="bg-white border-b border-blue-500">
-                  <td className="py-2 px-4">Day 3</td>
-                  <td className="py-2 px-4">Maintanence calories - TDEE</td>
-                </tr>
-                <tr className="bg-white border-b border-blue-500">
-                  <td className="py-2 px-4">Day 4</td>
-                  <td className="py-2 px-4">650 kcal</td>
-                </tr>
-                <tr className="bg-white border-b border-blue-500">
-                  <td className="py-2 px-4">Day 5</td>
-                  <td className="py-2 px-4">Maintanence calories - TDEE</td>
-                </tr>
-                <tr className="bg-white border-b border-blue-500">
-                  <td className="py-2 px-4">Day 6</td>
-                  <td className="py-2 px-4">Maintanence calories - TDEE</td>
-                </tr>
-                <tr className="bg-white border-b border-blue-500">
-                  <td className="py-2 px-4">Day 7</td>
-                  <td className="py-2 px-4">Maintanence calories - TDEE</td>
-                </tr>
-              </tbody>
-            </table>
-          ) : method === "Alternate day Fasting" ? (
-            <table className="w-full border-collapse border border-blue-500 max-w-xl mt-16 mx-auto">
-              <thead>
-                <tr className="bg-blue-500">
-                  <th className="py-2 px-4 text-white text-left">Day</th>
-                  <th className="py-2 px-4 text-white text-left">Diet</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="bg-white border-b border-blue-500">
-                  <td className="py-2 px-4">Day 1</td>
-                  <td className="py-2 px-4">Maintanence calories - TDEE</td>
-                </tr>
-                <tr className="bg-white border-b border-blue-500">
-                  <td className="py-2 px-4">Day 2</td>
-                  <td className="py-2 px-4">24-hour fasting</td>
-                </tr>
-                <tr className="bg-white border-b border-blue-500">
-                  <td className="py-2 px-4">Day 3</td>
-                  <td className="py-2 px-4">Maintanence calories - TDEE</td>
-                </tr>
-                <tr className="bg-white border-b border-blue-500">
-                  <td className="py-2 px-4">Day 4</td>
-                  <td className="py-2 px-4">24-hour fasting</td>
-                </tr>
-                <tr className="bg-white border-b border-blue-500">
-                  <td className="py-2 px-4">Day 5</td>
-                  <td className="py-2 px-4">Maintanence calories - TDEE</td>
-                </tr>
-                <tr className="bg-white border-b border-blue-500">
-                  <td className="py-2 px-4">Day 6</td>
-                  <td className="py-2 px-4">24-hour fasting</td>
-                </tr>
-                <tr className="bg-white border-b border-blue-500">
-                  <td className="py-2 px-4">Day 7</td>
-                  <td className="py-2 px-4">Maintanence calories - TDEE</td>
-                </tr>
-              </tbody>
-            </table>
-          ) : (
-            <>
-              <p>
-                You should eat one to three meals per day in a 8-hour window.{" "}
-              </p>
-              <table className="w-full border-collapse border border-blue-500 max-w-xl mt-16 mx-auto">
-                <thead>
-                  <tr className="bg-blue-500">
-                    <th className="py-2 px-4 text-white text-left">
-                      Prefered times
-                    </th>
-                    <th className="py-2 px-4 text-white text-left">
-                      Eating timeframe
-                    </th>
-                    <th className="py-2 px-4 text-white text-left">
-                      Fasting timeframe
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="bg-white border-b border-blue-500">
-                    <td className="py-2 px-4">Early in day</td>
-                    <td className="py-2 px-4">8 AM - 4 PM</td>
-                    <td className="py-2 px-4">4 PM - 8 AM next day</td>
-                  </tr>
-                  <tr className="bg-white border-b border-blue-500">
-                    <td className="py-2 px-4">Later in day</td>
-                    <td className="py-2 px-4">3 PM - 11 PM</td>
-                    <td className="py-2 px-4">11 PM - 7 AM next day</td>
-                  </tr>
-                  <tr className="bg-white border-b border-blue-500">
-                    <td className="py-2 px-4">Standard</td>
-                    <td className="py-2 px-4">Noon - 8 PM</td>
-                    <td className="py-2 px-4">8 PM - Noon next day</td>
-                  </tr>
-                </tbody>
-              </table>
-            </>
-          )}
-          <div className="text-2xl font-bold">
-            <p>Your TDEE is:</p>
-            <h1 className="text-gradient mb-0">{tdee.toFixed(2)} kcal.</h1>
+      <div
+        ref={resultRef}
+        className="group w-[90%] mx-auto group flex flex-col justify-center"
+      >
+        {tdee > 0 ? (
+          <div className="flex flex-col">
+            <div className="flex justify-center">
+              <h1 className="text-gradient mb-0">{method}</h1>
+            </div>
+            {method === "5/2 Split Diet" ? (
+              <>
+                <div className="">
+                  <p className="mb-0 font-bold">Your Daily Calorie Goal:</p>
+                  <h2 className="text-gradient my-0">
+                    {tdee.toFixed(2)} kcal per day.
+                  </h2>
+                  <p>
+                    Daily calorie goal is calculated from your TDEE with{" "}
+                    <Link href="/tdee-calculator">this calculator</Link>. Number
+                    of calories you use daily while doing absolutely nothing.
+                    With other words - You will lose these no matter what, you
+                    need them daily to maintain your current weight.
+                  </p>
+                </div>
+                <table className="w-full border-collapse border border-blue-500 max-w-xl mt-16 mx-auto">
+                  <thead>
+                    <tr className="bg-blue-500">
+                      <th className="py-2 px-4 text-white text-left">Day</th>
+                      <th className="py-2 px-4 text-white text-left">Diet</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="bg-white border-b border-blue-500">
+                      <td className="py-2 px-4">Day 1</td>
+                      <td className="py-2 px-4">500-600 kcal</td>
+                    </tr>
+                    <tr className="bg-white border-b border-blue-500">
+                      <td className="py-2 px-4">Day 2</td>
+                      <td className="py-2 px-4">Your Daily Calorie Goal*</td>
+                    </tr>
+                    <tr className="bg-white border-b border-blue-500">
+                      <td className="py-2 px-4">Day 3</td>
+                      <td className="py-2 px-4">Your Daily Calorie Goal*</td>
+                    </tr>
+                    <tr className="bg-white border-b border-blue-500">
+                      <td className="py-2 px-4">Day 4</td>
+                      <td className="py-2 px-4">500-600 kcal</td>
+                    </tr>
+                    <tr className="bg-white border-b border-blue-500">
+                      <td className="py-2 px-4">Day 5</td>
+                      <td className="py-2 px-4">Your Daily Calorie Goal*</td>
+                    </tr>
+                    <tr className="bg-white border-b border-blue-500">
+                      <td className="py-2 px-4">Day 6</td>
+                      <td className="py-2 px-4">Your Daily Calorie Goal*</td>
+                    </tr>
+                    <tr className="bg-white border-b border-blue-500">
+                      <td className="py-2 px-4">Day 7</td>
+                      <td className="py-2 px-4">Your Daily Calorie Goal*</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </>
+            ) : method === "Alternate day Fasting" ? (
+              <>
+                <div className="">
+                  <p className="mb-0 font-bold">Your Daily Calorie Goal:</p>
+                  <h2 className="text-gradient my-0">
+                    {tdee.toFixed(2)} kcal per day.
+                  </h2>
+                  <p>
+                    Daily calorie goal is calculated from your TDEE with{" "}
+                    <Link href="/tdee-calculator">this calculator</Link>. Number
+                    of calories you use daily while doing absolutely nothing.
+                    With other words - You will lose these no matter what, you
+                    need them daily to maintain your current weight.
+                  </p>
+                </div>
+                <table className="w-full border-collapse border border-blue-500 max-w-xl mt-16 mx-auto">
+                  <thead>
+                    <tr className="bg-blue-500">
+                      <th className="py-2 px-4 text-white text-left">Day</th>
+                      <th className="py-2 px-4 text-white text-left">Diet</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="bg-white border-b border-blue-500">
+                      <td className="py-2 px-4">Day 1</td>
+                      <td className="py-2 px-4">Your Daily Calorie Goal*</td>
+                    </tr>
+                    <tr className="bg-white border-b border-blue-500">
+                      <td className="py-2 px-4">Day 2</td>
+                      <td className="py-2 px-4">24-hour fasting</td>
+                    </tr>
+                    <tr className="bg-white border-b border-blue-500">
+                      <td className="py-2 px-4">Day 3</td>
+                      <td className="py-2 px-4">Your Daily Calorie Goal*</td>
+                    </tr>
+                    <tr className="bg-white border-b border-blue-500">
+                      <td className="py-2 px-4">Day 4</td>
+                      <td className="py-2 px-4">24-hour fasting</td>
+                    </tr>
+                    <tr className="bg-white border-b border-blue-500">
+                      <td className="py-2 px-4">Day 5</td>
+                      <td className="py-2 px-4">Your Daily Calorie Goal*</td>
+                    </tr>
+                    <tr className="bg-white border-b border-blue-500">
+                      <td className="py-2 px-4">Day 6</td>
+                      <td className="py-2 px-4">24-hour fasting</td>
+                    </tr>
+                    <tr className="bg-white border-b border-blue-500">
+                      <td className="py-2 px-4">Day 7</td>
+                      <td className="py-2 px-4">Your Daily Calorie Goal*</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </>
+            ) : (
+              <>
+                <div className="font-bold">
+                  <p className="my-0">Please aim to eat:</p>
+                  <h2 className="text-gradient my-0">
+                    {tdee.toFixed(2)} kcal per day.
+                  </h2>
+                  <p>
+                    You should eat one to three meals per day in a 8-hour
+                    window. Choose the preferred times below.
+                  </p>
+                </div>
+                <table className="w-full border-collapse border border-blue-500 max-w-xl mt-16 mx-auto">
+                  <thead>
+                    <tr className="bg-blue-500">
+                      <th className="py-2 px-4 text-white text-left">
+                        Preferred times
+                      </th>
+                      <th className="py-2 px-4 text-white text-left">
+                        Eating timeframe
+                      </th>
+                      <th className="py-2 px-4 text-white text-left">
+                        Fasting timeframe
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="bg-white border-b border-blue-500">
+                      <td className="py-2 px-4">Early in day</td>
+                      <td className="py-2 px-4">8 AM - 4 PM</td>
+                      <td className="py-2 px-4">4 PM - 8 AM next day</td>
+                    </tr>
+                    <tr className="bg-white border-b border-blue-500">
+                      <td className="py-2 px-4">Later in day</td>
+                      <td className="py-2 px-4">3 PM - 11 PM</td>
+                      <td className="py-2 px-4">11 PM - 7 AM next day</td>
+                    </tr>
+                    <tr className="bg-white border-b border-blue-500">
+                      <td className="py-2 px-4">Standard</td>
+                      <td className="py-2 px-4">Noon - 8 PM</td>
+                      <td className="py-2 px-4">8 PM - Noon next day</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </>
+            )}
           </div>
-        </div>
-      )}
+        ) : (
+          <div className="flex flex-col">
+            <p className="text-lg text-red-600">
+              Please do the calculation above first.
+            </p>
+          </div>
+        )}
+        <h2>Intermittent Fasting for Weight Loss</h2>
+        <p>
+          Intermittent Fasting (IF) has become a key player in weight
+          management. The principle is simple: alternate periods of fasting with
+          eating. This switch not only helps with reducing overall calorie
+          intake but also prompts the body to burn stored fat.
+        </p>
+        <ul>
+          <li>
+            Studies indicate a weight reduction between 0.8% to 13% from
+            baseline.
+          </li>
+          <li>
+            The 16/8 method, limiting food intake to 8 hours, is particularly
+            effective.
+          </li>
+          <li>
+            Exercise may enhance the benefits of IF, although individual results
+            can vary.
+          </li>
+        </ul>
+        <h2>Overview of Fasting Methods</h2>
+        <table className="w-full border-collapse border border-blue-500 max-w-xl mt-16 mx-auto">
+          <thead>
+            <tr className="bg-blue-500">
+              <th className="py-2 px-4 text-white text-left">Fasting Method</th>
+              <th className="py-2 px-4 text-white text-left">
+                Key Characteristics
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td className="py-2 px-4 border border-gray-300">
+                16/8 Split Diet
+              </td>
+              <td className="py-2 px-4 border border-gray-300">
+                <ul>
+                  <li>Eating window of 8 hours with 16 hours of fasting.</li>
+                  <li>Popular for its simplicity and effectiveness.</li>
+                  <li>Flexible eating period can be adjusted to lifestyle.</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td className="py-2 px-4 border border-gray-300">
+                5/2 Split Diet
+              </td>
+              <td className="py-2 px-4 border border-gray-300">
+                <ul>
+                  <li>
+                    Normal eating for 5 days, reduced calorie intake for 2
+                    non-consecutive days.
+                  </li>
+                  <li>Typically, 500-600 calories on fasting days.</li>
+                  <li>
+                    Focused on calorie reduction rather than complete fasting.
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td className="py-2 px-4 border border-gray-300">
+                Alternate Day Fasting
+              </td>
+              <td className="py-2 px-4 border border-gray-300">
+                <ul>
+                  <li>
+                    Alternates between normal eating days and fasting days.
+                  </li>
+                  <li>
+                    On fasting days, either no food or a very low-calorie diet.
+                  </li>
+                  <li>
+                    Can lead to significant weight loss and health improvements.
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <h2>Which fasting method is the best for weight loss?</h2>
+        <p>
+          A recent meta-analysis has compared three popular intermittent fasting
+          (IF) methods: Alternate Day Fasting (ADF), the 5:2 diet, and
+          Time-Restricted Eating (TRE). This study aimed to determine which
+          fasting method is the most effective for weight loss.
+        </p>
+
+        <ul>
+          <li>
+            <strong>Effectiveness Compared to Traditional Diets:</strong> The IF
+            methods showed similar weight loss effectiveness compared to
+            traditional caloric restriction, making them a compelling
+            alternative for those seeking new diet strategies.
+          </li>
+          <li>
+            <strong>Ranking the Fasting Methods:</strong> The study found ADF to
+            be the most effective for weight loss, followed by traditional
+            calorie-restricted diets, with TRE in last place.
+          </li>
+          <li>
+            <strong>Compliance Rates:</strong> Short-term adherence to IF diets
+            started strong, with compliance rates above 80%, indicating an
+            initial ease of adoption for participants.
+          </li>
+        </ul>
+
+        <p>
+          The conclusion points to IF, and ADF in particular, as a viable and
+          potentially easier-to-follow alternative to calorie counting for
+          weight loss. Longer-term studies are needed to understand the full
+          scope of IF benefits and sustainability. For a more in-depth analysis,
+          review the complete study in the{" "}
+          <Link href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10098946/">
+            journal
+          </Link>
+          .
+        </p>
+
+        <h2>Will I be hungry on fasting days?</h2>
+        <p>
+          Reports state that the first 10 days on the every-other-day diet are
+          the most challenging. Calorie-free beverages, such as unsweetened tea,
+          may help offset hunger. Here are some <strong>tips</strong> for you:
+        </p>
+        <ul>
+          <li>
+            <strong>Hydrate Strategically:</strong> Keep water intake high to
+            curb hunger. Spicing it up with a slice of lemon or cucumber can
+            make it more enjoyable, and electrolytes can help maintain balance.
+          </li>
+          <li>
+            <strong>Nourish with Nutrients:</strong> Incorporate a diet rich in
+            fiber and proteins like legumes, lean meats, and greens.
+            They&apos;re your allies in keeping hunger at bay and stabilizing
+            energy levels.
+          </li>
+          <li>
+            <strong>Smart Snacking:</strong> Choose whole foods over processed
+            snacks. Foods with a low glycemic index maintain your blood sugar
+            levels and fend off the cravings.
+          </li>
+          <li>
+            <strong>Build Up Gradually:</strong> Ease into fasting by starting
+            with shorter periods and then extending them. This helps your body
+            adapt without overwhelming it.
+          </li>
+          <li>
+            <strong>Engage Your Mind:</strong> Stay occupied with activities
+            like reading, walking, or a new hobby. It&apos;s not just about
+            passing time but enriching your life while fasting.
+          </li>
+          <li>
+            <strong>Stay Positive and Consistent:</strong> Remember that
+            perseverance is key. It&apos;s normal to have an adjustment period,
+            so keep a positive mindset and be consistent with your routine.
+          </li>
+          <li>
+            <strong>Listen to Your Body:</strong> Pay attention to what your
+            body is telling you. If you feel unwell, it&apos;s okay to adjust
+            your fasting plan. Health comes first.
+          </li>
+          <li>
+            <strong>Seek Community Support:</strong> Join online forums or local
+            groups practicing intermittent fasting. Sharing experiences and tips
+            can be incredibly motivating.
+          </li>
+        </ul>
+
+        <h2>Do I still fast once I’m ready to maintain my weight?</h2>
+        <p>
+          Some plans, such as the every-other-day diet, also include a weight
+          maintenance phase, which involves increasing the number of calories on
+          fasting days from 500 to 1,000. Other plans recommend decreasing the
+          number of fasting days each week. If a person has specific conditions
+          or health requirements, it may benefit them to seek consultation with
+          a doctor or dietitian before starting a restrictive diet.
+        </p>
+        <h2>Can I eat or drink something without breaking the fast?</h2>
+        <ul>
+          <li>
+            <strong>Stay Hydrated:</strong> Plain water is your best bet to
+            avoid breaking your fast and staying hydrated.
+          </li>
+          <li>
+            <strong>Coffee and Tea:</strong> Enjoy these beverages without sugar
+            to keep the fast intact. A splash of milk may be acceptable for some
+            fasting protocols, but it&apos;s best to stick to black to be safe.
+          </li>
+          <li>
+            <strong>Savory Broths:</strong> Bone or vegetable broths can offer
+            comfort without a significant calorie intake, but ensure
+            they&apos;re free of solid bits.
+          </li>
+          <li>
+            <strong>Pickles for Crunch:</strong> A pickle can be a low-calorie,
+            satisfying snack. Just check the label for added sugars.
+          </li>
+          <li>
+            <strong>Zero-Calorie Drinks:</strong> Diet sodas are often
+            considered acceptable, but they can trigger a craving response in
+            some people.
+          </li>
+          <li>
+            <strong>Citrus Twist:</strong> Adding a splash of lemon juice to
+            water is fine, as long as it&apos;s just a small amount.
+          </li>
+          <li>
+            <strong>Apple Cider Vinegar:</strong> A bit diluted in water can aid
+            digestion and won&apos;t break a fast.
+          </li>
+          <li>
+            <strong>Chew Thoughtfully:</strong> Sugar-free gum can keep your
+            mouth busy without adding calories.
+          </li>
+        </ul>
+      </div>
+      <GoToTop />
     </section>
   );
 }

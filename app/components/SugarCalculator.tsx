@@ -433,6 +433,7 @@ export default function SugarCalculator() {
           </div>
         </div>
       </div>
+      {/* RESULTS */}
       <div ref={resultRef} className="group mx-auto group flex flex-col">
         {tdee > 0 ? (
           <div className="flex flex-col">
