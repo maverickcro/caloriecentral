@@ -9,6 +9,8 @@ import {
   extraOptions,
 } from "../../lib/data";
 import CustomButton from "./CustomButton";
+import GoToTop from "./GoToTop";
+import Link from "next/link";
 
 export default function Calculator() {
   const buttonRef = useRef<HTMLDivElement>(null);
@@ -150,7 +152,13 @@ export default function Calculator() {
 
   useEffect(() => {
     if (buttonRef.current) {
-      buttonRef.current.scrollIntoView({ behavior: "smooth" });
+      const yOffset = -window.innerHeight / 2; // Scroll to 50% of the viewport height
+      const y =
+        buttonRef.current.getBoundingClientRect().top +
+        window.pageYOffset +
+        yOffset;
+
+      window.scrollTo({ top: y, behavior: "smooth" });
     }
   }, [
     selectedBread,
@@ -245,14 +253,10 @@ export default function Calculator() {
     selectedBread.title === "Italian Herbs & Cheese Bread" ||
     selectedBread.title === "Jalapeño Cheddar Bread";
   return (
-    <section className="my-6 mx-auto prose  max-w-4xl prose-md prose-slate">
+    <section className="my-6 mx-auto max-w-4xl">
       {isNormalBread
-        ? step < 7 && (
-            <p className="text-base font-bold text-gradient">Step {step}/6</p>
-          )
-        : step < 6 && (
-            <p className="text-base font-bold text-gradient">Step {step}/5</p>
-          )}
+        ? step < 7 && <p className="font-bold text-gradient">Step {step}/6</p>
+        : step < 6 && <p className="font-bold text-gradient">Step {step}/5</p>}
       {}
       {step == 6 && isNormalBread && (
         <div>
@@ -290,6 +294,11 @@ export default function Calculator() {
               disabled={selectedBreadLength.title === ""}
             />
           </div>
+          {!selectedBreadLength.title ? (
+            <p style={{ color: "red" }}>Choose your option</p>
+          ) : (
+            <p style={{ color: "green" }}>You can click Next now.</p>
+          )}
         </div>
       )}
       {step == 1 && (
@@ -325,6 +334,11 @@ export default function Calculator() {
               disabled={selectedBread.title === ""}
             />
           </div>
+          {!selectedBread.title ? (
+            <p style={{ color: "red" }}>Choose your option</p>
+          ) : (
+            <p style={{ color: "green" }}>You can click Next now.</p>
+          )}
         </div>
       )}
       {step == 2 && (
@@ -355,6 +369,11 @@ export default function Calculator() {
               disabled={selectedCheese.title === ""}
             />
           </div>
+          {!selectedCheese.title ? (
+            <p style={{ color: "red" }}>Choose your option</p>
+          ) : (
+            <p style={{ color: "green" }}>You can click Next now.</p>
+          )}
         </div>
       )}
       {step == 3 && (
@@ -385,6 +404,11 @@ export default function Calculator() {
               disabled={selectedMeat.title === ""}
             />
           </div>
+          {!selectedMeat.title ? (
+            <p style={{ color: "red" }}>Choose your option</p>
+          ) : (
+            <p style={{ color: "green" }}>You can click Next now.</p>
+          )}
         </div>
       )}
       {step == 4 && (
@@ -415,6 +439,11 @@ export default function Calculator() {
               disabled={selectedSauce.title === ""}
             />
           </div>
+          {!selectedSauce.title ? (
+            <p style={{ color: "red" }}>Choose your option</p>
+          ) : (
+            <p style={{ color: "green" }}>You can click Next now.</p>
+          )}
         </div>
       )}
       {step == 5 && (
@@ -446,6 +475,9 @@ export default function Calculator() {
               disabled={selectedExtras.length === 0}
             />
           </div>
+          <p style={{ color: "green" }}>
+            Click Next when you selected your option(s).
+          </p>
         </div>
       )}
       {isNormalBread
@@ -477,6 +509,195 @@ export default function Calculator() {
               </div>
             </div>
           )}
+      <div className="group mx-auto group flex flex-col">
+        <p>
+          I created this Subway Calorie Calculator with the knowledge I gained
+          while working at Subway. I&apos;ve double-checked the calorie count
+          and weight for all the options, from breads to proteins, sauces to
+          cookies. I wanted to make sure that this calculator is as accurate and
+          helpful as possible because I truly value the fresh, tasty food Subway
+          offers. I&apos;m excited to share this with everyone who loves Subway
+          and is mindful of their calorie intake.
+        </p>
+        <p>
+          Calories are like fuel for your body. The amount you need each day can
+          vary, but generally, adults need between 1,500 to 2,500 calories
+          daily. Here&apos;s a quick guide to understanding how a Subway meal
+          fits into your calorie goals:
+        </p>
+        <ul>
+          <li>
+            <strong>Light Meals:</strong> Under 800 calories - ideal for smaller
+            appetites or weight loss goals, making up about 40% of a
+            2,000-calorie daily diet.
+          </li>
+          <li>
+            <strong>Regular Meals:</strong> 800 - 1,300 calories - suitable for
+            an average adult, accounting for 40-65% of daily calorie intake,
+            especially if you&apos;re moderately active.
+          </li>
+          <li>
+            <strong>Hearty Meals:</strong> Over 1,300 calories - perfect for
+            those with a very active lifestyle, providing a substantial part of
+            your energy needs. If you are not so active though, this might be
+            <strong> too many </strong> calories in one meal.
+          </li>
+        </ul>
+        <p>
+          If you are interested how many calories you need per day use our{" "}
+          <strong>FREE </strong>
+          tool and find out in seconds:{" "}
+          <Link href="/tdee-calculator">Calorie Calculator</Link>
+        </p>
+        <p>
+          Choosing meals that match your lifestyle and nutritional needs is
+          essential. It&apos;s not only about how many calories, but also the
+          quality of those calories - incorporating a mix of protein, vitamins,
+          and minerals is important for a balanced diet.
+        </p>
+        <p>
+          We got you covered there as well! If you are interested which macros
+          and how much you need per day use our&nbsp;
+          <Link href="/macro-calculator">Macros Calculator</Link>
+        </p>{" "}
+        <h2>Is Subway Healthy?</h2>
+        <p>
+          Many of you ask,{" "}
+          <strong>&quot;Are Subway sandwiches healthy?&quot;</strong> or even
+          <strong>&quot;Is Subway bad for you?&quot;</strong>. It&apos;s a good
+          question! Subway offers a lot of choices, and how healthy they are can
+          depend on what you pick. Some options are packed with veggies and lean
+          proteins, which are great for you. But some choices might have more
+          calories and fat, especially if you add lots of cheese and sauces.
+        </p>
+        <p>
+          Although less calories doesn&apos;t necessairly means healthy and
+          right nutrition for you, we prepared some general calorie information
+          you would be interested in.
+        </p>
+        <h2>Subway Bread: Counting the Calories</h2>
+        <p>
+          Choosing the right bread for your Subway sandwich can affect the
+          calorie count, especially if you&apos;re comparing a footlong to a
+          6-inch or a wrap. Here are some choices:
+        </p>
+        <p>
+          <strong>Lower Calorie Bread Options:</strong>
+        </p>
+        <ul>
+          <li>Mini Artisan Italian Bread: 130 kcal</li>
+          <li>Mini Hearty Multigrain Bread: 130 kcal</li>
+          <li>Artisan Italian Bread: 200 kcal</li>
+          <li>Hearty Multigrain Bread: 200 kcal</li>
+        </ul>
+        <p>
+          <strong>Higher Calorie Bread Options:</strong>
+        </p>
+        <ul>
+          <li>Artisan Flatbread: 220 kcal</li>
+          <li>Italian Herbs & Cheese Bread: 240 kcal</li>
+          <li>Jalapeño Cheddar Bread: 230 kcal</li>
+          <li>Wrap: 300 kcal</li>
+        </ul>
+        <h2>Subway Cheese: Low vs. High Calorie Choices</h2>
+        <p>
+          Adding cheese to your sandwich? Some cheeses add more calories than
+          others. Here&apos;s a quick guide:
+        </p>
+        <p>
+          <strong>Lower Calorie Cheese Options:</strong>
+        </p>
+        <ul>
+          <li>American: 40 kcal</li>
+          <li>BelGioioso Fresh Mozzarella: 40 kcal</li>
+          <li>Mozzarella, Shredded: 45 kcal</li>
+        </ul>
+        <p>
+          <strong>Higher Calorie Cheese Options:</strong>
+        </p>
+        <ul>
+          <li>Monterey Cheddar, Shredded: 50 kcal</li>
+          <li>Pepper Jack: 50 kcal</li>
+          <li>Provolone: 50 kcal</li>
+          <li>Swiss: 60 kcal</li>
+        </ul>
+        <h2>Subway Meats: Lean vs. Rich Calorie Counts</h2>
+        <p>
+          Meats can be the most varying part of the calorie count on your Subway
+          sandwich. Choose wisely:
+        </p>
+        <p>
+          <strong>Leaner Protein Options:</strong>
+        </p>
+        <ul>
+          <li>Black Forest Ham: 70 kcal</li>
+          <li>Oven Roasted Turkey: 60 kcal</li>
+          <li>Grilled Chicken: 80 kcal</li>
+        </ul>
+        <p>
+          <strong>Richer Calorie Protein Options:</strong>
+        </p>
+        <ul>
+          <li>All-American Club Meats: 140 kcal</li>
+          <li>Meatballs: 240 kcal</li>
+          <li>Tuna: 250 kcal</li>
+          <li>Spicy Italian Meats: 250 kcal</li>
+        </ul>
+        <h2>Subway Cookies and Sides: Sweet Treats and Calorie Facts</h2>
+        <p>
+          Thinking about a sweet end to your meal or some extras on the side?
+          Here&apos;s how they stack up in calories:
+        </p>
+        <p>
+          <strong>Cookie Choices:</strong>
+        </p>
+        <ul>
+          <li>Chocolate Chip Cookie: 210 kcal</li>
+          <li>Double Chocolate Cookie: 210 kcal</li>
+          <li>Oatmeal Raisin Cookie: 200 kcal</li>
+        </ul>
+        <p>
+          <strong>Other Side Options:</strong>
+        </p>
+        <ul>
+          <li>Applesauce: 70 kcal</li>
+          <li>Hash Browns: 190 kcal</li>
+          <li>Muffin, Apple Cinnamon: 450 kcal</li>
+          <li>Muffin, Blueberry Crumb: 410 kcal</li>
+        </ul>
+        <p>
+          Remember, if you&apos;re watching your calorie intake, you might want
+          to skip or share a cookie, and go for lighter sides like applesauce.
+        </p>
+        <h2>High and Low Calorie Subway Toppings</h2>
+        <p>
+          Keep in mind that the right Subway toppings can really change the
+          calorie count of your sandwich. Picking low-calorie veggies can make
+          your meal healthier, while some sauces and meats can add more calories
+          than you might expect.
+        </p>
+        <p>
+          <strong>Some good low-calorie choices include:</strong>
+        </p>
+        <ul>
+          <li>Cucumbers</li>
+          <li>Lettuce</li>
+          <li>Tomatoes</li>
+          <li>Red onions</li>
+        </ul>
+        <p>
+          <strong>Watch out for high-calorie toppings like:</strong>
+        </p>
+        <ul>
+          <li>Chipotle sauce (70 kcal)</li>
+          <li>Mayonnaise (100 kcal) or Ranch sauce (80 kcal)</li>
+          <li>Caloric and unhealthy additions like Bacon (80 kcal).</li>
+          <li>
+            Generally cheese, but you should try parmesan (only 5 kcal) instead.
+          </li>
+        </ul>
+      </div>
+      <GoToTop />
     </section>
   );
 }

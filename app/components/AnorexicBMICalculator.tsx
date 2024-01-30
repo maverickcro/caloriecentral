@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 import CustomButton from "./CustomButton";
+import GoToTop from "./GoToTop";
 
 export default function AnorexicBMICalculator() {
   const resultRef = useRef<HTMLDivElement>(null);
@@ -16,6 +17,25 @@ export default function AnorexicBMICalculator() {
 
   const isValid: boolean =
     age > 0 && weight > 0 && (heightCm > 0 || heightFeet > 0);
+
+  useEffect(() => {
+    // Load all values from localStorage
+    const savedAge = localStorage.getItem("age");
+    const savedGender = localStorage.getItem("gender");
+    const savedWeight = localStorage.getItem("weight");
+    const savedHeightCm = localStorage.getItem("heightCm");
+    const savedHeightFeet = localStorage.getItem("heightFeet");
+    const savedHeightInches = localStorage.getItem("heightInches");
+    const savedMeasurementSystem = localStorage.getItem("measurementSystem");
+
+    if (savedAge) setAge(Number(savedAge));
+    if (savedGender) setGender(savedGender);
+    if (savedWeight) setWeight(Number(savedWeight));
+    if (savedHeightCm) setHeightCm(Number(savedHeightCm));
+    if (savedHeightFeet) setHeightFeet(Number(savedHeightFeet));
+    if (savedHeightInches) setHeightInches(Number(savedHeightInches));
+    if (savedMeasurementSystem) setMeasurementSystem(savedMeasurementSystem);
+  }, []);
 
   useEffect(() => {
     if (calculated && resultRef.current) {
@@ -47,7 +67,13 @@ export default function AnorexicBMICalculator() {
 
     setBmi(calculatedBmi);
     setCalculated(true);
-
+    localStorage.setItem("age", age.toString());
+    localStorage.setItem("gender", gender);
+    localStorage.setItem("weight", weight.toString());
+    localStorage.setItem("heightCm", heightCm.toString());
+    localStorage.setItem("heightFeet", heightFeet.toString());
+    localStorage.setItem("heightInches", heightInches.toString());
+    localStorage.setItem("measurementSystem", measurementSystem);
     return;
   };
 
@@ -101,6 +127,7 @@ export default function AnorexicBMICalculator() {
               Age
             </label>
             <input
+              value={age}
               id="3"
               min="1"
               max="100"
@@ -151,6 +178,7 @@ export default function AnorexicBMICalculator() {
             </label>
             <div className="relative flex items-center">
               <input
+                value={weight}
                 id="9"
                 type="number"
                 min="1"
@@ -173,6 +201,7 @@ export default function AnorexicBMICalculator() {
             {measurementSystem === "metric" ? (
               <div className="relative flex items-center">
                 <input
+                  value={heightCm}
                   id="9"
                   min="40"
                   type="number"
@@ -187,6 +216,7 @@ export default function AnorexicBMICalculator() {
               <div className="flex items-center space-x-2">
                 <div className="relative w-1/2">
                   <input
+                    value={heightFeet}
                     id="9"
                     type="number"
                     min="1"
@@ -202,6 +232,7 @@ export default function AnorexicBMICalculator() {
                 &nbsp;
                 <div className="relative w-1/2">
                   <input
+                    value={heightInches}
                     id="9"
                     type="number"
                     min="0"
@@ -231,17 +262,175 @@ export default function AnorexicBMICalculator() {
           </div>
         </div>
       </div>
-      {bmi > 0 && (
-        <div
-          ref={resultRef}
-          className="group w-[70%] mx-auto group flex flex-col"
-        >
-          <p className="text-2xl font-bold">
-            Your BMI is:{" "}
-            <h1 className="text-gradient mb-0">{bmi.toFixed(2)} kg/m2</h1>
+      <div ref={resultRef} className="group mx-auto group flex py-12 flex-col">
+        {bmi > 0 ? (
+          <>
+            <h1
+              className={`text-gradient mb-0 ${bmi > 0 ? "visible" : "hidden"}`}
+            >
+              Your BMI is:{" "}
+              <span className="text-gradient">{bmi.toFixed(2)}</span> kg/m²
+            </h1>
+            <p
+              className={`text-lg ${
+                bmi >= 17.5 ? "text-green-600" : "text-red-600"
+              }`}
+            >
+              Your Body Mass Index (BMI) suggests that you are in the{" "}
+              <span className="font-semibold">
+                {bmi < 15
+                  ? "extremely low"
+                  : bmi < 16
+                  ? "severe"
+                  : bmi < 17
+                  ? "moderate"
+                  : bmi < 17.5
+                  ? "mild"
+                  : "normal"}
+              </span>{" "}
+              weight category for your height.
+            </p>
+          </>
+        ) : (
+          <p className="text-lg text-red-600">
+            Please do the calculation above first.
+          </p>
+        )}
+
+        <p className="italic text-sm mt-2">
+          This BMI result is not an official medical diagnosis. For a full
+          assessment and health advice, please consult a healthcare
+          professional.
+        </p>
+        <p className=" text-black">
+          Your Body Mass Index (BMI) is a starting point to help understand your
+          body weight compared to your height. Here&apos;s what your BMI might
+          indicate:
+        </p>
+        <table className="w-full border-collapse border border-blue-500 max-w-xl mt-16 mx-auto">
+          <thead>
+            <tr className="bg-blue-500">
+              <th className="py-2 px-4 text-white text-left">BMI</th>
+              <th className="py-2 px-4 text-white text-left">Category</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="bg-white border-b border-blue-500">
+              <td className="py-2 px-4">Below 15</td>
+              <td className="py-2 px-4">Extremely low</td>
+            </tr>
+            <tr className="bg-white border-b border-blue-500">
+              <td className="py-2 px-4">15 to 15.99</td>
+              <td className="py-2 px-4">Severe</td>
+            </tr>
+            <tr className="bg-white border-b border-blue-500">
+              <td className="py-2 px-4">16 to 16.99</td>
+              <td className="py-2 px-4">Moderate</td>
+            </tr>
+            <tr className="bg-white border-b border-blue-500">
+              <td className="py-2 px-4">17 to 17.49</td>
+              <td className="py-2 px-4">Mild</td>
+            </tr>
+            <tr className="bg-white border-b border-blue-500">
+              <td className="py-2 px-4">17.5 and above</td>
+              <td className="py-2 px-4">Normal range</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2>Understanding BMI in Anorexia Nervosa</h2>
+        <div>
+          <p className=" text-black">
+            When considering anorexia nervosa (AN), a{" "}
+            <strong>BMI result is more than just a number</strong>—it&apos;s a
+            window into an individual&apos;s health that requires careful
+            interpretation. While BMI specifiers offer a framework for
+            identifying AN, recent studies suggest that they{" "}
+            <strong>may not fully capture the severity of the condition</strong>
+            , especially in hospital settings where patients often present with
+            extremely low BMI.
+          </p>
+          <p className=" text-black">
+            Here&apos;s a snapshot of what BMI levels might indicate for those
+            with AN:
+          </p>
+          <ul>
+            <li>
+              <strong>A BMI below 15 suggests a severe condition</strong> that
+              requires immediate medical attention.
+            </li>
+            <li>
+              Those with a BMI between 13.6 and 14.99 fall into a critical
+              category, often requiring{" "}
+              <strong>hospitalization for intensive care</strong>.
+            </li>
+            <li>
+              A new proposed category, &quot;very extreme&quot; AN, with a BMI ≤
+              13.5, doesn&apos;t necessarily indicate a distinct clinical group
+              from those with slightly higher BMIs. Yet, it signals a{" "}
+              <strong>
+                need for immediate and specialized medical intervention
+              </strong>
+              .
+            </li>
+          </ul>
+
+          <p className=" text-black">
+            It&apos;s important to note that while a{" "}
+            <strong>low BMI is a significant health risk</strong>, it
+            doesn&apos;t always correlate with the intensity of eating disorder
+            psychopathology. This disconnect suggests that{" "}
+            <strong>BMI alone isn&apos;t a complete measure</strong> of an
+            individual&apos;s experience with AN.
+          </p>
+
+          <p className=" text-black">
+            While BMI is a crucial tool for assessing the physical aspect of AN,
+            it&apos;s only part of the picture. The treatment and recovery
+            journey for those with AN <strong>varies significantly</strong> and
+            goes beyond just achieving a healthy BMI.&nbsp;
+            <strong>
+              A holistic approach to treatment that addresses both physical and
+              mental health is essential for recovery
+            </strong>
+            .
+          </p>
+          <h2>How to calculate BMI?</h2>
+          <p>
+            To calculate your BMI (Body Mass Index), which helps understand if
+            your weight is in a healthy range for your height, follow these easy
+            steps:
+          </p>
+          <ul>
+            <li>
+              Get your weight in your usual unit (like pounds or kilograms).
+            </li>
+            <li>
+              Measure your height using your preferred unit (like inches or
+              meters).
+            </li>
+            <li>Square your height (multiply it by itself).</li>
+            <li>Divide your weight by your squared height.</li>
+            <li>If you used pounds and inches, multiply the result by 703.</li>
+            <li>
+              If you used kilograms and meters, there&apos;s no need for a
+              conversion factor.
+            </li>
+
+            <li>The resulting number is your BMI.</li>
+          </ul>
+          <p>
+            This number gives you a basic idea of whether you fall into a normal
+            category or if you have strong reason to consider reaching for help.
           </p>
         </div>
-      )}
+        <span className="italic text-sm py-6">
+          Please remember, this text is for informational purposes only and
+          should not replace professional medical advice. If you suspect that
+          you or someone else is experiencing symptoms of anorexia,{" "}
+          <strong>seek help from a healthcare provider immediately</strong>.
+        </span>
+      </div>
+      <GoToTop />
     </section>
   );
 }

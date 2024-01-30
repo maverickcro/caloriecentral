@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useRef, useEffect, useCallback } from "react";
-import CustomButton from "./CustomButton"; // Assuming you have a CustomButton component
+import CustomButton from "./CustomButton";
+import GoToTop from "./GoToTop";
 import { activityLevels } from "../../lib/data";
 
 export default function SugarCalculator() {
@@ -21,6 +22,25 @@ export default function SugarCalculator() {
 
   const isValid: boolean =
     age > 0 && weight > 0 && (heightCm > 0 || heightFeet > 0);
+
+  useEffect(() => {
+    // Load all values from localStorage
+    const savedAge = localStorage.getItem("age");
+    const savedGender = localStorage.getItem("gender");
+    const savedWeight = localStorage.getItem("weight");
+    const savedHeightCm = localStorage.getItem("heightCm");
+    const savedHeightFeet = localStorage.getItem("heightFeet");
+    const savedHeightInches = localStorage.getItem("heightInches");
+    const savedMeasurementSystem = localStorage.getItem("measurementSystem");
+
+    if (savedAge) setAge(Number(savedAge));
+    if (savedGender) setGender(savedGender);
+    if (savedWeight) setWeight(Number(savedWeight));
+    if (savedHeightCm) setHeightCm(Number(savedHeightCm));
+    if (savedHeightFeet) setHeightFeet(Number(savedHeightFeet));
+    if (savedHeightInches) setHeightInches(Number(savedHeightInches));
+    if (savedMeasurementSystem) setMeasurementSystem(savedMeasurementSystem);
+  }, []);
 
   useEffect(() => {
     if (calculated && resultRef.current) {
@@ -142,6 +162,7 @@ export default function SugarCalculator() {
               Age
             </label>
             <input
+              value={age}
               id="3"
               min="1"
               max="100"
@@ -192,6 +213,7 @@ export default function SugarCalculator() {
             </label>
             <div className="relative flex items-center">
               <input
+                value={weight}
                 id="9"
                 type="number"
                 min="1"
@@ -214,6 +236,7 @@ export default function SugarCalculator() {
             {measurementSystem === "metric" ? (
               <div className="relative flex items-center">
                 <input
+                  value={heightCm}
                   id="9"
                   min="40"
                   type="number"
@@ -228,6 +251,7 @@ export default function SugarCalculator() {
               <div className="flex items-center space-x-2">
                 <div className="relative w-1/2">
                   <input
+                    value={heightFeet}
                     id="9"
                     type="number"
                     min="1"
@@ -243,6 +267,7 @@ export default function SugarCalculator() {
                 &nbsp;
                 <div className="relative w-1/2">
                   <input
+                    value={heightInches}
                     id="9"
                     type="number"
                     min="0"
@@ -293,7 +318,7 @@ export default function SugarCalculator() {
               {activityLevels.map((activity, index) => (
                 <div
                   key={index}
-                  className={`p-2 m-2 mb-0 w-full text-base border rounded-md cursor-pointer text-black ${
+                  className={`p-2 m-2 mb-0 w-full  border rounded-md cursor-pointer text-black ${
                     activityLevel.label === activity.label
                       ? "border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 text-white hover:text-white"
                       : "border-gray-300 hover:border-blue-500 hover:bg-gradient-to-br hover:from-purple-600 hover:to-blue-500 hover:text-white"
@@ -408,56 +433,102 @@ export default function SugarCalculator() {
           </div>
         </div>
       </div>
-      <div>
-        <div>
-          {tdee > 0 && (
-            <div
-              ref={resultRef}
-              className="group w-[70%] mx-auto group flex flex-col"
-            >
-              <p>
-                Your allowed <b>sugar</b> intake per day is:
-              </p>
-              <h1 className="text-gradient mb-0">
-                {gender === "male"
-                  ? ((tdee * 0.07) / 4).toFixed(2)
-                  : ((tdee * 0.05) / 4).toFixed(2)}
-                g
-              </h1>
-            </div>
-          )}
-          <p className="text-base text-black">
-            The American Heart Association&apos;s recommendation for limiting
-            added sugars to no more than 100 calories per day for women and 150
-            calories per day for men is based on the concept of discretionary
-            calories. Discretionary calories are the portion of a person&apos;s
-            daily caloric intake that can be used for added sugars and fats,
-            after accounting for the calories needed to meet all nutrient
-            requirements through consuming nutrient-dense foods.{" "}
-          </p>
-          <h3>Daily Caloric Intake: </h3>
-          <p className="text-base text-black">
+      <div ref={resultRef} className="group mx-auto group flex flex-col">
+        {tdee > 0 ? (
+          <div className="flex flex-col">
+            <h2>Your recommended sugar intake per day is:&nbsp;</h2>
+            <span>According to American Heart Association (AHA):</span>
+            <h2 className="text-gradient mt-0">
+              {gender === "male"
+                ? ((tdee * 0.07) / 4).toFixed(2)
+                : ((tdee * 0.05) / 4).toFixed(2)}{" "}
+              grams per day.
+            </h2>
+            <span>According to World Health Organization (WHO):</span>
+            <h2 className="text-gradient mt-0">
+              {((tdee * 0.1) / 4).toFixed(2)} grams per day.
+            </h2>
+          </div>
+        ) : (
+          <div className="flex flex-col">
+            <p className="text-lg text-red-600">
+              Please do the calculation above first.
+            </p>
+          </div>
+        )}
+        <p className=" text-black">
+          Sugar <strong>only gives you calories</strong> and no other good
+          nutrients. To make your diet healthier and not eat too many calories,
+          it&apos;s important to not let sugary foods take the place of foods
+          that are good for you or make you eat more calories than you need.{" "}
+        </p>
+        <h2>Why this much?</h2>
+        <p className=" text-black">
+          <strong>The American Heart Association&apos;s</strong> recommendation
+          for limiting added sugars to no more than 5% calories per day for
+          women and 7% calories per day for men is based on the concept of
+          discretionary calories.
+        </p>
+        <p className=" text-black">
+          <strong>World Health Organization&apos;s</strong> on the other side,
+          recommends less than 10% of total energy intake from free sugars but
+          ideally less than 5% of total energy intake for additional health
+          benefits.
+        </p>
+        <h2>Daily Caloric Intake: </h2>
+        <ul>
+          <li>
             For Women: The average daily caloric intake for women can vary based
             on age, activity level, and overall health, but it generally ranges
-            from 1,800 to 2,400 calories per day. The lower end is for sedentary
-            women, while the higher end is for those who are more active. For
-            Men: Similarly, for men, the average daily caloric intake ranges
+            from 1,800 to 2,400 calories per day.
+          </li>
+          <li>
+            For Men: Similarly, for men, the average daily caloric intake ranges
             from 2,200 to 3,000 calories per day, with the range depending on
             activity level and age.
-          </p>
-          <h3>Calculation of Discretionary Calories:</h3>
-          <p className="text-base text-black">
-            100 to 150 Calories from Added Sugars: The AHA&apos;s recommendation
-            implies that added sugars should constitute only a small fraction of
-            the total daily calorie intake. This is because the majority of a
-            person’s caloric intake should come from foods that provide the
-            nutrients needed to maintain health. Percentage of Total Calories:
-            For women, 100 calories from added sugars represent about 4-5% of a
-            2,000-calorie diet, which is a commonly used reference point. For
-            men, 150 calories represent about 5-7% of a 2,500-calorie diet.
-          </p>
-        </div>
+          </li>
+        </ul>
+        <p>
+          The lower end is for sedentary lifestyle, while the higher end is for
+          those who are more active.
+        </p>
+        <h2>How much sugar?</h2>
+        <p className=" text-black">
+          We&apos;ve calculated your Total Daily Energy Expenditure (TDEE) based
+          on your personal details like gender, height, weight, and activity
+          level. This number is crucial because it tells us how many calories
+          you need daily to maintain your current weight, whether you are super
+          active or not so much.
+        </p>
+        <p className=" text-black">
+          Here&apos;s the easy part: once we have your TDEE, we use it to figure
+          out your ideal daily sugar intake. We stick to recommendations from
+          reliable sources like the American Heart Association (AHA) and the
+          World Health Organization (WHO) for this.
+        </p>
+        <ul>
+          <li>
+            For Women: The AHA suggests keeping added sugars to about 5% of your
+            total daily calories.
+          </li>
+          <li>
+            For Men: The AHA recommends a slightly higher allowance, up to 7% of
+            your daily calories.
+          </li>
+          <li>
+            General Guideline: The WHO advises that no matter your gender,
+            keeping added sugars under 10% of your daily calories is a good
+            health practice.
+          </li>
+        </ul>
+        <p className=" text-black">
+          So, if your TDEE is around 2000 calories, a woman should aim for no
+          more than 100 calories from sugar (that&apos;s roughly 25 grams or 6
+          teaspoons). A man can go up to about 140 calories from sugar (around
+          35 grams or 8.75 teaspoons).
+        </p>
       </div>
+      <GoToTop />
     </section>
   );
 }

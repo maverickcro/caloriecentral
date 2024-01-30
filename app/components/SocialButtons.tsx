@@ -1,10 +1,5 @@
 import Link from "next/link";
-import {
-  FaFacebook,
-  FaInstagram,
-  FaLinkedin,
-  FaWhatsapp,
-} from "react-icons/fa";
+import { FaFacebook, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 export default function SocialShareButtons({ url }: { url: string }) {
   // Define the URLs for sharing content on social platforms
   const socialLinks = {
