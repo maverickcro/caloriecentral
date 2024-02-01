@@ -59,11 +59,6 @@ export default function Home() {
           alt="Sugar Calculator"
         />
       </div>
-      <div className="w-full flex justify-center pb-12">
-        <Link href="/calculators">
-          <CustomButton type={"gradient"} label="VIEW ALL CALCULATORS" />
-        </Link>
-      </div>
       <LandingPagePosts />
       <div className="w-full flex justify-center pb-12">
         <Link href="/posts">

@@ -1,6 +1,7 @@
 import React from "react";
 import CalculatorComponent from "../components/SugarCalculator";
 import Link from "next/link";
+import AboutMeSection from "../components/AboutMeSection";
 
 export default function Calculator() {
   return (
@@ -51,6 +52,7 @@ export default function Calculator() {
           </Link>
         </li>
       </ul>
+      <AboutMeSection />
     </section>
   );
 }

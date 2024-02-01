@@ -40,7 +40,6 @@ body {
 }
 
 #__next {
-  /* This is the ID of the root div in Next.js applications */
   display: flex;
   flex-direction: column;
   min-height: 100%;
@@ -67,4 +66,23 @@ h1 {
 
 .logo-animation {
   animation: fadeInDown 0.5s ease-out forwards;
+}
+
+strong {
+  position: relative;
+  font-weight: 400;
+}
+
+strong::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  left: -0.25rem;
+  right: -0.25rem;
+  height: 0.5rem;
+  z-index: -1;
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/664131/underline.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }

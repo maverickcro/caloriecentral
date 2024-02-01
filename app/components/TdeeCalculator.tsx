@@ -2,6 +2,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import CustomButton from "./CustomButton"; // Assuming you have a CustomButton component
 import { activityLevels } from "../../lib/data";
+import GoToTop from "./GoToTop";
 
 export default function TDEECalculator() {
   const resultRef = useRef<HTMLDivElement>(null);
@@ -19,6 +20,25 @@ export default function TDEECalculator() {
 
   const isValid: boolean =
     age > 0 && weight > 0 && (heightCm > 0 || heightFeet > 0);
+
+  useEffect(() => {
+    // Load all values from localStorage
+    const savedAge = localStorage.getItem("age");
+    const savedGender = localStorage.getItem("gender");
+    const savedWeight = localStorage.getItem("weight");
+    const savedHeightCm = localStorage.getItem("heightCm");
+    const savedHeightFeet = localStorage.getItem("heightFeet");
+    const savedHeightInches = localStorage.getItem("heightInches");
+    const savedMeasurementSystem = localStorage.getItem("measurementSystem");
+
+    if (savedAge) setAge(Number(savedAge));
+    if (savedGender) setGender(savedGender);
+    if (savedWeight) setWeight(Number(savedWeight));
+    if (savedHeightCm) setHeightCm(Number(savedHeightCm));
+    if (savedHeightFeet) setHeightFeet(Number(savedHeightFeet));
+    if (savedHeightInches) setHeightInches(Number(savedHeightInches));
+    if (savedMeasurementSystem) setMeasurementSystem(savedMeasurementSystem);
+  }, []);
 
   useEffect(() => {
     if (calculated && resultRef.current) {
@@ -116,6 +136,7 @@ export default function TDEECalculator() {
               Age
             </label>
             <input
+              value={age}
               id="3"
               min="1"
               max="100"
@@ -166,6 +187,7 @@ export default function TDEECalculator() {
             </label>
             <div className="relative flex items-center">
               <input
+                value={weight}
                 id="9"
                 type="number"
                 min="1"
@@ -188,6 +210,7 @@ export default function TDEECalculator() {
             {measurementSystem === "metric" ? (
               <div className="relative flex items-center">
                 <input
+                  value={heightCm}
                   id="9"
                   min="40"
                   type="number"
@@ -202,6 +225,7 @@ export default function TDEECalculator() {
               <div className="flex items-center space-x-2">
                 <div className="relative w-1/2">
                   <input
+                    value={heightFeet}
                     id="9"
                     type="number"
                     min="1"
@@ -217,6 +241,7 @@ export default function TDEECalculator() {
                 &nbsp;
                 <div className="relative w-1/2">
                   <input
+                    value={heightInches}
                     id="9"
                     type="number"
                     min="0"
@@ -293,18 +318,157 @@ export default function TDEECalculator() {
           </div>
         </div>
       </div>
-      {tdee > 0 && (
-        <div
-          ref={resultRef}
-          className="group w-[70%] mx-auto group flex flex-col"
-        >
-          <p className="text-2xl font-bold">
-            To maintain your weight:{" "}
-            <h1 className="text-gradient mb-0">{tdee.toFixed(2)}</h1> kcal
-            daily.
-          </p>
-        </div>
-      )}
+      <div ref={resultRef} className="group mx-auto group flex flex-col">
+        {tdee > 0 ? (
+          <div className="flex flex-col">
+            <h2>Your TDEE is:&nbsp;</h2>
+            <h2 className="text-gradient mt-0">
+              {tdee.toFixed(2)}&nbsp;kcal per day.
+            </h2>
+            <p>Based on your TDEE, here are some additional insights:</p>
+            <ul>
+              <li>
+                To <strong>lose weight</strong>, aim for a calorie intake{" "}
+                <strong>below</strong> this number.
+              </li>
+              <li>
+                To <strong>maintain weight</strong>, eat close to this daily
+                calorie count.
+              </li>
+              <li>
+                To <strong>gain weight</strong>, consume more calories than your
+                TDEE suggests.
+              </li>
+              <li>
+                <strong>Macronutrient Breakdown:</strong> For balanced
+                nutrition, target approximately 50% of your calories from
+                carbohydrates, 20% from proteins, and 30% from fats.
+              </li>
+              <li>
+                <strong>Weekly Caloric Deficit:</strong> Aiming for a deficit of
+                3500 kcal can lead to a weight loss of approximately 1 pound per
+                week.
+              </li>
+              <li>
+                <strong>Activity Adjustment:</strong> Remember, if your activity
+                level changes, so does your TDEE. Re-calculate accordingly.
+              </li>
+            </ul>
+            <p>
+              In other words, if you eat <strong>{tdee.toFixed(2)} kcal</strong>{" "}
+              daily with your activity level, you will <strong>maintain</strong>{" "}
+              your current weight. It helps you figure out how many calories to
+              eat, whether you want to maintain your current weight, become
+              stronger, or lose some weight. It&apos;s like having a map for
+              your food journey.
+            </p>
+          </div>
+        ) : (
+          <div className="flex flex-col">
+            <p className="text-lg text-red-600">
+              Please do the calculation above first.
+            </p>
+          </div>
+        )}
+
+        <h2>TDEE Calculator for Weight loss?</h2>
+
+        <p>
+          Imagine you&apos;re the 185-pound individual who just burned around{" "}
+          <strong>400 calories</strong> on a vigorous 30-minute bike ride.
+          That&apos;s an impressive effort! Now consider a large slice of
+          pepperoni pizza that can easily contain the same amount of calories.
+          Consuming that slice would effectively <strong>cancel out</strong> all
+          the hard work you just put in on your bike.
+        </p>
+
+        <p>
+          The truth is, it&apos;s much <strong>quicker and easier</strong> to
+          consume calories than it is to burn them off. This is why paying
+          attention to your diet is so crucial when trying to lose weight. You
+          can unknowingly eat hundreds of calories in just a few minutes, which
+          might take over an hour of intense exercise to burn off.
+        </p>
+
+        <p>
+          Use this calculator for <strong>faster weight loss</strong>. Calories
+          are important. At best, be mindful that if you eat{" "}
+          <strong>more</strong> than your TDEE you <strong>will</strong> gain
+          weight. At best combine workouts with less empty calories and keep
+          them under your TDEE.
+        </p>
+
+        <h2>How We Calculate Your TDEE</h2>
+
+        <p>
+          Our TDEE calculator starts with something called BMR—that&apos;s like
+          the minimum amount of fuel your body needs just to keep all systems
+          running, even if you&apos;re just chilling all day. Then, we think
+          about how much you move, whether it&apos;s a little or a lot, and add
+          that to your BMR. This gives you your TDEE.
+        </p>
+        <ul>
+          <li>
+            <strong>Starting with the Basics:</strong> Your Basal Metabolic Rate
+            (BMR) is like the idle power your body needs, similar to how a
+            parked car still uses fuel to run the radio.
+          </li>
+          <li>
+            <strong>Height and Weight:</strong> We first convert your height to
+            centimeters and your weight to kilograms, even if you use pounds and
+            feet.
+          </li>
+          <li>
+            <strong>Lean Body Mass:</strong> If you know your body fat
+            percentage, we fine-tune the calculations to focus on the lean part
+            of your weight—that&apos;s everything in your body minus the fat.
+          </li>
+          <li>
+            <strong>Gender Matters:</strong> Men and women burn energy
+            differently, so we adjust the formula based on your biological sex.
+          </li>
+          <li>
+            <strong>Age Adjustments:</strong> As we age, our metabolism changes,
+            so we factor in your age for a precise number.
+          </li>
+          <li>
+            <strong>Active Lifestyle:</strong> Whether you&apos;re a couch
+            potato or a fitness freak, we multiply your BMR by your activity
+            level to find out how many calories you burn on a typical day.
+          </li>
+        </ul>
+
+        <p>
+          Once all the numbers are crunched, voilà! You have your TDEE, a
+          snapshot of your daily calorie needs you burn just by existing
+          combined with your physical activity.
+        </p>
+
+        <h2>Tips for Making the Most of Your TDEE</h2>
+
+        <ul>
+          <li>
+            Track your food: Keep a diary of what you eat to stay close to your
+            TDEE goals.
+          </li>
+          <li>
+            Be consistent: Try to be as accurate as possible with your activity
+            levels for the best TDEE estimate.
+          </li>
+          <li>
+            Adjust as you go: Your TDEE can change if you start moving more or
+            less, so recalculate it if your lifestyle changes.
+          </li>
+        </ul>
+
+        <p>
+          Remember, your TDEE is a starting point. With this information you
+          push your fitness goals <strong>further</strong>! Here are some other
+          calculators that <strong>will</strong> help you with your weight loss,
+          muscle gain, macros and much more.
+        </p>
+      </div>
+      <GoToTop />
     </section>
   );
 }

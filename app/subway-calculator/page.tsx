@@ -1,6 +1,7 @@
 import React from "react";
 import CalculatorComponent from "../components/SubwayCalculator";
 import Link from "next/link";
+import AboutMeSection from "../components/AboutMeSection";
 
 export default function Calculator() {
   return (
@@ -25,6 +26,7 @@ export default function Calculator() {
           nutritional values and calories in bread, protein, sauces and sides.
         </Link>
       </span>
+      <AboutMeSection />
     </section>
   );
 }
