@@ -24,6 +24,25 @@ export default function FatCalculator() {
     age > 0 && weight > 0 && (heightCm > 0 || heightFeet > 0);
 
   useEffect(() => {
+    // Load all values from localStorage
+    const savedAge = localStorage.getItem("age");
+    const savedGender = localStorage.getItem("gender");
+    const savedWeight = localStorage.getItem("weight");
+    const savedHeightCm = localStorage.getItem("heightCm");
+    const savedHeightFeet = localStorage.getItem("heightFeet");
+    const savedHeightInches = localStorage.getItem("heightInches");
+    const savedMeasurementSystem = localStorage.getItem("measurementSystem");
+
+    if (savedAge) setAge(Number(savedAge));
+    if (savedGender) setGender(savedGender);
+    if (savedWeight) setWeight(Number(savedWeight));
+    if (savedHeightCm) setHeightCm(Number(savedHeightCm));
+    if (savedHeightFeet) setHeightFeet(Number(savedHeightFeet));
+    if (savedHeightInches) setHeightInches(Number(savedHeightInches));
+    if (savedMeasurementSystem) setMeasurementSystem(savedMeasurementSystem);
+  }, []);
+
+  useEffect(() => {
     if (calculated && resultRef.current) {
       resultRef.current.scrollIntoView({ behavior: "smooth" });
       setCalculated(false); // Reset to false after scrolling
@@ -145,6 +164,7 @@ export default function FatCalculator() {
               Age
             </label>
             <input
+              value={age}
               id="3"
               min="1"
               max="100"
@@ -195,6 +215,7 @@ export default function FatCalculator() {
             </label>
             <div className="relative flex items-center">
               <input
+                value={weight}
                 id="9"
                 type="number"
                 min="1"
@@ -217,6 +238,7 @@ export default function FatCalculator() {
             {measurementSystem === "metric" ? (
               <div className="relative flex items-center">
                 <input
+                  value={heightCm}
                   id="9"
                   min="40"
                   type="number"
@@ -231,6 +253,7 @@ export default function FatCalculator() {
               <div className="flex items-center space-x-2">
                 <div className="relative w-1/2">
                   <input
+                    value={heightFeet}
                     id="9"
                     type="number"
                     min="1"
@@ -246,6 +269,7 @@ export default function FatCalculator() {
                 &nbsp;
                 <div className="relative w-1/2">
                   <input
+                    value={heightInches}
                     id="9"
                     type="number"
                     min="0"
@@ -411,37 +435,212 @@ export default function FatCalculator() {
           </div>
         </div>
       </div>
-      {tdee > 0 && (
-        <div
-          ref={resultRef}
-          className="group w-[70%] mx-auto group flex flex-col"
-        >
-          <div className="text-2xl font-bold">
-            <p>
-              {goal === "1"
-                ? `Since your goal is weight loss, that would mean a calorie deficit of ${deficitPerday(
-                    deficitLevel
-                  )} kcal per day. Your fat intake should be:`
-                : goal === "2"
-                ? `Since your goal is to maintain your current weight, your fat intake should be:`
-                : `Since your goal is weight gain, that would mean a calorie suficit of ${deficitPerday(
-                    deficitLevel
-                  )} kcal per day. Your fat intake should be:`}
-            </p>
-            <h1 className="text-gradient mb-0">{Fat.toFixed(2)}g per day.</h1>
-            <p>{`Suggested fat intake limits for a grown-ups: ${(
-              (tdee * 0.2) /
-              9
-            ).toFixed(2)} - ${((tdee * 0.35) / 9).toFixed(
-              2
-            )} grams per day, but only <${((tdee * 0.1) / 9).toFixed(
-              2
-            )} grams from saturated fats.`}</p>
-            <p>Your total daily calories should be:</p>
-            <h1 className="text-gradient mb-0">{tdee.toFixed(2)} kcal.</h1>
+      {/* RESULTS */}
+      <div ref={resultRef} className="group mx-auto group flex flex-col">
+        {tdee > 0 ? (
+          <div className="flex flex-col">
+            <h2>Your recommended fat intake per day is:</h2>
+            <span>
+              {goal === "1" ? (
+                <span>
+                  Since your goal is <strong>weight loss</strong>, that would
+                  mean a calorie deficit of {deficitPerday(deficitLevel)} kcal
+                  per day. Your fat intake should be:
+                </span>
+              ) : goal === "2" ? (
+                <span>
+                  Since your goal is to <strong>maintain</strong> your current
+                  weight, your fat intake should be:
+                </span>
+              ) : (
+                <span>
+                  Since your goal is <strong>weight gain</strong>, that would
+                  mean a calorie surplus of {deficitPerday(deficitLevel)} kcal
+                  per day. Your fat intake should be:
+                </span>
+              )}
+            </span>
+            <h2 className="text-gradient mt-0">{Fat.toFixed(2)}g per day.</h2>
+            <span>Suggested daily fat intake limits for adults are:</span>
+            <h2 className="text-gradient mt-0">
+              {((tdee * 0.2) / 9).toFixed(2)} - {((tdee * 0.35) / 9).toFixed(2)}
+              g
+            </h2>
+            <span>But, when it comes to saturated fats, maximum of:</span>
+            <h2 className="text-gradient mt-0">
+              {((tdee * 0.1) / 9).toFixed(2)}g
+            </h2>
+            <span>Your total daily calorie intake should be:</span>
+            <h2 className="text-gradient mt-0">{tdee.toFixed(2)} kcal.</h2>
           </div>
-        </div>
-      )}
+        ) : (
+          <div className="flex flex-col">
+            <p className="text-lg text-red-600">
+              Please do the calculation above first.
+            </p>
+          </div>
+        )}
+        <h2>Why this much?</h2>
+        <p>
+          Understanding the right amount of dietary fat, particularly for total
+          and saturated fat intake, is crucial for maintaining good health.
+          According to the <strong>World Health Organization (WHO)</strong>,
+          adults should aim for a total fat intake that constitutes{" "}
+          <strong>20-35%</strong> of their total daily calories. This
+          recommendation is supported by evidence suggesting that this range
+          supports adequate energy, essential fatty acids, and fat-soluble
+          vitamin consumption without promoting weight gain associated with
+          higher fat diets.
+        </p>
+        <h2>Recommended Fat Intake for Adults</h2>
+        <table className="w-full border-collapse border border-blue-500 max-w-xl mt-16 mx-auto">
+          <thead>
+            <tr className="bg-blue-500">
+              <th className="py-2 px-4 text-white text-left">Organization</th>
+              <th className="py-2 px-4 text-white text-left">Total Fat</th>
+              <th className="py-2 px-4 text-white text-left">Saturated Fat</th>
+              <th className="py-2 px-4 text-white text-left">Trans Fat</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="bg-white border-b border-blue-500">
+              <td className="py-2 px-4">World Health Organization</td>
+              <td className="py-2 px-4">20-35%</td>
+              <td className="py-2 px-4">{`<10%`}</td>
+              <td className="py-2 px-4">{`<1%`}</td>
+            </tr>
+            <tr className="bg-white border-b border-blue-500">
+              <td className="py-2 px-4">
+                Food and Nutrition Board, Institute of Medicine
+              </td>
+              <td className="py-2 px-4">20-35%</td>
+              <td className="py-2 px-4">Limit</td>
+              <td className="py-2 px-4">Limit</td>
+            </tr>
+            <tr className="bg-white border-b border-blue-500">
+              <td className="py-2 px-4">
+                United States Department of Health and Human Services and United
+                States Department of Agriculture
+              </td>
+              <td className="py-2 px-4">Limit</td>
+              <td className="py-2 px-4">{`<10%`}</td>
+              <td className="py-2 px-4">Limit</td>
+            </tr>
+            <tr className="bg-white border-b border-blue-500">
+              <td className="py-2 px-4">
+                American Heart Association/American College of Cardiology
+              </td>
+              <td className="py-2 px-4">5-6%</td>
+              <td className="py-2 px-4">Limit</td>
+              <td className="py-2 px-4">Limit</td>
+            </tr>
+          </tbody>
+        </table>
+        <span>
+          Limit is a general advice - no percentage because of lack of
+          supporting evidence, keep it low.
+        </span>
+        <h2>You absolutely need fat - do not avoid it!</h2>
+        <p>
+          Hey there! Let&apos;s chat about why fat is actually a friend, not a
+          foe, in our diets. Did you know that fat is key for{" "}
+          <strong>absorbing vitamins</strong> like A, D, E, and K? Yep, without
+          a bit of fat, our bodies wouldn&apos;t be able to soak up these
+          vitamins that are crucial for things like keeping your vision sharp
+          and your bones strong.
+        </p>
+        <p>
+          Plus, fats bring to the table <strong>essential fatty acids</strong>
+          —those are the good guys that your body can&apos;t make by itself but
+          really needs for everything from brain health to keeping your skin
+          glowing. Totally cutting out fat might leave you missing out on these
+          benefits.
+        </p>
+        <p>These are the ones you look for:</p>
+        <ul>
+          <li>
+            <strong>Omega-3 and Omega-6 fatty acids</strong> - These unsaturated
+            fats are superheroes for your heart, helping to lower
+            &quot;bad&quot; cholesterol.
+          </li>
+          <li>
+            Found in plant oils, nuts, fish, and some eggs, they&apos;re an
+            essential part of a balanced diet.
+          </li>
+        </ul>
+        <h2>Which ones are bad then?</h2>
+        <h3>Saturated Fats: Not So Friendly</h3>
+        <p>
+          Saturated fats are the ones to watch. They&apos;re found in a variety
+          of foods we often enjoy, but too much can lead to increased
+          &quot;bad&quot; LDL cholesterol, putting us at risk for heart disease.
+          The goal? Keep them to{" "}
+          <strong>less than 10% of daily calories</strong>. Here&apos;s where
+          they lurk:
+        </p>
+        <ul>
+          <li>Meaty delights like fatty cuts and processed products</li>
+          <li>Dairy darlings, including butter, ghee, and certain cheeses</li>
+          <li>Tempting treats like ice cream, cakes, and biscuits</li>
+        </ul>
+        <h3>Trans Fats: The Real Culprits</h3>
+        <p>
+          Trans fats take the &quot;unhealthy&quot; crown, known to wreak havoc
+          on heart health. While less common, they&apos;re still around, and
+          keeping them <strong>below 1% of total calories</strong> is crucial.
+          Get really good with <strong>food labels</strong> to avoid these
+          hidden foes.
+        </p>
+
+        <p>
+          So, while keeping an eye on fats, remember it’s the type that counts.
+          Swapping out the not-so-great ones with beneficial unsaturated fats
+          can be a heart-healthy game-changer. Let&apos;s eat smart and take
+          care of our hearts!
+        </p>
+        <h2>In simplest terms</h2>
+        <p>
+          <strong>Good Fats:</strong>
+        </p>
+        <ul>
+          <li>
+            <strong>Unsaturated Fats:</strong> These are your heart-healthy
+            heroes. Found in plants and fish, they help lower bad cholesterol
+            levels and are crucial for overall health. They come in two main
+            types:
+            <ul>
+              <li>
+                <strong>Monounsaturated Fats:</strong> Think olive oil,
+                avocados, and some nuts like almonds and peanuts.
+              </li>
+              <li>
+                <strong>Polyunsaturated Fats:</strong> These include omega-3 and
+                omega-6 fatty acids found in fish like salmon, as well as in
+                flaxseeds and walnuts.
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <p>
+          <strong>Not-So-Good Fats:</strong>
+        </p>
+        <ul>
+          <li>
+            <strong>Saturated Fats:</strong> Found in animal products and some
+            tropical oils, they can raise your bad cholesterol levels and
+            increase the risk of heart disease if consumed in excess. Foods high
+            in saturated fats include red meat, butter, cheese, and ice cream.
+          </li>
+          <li>
+            <strong>Trans Fats:</strong> The worst type of fats for your heart,
+            trans fats are found in some processed foods and can increase bad
+            cholesterol while decreasing good cholesterol. They&apos;re often
+            listed as &quot;partially hydrogenated oils&quot; on ingredient
+            labels.
+          </li>
+        </ul>
+      </div>
     </section>
   );
 }
