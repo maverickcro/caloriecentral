@@ -460,7 +460,7 @@ export default function FatCalculator() {
                 </span>
               )}
             </span>
-            <h2 className="text-gradient mt-0">{Fat.toFixed(2)}g per day.</h2>
+            <h1 className="text-gradient mt-0">{Fat.toFixed(2)}g per day.</h1>
             <span>Suggested daily fat intake limits for adults are:</span>
             <h2 className="text-gradient mt-0">
               {((tdee * 0.2) / 9).toFixed(2)} - {((tdee * 0.35) / 9).toFixed(2)}

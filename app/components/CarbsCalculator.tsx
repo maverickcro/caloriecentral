@@ -2,6 +2,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import CustomButton from "./CustomButton"; // Assuming you have a CustomButton component
 import { activityLevels } from "../../lib/data";
+import GoToTop from "./GoToTop";
 
 export default function CarbsCalculator() {
   const resultRef = useRef<HTMLDivElement>(null);
@@ -22,6 +23,25 @@ export default function CarbsCalculator() {
 
   const isValid: boolean =
     age > 0 && weight > 0 && (heightCm > 0 || heightFeet > 0);
+
+  useEffect(() => {
+    // Load all values from localStorage
+    const savedAge = localStorage.getItem("age");
+    const savedGender = localStorage.getItem("gender");
+    const savedWeight = localStorage.getItem("weight");
+    const savedHeightCm = localStorage.getItem("heightCm");
+    const savedHeightFeet = localStorage.getItem("heightFeet");
+    const savedHeightInches = localStorage.getItem("heightInches");
+    const savedMeasurementSystem = localStorage.getItem("measurementSystem");
+
+    if (savedAge) setAge(Number(savedAge));
+    if (savedGender) setGender(savedGender);
+    if (savedWeight) setWeight(Number(savedWeight));
+    if (savedHeightCm) setHeightCm(Number(savedHeightCm));
+    if (savedHeightFeet) setHeightFeet(Number(savedHeightFeet));
+    if (savedHeightInches) setHeightInches(Number(savedHeightInches));
+    if (savedMeasurementSystem) setMeasurementSystem(savedMeasurementSystem);
+  }, []);
 
   useEffect(() => {
     if (calculated && resultRef.current) {
@@ -145,6 +165,7 @@ export default function CarbsCalculator() {
               Age
             </label>
             <input
+              value={age}
               id="3"
               min="1"
               max="100"
@@ -195,6 +216,7 @@ export default function CarbsCalculator() {
             </label>
             <div className="relative flex items-center">
               <input
+                value={weight}
                 id="9"
                 type="number"
                 min="1"
@@ -217,6 +239,7 @@ export default function CarbsCalculator() {
             {measurementSystem === "metric" ? (
               <div className="relative flex items-center">
                 <input
+                  value={heightCm}
                   id="9"
                   min="40"
                   type="number"
@@ -231,6 +254,7 @@ export default function CarbsCalculator() {
               <div className="flex items-center space-x-2">
                 <div className="relative w-1/2">
                   <input
+                    value={heightFeet}
                     id="9"
                     type="number"
                     min="1"
@@ -246,6 +270,7 @@ export default function CarbsCalculator() {
                 &nbsp;
                 <div className="relative w-1/2">
                   <input
+                    value={heightInches}
                     id="9"
                     type="number"
                     min="0"
@@ -411,43 +436,201 @@ export default function CarbsCalculator() {
           </div>
         </div>
       </div>
-      {tdee > 0 && (
-        <div
-          ref={resultRef}
-          className="group w-[70%] mx-auto group flex flex-col"
-        >
-          <div className="text-2xl font-bold">
-            <p>
-              {goal === "1"
-                ? `Since your goal is weight loss, that would mean a calorie deficit of ${deficitPerday(
-                    deficitLevel
-                  )} kcal per day. Your carbs intake should be:`
-                : goal === "2"
-                ? `Since your goal is to maintain your current weight, your carbs intake should be:`
-                : `Since your goal is weight gain, that would mean a calorie suficit of ${deficitPerday(
-                    deficitLevel
-                  )} kcal per day. Your carbs intake should be:`}
-            </p>
-            <h1 className="text-gradient mb-0">{carbs.toFixed(2)}g per day.</h1>
-            <p>{`According to The Institute of Medicine): ${(
-              (tdee * 0.4) /
-              4
-            ).toFixed(2)} - ${((tdee * 0.65) / 4).toFixed(
-              2
-            )} grams per day.`}</p>
-            <p>{`According to Food and Agriculture Organization and the World Health Organization: ${(
-              (tdee * 0.55) /
-              4
-            ).toFixed(2)} - ${((tdee * 0.75) / 4).toFixed(
-              2
-            )} grams per day, but only ${((tdee * 0.1) / 4).toFixed(
-              2
-            )} grams from sugars.`}</p>
-            <p>Your total daily calories should be:</p>
-            <h1 className="text-gradient mb-0">{tdee.toFixed(2)} kcal.</h1>
+      {/* RESULTS */}
+      <div ref={resultRef} className="group mx-auto group flex flex-col">
+        {tdee > 0 ? (
+          <div className="flex flex-col">
+            <h2>Your recommended carbs intake per day is:&nbsp;</h2>
+            <span>
+              {goal === "1" ? (
+                <span>
+                  Since your goal is <strong>weight loss</strong>, that would
+                  mean a calorie deficit of {deficitPerday(deficitLevel)} kcal
+                  per day. Your <strong>daily</strong> carbs intake should be:
+                </span>
+              ) : goal === "2" ? (
+                <span>
+                  Since your goal is to <strong>maintain</strong> your current
+                  weight, your <strong>daily</strong> carbs intake should be:
+                </span>
+              ) : (
+                <span>
+                  Since your goal is <strong>weight gain</strong>, that would
+                  mean a calorie surplus of {deficitPerday(deficitLevel)} kcal
+                  per day. Your <strong>daily</strong> carbs intake should be:
+                </span>
+              )}
+            </span>
+
+            <h1 className="text-gradient mt-0">{carbs.toFixed(2)}g.</h1>
+            <span>According to The Institute of Medicine:</span>
+            <h2 className="text-gradient mt-0">
+              {((tdee * 0.4) / 4).toFixed(2)} - {((tdee * 0.65) / 4).toFixed(2)}
+              g
+            </h2>
+            <span>
+              According to Food and Agriculture Organization and the World
+              Health Organization:
+            </span>
+            <h2 className="text-gradient mt-0">
+              {((tdee * 0.55) / 4).toFixed(2)} -{" "}
+              {((tdee * 0.75) / 4).toFixed(2)}g
+            </h2>
+            <span>with sugar intake of maximum of:</span>
+            <h2 className="text-gradient mt-0">
+              {((tdee * 0.1) / 4).toFixed(2)}g
+            </h2>
+
+            <span>Your total daily calories should be:</span>
+            <h2 className="text-gradient mt-0">{tdee.toFixed(2)} kcal.</h2>
           </div>
-        </div>
-      )}
+        ) : (
+          <div className="flex flex-col">
+            <p className="text-lg text-red-600">
+              Please do the calculation above first.
+            </p>
+          </div>
+        )}
+        <p>
+          Carbohydrates are a vital part of our diet, providing the main source
+          of energy for our bodies. But how much do we really need? The answer
+          depends on various factors, including your total daily energy
+          expenditure (TDEE).
+        </p>
+        <h2>Why this much?</h2>
+        <ul>
+          <li>
+            <strong>Guidelines by The Institute of Medicine:</strong> They
+            recommend that carbohydrates should make up{" "}
+            <strong>40% to 65%</strong> of your total daily calories. This range
+            ensures adequate energy while supporting overall health.
+          </li>
+          <li>
+            <strong>
+              Recommendations by the Food and Agriculture Organization and the
+              World Health Organization:
+            </strong>{" "}
+            A slightly higher intake, between <strong>55% and 75%</strong> of
+            your TDEE, is advised to meet your body&apos;s energy needs and
+            support bodily functions.
+          </li>
+          <li>
+            <strong>Sugar Intake:</strong> It&apos;s crucial to limit added
+            sugars, with a maximum recommendation of <strong>10%</strong> of
+            your total daily calories. This helps manage blood sugar levels and
+            reduces the risk of metabolic diseases.
+          </li>
+        </ul>
+
+        <h2>Why Follow These Recommendations?</h2>
+        <p>
+          <strong>Energy Maintenance:</strong> Carbs provide the fuel your body
+          needs for daily activities and maintaining energy levels.
+        </p>
+        <p>
+          <strong>Health Benefits:</strong> A balanced carb intake supports
+          brain function, aids in digestive health, and helps regulate blood
+          sugar.
+        </p>
+        <p>
+          <strong>Disease Prevention:</strong> Proper carbohydrate management
+          can lower the risk of diabetes, heart disease, and obesity.
+        </p>
+
+        <h2>Tips for Healthy Carb Consumption</h2>
+        <ul>
+          <li>
+            <strong>Choose Wisely:</strong> Opt for whole, unprocessed carbs
+            like fruits, vegetables, and whole grains over refined sugars and
+            flours.
+          </li>
+          <li>
+            <strong>Monitor Portions:</strong> Keep an eye on portion sizes to
+            stay within your recommended daily intake.
+          </li>
+          <li>
+            <strong>Balance Your Diet:</strong> Combine carbohydrates with
+            proteins and healthy fats for a well-rounded diet.
+          </li>
+        </ul>
+
+        <h2>Carbs are not scary! Do not avoid them.</h2>
+        <p>
+          It&apos;s a common misconception that carbohydrates are the enemy of a
+          healthy diet. However, the truth is that{" "}
+          <strong>carbs are essential</strong> for energy, brain function, and
+          even weight management. The key is to choose{" "}
+          <strong>healthy sources</strong> of carbohydrates, such as whole
+          grains, fruits, and vegetables, which provide vital nutrients and
+          fiber. This fiber aids in digestion and can help you feel fuller
+          longer, preventing overeating. So, instead of avoiding carbs, focus on
+          incorporating the right kinds into your diet to fuel your body and
+          support overall health.
+        </p>
+        <h2>How much carbs for weight loss and weight gain?</h2>
+        <p>
+          When it comes to adjusting your weight, understanding your
+          carbohydrate intake is crucial. For <strong>weight loss</strong>,
+          focusing on a diet lower in calories but rich in nutrients is key.
+          Reducing simple carbs like sugar and opting for complex carbs can help
+          create a calorie deficit while keeping you satiated. Aim for carbs to
+          make up <strong>40% to 50%</strong> of your total caloric intake,
+          emphasizing foods with a low glycemic index to avoid spikes in blood
+          sugar.
+        </p>
+        <ul>
+          <li>
+            <strong>Whole Grains:</strong> Quinoa, barley, and whole grain
+            pasta.
+          </li>
+          <li>
+            <strong>Vegetables:</strong> Leafy greens, carrots, and broccoli.
+          </li>
+          <li>
+            <strong>Legumes:</strong> Lentils, chickpeas, and black beans.
+          </li>
+          <li>
+            <strong>Fruits:</strong> Apples, berries, and pears.
+          </li>
+          <li>
+            <strong>Nuts and Seeds:</strong> Almonds, walnuts, and flaxseeds.
+          </li>
+          <li>
+            <strong>Dairy:</strong> Greek yogurt and cottage cheese.
+          </li>
+        </ul>
+
+        <p>
+          Conversely, for <strong>weight gain</strong>, increasing your
+          carbohydrate intake can help achieve a calorie surplus needed for
+          muscle growth and weight gain. Targeting <strong>55% to 65%</strong>{" "}
+          of your calories from carbs, including more starchy vegetables, whole
+          grains, and legumes, can provide the extra energy required. Remember,
+          balancing these with proteins and healthy fats is essential for
+          healthy weight gain.
+        </p>
+        <h3>Some supplements to support your diet:</h3>
+        <ul>
+          <li>
+            <strong>Protein Powders:</strong> Whey, pea, or hemp protein can
+            help keep you full and support muscle maintenance during weight
+            loss.
+          </li>
+          <li>
+            <strong>Fiber Supplements:</strong> Psyllium husk or glucomannan to
+            help with fullness and improve digestion.
+          </li>
+          <li>
+            <strong>Green Tea Extract:</strong> Known for its
+            metabolism-boosting properties.
+          </li>
+          <li>
+            <strong>Omega-3 Supplements:</strong> Fish oil or algal oil to
+            support heart health and potentially aid in weight management.
+          </li>
+        </ul>
+      </div>
+      <GoToTop />
     </section>
   );
 }
