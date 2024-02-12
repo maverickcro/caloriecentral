@@ -82,6 +82,13 @@ export default function FastingCalculator() {
     setTdee(calculatedTdee);
 
     setCalculated(true);
+    localStorage.setItem("age", age.toString());
+    localStorage.setItem("gender", gender);
+    localStorage.setItem("weight", weight.toString());
+    localStorage.setItem("heightCm", heightCm.toString());
+    localStorage.setItem("heightFeet", heightFeet.toString());
+    localStorage.setItem("heightInches", heightInches.toString());
+    localStorage.setItem("measurementSystem", measurementSystem);
     return;
   };
 
@@ -353,7 +360,7 @@ export default function FastingCalculator() {
                 <div className="">
                   <p className="mb-0 font-bold">Your Daily Calorie Goal:</p>
                   <h2 className="text-gradient my-0">
-                    {tdee.toFixed(2)} kcal per day.
+                    {tdee.} kcal per day.
                   </h2>
                   <p>
                     Daily calorie goal is calculated from your TDEE with{" "}
@@ -407,7 +414,7 @@ export default function FastingCalculator() {
                 <div className="">
                   <p className="mb-0 font-bold">Your Daily Calorie Goal:</p>
                   <h2 className="text-gradient my-0">
-                    {tdee.toFixed(2)} kcal per day.
+                    {tdee.} kcal per day.
                   </h2>
                   <p>
                     Daily calorie goal is calculated from your TDEE with{" "}
@@ -461,7 +468,7 @@ export default function FastingCalculator() {
                 <div className="font-bold">
                   <p className="my-0">Please aim to eat:</p>
                   <h2 className="text-gradient my-0">
-                    {tdee.toFixed(2)} kcal per day.
+                    {tdee.} kcal per day.
                   </h2>
                   <p>
                     You should eat one to three meals per day in a 8-hour

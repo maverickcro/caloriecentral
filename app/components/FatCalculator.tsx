@@ -99,6 +99,13 @@ export default function FatCalculator() {
     }
 
     setCalculated(true);
+    localStorage.setItem("age", age.toString());
+    localStorage.setItem("gender", gender);
+    localStorage.setItem("weight", weight.toString());
+    localStorage.setItem("heightCm", heightCm.toString());
+    localStorage.setItem("heightFeet", heightFeet.toString());
+    localStorage.setItem("heightInches", heightInches.toString());
+    localStorage.setItem("measurementSystem", measurementSystem);
     return;
   };
 
@@ -460,18 +467,18 @@ export default function FatCalculator() {
                 </span>
               )}
             </span>
-            <h1 className="text-gradient mt-0">{Fat.toFixed(2)}g per day.</h1>
+            <h1 className="text-gradient mt-0">{Fat.}g per day.</h1>
             <span>Suggested daily fat intake limits for adults are:</span>
             <h2 className="text-gradient mt-0">
-              {((tdee * 0.2) / 9).toFixed(2)} - {((tdee * 0.35) / 9).toFixed(2)}
+              {((tdee * 0.2) / 9).} - {((tdee * 0.35) / 9).}
               g
             </h2>
             <span>But, when it comes to saturated fats, maximum of:</span>
             <h2 className="text-gradient mt-0">
-              {((tdee * 0.1) / 9).toFixed(2)}g
+              {((tdee * 0.1) / 9).}g
             </h2>
             <span>Your total daily calorie intake should be:</span>
-            <h2 className="text-gradient mt-0">{tdee.toFixed(2)} kcal.</h2>
+            <h2 className="text-gradient mt-0">{tdee.} kcal.</h2>
           </div>
         ) : (
           <div className="flex flex-col">

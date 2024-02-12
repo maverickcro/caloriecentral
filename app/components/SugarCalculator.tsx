@@ -96,6 +96,13 @@ export default function SugarCalculator() {
     }
 
     setCalculated(true);
+    localStorage.setItem("age", age.toString());
+    localStorage.setItem("gender", gender);
+    localStorage.setItem("weight", weight.toString());
+    localStorage.setItem("heightCm", heightCm.toString());
+    localStorage.setItem("heightFeet", heightFeet.toString());
+    localStorage.setItem("heightInches", heightInches.toString());
+    localStorage.setItem("measurementSystem", measurementSystem);
     return;
   };
 
@@ -440,14 +447,12 @@ export default function SugarCalculator() {
             <h2>Your recommended sugar intake per day is:&nbsp;</h2>
             <span>According to American Heart Association (AHA):</span>
             <h2 className="text-gradient mt-0">
-              {gender === "male"
-                ? ((tdee * 0.07) / 4).toFixed(2)
-                : ((tdee * 0.05) / 4).toFixed(2)}{" "}
-              grams per day.
+              {gender === "male" ? (tdee * 0.07) / 4 : (tdee * 0.05) / 4} grams
+              per day.
             </h2>
             <span>According to World Health Organization (WHO):</span>
             <h2 className="text-gradient mt-0">
-              {((tdee * 0.1) / 4).toFixed(2)} grams per day.
+              {(tdee * 0.1) / 4} grams per day.
             </h2>
           </div>
         ) : (

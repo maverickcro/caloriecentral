@@ -80,6 +80,13 @@ export default function ProteinCalculator() {
     }
 
     setCalculated(true);
+    localStorage.setItem("age", age.toString());
+    localStorage.setItem("gender", gender);
+    localStorage.setItem("weight", weight.toString());
+    localStorage.setItem("heightCm", heightCm.toString());
+    localStorage.setItem("heightFeet", heightFeet.toString());
+    localStorage.setItem("heightInches", heightInches.toString());
+    localStorage.setItem("measurementSystem", measurementSystem);
     return;
   };
 
@@ -428,20 +435,15 @@ export default function ProteinCalculator() {
                     deficitLevel
                   )} kcal per day. Your protein intake should be:`}
             </p>
-            <h1 className="text-gradient mb-0">
-              {protein.toFixed(2)}g per day.
-            </h1>
-            <p>{`According to American Dietetic Association (ADA): at least ${(
+            <h1 className="text-gradient mb-0">{protein}g per day.</h1>
+            <p>{`According to American Dietetic Association (ADA): at least ${
               weight * 0.8
-            ).toFixed(2)} - ${(weight * 2.2).toFixed(2)} grams per day.`}</p>
-            <p>{`According to The Centers for Disease Control and Prevention (CDC): at least ${(
-              (tdee * 0.1) /
-              4
-            ).toFixed(2)} - ${((tdee * 0.35) / 4).toFixed(
-              2
-            )} grams per day.`}</p>
+            } - ${weight * 2.2} grams per day.`}</p>
+            <p>{`According to The Centers for Disease Control and Prevention (CDC): at least ${
+              (tdee * 0.1) / 4
+            } - ${((tdee * 0.35) / 4).toFixed(2)} grams per day.`}</p>
             <p>Your total daily calories should be:</p>
-            <h1 className="text-gradient mb-0">{tdee.toFixed(2)} kcal.</h1>
+            <h1 className="text-gradient mb-0">{tdee} kcal.</h1>
           </div>
         </div>
       )}

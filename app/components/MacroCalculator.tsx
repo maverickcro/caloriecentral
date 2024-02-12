@@ -129,6 +129,13 @@ export default function TDEECalculator() {
     }
 
     setCalculated(true);
+    localStorage.setItem("age", age.toString());
+    localStorage.setItem("gender", gender);
+    localStorage.setItem("weight", weight.toString());
+    localStorage.setItem("heightCm", heightCm.toString());
+    localStorage.setItem("heightFeet", heightFeet.toString());
+    localStorage.setItem("heightInches", heightInches.toString());
+    localStorage.setItem("measurementSystem", measurementSystem);
     return;
   };
 
@@ -460,10 +467,10 @@ export default function TDEECalculator() {
           <div className="text-2xl font-bold">
             <h1 className="text-gradient mb-0">MACRO BREAKDOWN:</h1>
             Total calories:{" "}
-            <h1 className="text-gradient mb-0">{goalCalories.toFixed(2)}</h1>
-            <p>Carbs: {carbs.toFixed(2)} kcal</p>
-            <p>Protein: {protein.toFixed(2)}g</p>
-            <p>Fat: {fat.toFixed(2)}g</p>
+            <h1 className="text-gradient mb-0">{goalCalories.}</h1>
+            <p>Carbs: {carbs.} kcal</p>
+            <p>Protein: {protein.}g</p>
+            <p>Fat: {fat.}g</p>
           </div>
         </div>
       )}

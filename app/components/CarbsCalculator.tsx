@@ -100,6 +100,13 @@ export default function CarbsCalculator() {
     }
 
     setCalculated(true);
+    localStorage.setItem("age", age.toString());
+    localStorage.setItem("gender", gender);
+    localStorage.setItem("weight", weight.toString());
+    localStorage.setItem("heightCm", heightCm.toString());
+    localStorage.setItem("heightFeet", heightFeet.toString());
+    localStorage.setItem("heightInches", heightInches.toString());
+    localStorage.setItem("measurementSystem", measurementSystem);
     return;
   };
 
@@ -462,27 +469,26 @@ export default function CarbsCalculator() {
               )}
             </span>
 
-            <h1 className="text-gradient mt-0">{carbs.toFixed(2)}g.</h1>
+            <h1 className="text-gradient mt-0">{Math.round(carbs)}g.</h1>
             <span>According to The Institute of Medicine:</span>
             <h2 className="text-gradient mt-0">
-              {((tdee * 0.4) / 4).toFixed(2)} - {((tdee * 0.65) / 4).toFixed(2)}
-              g
+              {Math.round((tdee * 0.4) / 4)}g - {Math.round((tdee * 0.65) / 4)}g
             </h2>
             <span>
               According to Food and Agriculture Organization and the World
               Health Organization:
             </span>
             <h2 className="text-gradient mt-0">
-              {((tdee * 0.55) / 4).toFixed(2)} -{" "}
-              {((tdee * 0.75) / 4).toFixed(2)}g
+              {Math.round((tdee * 0.55) / 4)}g - {Math.round((tdee * 0.75) / 4)}
+              g
             </h2>
             <span>with sugar intake of maximum of:</span>
             <h2 className="text-gradient mt-0">
-              {((tdee * 0.1) / 4).toFixed(2)}g
+              {Math.round((tdee * 0.1) / 4)}g
             </h2>
 
             <span>Your total daily calories should be:</span>
-            <h2 className="text-gradient mt-0">{tdee.toFixed(2)} kcal.</h2>
+            <h2 className="text-gradient mt-0">{Math.round(tdee)} kcal.</h2>
           </div>
         ) : (
           <div className="flex flex-col">

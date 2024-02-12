@@ -64,9 +64,6 @@ export default function AnorexicBMICalculator() {
 
     setBmi(calculatedBmi);
     setCalculated(true);
-
-    setBmi(calculatedBmi);
-    setCalculated(true);
     localStorage.setItem("age", age.toString());
     localStorage.setItem("gender", gender);
     localStorage.setItem("weight", weight.toString());
@@ -269,7 +266,7 @@ export default function AnorexicBMICalculator() {
               className={`text-gradient mb-0 ${bmi > 0 ? "visible" : "hidden"}`}
             >
               Your BMI is:{" "}
-              <span className="text-gradient">{bmi.toFixed(2)}</span> kg/m²
+              <span className="text-gradient">{Math.round(bmi)}</span> kg/m²
             </h1>
             <p
               className={`text-lg ${

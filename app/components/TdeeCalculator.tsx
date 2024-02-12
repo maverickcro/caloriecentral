@@ -81,6 +81,13 @@ export default function TDEECalculator() {
     // Update the TDEE state
     setTdee(calculatedTdee);
     setCalculated(true);
+    localStorage.setItem("age", age.toString());
+    localStorage.setItem("gender", gender);
+    localStorage.setItem("weight", weight.toString());
+    localStorage.setItem("heightCm", heightCm.toString());
+    localStorage.setItem("heightFeet", heightFeet.toString());
+    localStorage.setItem("heightInches", heightInches.toString());
+    localStorage.setItem("measurementSystem", measurementSystem);
 
     // Return the dynamic sentence and the TDEE calculation
     return;
@@ -323,7 +330,7 @@ export default function TDEECalculator() {
           <div className="flex flex-col">
             <h2>Your TDEE is:&nbsp;</h2>
             <h2 className="text-gradient mt-0">
-              {tdee.toFixed(2)}&nbsp;kcal per day.
+              {tdee.}&nbsp;kcal per day.
             </h2>
             <p>Based on your TDEE, here are some additional insights:</p>
             <ul>
@@ -355,7 +362,7 @@ export default function TDEECalculator() {
               </li>
             </ul>
             <p>
-              In other words, if you eat <strong>{tdee.toFixed(2)} kcal</strong>{" "}
+              In other words, if you eat <strong>{tdee.} kcal</strong>{" "}
               daily with your activity level, you will <strong>maintain</strong>{" "}
               your current weight. It helps you figure out how many calories to
               eat, whether you want to maintain your current weight, become

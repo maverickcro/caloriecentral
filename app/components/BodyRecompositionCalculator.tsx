@@ -108,16 +108,23 @@ export default function BodyRecompositionCalculator() {
     let proteinGramsRest: number = proteinCaloriesRest / 4; // adjusted protein for rest days (since it's higher)
 
     // Set state with the new values
-    setTrainingDaysTotalCalories(Number(trainingDaysCalories.toFixed(2)));
-    setRestDaysTotalCalories(Number(restDaysCalories.toFixed(2)));
-    setTrainingCarbs(Number(carbsGramsTraining.toFixed(2)));
-    setTrainingProtein(Number(proteinGramsTraining.toFixed(2)));
-    setTrainingFat(Number(fatGramsTraining.toFixed(2)));
-    setRestCarbs(Number(carbsGramsRest.toFixed(2)));
-    setRestProtein(Number(proteinGramsRest.toFixed(2)));
-    setRestFat(Number(fatGramsRest.toFixed(2)));
+    setTrainingDaysTotalCalories(Number(trainingDaysCalories));
+    setRestDaysTotalCalories(Number(restDaysCalories));
+    setTrainingCarbs(Number(carbsGramsTraining));
+    setTrainingProtein(Number(proteinGramsTraining));
+    setTrainingFat(Number(fatGramsTraining));
+    setRestCarbs(Number(carbsGramsRest));
+    setRestProtein(Number(proteinGramsRest));
+    setRestFat(Number(fatGramsRest));
 
     setCalculated(true);
+    localStorage.setItem("age", age.toString());
+    localStorage.setItem("gender", gender);
+    localStorage.setItem("weight", weight.toString());
+    localStorage.setItem("heightCm", heightCm.toString());
+    localStorage.setItem("heightFeet", heightFeet.toString());
+    localStorage.setItem("heightInches", heightInches.toString());
+    localStorage.setItem("measurementSystem", measurementSystem);
   };
 
   const handleSubmit = (event: any) => {

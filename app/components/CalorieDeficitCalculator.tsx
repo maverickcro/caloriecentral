@@ -10,6 +10,7 @@ export default function CalorieDeficitCalculator() {
   const [deficitLevel, setDeficitLevel] = useState("1");
   const [deficit, setDeficit] = useState(0);
   const [weight, setWeight] = useState(0);
+  const [weightGoal, setWeightGoal] = useState(0);
   const [heightCm, setHeightCm] = useState(0);
   const [heightFeet, setHeightFeet] = useState(0);
   const [heightInches, setHeightInches] = useState(0);
@@ -17,6 +18,8 @@ export default function CalorieDeficitCalculator() {
   const [activityLevel, setActivityLevel] = useState(activityLevels[0]);
   const [calculated, setCalculated] = useState(false);
   const [tdee, setTdee] = useState(0);
+  const [goalDate, setGoalDate] = useState("");
+  const [goalDays, setGoalDays] = useState(0);
 
   const isValid: boolean =
     age > 0 && weight > 0 && (heightCm > 0 || heightFeet > 0);
@@ -28,9 +31,30 @@ export default function CalorieDeficitCalculator() {
       case "2":
         return measurementSystem === "metric" ? "0.50 kg" : "1.10 lbs";
       case "3":
-        return measurementSystem === "metric" ? "0.50 kg" : "1.10 lbs";
+        return measurementSystem === "metric" ? "0.75 kg" : "1.65 lbs";
     }
   };
+
+  useEffect(() => {
+    // Load all values from localStorage
+    const savedAge = localStorage.getItem("age");
+    const savedGender = localStorage.getItem("gender");
+    const savedWeight = localStorage.getItem("weight");
+    const savedWeightGoal = localStorage.getItem("weightGoal");
+    const savedHeightCm = localStorage.getItem("heightCm");
+    const savedHeightFeet = localStorage.getItem("heightFeet");
+    const savedHeightInches = localStorage.getItem("heightInches");
+    const savedMeasurementSystem = localStorage.getItem("measurementSystem");
+
+    if (savedAge) setAge(Number(savedAge));
+    if (savedGender) setGender(savedGender);
+    if (savedWeight) setWeight(Number(savedWeight));
+    if (savedWeightGoal) setWeightGoal(Number(savedWeightGoal));
+    if (savedHeightCm) setHeightCm(Number(savedHeightCm));
+    if (savedHeightFeet) setHeightFeet(Number(savedHeightFeet));
+    if (savedHeightInches) setHeightInches(Number(savedHeightInches));
+    if (savedMeasurementSystem) setMeasurementSystem(savedMeasurementSystem);
+  }, []);
 
   useEffect(() => {
     if (calculated && resultRef.current) {
@@ -79,11 +103,48 @@ export default function CalorieDeficitCalculator() {
     setDeficit(deficitPerDay);
 
     setCalculated(true);
+    localStorage.setItem("age", age.toString());
+    localStorage.setItem("gender", gender);
+    localStorage.setItem("weight", weight.toString());
+    localStorage.setItem("heightCm", heightCm.toString());
+    localStorage.setItem("heightFeet", heightFeet.toString());
+    localStorage.setItem("heightInches", heightInches.toString());
+    localStorage.setItem("measurementSystem", measurementSystem);
+    localStorage.setItem("weightGoal", weightGoal.toString());
   };
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
     calculateCalorieDeficit();
+    calculateDaysToGoalWeight();
+  };
+
+  const calculateDaysToGoalWeight = () => {
+    const CALORIES_PER_KG = 7700;
+    const CALORIES_PER_POUND = 3500;
+
+    let totalCalorieDeficit;
+    if (measurementSystem === "metric") {
+      totalCalorieDeficit = (weight - weightGoal) * CALORIES_PER_KG;
+    } else {
+      // assuming the only other option is "imperial"
+      totalCalorieDeficit = (weight - weightGoal) * CALORIES_PER_POUND;
+    }
+
+    if (deficit === 0) {
+      throw new Error("Daily calorie deficit cannot be zero.");
+    }
+
+    const numberOfDays = totalCalorieDeficit / deficit; // Calculate the goal date
+    const today = new Date();
+    const goalDate = new Date(today.setDate(today.getDate() + numberOfDays));
+
+    // Format the date as "Month Day, Year"
+    const options: any = { month: "short", day: "numeric", year: "numeric" };
+    const formattedGoalDate = goalDate.toLocaleDateString("en-US", options);
+
+    setGoalDate(formattedGoalDate);
+    setGoalDays(Math.ceil(numberOfDays));
   };
 
   return (
@@ -131,6 +192,7 @@ export default function CalorieDeficitCalculator() {
               Age
             </label>
             <input
+              value={age}
               id="3"
               min="1"
               max="100"
@@ -181,6 +243,7 @@ export default function CalorieDeficitCalculator() {
             </label>
             <div className="relative flex items-center">
               <input
+                value={weight}
                 id="9"
                 type="number"
                 min="1"
@@ -203,6 +266,7 @@ export default function CalorieDeficitCalculator() {
             {measurementSystem === "metric" ? (
               <div className="relative flex items-center">
                 <input
+                  value={heightCm}
                   id="9"
                   min="40"
                   type="number"
@@ -217,6 +281,7 @@ export default function CalorieDeficitCalculator() {
               <div className="flex items-center space-x-2">
                 <div className="relative w-1/2">
                   <input
+                    value={heightFeet}
                     id="9"
                     type="number"
                     min="1"
@@ -232,6 +297,7 @@ export default function CalorieDeficitCalculator() {
                 &nbsp;
                 <div className="relative w-1/2">
                   <input
+                    value={heightInches}
                     id="9"
                     type="number"
                     min="0"
@@ -314,6 +380,28 @@ export default function CalorieDeficitCalculator() {
               </button>
             </div>
           </div>
+          {/* weight goal*/}
+          <div className="group w-[70%]">
+            <label
+              htmlFor="10"
+              className="inline-block w-full text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+            >
+              Weight Goal
+            </label>
+            <div className="relative flex items-center">
+              <input
+                value={weightGoal}
+                id="10"
+                type="number"
+                min="1"
+                onChange={(e: any) => setWeightGoal(e.target.value)}
+                className="peer relative h-10 w-full rounded-md bg-gray-50 pl-20 pr-4 font-thin outline-none drop-shadow-sm transition-all duration-200 ease-in-out focus:bg-white focus:drop-shadow-lg"
+              />
+              <button className="absolute h-10 w-16 rounded-l-md  text-xs font-semibold border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 text-white">
+                {measurementSystem === "metric" ? "kg" : "lbs"}
+              </button>
+            </div>
+          </div>
           <div className="group w-[70%]">
             <CustomButton
               type="finish"
@@ -329,27 +417,33 @@ export default function CalorieDeficitCalculator() {
         </div>
       </div>
 
-      {deficit > 0 && (
-        <div
-          ref={resultRef}
-          className="group w-[70%] mx-auto group flex flex-col"
-        >
-          <p className="text-2xl font-bold">
-            To maintain your weight:{" "}
-            <h1 className="text-gradient mb-0">{tdee.toFixed(2)}</h1> kcal
-            daily.
-          </p>
-          <div className="text-2xl font-bold">
-            You should consume:{" "}
-            <h1 className="text-gradient mb-0">
-              {(tdee - deficit).toFixed(2)}
-            </h1>{" "}
-            kcal daily to lose{" "}
-            <h1 className="text-gradient mb-0">{deficitWeight()}</h1>
-            weekly.
+      <div ref={resultRef} className="group mx-auto group flex flex-col">
+        {deficit > 0 ? (
+          //  && weightGoal > 0
+          <div className="flex flex-col">
+            <h2>Your daily calorie intake:</h2>
+            <span>If you want to lose {deficitWeight()} per week:</span>
+
+            <h1 className="text-gradient mt-0">
+              {Math.round(tdee - deficit)} kcal.
+            </h1>
+
+            <span>
+              How long will it take to get to {weightGoal}{" "}
+              {`${measurementSystem === "metric" ? "kg" : "pounds"}`}?
+            </span>
+            <h2 className="text-gradient mt-0">
+              {goalDays} days, {goalDate}
+            </h2>
           </div>
-        </div>
-      )}
+        ) : (
+          <div className="flex flex-col">
+            <p className="text-lg text-red-600">
+              Please do the calculation above first.
+            </p>
+          </div>
+        )}
+      </div>
     </section>
   );
 }
