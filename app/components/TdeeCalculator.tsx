@@ -329,9 +329,7 @@ export default function TDEECalculator() {
         {tdee > 0 ? (
           <div className="flex flex-col">
             <h2>Your TDEE is:&nbsp;</h2>
-            <h2 className="text-gradient mt-0">
-              {tdee.}&nbsp;kcal per day.
-            </h2>
+            <h2 className="text-gradient mt-0">{tdee}&nbsp;kcal per day.</h2>
             <p>Based on your TDEE, here are some additional insights:</p>
             <ul>
               <li>
@@ -362,12 +360,12 @@ export default function TDEECalculator() {
               </li>
             </ul>
             <p>
-              In other words, if you eat <strong>{tdee.} kcal</strong>{" "}
-              daily with your activity level, you will <strong>maintain</strong>{" "}
-              your current weight. It helps you figure out how many calories to
-              eat, whether you want to maintain your current weight, become
-              stronger, or lose some weight. It&apos;s like having a map for
-              your food journey.
+              In other words, if you eat <strong>{tdee} kcal</strong> daily with
+              your activity level, you will <strong>maintain</strong> your
+              current weight. It helps you figure out how many calories to eat,
+              whether you want to maintain your current weight, become stronger,
+              or lose some weight. It&apos;s like having a map for your food
+              journey.
             </p>
           </div>
         ) : (

@@ -8,7 +8,7 @@ export default function CalorieDeficitCalculator() {
   const [age, setAge] = useState(0);
   const [gender, setGender] = useState("male"); // default to male
   const [deficitLevel, setDeficitLevel] = useState("1");
-  const [deficit, setDeficit] = useState(0);
+  const [deficit, setDeficit] = useState(1925 / 7);
   const [weight, setWeight] = useState(0);
   const [weightGoal, setWeightGoal] = useState(0);
   const [heightCm, setHeightCm] = useState(0);
@@ -64,23 +64,16 @@ export default function CalorieDeficitCalculator() {
   }, [calculated]);
 
   const calculateCalorieDeficit = () => {
-    // Convert height to centimeters if the user has selected imperial
     let heightInCm =
       measurementSystem === "metric"
         ? heightCm
         : heightFeet * 30.48 + heightInches * 2.54;
-
-    // Convert weight to kilograms if the user has selected imperial
     let weightInKg =
       measurementSystem === "metric" ? weight : weight * 0.453592;
-
-    // Calculate BMR using the Mifflin-St Jeor equation
     let BMR =
       gender === "male"
         ? 10 * weightInKg + 6.25 * heightInCm - 5 * age + 5
         : 10 * weightInKg + 6.25 * heightInCm - 5 * age - 161;
-
-    // Adjust BMR based on activity level
     let TDEE = BMR * activityLevel.value;
     setTdee(TDEE);
 
@@ -96,12 +89,30 @@ export default function CalorieDeficitCalculator() {
         deficitPerDay = 5775 / 7;
         break;
       default:
-        deficitPerDay = 0; // No deficit if no level is selected or an invalid level is provided
+        deficitPerDay = 0;
     }
 
-    // Set the calculated deficit
     setDeficit(deficitPerDay);
+    const CALORIES_PER_KG = 7700;
+    const CALORIES_PER_POUND = 3500;
 
+    let totalCalorieDeficit;
+    if (measurementSystem === "metric") {
+      totalCalorieDeficit = (weight - weightGoal) * CALORIES_PER_KG;
+    } else {
+      // assuming the only other option is "imperial"
+      totalCalorieDeficit = (weight - weightGoal) * CALORIES_PER_POUND;
+    }
+    const numberOfDays = Math.round(totalCalorieDeficit / deficitPerDay);
+    const today = new Date();
+    const goalDate = new Date();
+    goalDate.setDate(today.getDate() + Math.ceil(numberOfDays));
+
+    const options: any = { month: "short", day: "numeric", year: "numeric" };
+    const formattedGoalDate = goalDate.toLocaleDateString("en-US", options);
+
+    setGoalDate(formattedGoalDate);
+    setGoalDays(Math.ceil(numberOfDays));
     setCalculated(true);
     localStorage.setItem("age", age.toString());
     localStorage.setItem("gender", gender);
@@ -116,35 +127,6 @@ export default function CalorieDeficitCalculator() {
   const handleSubmit = (event: any) => {
     event.preventDefault();
     calculateCalorieDeficit();
-    calculateDaysToGoalWeight();
-  };
-
-  const calculateDaysToGoalWeight = () => {
-    const CALORIES_PER_KG = 7700;
-    const CALORIES_PER_POUND = 3500;
-
-    let totalCalorieDeficit;
-    if (measurementSystem === "metric") {
-      totalCalorieDeficit = (weight - weightGoal) * CALORIES_PER_KG;
-    } else {
-      // assuming the only other option is "imperial"
-      totalCalorieDeficit = (weight - weightGoal) * CALORIES_PER_POUND;
-    }
-
-    if (deficit === 0) {
-      throw new Error("Daily calorie deficit cannot be zero.");
-    }
-
-    const numberOfDays = totalCalorieDeficit / deficit; // Calculate the goal date
-    const today = new Date();
-    const goalDate = new Date(today.setDate(today.getDate() + numberOfDays));
-
-    // Format the date as "Month Day, Year"
-    const options: any = { month: "short", day: "numeric", year: "numeric" };
-    const formattedGoalDate = goalDate.toLocaleDateString("en-US", options);
-
-    setGoalDate(formattedGoalDate);
-    setGoalDays(Math.ceil(numberOfDays));
   };
 
   return (
@@ -428,13 +410,17 @@ export default function CalorieDeficitCalculator() {
               {Math.round(tdee - deficit)} kcal.
             </h1>
 
-            <span>
-              How long will it take to get to {weightGoal}{" "}
-              {`${measurementSystem === "metric" ? "kg" : "pounds"}`}?
-            </span>
-            <h2 className="text-gradient mt-0">
-              {goalDays} days, {goalDate}
-            </h2>
+            {weightGoal > 0 && (
+              <>
+                <span>
+                  How long will it take to get to {weightGoal}{" "}
+                  {`${measurementSystem === "metric" ? "kg" : "pounds"}`}?
+                </span>
+                <h2 className="text-gradient mt-0">
+                  {goalDays} days, {goalDate}
+                </h2>
+              </>
+            )}
           </div>
         ) : (
           <div className="flex flex-col">
@@ -443,6 +429,159 @@ export default function CalorieDeficitCalculator() {
             </p>
           </div>
         )}
+        <p>
+          Calorie deficit is the most important factor when it comes to weight
+          loss. If you are not in caloric deficit, you will <strong>not</strong>{" "}
+          lose weight - simple as that.
+        </p>
+        <h2>Why this much?</h2>
+        <p>
+          Calculator accurately determines how many calories you need to consume
+          per day in order to get to your weight goal. We recommend going for{" "}
+          <strong>
+            {measurementSystem === "metric"
+              ? "0.25 kg - 0.75 kg"
+              : "0.55lbs - 1.65lbs"}{" "}
+            per week
+          </strong>{" "}
+          because you want to do it in sustainable and healthy way. Anything
+          below these values is not recommended as you won&apos;t be able to
+          meet minimum nutrient recommendations. It should only be used in{" "}
+          limited circumstances along with <strong>medical monitoring</strong>.
+        </p>
+        <h2>
+          How did we calculate <strong>{Math.round(tdee - deficit)}</strong>{" "}
+          kcal per day?
+        </h2>
+        <p>
+          First, we asked for some basic information which helped us determine
+          your <strong>TDEE</strong>, which stands for{" "}
+          <strong>Total Daily Energy Expenditure</strong>. This tells us how
+          many calories your body requires in a day to maintain its current
+          weight. Your TDEE is <strong>{Math.round(tdee)}</strong> kcal per day.
+        </p>
+        <p>
+          Now, given we have your TDEE, we asked you how much weight you want to
+          lose per week. Since one{" "}
+          <strong>
+            {measurementSystem === "metric" ? "kilogram" : "pound"}
+          </strong>{" "}
+          is equal to{" "}
+          <strong>{measurementSystem === "metric" ? "7,700" : "3,500"}</strong>{" "}
+          kcal, it is pretty straightforward to convert that into calories.
+        </p>
+        <p>
+          That means we have a number goal of calories we want to lose per week.
+          If you divide it by the number of days per week, you will get your{" "}
+          <strong>daily calorie deficit</strong>. Just subtract it from your
+          TDEE and that&apos;s it!
+        </p>
+        <h3>Weight loss calculation example</h3>
+        {measurementSystem === "metric" ? (
+          <p>
+            For instance, if your TDEE is <strong>2500</strong> kcal per day and
+            you want to lose <strong>0.5 kg</strong> per week, you need to
+            create a deficit of <strong>3850</strong> kcal per week (0.5 kg x
+            7700 kcal/kg). This equates to a daily calorie deficit of{" "}
+            <strong>550</strong> kcal (3850 kcal / 7 days). Therefore, your
+            daily calorie intake should be <strong>1950</strong> kcal (2500 -
+            550 kcal).
+          </p>
+        ) : (
+          <p>
+            For example, if your TDEE is <strong>2500</strong> kcal per day and
+            you want to lose <strong>1 pound</strong> per week, you need to
+            create a deficit of <strong>3500</strong> kcal per week (1 pound x
+            3500 kcal/pound). This equates to a daily calorie deficit of{" "}
+            <strong>500</strong> kcal (3500 kcal / 7 days). Therefore, your
+            daily calorie intake should be <strong>2000</strong> kcal (2500 -
+            500 kcal).
+          </p>
+        )}
+        {weightGoal > 0 && (
+          <>
+            <h2>
+              How do we estimate that you need <strong>{goalDays}</strong> days
+              for your goal weight?
+            </h2>
+            <p>
+              We use similar logic as with goal calories above. We subtract your
+              goal weight from your current weight. Then that difference is
+              converted to calories. When we divide those calories by your daily
+              deficit, we get the number of days needed to reach your goal.
+            </p>
+            <h3>Weight loss date estimation example</h3>
+            {measurementSystem === "metric" ? (
+              <p>
+                For example, if you want to lose <strong>5 kg</strong>, and one
+                kilogram is equivalent to <strong> 7,700 kcal</strong>, you need
+                a total deficit of <strong>38,500 kcal</strong>
+                (5 kg x 7,700 kcal/kg). With a daily deficit of{" "}
+                <strong>500 kcal</strong>, it will take you{" "}
+                <strong>77 days</strong> to reach your goal (38,500 kcal / 500
+                kcal per day).
+              </p>
+            ) : (
+              <p>
+                For instance, if your aim is to lose <strong>10 pounds</strong>,
+                and one pound is equivalent to
+                <strong>3,500 kcal</strong>, you require a total calorie deficit
+                of <strong>35,000 kcal</strong>
+                (10 pounds x 3,500 kcal/pound). With a daily deficit of{" "}
+                <strong>500 kcal</strong>, it will take you{" "}
+                <strong>70 days</strong> to meet your goal (35,000 kcal / 500
+                kcal per day).
+              </p>
+            )}
+            <p>Then we just add those days to current date.</p>
+          </>
+        )}
+        <h2>
+          Nutrition doesn&apos;t matter for losing weight, only{" "}
+          <strong>calorie deficit</strong>
+        </h2>
+        <p>
+          You read it right. When we talk about straight weight loss, you{" "}
+          <strong>WILL</strong> lose weight if you eat less.{" "}
+        </p>
+        <p>
+          In a study by NIH&apos;s NHLBI, 811 adults followed four different
+          heart-healthy diets, all aimed at reducing calorie intake. Key
+          findings include:
+        </p>
+        <ul>
+          <li>
+            All diets led to <strong>similar weight loss</strong>, regardless of
+            macronutrient composition.
+          </li>
+          <li>
+            Participants saw an average weight loss of{" "}
+            <strong>13 pounds in 6 months</strong> and maintained a{" "}
+            <strong>9 pound loss after 2 years</strong>.
+          </li>
+          <li>
+            Weight loss was accompanied by a{" "}
+            <strong>1 to 3 inch reduction in waist size</strong>.
+          </li>
+        </ul>
+        <p>Reference to that study is in the bottom of the page.</p>
+        <p>
+          These diets, varying from low to high fat and protein content, proved
+          that as long as you consume fewer calories than you burn, weight loss
+          occurs. However, while the specifics of your diet may not impact your
+          ability to lose weight, we still encourage eating a healthy diet for
+          overall well-being.
+        </p>
+
+        <h2>Most important thing for weight loss</h2>
+        <p>
+          Following a structured plan that encompasses a calorie deficit, as
+          evidenced by scientific research, maximizes the potential for
+          effective and sustainable weight loss. The most important thing is to
+          be <strong>consistent</strong>! So stay strong and keep going.
+          Hopefully this evidence will encourage you that success is{" "}
+          <strong>inevitable</strong>.
+        </p>
       </div>
     </section>
   );
