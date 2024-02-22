@@ -2,6 +2,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import CustomButton from "./CustomButton"; // Assuming you have a CustomButton component
 import { activityLevels } from "../../lib/data";
+import GoToTop from "./GoToTop";
 
 export default function BodyRecompositionCalculator() {
   const resultRef = useRef<HTMLDivElement>(null);
@@ -27,6 +28,25 @@ export default function BodyRecompositionCalculator() {
 
   const isValid: boolean =
     age > 0 && weight > 0 && (heightCm > 0 || heightFeet > 0);
+
+  useEffect(() => {
+    // Load all values from localStorage
+    const savedAge = localStorage.getItem("age");
+    const savedGender = localStorage.getItem("gender");
+    const savedWeight = localStorage.getItem("weight");
+    const savedHeightCm = localStorage.getItem("heightCm");
+    const savedHeightFeet = localStorage.getItem("heightFeet");
+    const savedHeightInches = localStorage.getItem("heightInches");
+    const savedMeasurementSystem = localStorage.getItem("measurementSystem");
+
+    if (savedAge) setAge(Number(savedAge));
+    if (savedGender) setGender(savedGender);
+    if (savedWeight) setWeight(Number(savedWeight));
+    if (savedHeightCm) setHeightCm(Number(savedHeightCm));
+    if (savedHeightFeet) setHeightFeet(Number(savedHeightFeet));
+    if (savedHeightInches) setHeightInches(Number(savedHeightInches));
+    if (savedMeasurementSystem) setMeasurementSystem(savedMeasurementSystem);
+  }, []);
 
   useEffect(() => {
     if (calculated && resultRef.current) {
@@ -176,6 +196,7 @@ export default function BodyRecompositionCalculator() {
               Age
             </label>
             <input
+              value={age}
               id="3"
               min="1"
               max="100"
@@ -226,6 +247,7 @@ export default function BodyRecompositionCalculator() {
             </label>
             <div className="relative flex items-center">
               <input
+                value={weight}
                 id="9"
                 type="number"
                 min="1"
@@ -248,6 +270,7 @@ export default function BodyRecompositionCalculator() {
             {measurementSystem === "metric" ? (
               <div className="relative flex items-center">
                 <input
+                  value={heightCm}
                   id="9"
                   min="40"
                   type="number"
@@ -262,6 +285,7 @@ export default function BodyRecompositionCalculator() {
               <div className="flex items-center space-x-2">
                 <div className="relative w-1/2">
                   <input
+                    value={heightFeet}
                     id="9"
                     type="number"
                     min="1"
@@ -277,6 +301,7 @@ export default function BodyRecompositionCalculator() {
                 &nbsp;
                 <div className="relative w-1/2">
                   <input
+                    value={heightInches}
                     id="9"
                     type="number"
                     min="0"
@@ -307,9 +332,6 @@ export default function BodyRecompositionCalculator() {
                 onChange={(e: any) => setBodyFat(e.target.value)}
                 className="peer relative h-10 w-full rounded-md bg-gray-50 pl-20 pr-4 font-thin outline-none drop-shadow-sm transition-all duration-200 ease-in-out focus:bg-white focus:drop-shadow-lg"
               />
-              <span className="block pt-1 text-xs font-semibold text-gray-500">
-                Calculate with our free tool.
-              </span>
               <button className="absolute left-0 h-10 w-16 rounded-l-md  text-xs font-semibold border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 text-white">
                 %
               </button>
