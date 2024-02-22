@@ -359,9 +359,7 @@ export default function FastingCalculator() {
               <>
                 <div className="">
                   <p className="mb-0 font-bold">Your Daily Calorie Goal:</p>
-                  <h2 className="text-gradient my-0">
-                    {tdee.} kcal per day.
-                  </h2>
+                  <h2 className="text-gradient my-0">{tdee} kcal per day.</h2>
                   <p>
                     Daily calorie goal is calculated from your TDEE with{" "}
                     <Link href="/tdee-calculator">this calculator</Link>. Number
@@ -413,9 +411,7 @@ export default function FastingCalculator() {
               <>
                 <div className="">
                   <p className="mb-0 font-bold">Your Daily Calorie Goal:</p>
-                  <h2 className="text-gradient my-0">
-                    {tdee.} kcal per day.
-                  </h2>
+                  <h2 className="text-gradient my-0">{tdee} kcal per day.</h2>
                   <p>
                     Daily calorie goal is calculated from your TDEE with{" "}
                     <Link href="/tdee-calculator">this calculator</Link>. Number
@@ -467,9 +463,7 @@ export default function FastingCalculator() {
               <>
                 <div className="font-bold">
                   <p className="my-0">Please aim to eat:</p>
-                  <h2 className="text-gradient my-0">
-                    {tdee.} kcal per day.
-                  </h2>
+                  <h2 className="text-gradient my-0">{tdee} kcal per day.</h2>
                   <p>
                     You should eat one to three meals per day in a 8-hour
                     window. Choose the preferred times below.

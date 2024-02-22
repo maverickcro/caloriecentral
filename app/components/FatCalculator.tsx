@@ -467,18 +467,15 @@ export default function FatCalculator() {
                 </span>
               )}
             </span>
-            <h1 className="text-gradient mt-0">{Fat.}g per day.</h1>
+            <h1 className="text-gradient mt-0">{Fat}g per day.</h1>
             <span>Suggested daily fat intake limits for adults are:</span>
             <h2 className="text-gradient mt-0">
-              {((tdee * 0.2) / 9).} - {((tdee * 0.35) / 9).}
-              g
+              {(tdee * 0.2) / 9} - {(tdee * 0.35) / 9}g
             </h2>
             <span>But, when it comes to saturated fats, maximum of:</span>
-            <h2 className="text-gradient mt-0">
-              {((tdee * 0.1) / 9).}g
-            </h2>
+            <h2 className="text-gradient mt-0">{(tdee * 0.1) / 9}g</h2>
             <span>Your total daily calorie intake should be:</span>
-            <h2 className="text-gradient mt-0">{tdee.} kcal.</h2>
+            <h2 className="text-gradient mt-0">{tdee} kcal.</h2>
           </div>
         ) : (
           <div className="flex flex-col">

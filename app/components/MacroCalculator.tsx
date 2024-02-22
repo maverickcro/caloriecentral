@@ -467,10 +467,10 @@ export default function TDEECalculator() {
           <div className="text-2xl font-bold">
             <h1 className="text-gradient mb-0">MACRO BREAKDOWN:</h1>
             Total calories:{" "}
-            <h1 className="text-gradient mb-0">{goalCalories.}</h1>
-            <p>Carbs: {carbs.} kcal</p>
-            <p>Protein: {protein.}g</p>
-            <p>Fat: {fat.}g</p>
+            <h1 className="text-gradient mb-0">{goalCalories}</h1>
+            <p>Carbs: {carbs} kcal</p>
+            <p>Protein: {protein}g</p>
+            <p>Fat: {fat}g</p>
           </div>
         </div>
       )}
