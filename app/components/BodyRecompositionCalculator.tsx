@@ -23,7 +23,7 @@ export default function BodyRecompositionCalculator() {
   const [restCarbs, setRestCarbs] = useState(0);
   const [restProtein, setRestProtein] = useState(0);
   const [restFat, setRestFat] = useState(0);
-
+  const [tdee, setTdee] = useState(0);
   const [calculated, setCalculated] = useState(false);
 
   const isValid: boolean =
@@ -85,6 +85,7 @@ export default function BodyRecompositionCalculator() {
 
     // Calculate TDEE based on activity level
     let calculatedTdee: number = BMR * 1.2;
+    setTdee(calculatedTdee);
     // Adjust TDEE for training and rest days based on recomp goal
     let trainingDaysCalories: number = 0;
     let restDaysCalories: number = 0;
@@ -341,9 +342,8 @@ export default function BodyRecompositionCalculator() {
           <div className="group w-[70%]">
             <div className="relative flex flex-col items-center">
               <p className="inline-block w-full text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400">
-                The optimal number of workouts is 3 weight exercise workouts per
-                week. Each workout should last at least 30
-                minutes.(!!!reference!!!)
+                The optimal number of workouts is 2-4 weight exercise workouts
+                per week. Each workout should last at least 30 minutes.
               </p>
             </div>
           </div>
@@ -404,31 +404,103 @@ export default function BodyRecompositionCalculator() {
           </div>
         </div>
       </div>
-      {restFat > 0 && (
-        <div
-          ref={resultRef}
-          className="group w-[70%] mx-auto group flex flex-col"
-        >
-          <div className="text-2xl font-bold">
-            <h1 className="text-gradient mb-0">TRAINING DAYS:</h1>
-            <p className="text-gradient__orange">
-              Total calories: {trainingDaysTotalCalories} kcal
+      {/* RESULTS */}
+      <div ref={resultRef} className="group mx-auto group flex flex-col">
+        {tdee > 0 ? (
+          <>
+            <h2>Your daily calories and macros for body recomp:</h2>
+            <div className="flex flex-col md:flex-row w-full justify-center items-center py-8 bg-gray-200 to-gray-200">
+              <div className="w-1/2 m-11 p-5 bg-white rounded-3xl">
+                <h2 className="my-6">🤾‍♀️Training days:</h2>
+                <h3 className="text-gradient font-bold my-0">
+                  {Math.round(trainingDaysTotalCalories)} kcal
+                </h3>
+                <p className="my-0">Carbs: {Math.round(trainingCarbs)}g</p>
+                <p className="my-0">Protein: {Math.round(trainingProtein)}g</p>
+                <p className="my-0">Fat: {Math.round(trainingFat)}g</p>
+              </div>
+              <div className="w-1/2 m-11 p-5 bg-white rounded-3xl">
+                <h2 className="my-6">😴Rest days:</h2>
+                <h3 className="text-gradient font-bold my-0">
+                  {Math.round(restDaysTotalCalories)} kcal
+                </h3>
+                <p className="my-0">Carbs: {Math.round(restCarbs)}g</p>
+                <p className="my-0">Protein: {Math.round(restProtein)}g</p>
+                <p className="my-0">Fat: {Math.round(restFat)}g</p>
+              </div>
+            </div>
+          </>
+        ) : (
+          <div className="flex flex-col">
+            <p className="text-lg text-red-600">
+              Please do the calculation above first.
             </p>
-            <p>Carbs: {trainingCarbs} g</p>
-            <p>Protein: {trainingProtein}g</p>
-            <p>Fat: {trainingFat}g</p>
           </div>
-          <div className="text-2xl font-bold">
-            <h1 className="text-gradient mb-0">REST DAYS:</h1>
-            <p className="text-gradient__orange">
-              Total calories: {restDaysTotalCalories} kcal
-            </p>
-            <p>Carbs: {restCarbs}g</p>
-            <p>Protein: {restProtein}g</p>
-            <p>Fat: {restFat}g</p>
-          </div>
-        </div>
-      )}
+        )}
+        <p>
+          <strong>Body recomposition</strong>, a game-changer in fitness that
+          allows you to <strong>burn fat</strong> and{" "}
+          <strong>build muscle </strong>
+          at the same time. This approach goes beyond the scale, focusing on
+          improving body shape and muscle tone through a blend of targeted{" "}
+          <strong>resistance training</strong> and a{" "}
+          <strong>high-protein diet</strong>. It reshapes your body and elevates
+          your health, all without extreme dieting or exhaustive workouts.
+        </p>
+        <h2>Why this much?</h2>
+        <p>
+          Curious about{" "}
+          <strong>why the numbers stack up the way they do</strong> on your{" "}
+          <strong>body recomposition calculator</strong>? It&apos;s a finely
+          tuned balance!
+        </p>
+        <p>
+          On <strong>training days</strong>, you need a boost in energy to fuel
+          those intense workouts—that&apos;s where the higher carbs come in,
+          making up 40% of your calorie intake. We don&apos;t skimp on the
+          proteins, either; they&apos;re crucial for muscle repair. Then,
+          there&apos;s a healthy dose of fats to keep your hormone levels in
+          check.
+        </p>
+        <p>
+          On <strong>rest days</strong>, we dial down the carbs to 30% and let
+          proteins take the lead, supporting muscle growth even when you&apos;re
+          not lifting. Every gram and calorie is calculated to optimize your
+          body recomp, targeting the sweet spot between{" "}
+          <strong>muscle gain</strong> and
+          <strong> fat loss</strong>. It&apos;s not just about eating more or
+          less; it&apos;s about eating right for your body&apos;s specific needs
+          during the muscle-building journey.
+        </p>
+        <h2>Steps to Get the Muscle and Lose the Fat</h2>
+        <p>It&apos;s simpler than you think.</p>
+        <ul>
+          <li>
+            <strong>Do your calculation:</strong> I&apos;ve done the math so you
+            know exactly how much to eat.
+          </li>
+          <li>
+            <strong>Protein is Key:</strong> More protein on rest days means
+            more muscle repair.
+          </li>
+          <li>
+            <strong>Do not skip your workouts:</strong> Aim to do at least 2, at
+            best 3-4 per week. Resistance training in the gym, body training in
+            the park or at home. Make it work the best for you.
+          </li>
+          <li>
+            <strong>Stay consistant:</strong> Probably the most important part.
+            Find the right motivation, find a training partner.{" "}
+            <strong>Have a clear goal</strong>.
+          </li>
+        </ul>
+        <p>
+          Trust the plan, see the change, and feel great doing it. Come back
+          every two weeks and do your calculation again for an updated plan.{" "}
+          <strong>I truly believe in you.</strong>
+        </p>
+      </div>
+      <GoToTop />
     </section>
   );
 }

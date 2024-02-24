@@ -16,11 +16,11 @@ export default function Calculator() {
           Updated: Feb 22, 2024
         </span>
         <p className="text-black">
-          Experience the power of transformation with our Body Recomposition
-          Calculator, designed to help you simultaneously lose fat and build
-          muscle. This tool is your ally in navigating the nuanced balance of
-          diet and exercise, paving the way for you to achieve a leaner,
-          stronger physique.
+          When I was starting my fitness journey, this was the first thing that
+          piqued my interest. <strong>Body recomp</strong> gave the best
+          results. I was able to simultaneously{" "}
+          <strong>lose fat and build muscle</strong>. This calculator will
+          advise you on your macros, both training and rest days.
         </p>
 
         <CalculatorComponent />
@@ -29,11 +29,22 @@ export default function Calculator() {
           <li>
             <Link
               rel="nofollow"
-              href="https://pubmed.ncbi.nlm.nih.gov/16004827/"
+              href="https://www.healthline.com/nutrition/body-recomposition"
             >
-              Manore MM. Exercise and the Institute of Medicine recommendations
-              for nutrition. Curr Sports Med Rep. 2005 Aug;4(4):193-8. doi:
-              10.1097/01.csmr.0000306206.72186.00. PMID: 16004827.
+              Kubala, J. (2023, January 27). Body Recomposition: Lose Fat and
+              Gain Muscle at the Same Time. Healthline.
+            </Link>
+          </li>
+          <li>
+            <Link
+              rel="nofollow"
+              href="https://europepmc.org/article/med/35019903"
+            >
+              Ribeiro AS, Pereira LC, Schoenfeld BJ, et al. Moderate and Higher
+              Protein Intakes Promote Superior Body Recomposition in Older Women
+              Performing Resistance Training. Medicine and Science in Sports and
+              Exercise. 2022 May;54(5):807-813. DOI:
+              10.1249/mss.0000000000002855. PMID: 35019903.
             </Link>
           </li>
         </ul>
