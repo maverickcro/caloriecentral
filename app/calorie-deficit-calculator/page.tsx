@@ -73,13 +73,13 @@ export default function Calculator() {
             src="/protein-calculator.png"
             alt="Protein Intake Calculator"
           />
-          <CalculatorCard
+          {/* <CalculatorCard
             title="Macro Calculator"
             href="/macro-calculator"
             description="Optimize your protein, carbohydrate, and fat intake simultaneously for maximum muscle gain and fat loss."
             src="/macro-calculator.png"
             alt="Macro Calculator"
-          />
+          /> */}
           <CalculatorCard
             title="Body Recomposition Calculator"
             href="/body-recomposition-calculator"

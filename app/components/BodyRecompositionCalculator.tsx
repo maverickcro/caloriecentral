@@ -408,7 +408,9 @@ export default function BodyRecompositionCalculator() {
       <div ref={resultRef} className="group mx-auto group flex flex-col">
         {tdee > 0 ? (
           <>
-            <h2>Your daily calories and macros for body recomp:</h2>
+            <h2 className="font-normal text-center">
+              <strong>Your results:</strong>
+            </h2>
             <div className="flex flex-col md:flex-row w-full justify-center items-center py-8 bg-gray-200 to-gray-200">
               <div className="w-1/2 m-11 p-5 bg-white rounded-3xl">
                 <h2 className="my-6">🤾‍♀️Training days:</h2>

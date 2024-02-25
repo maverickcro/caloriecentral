@@ -24,6 +24,25 @@ export default function ProteinCalculator() {
     age > 0 && weight > 0 && (heightCm > 0 || heightFeet > 0);
 
   useEffect(() => {
+    // Load all values from localStorage
+    const savedAge = localStorage.getItem("age");
+    const savedGender = localStorage.getItem("gender");
+    const savedWeight = localStorage.getItem("weight");
+    const savedHeightCm = localStorage.getItem("heightCm");
+    const savedHeightFeet = localStorage.getItem("heightFeet");
+    const savedHeightInches = localStorage.getItem("heightInches");
+    const savedMeasurementSystem = localStorage.getItem("measurementSystem");
+
+    if (savedAge) setAge(Number(savedAge));
+    if (savedGender) setGender(savedGender);
+    if (savedWeight) setWeight(Number(savedWeight));
+    if (savedHeightCm) setHeightCm(Number(savedHeightCm));
+    if (savedHeightFeet) setHeightFeet(Number(savedHeightFeet));
+    if (savedHeightInches) setHeightInches(Number(savedHeightInches));
+    if (savedMeasurementSystem) setMeasurementSystem(savedMeasurementSystem);
+  }, []);
+
+  useEffect(() => {
     if (calculated && resultRef.current) {
       resultRef.current.scrollIntoView({ behavior: "smooth" });
       setCalculated(false); // Reset to false after scrolling
@@ -112,7 +131,7 @@ export default function ProteinCalculator() {
       <div className="bg-gray-200 to-gray-200 py-16 px-2">
         <div className="grid w-full grid-cols-1 place-items-center space-y-6">
           {/* measurement system */}
-          <div className="group relative w-[70%]">
+          <div className="relative w-[70%]">
             <label
               htmlFor="3"
               className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -144,7 +163,7 @@ export default function ProteinCalculator() {
             </div>
           </div>
           {/* age */}
-          <div className="group relative w-[70%]">
+          <div className="relative w-[70%]">
             <label
               htmlFor="3"
               className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -152,6 +171,7 @@ export default function ProteinCalculator() {
               Age
             </label>
             <input
+              value={age}
               id="3"
               min="1"
               max="100"
@@ -161,7 +181,7 @@ export default function ProteinCalculator() {
             />
           </div>
           {/* gender */}
-          <div className="group relative w-[70%]">
+          <div className="relative w-[70%]">
             <label
               htmlFor="3"
               className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -193,7 +213,7 @@ export default function ProteinCalculator() {
             </div>
           </div>
           {/* weight */}
-          <div className="group w-[70%]">
+          <div className="w-[70%]">
             <label
               htmlFor="9"
               className="inline-block w-full text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -202,6 +222,7 @@ export default function ProteinCalculator() {
             </label>
             <div className="relative flex items-center">
               <input
+                value={weight}
                 id="9"
                 type="number"
                 min="1"
@@ -224,6 +245,7 @@ export default function ProteinCalculator() {
             {measurementSystem === "metric" ? (
               <div className="relative flex items-center">
                 <input
+                  value={heightCm}
                   id="9"
                   min="40"
                   type="number"
@@ -238,6 +260,7 @@ export default function ProteinCalculator() {
               <div className="flex items-center space-x-2">
                 <div className="relative w-1/2">
                   <input
+                    value={heightFeet}
                     id="9"
                     type="number"
                     min="1"
@@ -253,6 +276,7 @@ export default function ProteinCalculator() {
                 &nbsp;
                 <div className="relative w-1/2">
                   <input
+                    value={heightInches}
                     id="9"
                     type="number"
                     min="0"
@@ -283,9 +307,6 @@ export default function ProteinCalculator() {
                 onChange={(e: any) => setBodyFat(e.target.value)}
                 className="peer relative h-10 w-full rounded-md bg-gray-50 pl-20 pr-4 font-thin outline-none drop-shadow-sm transition-all duration-200 ease-in-out focus:bg-white focus:drop-shadow-lg"
               />
-              <span className="block pt-1 text-xs font-semibold text-gray-500">
-                Calculate with our free tool.
-              </span>
               <button className="absolute left-0 h-10 w-16 rounded-l-md  text-xs font-semibold border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 text-white">
                 %
               </button>
@@ -314,6 +335,10 @@ export default function ProteinCalculator() {
                 </div>
               ))}
             </div>
+            <span className="block pt-1 text-xs font-semibold text-gray-500">
+              We consider each exercise as a 30 minutes minimum of elevated
+              heart rate activity.
+            </span>
           </div>
           {/* goal */}
           <div className="group relative w-[70%]">
@@ -418,35 +443,57 @@ export default function ProteinCalculator() {
           </div>
         </div>
       </div>
-      {tdee > 0 && (
-        <div
-          ref={resultRef}
-          className="group w-[70%] mx-auto group flex flex-col"
-        >
-          <div className="text-2xl font-bold">
-            <p>
-              {goal === "1"
-                ? `Since your goal is weight loss, that would mean a calorie deficit of ${deficitPerday(
-                    deficitLevel
-                  )} kcal per day. Your protein intake should be:`
-                : goal === "2"
-                ? `Since your goal is to maintain your current weight, your protein intake should be:`
-                : `Since your goal is weight gain, that would mean a calorie suficit of ${deficitPerday(
-                    deficitLevel
-                  )} kcal per day. Your protein intake should be:`}
+      <div ref={resultRef} className="group mx-auto group flex flex-col">
+        {tdee > 0 ? (
+          <>
+            <h2 className="font-normal text-center">
+              <strong>Your results:</strong>
+            </h2>
+            <div className="flex w-full justify-center items-center py-8 bg-gray-200 to-gray-200">
+              <div className="max-w-md m-11 p-5 bg-white rounded-3xl">
+                <h3 className="my-6">
+                  💪To{" "}
+                  <span className="text-gradient">
+                    {goal === "1"
+                      ? "Weight loss"
+                      : goal === "2"
+                      ? "Maintain weight"
+                      : "Weight gain"}
+                  </span>
+                </h3>
+                <h3 className="my-6">
+                  🥩
+                  <span className="text-gradient">
+                    {Math.round(protein)}
+                  </span>{" "}
+                  grams per day.
+                </h3>
+                <h3 className="my-0">
+                  🍴
+                  <span className="text-gradient">{Math.round(tdee)}</span> kcal
+                  per day.
+                </h3>
+                <p className="block pt-5 text-sm font-semibold text-gray-500">
+                  {`According to American Dietetic Association (ADA): at least ${Math.round(
+                    weight * 0.8
+                  )} - ${Math.round(weight * 2.2)} grams per day.`}
+                </p>
+                <p className="block pt-1 text-sm font-semibold text-gray-500">
+                  {`According to The Centers for Disease Control and Prevention (CDC): at least ${Math.round(
+                    (tdee * 0.1) / 4
+                  )} - ${Math.round((tdee * 0.35) / 4)} grams per day.`}
+                </p>
+              </div>
+            </div>
+          </>
+        ) : (
+          <div className="flex flex-col">
+            <p className="text-lg text-red-600">
+              Please do the calculation above first.
             </p>
-            <h1 className="text-gradient mb-0">{protein}g per day.</h1>
-            <p>{`According to American Dietetic Association (ADA): at least ${
-              weight * 0.8
-            } - ${weight * 2.2} grams per day.`}</p>
-            <p>{`According to The Centers for Disease Control and Prevention (CDC): at least ${
-              (tdee * 0.1) / 4
-            } - ${((tdee * 0.35) / 4).toFixed(2)} grams per day.`}</p>
-            <p>Your total daily calories should be:</p>
-            <h1 className="text-gradient mb-0">{tdee} kcal.</h1>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </section>
   );
 }

@@ -19,12 +19,12 @@ export default function Navbar() {
           >
             Calculators
           </Link>
-          <Link
+          {/* <Link
             className="logo-animation font-bold no-underline navbar-link"
             href="/posts"
           >
             Blog
-          </Link>
+          </Link> */}
           <Link
             className="logo-animation font-bold no-underline navbar-link"
             href="/about"

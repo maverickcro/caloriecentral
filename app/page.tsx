@@ -22,11 +22,11 @@ export default function Home() {
           alt="Subway calorie nutrition calculator"
         />
         <CalculatorCard
-          title="Cal Calc - TDEE Calculator"
+          title="TDEE Calculator"
           href="/tdee-calculator"
           description="Learn How Many Calories You Burn Every Day Just For Existing."
           src="/tdee-calculator.png"
-          alt="Cal Calc - TDEE calculator"
+          alt="TDEE calculator"
         />
         <CalculatorCard
           title="Calorie Deficit Calculator"
@@ -36,12 +36,19 @@ export default function Home() {
           alt="Calorie Deficit Calculator"
         />
         <CalculatorCard
+          title="Protein Intake Calculator"
+          href="/protein-calculator"
+          description="Calculate the optimal protein intake wheter you are on a weight loss, maintain weight or want to build muscle."
+          src="/protein-calculator.png"
+          alt="Protein Intake Calculator"
+        />
+        {/* <CalculatorCard
           title="Macro Calculator"
           href="/macro-calculator"
           description="Optimize your protein, carbohydrate, and fat intake simultaneously for maximum muscle gain and fat loss."
           src="/macro-calculator.png"
           alt="Macro Calculator"
-        />
+        /> */}
         <CalculatorCard
           title="Fasting Calculator"
           href="/fasting-calculator"
@@ -64,12 +71,12 @@ export default function Home() {
           <CustomButton type={"gradient"} label="VIEW ALL CALCULATORS" />
         </Link>
       </div>
-      <LandingPagePosts />
+      {/* <LandingPagePosts />
       <div className="w-full flex justify-center pb-12">
         <Link href="/posts">
           <CustomButton type={"gradient"} label="VIEW ALL POSTS" />
         </Link>
-      </div>
+      </div> */}
       <AboutMeSection />
     </main>
   );
