@@ -66,11 +66,11 @@ export default function PostList() {
       </span>
       <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 py-12">
         <CalculatorCard
-          title="Cal Calc - TDEE Calculator"
+          title="TDEE Calculator"
           href="/tdee-calculator"
           description="Learn How Many Calories You Burn Every Day Just For Existing."
           src="/tdee-calculator.png"
-          alt="Cal Calc - TDEE calculator"
+          alt="TDEE calculator"
         />
         <CalculatorCard
           title="Calorie Deficit Calculator"

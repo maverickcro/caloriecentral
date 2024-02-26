@@ -26,30 +26,89 @@ export default function Calculator() {
           <li>
             <Link
               rel="nofollow"
-              href="https://pubmed.ncbi.nlm.nih.gov/16004827/"
+              href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6492513/"
             >
-              Manore MM. Exercise and the Institute of Medicine recommendations
-              for nutrition. Curr Sports Med Rep. 2005 Aug;4(4):193-8. doi:
-              10.1097/01.csmr.0000306206.72186.00. PMID: 16004827.
+              Richter M, Baerlocher K, Bauer JM, Elmadfa I, Heseker H,
+              Leschik-Bonnet E, Stangl G, Volkert D, Stehle P; on behalf of the
+              German Nutrition Society (DGE). Revised Reference Values for the
+              Intake of Protein. Ann Nutr Metab. 2019;74(3):242-250. doi:
+              10.1159/000499374. Epub 2019 Mar 22. PMID: 30904906; PMCID:
+              PMC6492513.
+            </Link>
+          </li>
+          <li>
+            <Link rel="nofollow" href="https://bjsm.bmj.com/content/52/6/376">
+              Morton RW, Murphy KT, McKellar SR, et alA systematic review,
+              meta-analysis and meta-regression of the effect of protein
+              supplementation on resistance training-induced gains in muscle
+              mass and strength in healthy adultsBritish Journal of Sports
+              Medicine 2018;52:376-384.
             </Link>
           </li>
           <li>
             <Link
               rel="nofollow"
-              href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4224210/"
+              href="https://retractionwatch.com/2021/02/12/eleven-papers-corrected-after-nutrition-prof-fails-to-disclose-patent-company-ties/"
             >
-              Slavin J, Carlson J. Carbohydrates. Adv Nutr. 2014 Nov
-              14;5(6):760-1. doi: 10.3945/an.114.006163. PMID: 25398736; PMCID:
-              PMC4224210.
+              Eleven papers corrected after nutrition prof fails to disclose
+              patent, company ties
             </Link>
           </li>
           <li>
             <Link
               rel="nofollow"
-              href="https://www.ncbi.nlm.nih.gov/books/NBK459280/"
+              href="https://pubmed.ncbi.nlm.nih.gov/28698222/"
             >
-              Julie E. Holesh; Sanah Aslam; Andrew Martin. Physiology,
-              Carbohydrates. 2023 May 12;
+              2018 - Morton RW, Murphy KT, McKellar SR, Schoenfeld BJ,
+              Henselmans M, Helms E, Aragon AA, Devries MC, Banfield L, Krieger
+              JW, Phillips SM. A systematic review, meta-analysis and
+              meta-regression of the effect of protein supplementation on
+              resistance training-induced gains in muscle mass and strength in
+              healthy adults. Br J Sports Med. 2018 Mar;52(6):376-384. doi:
+              10.1136/bjsports-2017-097608. Epub 2017 Jul 11. Erratum in: Br J
+              Sports Med. 2020 Oct;54(19):e7. PMID: 28698222; PMCID: PMC5867436.
+            </Link>
+          </li>
+          <li>
+            <Link
+              rel="nofollow"
+              href="https://pubmed.ncbi.nlm.nih.gov/22150425/"
+            >
+              2011 - Phillips SM, Van Loon LJ. Dietary protein for athletes:
+              from requirements to optimum adaptation. J Sports Sci. 2011;29
+              Suppl 1:S29-38. doi: 10.1080/02640414.2011.619204. PMID: 22150425.
+            </Link>
+          </li>
+          <li>
+            <Link
+              rel="nofollow"
+              href="https://pubmed.ncbi.nlm.nih.gov/17111010/"
+            >
+              Hartman JW, Moore DR, Phillips SM. Resistance training reduces
+              whole-body protein turnover and improves net protein retention in
+              untrained young males. Appl Physiol Nutr Metab. 2006
+              Oct;31(5):557-64. doi: 10.1139/h06-031. PMID: 17111010.
+            </Link>
+          </li>
+          <li>
+            <Link
+              rel="nofollow"
+              href="https://pubmed.ncbi.nlm.nih.gov/18577776/"
+            >
+              2007 - Phillips SM, Moore DR, Tang JE. A critical examination of
+              dietary protein requirements, benefits, and excesses in athletes.
+              Int J Sport Nutr Exerc Metab. 2007 Aug;17 Suppl:S58-76. doi:
+              10.1123/ijsnem.17.s1.s58. PMID: 18577776.
+            </Link>
+          </li>
+          <li>
+            <Link
+              rel="nofollow"
+              href="https://pubmed.ncbi.nlm.nih.gov/15212752/"
+            >
+              2004 - Phillips SM. Protein requirements and supplementation in
+              strength sports. Nutrition. 2004 Jul-Aug;20(7-8):689-95. doi:
+              10.1016/j.nut.2004.04.009. PMID: 15212752.
             </Link>
           </li>
         </ul>

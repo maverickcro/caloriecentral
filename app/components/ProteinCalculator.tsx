@@ -2,6 +2,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import CustomButton from "./CustomButton"; // Assuming you have a CustomButton component
 import { activityLevels } from "../../lib/data";
+import Image from "next/image";
 
 export default function ProteinCalculator() {
   const resultRef = useRef<HTMLDivElement>(null);
@@ -464,7 +465,9 @@ export default function ProteinCalculator() {
                 <h3 className="my-6">
                   🥩
                   <span className="text-gradient">
-                    {Math.round(protein)}
+                    {measurementSystem === "metric"
+                      ? Math.round(weight * 1.6)
+                      : Math.round(weight * 0.72)}
                   </span>{" "}
                   grams per day.
                 </h3>
@@ -493,6 +496,224 @@ export default function ProteinCalculator() {
             </p>
           </div>
         )}
+        <p>
+          In today&apos;s society, <strong>protein</strong> has taken a center
+          stage. It is the most important point of nutritional discussions,
+          diets and even culinary innovation. Everywhere you look, from local
+          supermarkets to that cool coffee place, protein is incorporated in{" "}
+          <strong>every conceivable</strong> way. From meat, tofu, to snacks
+          like protein chips, ice creams and even protein coffee. Where did all
+          this craze come from?
+        </p>
+        <p>
+          But with all this protein obsession, it is crucial to sift through the
+          hype and uncover <strong>scientific truths</strong> about our actual
+          protein needs and how best to incorporate it into our diets in a{" "}
+          <strong>balanced manner</strong>, whether you are building muscle or
+          on a weight loss.
+        </p>
+        <h2>Why this much?</h2>
+        <p>
+          We will provide you with our personal <strong>unbiased</strong>{" "}
+          recommendation and the one that is being recommended to you from
+          American Dietetic Association and The Centers for Disease Control and
+          Prevention. You decide for youself <strong>what works best</strong>{" "}
+          for you.
+        </p>
+        <ul>
+          <li>
+            <strong>Body Weight Consideration:</strong> The American Dietetic
+            Association (ADA) recommends a protein intake ranging from a minimum
+            of <strong>0.8 grams</strong> to a maximum of{" "}
+            <strong>2.2 grams</strong> per kilogram of body weight per day. This
+            range accommodates varying levels of activity and physiological
+            needs.
+          </li>
+          <li>
+            <strong>Total Energy Expenditure Alignment:</strong> The Centers for
+            Disease Control and Prevention (CDC) suggest that your protein
+            intake should constitute between <strong>10% and 35%</strong> of
+            your TDEE. This is calculated by taking your TDEE, determining the
+            caloric contribution from protein (at 4 calories per gram), and
+            converting this into the weight of protein required per day.
+          </li>
+        </ul>
+        <p>
+          Minimum protein requirements per day, recommended dietary allowance
+          based on age:
+        </p>
+        <table className="w-full border-collapse border border-blue-500 max-w-xl mt-16 mx-auto">
+          <thead>
+            <tr className="bg-blue-500">
+              <th className="py-2 px-4 text-white text-left">Age</th>
+              <th className="py-2 px-4 text-white text-left">
+                Protein Needed (grams/day)
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="bg-white border-b border-blue-500">
+              <td className="py-2 px-4">Age 1 - 3</td>
+              <td className="py-2 px-4">13</td>
+            </tr>
+            <tr className="bg-white border-b border-blue-500">
+              <td className="py-2 px-4">Age 4 - 8</td>
+              <td className="py-2 px-4">19</td>
+            </tr>
+            <tr className="bg-white border-b border-blue-500">
+              <td className="py-2 px-4">Age 9 - 13</td>
+              <td className="py-2 px-4">34</td>
+            </tr>
+            <tr className="bg-white border-b border-blue-500">
+              <td className="py-2 px-4">Age 14 - 18 (Girls)</td>
+              <td className="py-2 px-4">46</td>
+            </tr>
+            <tr className="bg-white border-b border-blue-500">
+              <td className="py-2 px-4">Age 14 - 18 (Boys)</td>
+              <td className="py-2 px-4">52</td>
+            </tr>
+            <tr className="bg-white border-b border-blue-500">
+              <td className="py-2 px-4">Age 19 - 70+ (Women)</td>
+              <td className="py-2 px-4">46</td>
+            </tr>
+            <tr className="bg-white">
+              <td className="py-2 px-4">Age 19 - 70+ (Men)</td>
+              <td className="py-2 px-4">56</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2>How much protein for muscle gain?</h2>
+        <p>
+          You heard it over the years. One gram per pound of weight. Two grams
+          per kilogram. We gave you our recommendation and the global
+          recommendation ranges.
+        </p>
+        <p>
+          Based on the information from the <strong>latest</strong> interview
+          with Dr. Stuart Phillips, the <strong>most cited scientist</strong>{" "}
+          behind protein intake in the last 20 years:
+        </p>
+        <ul>
+          <li>
+            <strong>Protein Intake</strong>: For those looking to gain muscle
+            while also losing fat, Phillips suggests a protein intake of up to{" "}
+            <strong>(2-2.5 grams per kilogram)</strong> of body weight per day,
+            distributed across approximately four meals. This higher protein
+            intake, particularly post-workout, may be more critical when in a
+            calorie deficit.
+          </li>
+        </ul>
+        <h3>Do I need one gram of protein per pound?</h3>
+        <p>
+          It&apos;s almost impossible to find a scientific research on this
+          topic without this guy in the past 20 years. He had his fingers in
+          everything. But here is a small breakdown over the years. You can find
+          every paper in references on the bottom of this calculator.
+        </p>
+        <ul>
+          <li>2004. they recommend 1.0 - 1.3g per kg</li>
+          <li>2007. they recommend 1.2 - 1.6g per kg</li>
+          <li>2011. they recommend 1.3 - 1.8g per kg</li>
+          <li>2018. they recommend 1.62 - 2.2g per kg</li>
+          <li>
+            Today they recommend <strong>2.0 - 2.5g per kg</strong>
+          </li>
+        </ul>
+        <p>
+          How did they go from <strong>1 gram to 2.5 grams</strong> in just
+          under 20 years? Well, maybe humans evolved? Better scientific methods
+          or something third? We kept digging further.
+        </p>
+        <p>
+          Apparently, just recently, 11 papers from Dr. Phillips were corrected
+          because of <strong>conflicts of interest</strong>. He was a founder of
+          a popular whey protein for elderly people and athletes.
+        </p>
+        <h3 className="mb-16">
+          The same guy telling you to eat more protein is directly profiting
+          from selling you the protein.
+        </h3>
+        <p>
+          The word of mouth spreads really fast. Fitness industry and
+          influencers need their profits. It&apos;s easier to recommend 2 grams
+          to sell more, than keep it in normal limits. That is just{" "}
+          <strong>too much protein</strong>. It&apos;s not sustainable neither
+          physically nor financially.
+        </p>
+        <h2>Okay, again, how much protein do I actually need?</h2>
+
+        <p>
+          The accompanying graph is derived from a{" "}
+          <strong>
+            systematic review, meta-analysis, and meta-regression study
+          </strong>{" "}
+          published in the <em>British Journal of Sports Medicine</em> in March
+          2018. The study, titled{" "}
+          <em>
+            A systematic review, meta-analysis and meta-regression of the effect
+            of protein supplementation on resistance training-induced gains in
+            muscle mass and strength in healthy adults,
+          </em>{" "}
+          analyzes how dietary protein supplementation affects muscle gains in
+          individuals engaged in resistance training.
+        </p>
+        <p>
+          This research is critical in providing evidence-based guidelines for{" "}
+          <strong>optimal protein intake</strong> for muscle hypertrophy,
+          particularly in resistance-trained individuals. The graph specifically
+          illustrates the relationship between total daily protein intake and
+          changes in fat-free mass(muscle).
+        </p>
+        <div className="flex justify-center">
+          <Image
+            alt="Protein recommendation grams"
+            src="/grafss.png"
+            width={500}
+            height={250}
+          />
+        </div>
+        <>
+          <p>
+            <strong>The graph</strong> suggests a correlation between protein
+            intake and muscle gain. The optimal protein intake for muscle gain
+            is indicated at <strong>1.6 g/kg/day</strong>, where the increase in
+            fat-free mass levels off.
+          </p>
+          <p>
+            Here&apos;s why <strong>1.6 g/kg/day</strong> is significant:
+          </p>
+          <ul>
+            <li>
+              It represents a balance between sufficient protein for muscle
+              growth and the body&apos;s ability to utilize it effectively.
+            </li>
+            <li>
+              Intakes <strong>above</strong> this level do NOT significantly
+              increase muscle mass, indicating a <strong>plateau</strong> in the
+              protein&apos;s effectiveness for muscle synthesis.
+            </li>
+            <li>
+              This level is seen as optimal in the data, but individual needs
+              may vary.
+            </li>
+          </ul>
+
+          <p>
+            <strong>Always consult a healthcare provider</strong> for
+            personalized nutritional advice.
+          </p>
+        </>
+        <h2>Final recommendations</h2>
+        <p>
+          When building muscle, <strong>1.6 grams per kg</strong> or{" "}
+          <strong>0.72 grams per pound</strong> of body weight daily. But{" "}
+          <strong>don&apos;t worry</strong> too much about numbers. Always try
+          to have regular meals with protein sources like{" "}
+          <strong>meat, tofu, cheese, eggs</strong> etc. With this tactic you
+          will ensure a constant protein intake which is permentantly
+          sustainable. As always, be <strong>consistent</strong> in your
+          training and diet and results are <strong>inevitable</strong>.
+        </p>
       </div>
     </section>
   );

@@ -1,7 +1,6 @@
 import getFormattedDate from "@/lib/getFormattedDate";
 import { getSortedPostsData, getPostData } from "@/lib/posts";
 import { notFound } from "next/navigation";
-import Link from "next/link";
 import Image from "next/image";
 import SocialShareButtons from "@/app/components/SocialButtons";
 import AboutMeSection from "@/app/components/AboutMeSection";
