@@ -3,6 +3,7 @@ import React, { useState, useRef, useEffect } from "react";
 import CustomButton from "./CustomButton"; // Assuming you have a CustomButton component
 import { activityLevels } from "../../lib/data";
 import Image from "next/image";
+import GoToTop from "./GoToTop";
 
 export default function ProteinCalculator() {
   const resultRef = useRef<HTMLDivElement>(null);
@@ -132,7 +133,7 @@ export default function ProteinCalculator() {
       <div className="bg-gray-200 to-gray-200 py-16 px-2">
         <div className="grid w-full grid-cols-1 place-items-center space-y-6">
           {/* measurement system */}
-          <div className="relative w-[70%]">
+          <div className="relative w-full  md:w-[70%]">
             <label
               htmlFor="3"
               className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -164,7 +165,7 @@ export default function ProteinCalculator() {
             </div>
           </div>
           {/* age */}
-          <div className="relative w-[70%]">
+          <div className="relative w-full  md:w-[70%]">
             <label
               htmlFor="3"
               className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -182,7 +183,7 @@ export default function ProteinCalculator() {
             />
           </div>
           {/* gender */}
-          <div className="relative w-[70%]">
+          <div className="relative w-full  md:w-[70%]">
             <label
               htmlFor="3"
               className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -214,7 +215,7 @@ export default function ProteinCalculator() {
             </div>
           </div>
           {/* weight */}
-          <div className="w-[70%]">
+          <div className="w-full  md:w-[70%]">
             <label
               htmlFor="9"
               className="inline-block w-full text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -236,7 +237,7 @@ export default function ProteinCalculator() {
             </div>
           </div>
           {/* height */}
-          <div className="group w-[70%]">
+          <div className="w-full  md:w-[70%]">
             <label
               htmlFor="9"
               className="inline-block w-full text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -294,7 +295,7 @@ export default function ProteinCalculator() {
             )}
           </div>
           {/* bodyFat */}
-          <div className="group w-[70%]">
+          <div className="w-full  md:w-[70%]">
             <label
               htmlFor="9"
               className="inline-block w-full text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -314,7 +315,7 @@ export default function ProteinCalculator() {
             </div>
           </div>
           {/* activity */}
-          <div className="group w-[70%]">
+          <div className="w-full  md:w-[70%]">
             <label
               htmlFor="10"
               className="inline-block w-full text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -342,7 +343,7 @@ export default function ProteinCalculator() {
             </span>
           </div>
           {/* goal */}
-          <div className="group relative w-[70%]">
+          <div className="relative w-full  md:w-[70%]">
             <label
               htmlFor="3"
               className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -451,7 +452,7 @@ export default function ProteinCalculator() {
               <strong>Your results:</strong>
             </h2>
             <div className="flex w-full justify-center items-center py-8 bg-gray-200 to-gray-200">
-              <div className="max-w-md m-11 p-5 bg-white rounded-3xl">
+              <div className="md:max-w-md m-11 p-5 bg-white rounded-3xl">
                 <h3 className="my-6">
                   💪To{" "}
                   <span className="text-gradient">
@@ -703,7 +704,7 @@ export default function ProteinCalculator() {
             personalized nutritional advice.
           </p>
         </>
-        <h2>Final recommendations</h2>
+        <h2>Conclusion</h2>
         <p>
           When building muscle, <strong>1.6 grams per kg</strong> or{" "}
           <strong>0.72 grams per pound</strong> of body weight daily. But{" "}
@@ -715,6 +716,7 @@ export default function ProteinCalculator() {
           training and diet and results are <strong>inevitable</strong>.
         </p>
       </div>
+      <GoToTop />
     </section>
   );
 }

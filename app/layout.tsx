@@ -1,13 +1,15 @@
-import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
-export const metadata: Metadata = {
-  title: "CaloriePal",
-  description: "When did calories become a bad thing?",
+export const metadata = {
+  title: {
+    template: "%s - CaloriePal",
+  },
+  description: {
+    template: "%s",
+  },
 };
-
 export default function RootLayout({
   children,
 }: {

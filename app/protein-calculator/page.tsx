@@ -5,6 +5,11 @@ import Link from "next/link";
 import AboutMeSection from "../components/AboutMeSection";
 import CalculatorCard from "../components/CalculatorCard";
 
+export const metadata = {
+  title: "Protein Intake Calculator",
+  description: "Proteins suck",
+};
+
 export default function Calculator() {
   return (
     <main>
