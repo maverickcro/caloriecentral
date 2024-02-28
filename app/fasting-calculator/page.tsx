@@ -3,6 +3,24 @@ import CalculatorComponent from "../components/FastingCalculator";
 import Link from "next/link";
 import AboutMeSection from "../components/AboutMeSection";
 
+export const metadata = {
+  title: "Fasting Calculator - Plan Intermittent Fasting",
+  description:
+    "Plan and monitor your fasting schedule with our intuitive Fasting Calculator. Ideal for intermittent fasting, weight loss, and health improvement.",
+  keywords: [
+    "fasting calculator",
+    "intermittent fasting planner",
+    "fasting schedule tracker",
+    "IF calculator",
+    "weight loss fasting tool",
+    "health fasting guide",
+    "fasting hours calculator",
+    "fasting time tracker",
+    "fasting for health",
+    "intermittent fasting calculator",
+  ],
+};
+
 export default function Calculator() {
   return (
     <section className="mt-6 mx-auto px-6 prose  max-w-4xl prose-xl prose-slate">

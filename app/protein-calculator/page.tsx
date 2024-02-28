@@ -7,7 +7,20 @@ import CalculatorCard from "../components/CalculatorCard";
 
 export const metadata = {
   title: "Protein Intake Calculator",
-  description: "Proteins suck",
+  description:
+    "Calculate your daily protein intake for weight loss and muscle gain. Quick, easy tool for your diet and fitness goals.",
+  keywords: [
+    "protein intake calculator",
+    "daily protein needs",
+    "muscle building diet",
+    "weight loss protein",
+    "optimal protein for fitness",
+    "calculate protein intake",
+    "diet and fitness tool",
+    "nutrition calculator",
+    "protein for weight maintenance",
+    "muscle gain calculator",
+  ],
 };
 
 export default function Calculator() {

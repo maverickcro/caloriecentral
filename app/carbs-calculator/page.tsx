@@ -5,6 +5,24 @@ import CalculatorCard from "../components/CalculatorCard";
 import CustomButton from "../components/CustomButton";
 import AboutMeSection from "../components/AboutMeSection";
 
+export const metadata = {
+  title: "Carbs Intake Calculator",
+  description:
+    "Easily manage carbohydrates for weight loss or gain with our calculator. Ideal for energy, health, and diabetes prevention.",
+  keywords: [
+    "carbs intake calculator",
+    "carbohydrate calculator for diet",
+    "manage carbs for weight loss",
+    "carbs for weight gain",
+    "daily carb requirement calculator",
+    "carb counting tool",
+    "nutritional carb calculator",
+    "carbs for energy and health",
+    "diabetes carb management",
+    "optimal carbs intake guide",
+  ],
+};
+
 export default function Calculator() {
   return (
     <main>

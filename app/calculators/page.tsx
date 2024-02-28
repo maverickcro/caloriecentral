@@ -1,6 +1,30 @@
 import React from "react";
 import CalculatorCard from "../components/CalculatorCard";
 import AboutMeSection from "../components/AboutMeSection";
+
+export const metadata = {
+  title: "Free Calculators for Fitness Goals",
+  description:
+    "A range of free and easy to use calculators to support your fitness journey. Macros? Calories? Weight? Calculate everything.",
+  keywords: [
+    "fitness calculators",
+    "macros calculator",
+    "calorie tracking",
+    "weight management tools",
+    "protein intake calculator",
+    "carbs intake guide",
+    "fat consumption calculator",
+    "daily sugar limit tool",
+    "TDEE calculation",
+    "calorie deficit strategies",
+    "body recomposition macros",
+    "health nutrition calculators",
+    "fasting benefits calculator",
+    "anorexia BMI assessment",
+    "Subway sandwich nutrition",
+  ],
+};
+
 export default function PostList() {
   return (
     <main className="mt-6 mx-auto px-6 max-w-4xl text-center">

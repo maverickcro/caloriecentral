@@ -5,6 +5,24 @@ import AboutMeSection from "../components/AboutMeSection";
 import Link from "next/link";
 import CustomButton from "../components/CustomButton";
 
+export const metadata = {
+  title: "Body Recomposition Calculator",
+  description:
+    "Maximize your fitness results with our Body Recomposition Calculator. Get personalized calorie advice for training and rest days to effectively lose fat and build muscle.",
+  keywords: [
+    "body recomposition calculator",
+    "macro calculator",
+    "fitness calculator",
+    "body recomp calculator",
+    "lose fat and build muscle",
+    "nutrition planner",
+    "macros for training days",
+    "rest day diet calculator",
+    "muscle gain fat loss calculator",
+    "body recomp macros",
+  ],
+};
+
 export default function Calculator() {
   return (
     <main>

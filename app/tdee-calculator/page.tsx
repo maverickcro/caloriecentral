@@ -5,6 +5,24 @@ import AboutMeSection from "../components/AboutMeSection";
 import CalculatorCard from "../components/CalculatorCard";
 import CustomButton from "../components/CustomButton";
 
+export const metadata = {
+  title: "TDEE Calculator",
+  description:
+    "Accurately calculate your Total Daily Energy Expenditure to measure how many calories your burn per day based on your activity.",
+  keywords: [
+    "TDEE calculator",
+    "daily calorie needs",
+    "calorie burn calculator",
+    "total daily energy expenditure",
+    "diet planning tool",
+    "calorie maintenance calculator",
+    "weight management calculator",
+    "calorie tracker for weight loss",
+    "exercise calorie counter",
+    "nutritional planning aid",
+  ],
+};
+
 export default function Calculator() {
   return (
     <main>

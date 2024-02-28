@@ -270,20 +270,36 @@ export default function AnorexicBMICalculator() {
             </h1>
             <p
               className={`text-lg ${
-                bmi >= 17.5 ? "text-green-600" : "text-red-600"
+                bmi < 18.5
+                  ? "text-red-600"
+                  : bmi < 25
+                  ? "text-green-600"
+                  : bmi < 30
+                  ? "text-orange-500"
+                  : bmi < 35
+                  ? "text-orange-600"
+                  : bmi < 40
+                  ? "text-orange-700"
+                  : "text-red-700"
               }`}
             >
               Your Body Mass Index (BMI) suggests that you are in the{" "}
               <span className="font-semibold">
-                {bmi < 15
-                  ? "extremely low"
-                  : bmi < 16
-                  ? "severe"
-                  : bmi < 17
-                  ? "moderate"
-                  : bmi < 17.5
-                  ? "mild"
-                  : "normal"}
+                {bmi < 16
+                  ? "extremely underweight"
+                  : bmi < 16.9
+                  ? "underweight (risk of anorexia)"
+                  : bmi < 18.5
+                  ? "underweight"
+                  : bmi < 25
+                  ? "normal"
+                  : bmi < 30
+                  ? "overweight"
+                  : bmi < 35
+                  ? "obese (Class I)"
+                  : bmi < 40
+                  ? "obese (Class II - severe)"
+                  : "obese (Class III - very severe)"}
               </span>{" "}
               weight category for your height.
             </p>

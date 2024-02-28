@@ -3,6 +3,24 @@ import CalculatorComponent from "../components/AnorexicBMICalculator";
 import Link from "next/link";
 import AboutMeSection from "../components/AboutMeSection";
 
+export const metadata = {
+  title: "Anorexic BMI Calculator",
+  description:
+    "Use our calculator to safely understand BMI related to anorexia for better health management.",
+  keywords: [
+    "anorexic BMI calculator",
+    "BMI for anorexia assessment",
+    "health management BMI tool",
+    "anorexia nervosa BMI guide",
+    "underweight BMI calculator",
+    "eating disorder BMI check",
+    "BMI diagnostic tool for anorexia",
+    "anorexia awareness BMI calculator",
+    "BMI health assessment tool",
+    "anorexia nervosa health management",
+  ],
+};
+
 export default function Calculator() {
   return (
     <section className="mt-6 mx-auto px-6 prose  max-w-4xl prose-xl prose-slate">

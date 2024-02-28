@@ -5,6 +5,24 @@ import AboutMeSection from "../components/AboutMeSection";
 import CalculatorCard from "../components/CalculatorCard";
 import CustomButton from "../components/CustomButton";
 
+export const metadata = {
+  title: "Sugar Intake Calculator",
+  description:
+    "Calculate how much sugar you need per day for weight loss or weight gain. Limit calories from sugars with our free tool.",
+  keywords: [
+    "sugar intake calculator",
+    "daily sugar limit",
+    "sugar consumption for weight loss",
+    "limit calories from sugar",
+    "sugar and health risks",
+    "American Heart Association sugar guidelines",
+    "sugar intake for weight gain",
+    "monitor sugar consumption",
+    "nutrient-poor foods and sugar",
+    "caloric surplus and sugar",
+  ],
+};
+
 export default function Calculator() {
   return (
     <main>

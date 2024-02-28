@@ -5,6 +5,24 @@ import AboutMeSection from "../components/AboutMeSection";
 import CalculatorCard from "../components/CalculatorCard";
 import CustomButton from "../components/CustomButton";
 
+export const metadata = {
+  title: "Fat Intake Calculator",
+  description:
+    "Calculate how much fat you need per day for weight loss or weight gain. Learn about good and bad fats and how important they are.",
+  keywords: [
+    "fat intake calculator",
+    "daily fat requirement",
+    "healthy fats guide",
+    "calculate fat for diet",
+    "weight loss fat intake",
+    "weight gain fat calculator",
+    "good vs bad fats",
+    "dietary fat calculator",
+    "nutrition fat calculator",
+    "fat intake for muscle gain",
+  ],
+};
+
 export default function Calculator() {
   return (
     <main>

@@ -1,29 +1,28 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 
-export default function Contact() {
-  const [formState, setFormState] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+export const metadata = {
+  title: "Disclaimer",
+  description:
+    "Read our disclaimer for understanding the scope of information provided by CaloriePal's website and its intended use.",
+  keywords: [
+    "CaloriePal disclaimer",
+    "health information disclaimer",
+    "website liability notice",
+    "general information disclaimer",
+    "calorie advice disclaimer",
+    "nutritional information caution",
+    "fitness information notice",
+    "CaloriePal website terms",
+    "medical advice disclaimer",
+    "health service disclaimer",
+  ],
+};
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormState((prevState) => ({ ...prevState, [name]: value }));
-  };
-
-  const mailtoLink = `mailto:mav3ricktv@gmail.com?subject=${encodeURIComponent(
-    "Message from " + (formState.name || "Anonymous")
-  )}&body=${encodeURIComponent(formState.message)}`;
-
+export default function Disclaimer() {
   return (
     <main className="mt-6 mx-auto px-6 prose max-w-4xl prose-xl prose-slate">
-      <h1 className="text-2xl font-bold text-gradient mb-2">
-        CaloriePal Disclaimer
-      </h1>
+      <h1 className="font-bold text-gradient mb-2">CaloriePal Disclaimer</h1>
       <span className="block pt-1 text-xs font-semibold text-gray-500">
         Updated: Jan 23, 2024
       </span>

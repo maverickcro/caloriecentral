@@ -2,6 +2,25 @@ import React from "react";
 import CalculatorComponent from "../components/SubwayCalculator";
 import Link from "next/link";
 import AboutMeSection from "../components/AboutMeSection";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Subway Sandwich Nutrition and Calorie Calculator 2024",
+  description:
+    "Calculate nutritional information and calories for your favorite Subway sandwiches and wraps with our 2024 updated tool.",
+  keywords: [
+    "Subway calorie calculator",
+    "Subway nutrition facts",
+    "Subway sandwich calories",
+    "Subway menu calculator",
+    "2024 Subway nutrition",
+    "Subway meal planner",
+    "Subway diet calculator",
+    "Subway calories 2024",
+    "Healthy Subway choices",
+    "Subway nutrition calculator",
+  ],
+};
 
 export default function Calculator() {
   return (
