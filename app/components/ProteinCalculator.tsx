@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
-import CustomButton from "./CustomButton"; // Assuming you have a CustomButton component
+import CustomButton from "./CustomButton";
 import { activityLevels } from "../../lib/data";
 import Image from "next/image";
 import GoToTop from "./GoToTop";
@@ -451,31 +451,31 @@ export default function ProteinCalculator() {
             <h2 className="font-normal text-center">
               <strong>Your results:</strong>
             </h2>
-            <div className="flex w-full justify-center items-center py-8 bg-gray-200 to-gray-200">
+            <div className="flex w-full justify-center items-center py-2 rounded-3xl bg-gray-200 to-gray-200">
               <div className="md:max-w-md m-11 p-5 bg-white rounded-3xl">
                 <h3 className="my-6">
-                  💪To{" "}
+                  💪 For{" "}
                   <span className="text-gradient">
                     {goal === "1"
                       ? "Weight loss"
                       : goal === "2"
-                      ? "Maintain weight"
+                      ? "Weight maintenance"
                       : "Weight gain"}
                   </span>
                 </h3>
                 <h3 className="my-6">
-                  🥩
+                  🥩{" "}
                   <span className="text-gradient">
                     {measurementSystem === "metric"
                       ? Math.round(weight * 1.6)
                       : Math.round(weight * 0.72)}
                   </span>{" "}
-                  grams per day.
+                  grams per day
                 </h3>
                 <h3 className="my-0">
-                  🍴
+                  🍴 with a{" "}
                   <span className="text-gradient">{Math.round(tdee)}</span> kcal
-                  per day.
+                  diet.
                 </h3>
                 <p className="block pt-5 text-sm font-semibold text-gray-500">
                   {`According to American Dietetic Association (ADA): at least ${Math.round(

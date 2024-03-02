@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
-import CustomButton from "./CustomButton"; // Assuming you have a CustomButton component
+import CustomButton from "./CustomButton";
 import { activityLevels } from "../../lib/data";
 
 export default function TDEECalculator() {

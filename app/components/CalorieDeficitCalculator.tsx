@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
-import CustomButton from "./CustomButton"; // Assuming you have a CustomButton component
+import CustomButton from "./CustomButton";
 import { activityLevels } from "../../lib/data";
 
 export default function CalorieDeficitCalculator() {
@@ -400,28 +400,39 @@ export default function CalorieDeficitCalculator() {
       </div>
 
       <div ref={resultRef} className="group mx-auto group flex flex-col">
-        {deficit > 0 ? (
-          //  && weightGoal > 0
-          <div className="flex flex-col">
-            <h2>Your daily calorie intake:</h2>
-            <span>If you want to lose {deficitWeight()} per week:</span>
-
-            <h1 className="text-gradient mt-0">
-              {Math.round(tdee - deficit)} kcal.
-            </h1>
-
-            {weightGoal > 0 && (
-              <>
-                <span>
-                  How long will it take to get to {weightGoal}{" "}
-                  {`${measurementSystem === "metric" ? "kg" : "pounds"}`}?
-                </span>
-                <h2 className="text-gradient mt-0">
-                  {goalDays} days, {goalDate}
-                </h2>
-              </>
-            )}
-          </div>
+        {tdee > 0 && deficit > 0 ? (
+          <>
+            <h2 className="font-normal text-center">
+              <strong>Your results:</strong>
+            </h2>
+            <div className="flex w-full justify-center items-center py-2 rounded-3xl bg-gray-200 to-gray-200">
+              <div className="md:max-w-lg m-11 p-5 bg-white rounded-3xl">
+                <h3 className="my-6">
+                  💪 For{" "}
+                  <span className="text-gradient">{deficitWeight()}</span> loss
+                  per week,
+                </h3>
+                <h3 className="my-6">
+                  🍴 eat{" "}
+                  <span className="text-gradient">
+                    {Math.round(tdee - deficit)}
+                  </span>{" "}
+                  kcal per day.
+                </h3>
+                {weightGoal > 0 && (
+                  <>
+                    <h3 className="my-6">
+                      ⌛ Goal weight in{" "}
+                      <span className="text-gradient">{goalDays}</span> days,
+                    </h3>
+                    <h3 className="my-6">
+                      📅 on <span className="text-gradient">{goalDate}</span>.
+                    </h3>
+                  </>
+                )}
+              </div>
+            </div>
+          </>
         ) : (
           <div className="flex flex-col">
             <p className="text-lg text-red-600">

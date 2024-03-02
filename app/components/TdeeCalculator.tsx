@@ -1,8 +1,9 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
-import CustomButton from "./CustomButton"; // Assuming you have a CustomButton component
+import CustomButton from "./CustomButton";
 import { activityLevels } from "../../lib/data";
 import GoToTop from "./GoToTop";
+import Link from "next/link";
 
 export default function TDEECalculator() {
   const resultRef = useRef<HTMLDivElement>(null);
@@ -327,23 +328,39 @@ export default function TDEECalculator() {
       </div>
       <div ref={resultRef} className="group mx-auto group flex flex-col">
         {tdee > 0 ? (
-          <div className="flex flex-col">
-            <h2>Your TDEE is:&nbsp;</h2>
-            <h2 className="text-gradient mt-0">{tdee}&nbsp;kcal per day.</h2>
+          <>
+            <h2 className="font-normal text-center">
+              <strong>Your results:</strong>
+            </h2>
+            <div className="flex w-full justify-center items-center py-2 rounded-3xl bg-gray-200 to-gray-200">
+              <div className="md:max-w-md m-11 p-5 bg-white rounded-3xl">
+                <h3 className="my-6">
+                  💪Your TDEE is{" "}
+                  <span className="text-gradient">{Math.round(tdee)}</span>{" "}
+                  kcal.
+                </h3>
+                <p className="block pt-5 text-sm font-semibold text-gray-500">
+                  You need this many calories to <strong>maintain</strong> your
+                  weight.
+                </p>
+                <p className="block pt-1 text-sm font-semibold text-gray-500">
+                  To <strong>lose weight</strong>, aim for a calorie intake{" "}
+                  <strong>below</strong> this number.
+                </p>
+                <h3 className="my-6">
+                  🍴 Find out more with our{" "}
+                  <Link
+                    href="/calorie-deficit-calculator"
+                    className="logo-animation text-gradient"
+                  >
+                    Calorie Deficit Calculator
+                  </Link>
+                  .
+                </h3>
+              </div>
+            </div>
             <p>Based on your TDEE, here are some additional insights:</p>
             <ul>
-              <li>
-                To <strong>lose weight</strong>, aim for a calorie intake{" "}
-                <strong>below</strong> this number.
-              </li>
-              <li>
-                To <strong>maintain weight</strong>, eat close to this daily
-                calorie count.
-              </li>
-              <li>
-                To <strong>gain weight</strong>, consume more calories than your
-                TDEE suggests.
-              </li>
               <li>
                 <strong>Macronutrient Breakdown:</strong> For balanced
                 nutrition, target approximately 50% of your calories from
@@ -360,14 +377,14 @@ export default function TDEECalculator() {
               </li>
             </ul>
             <p>
-              In other words, if you eat <strong>{tdee} kcal</strong> daily with
-              your activity level, you will <strong>maintain</strong> your
-              current weight. It helps you figure out how many calories to eat,
-              whether you want to maintain your current weight, become stronger,
-              or lose some weight. It&apos;s like having a map for your food
-              journey.
+              In other words, if you eat{" "}
+              <strong>{Math.round(tdee)} kcal</strong> daily with your activity
+              level, you will <strong>maintain</strong> your current weight. It
+              helps you figure out how many calories to eat, whether you want to
+              maintain your current weight, become stronger, or lose some
+              weight. It&apos;s like having a map for your food journey.
             </p>
-          </div>
+          </>
         ) : (
           <div className="flex flex-col">
             <p className="text-lg text-red-600">

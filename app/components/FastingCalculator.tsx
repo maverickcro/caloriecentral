@@ -351,159 +351,217 @@ export default function FastingCalculator() {
         className="group w-[90%] mx-auto group flex flex-col justify-center"
       >
         {tdee > 0 ? (
-          <div className="flex flex-col">
-            <div className="flex justify-center">
-              <h1 className="text-gradient mb-0">{method}</h1>
+          <>
+            <h2 className="font-normal text-center">
+              <strong>Your results:</strong>
+            </h2>
+            <div className="flex w-full justify-center items-center py-2 rounded-3xl bg-gray-200 to-gray-200">
+              <div className="md:max-w-lg m-11 p-5 bg-white rounded-3xl">
+                <div className="flex flex-col">
+                  <h3 className="my-6">
+                    💪 For <span className="text-gradient">{method}</span>
+                  </h3>
+                  {method === "5/2 Split Diet" ? (
+                    <>
+                      <h3 className="my-0">
+                        🍴 Eat:{" "}
+                        <span className="text-gradient">
+                          {Math.round(tdee)}
+                        </span>{" "}
+                        kcal per day.
+                      </h3>
+                      <p className="block pt-5 text-sm font-semibold text-gray-500">
+                        Daily calorie goal is calculated from your TDEE with{" "}
+                        <Link
+                          href="/tdee-calculator"
+                          className="logo-animation text-gradient"
+                        >
+                          TDEE calculator
+                        </Link>
+                        . Number of calories you use daily while doing
+                        absolutely nothing. With other words - You will lose
+                        these no matter what, you need them daily to maintain
+                        your current weight.
+                      </p>
+                      <table className="w-full border-collapse border border-blue-500 max-w-xl mt-16 mx-auto">
+                        <thead>
+                          <tr className="bg-blue-500">
+                            <th className="py-2 px-4 text-white text-left">
+                              Day
+                            </th>
+                            <th className="py-2 px-4 text-white text-left">
+                              Diet
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr className="bg-white border-b border-blue-500">
+                            <td className="py-2 px-4">Day 1</td>
+                            <td className="py-2 px-4">500-600 kcal</td>
+                          </tr>
+                          <tr className="bg-white border-b border-blue-500">
+                            <td className="py-2 px-4">Day 2</td>
+                            <td className="py-2 px-4">
+                              Your Daily Calorie Goal*
+                            </td>
+                          </tr>
+                          <tr className="bg-white border-b border-blue-500">
+                            <td className="py-2 px-4">Day 3</td>
+                            <td className="py-2 px-4">
+                              Your Daily Calorie Goal*
+                            </td>
+                          </tr>
+                          <tr className="bg-white border-b border-blue-500">
+                            <td className="py-2 px-4">Day 4</td>
+                            <td className="py-2 px-4">500-600 kcal</td>
+                          </tr>
+                          <tr className="bg-white border-b border-blue-500">
+                            <td className="py-2 px-4">Day 5</td>
+                            <td className="py-2 px-4">
+                              Your Daily Calorie Goal*
+                            </td>
+                          </tr>
+                          <tr className="bg-white border-b border-blue-500">
+                            <td className="py-2 px-4">Day 6</td>
+                            <td className="py-2 px-4">
+                              Your Daily Calorie Goal*
+                            </td>
+                          </tr>
+                          <tr className="bg-white border-b border-blue-500">
+                            <td className="py-2 px-4">Day 7</td>
+                            <td className="py-2 px-4">
+                              Your Daily Calorie Goal*
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </>
+                  ) : method === "Alternate day Fasting" ? (
+                    <>
+                      <h3 className="my-0">
+                        🍴 Eat:{" "}
+                        <span className="text-gradient">
+                          {Math.round(tdee)}
+                        </span>{" "}
+                        kcal per day.
+                      </h3>
+                      <p className="block pt-5 text-sm font-semibold text-gray-500">
+                        Daily calorie goal is calculated from your TDEE with{" "}
+                        <Link
+                          href="/tdee-calculator"
+                          className="logo-animation text-gradient"
+                        >
+                          TDEE calculator
+                        </Link>
+                        . Number of calories you use daily while doing
+                        absolutely nothing. With other words - You will lose
+                        these no matter what, you need them daily to maintain
+                        your current weight.
+                      </p>
+                      <table className="w-full border-collapse border border-blue-500 max-w-xl mt-16 mx-auto">
+                        <thead>
+                          <tr className="bg-blue-500">
+                            <th className="py-2 px-4 text-white text-left">
+                              Day
+                            </th>
+                            <th className="py-2 px-4 text-white text-left">
+                              Diet
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr className="bg-white border-b border-blue-500">
+                            <td className="py-2 px-4">Day 1</td>
+                            <td className="py-2 px-4">
+                              Your Daily Calorie Goal*
+                            </td>
+                          </tr>
+                          <tr className="bg-white border-b border-blue-500">
+                            <td className="py-2 px-4">Day 2</td>
+                            <td className="py-2 px-4">24-hour fasting</td>
+                          </tr>
+                          <tr className="bg-white border-b border-blue-500">
+                            <td className="py-2 px-4">Day 3</td>
+                            <td className="py-2 px-4">
+                              Your Daily Calorie Goal*
+                            </td>
+                          </tr>
+                          <tr className="bg-white border-b border-blue-500">
+                            <td className="py-2 px-4">Day 4</td>
+                            <td className="py-2 px-4">24-hour fasting</td>
+                          </tr>
+                          <tr className="bg-white border-b border-blue-500">
+                            <td className="py-2 px-4">Day 5</td>
+                            <td className="py-2 px-4">
+                              Your Daily Calorie Goal*
+                            </td>
+                          </tr>
+                          <tr className="bg-white border-b border-blue-500">
+                            <td className="py-2 px-4">Day 6</td>
+                            <td className="py-2 px-4">24-hour fasting</td>
+                          </tr>
+                          <tr className="bg-white border-b border-blue-500">
+                            <td className="py-2 px-4">Day 7</td>
+                            <td className="py-2 px-4">
+                              Your Daily Calorie Goal*
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </>
+                  ) : (
+                    <>
+                      <div className="font-bold">
+                        <h3 className="my-0">
+                          🍴 Eat:{" "}
+                          <span className="text-gradient">
+                            {Math.round(tdee)}
+                          </span>{" "}
+                          kcal per day.
+                        </h3>
+                        <p className="block pt-5 text-sm font-semibold text-gray-500">
+                          You should eat one to three meals per day in a 8-hour
+                          window. Choose the preferred times below.
+                        </p>
+                      </div>
+                      <table className="w-full border-collapse border border-blue-500 max-w-xl mt-16 mx-auto">
+                        <thead>
+                          <tr className="bg-blue-500">
+                            <th className="py-2 px-4 text-white text-left">
+                              Preferred times
+                            </th>
+                            <th className="py-2 px-4 text-white text-left">
+                              Eating timeframe
+                            </th>
+                            <th className="py-2 px-4 text-white text-left">
+                              Fasting timeframe
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr className="bg-white border-b border-blue-500">
+                            <td className="py-2 px-4">Early in day</td>
+                            <td className="py-2 px-4">8 AM - 4 PM</td>
+                            <td className="py-2 px-4">4 PM - 8 AM next day</td>
+                          </tr>
+                          <tr className="bg-white border-b border-blue-500">
+                            <td className="py-2 px-4">Later in day</td>
+                            <td className="py-2 px-4">3 PM - 11 PM</td>
+                            <td className="py-2 px-4">11 PM - 7 AM next day</td>
+                          </tr>
+                          <tr className="bg-white border-b border-blue-500">
+                            <td className="py-2 px-4">Standard</td>
+                            <td className="py-2 px-4">Noon - 8 PM</td>
+                            <td className="py-2 px-4">8 PM - Noon next day</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </>
+                  )}
+                </div>
+              </div>
             </div>
-            {method === "5/2 Split Diet" ? (
-              <>
-                <div className="">
-                  <p className="mb-0 font-bold">Your Daily Calorie Goal:</p>
-                  <h2 className="text-gradient my-0">{tdee} kcal per day.</h2>
-                  <p>
-                    Daily calorie goal is calculated from your TDEE with{" "}
-                    <Link href="/tdee-calculator">this calculator</Link>. Number
-                    of calories you use daily while doing absolutely nothing.
-                    With other words - You will lose these no matter what, you
-                    need them daily to maintain your current weight.
-                  </p>
-                </div>
-                <table className="w-full border-collapse border border-blue-500 max-w-xl mt-16 mx-auto">
-                  <thead>
-                    <tr className="bg-blue-500">
-                      <th className="py-2 px-4 text-white text-left">Day</th>
-                      <th className="py-2 px-4 text-white text-left">Diet</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr className="bg-white border-b border-blue-500">
-                      <td className="py-2 px-4">Day 1</td>
-                      <td className="py-2 px-4">500-600 kcal</td>
-                    </tr>
-                    <tr className="bg-white border-b border-blue-500">
-                      <td className="py-2 px-4">Day 2</td>
-                      <td className="py-2 px-4">Your Daily Calorie Goal*</td>
-                    </tr>
-                    <tr className="bg-white border-b border-blue-500">
-                      <td className="py-2 px-4">Day 3</td>
-                      <td className="py-2 px-4">Your Daily Calorie Goal*</td>
-                    </tr>
-                    <tr className="bg-white border-b border-blue-500">
-                      <td className="py-2 px-4">Day 4</td>
-                      <td className="py-2 px-4">500-600 kcal</td>
-                    </tr>
-                    <tr className="bg-white border-b border-blue-500">
-                      <td className="py-2 px-4">Day 5</td>
-                      <td className="py-2 px-4">Your Daily Calorie Goal*</td>
-                    </tr>
-                    <tr className="bg-white border-b border-blue-500">
-                      <td className="py-2 px-4">Day 6</td>
-                      <td className="py-2 px-4">Your Daily Calorie Goal*</td>
-                    </tr>
-                    <tr className="bg-white border-b border-blue-500">
-                      <td className="py-2 px-4">Day 7</td>
-                      <td className="py-2 px-4">Your Daily Calorie Goal*</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </>
-            ) : method === "Alternate day Fasting" ? (
-              <>
-                <div className="">
-                  <p className="mb-0 font-bold">Your Daily Calorie Goal:</p>
-                  <h2 className="text-gradient my-0">{tdee} kcal per day.</h2>
-                  <p>
-                    Daily calorie goal is calculated from your TDEE with{" "}
-                    <Link href="/tdee-calculator">this calculator</Link>. Number
-                    of calories you use daily while doing absolutely nothing.
-                    With other words - You will lose these no matter what, you
-                    need them daily to maintain your current weight.
-                  </p>
-                </div>
-                <table className="w-full border-collapse border border-blue-500 max-w-xl mt-16 mx-auto">
-                  <thead>
-                    <tr className="bg-blue-500">
-                      <th className="py-2 px-4 text-white text-left">Day</th>
-                      <th className="py-2 px-4 text-white text-left">Diet</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr className="bg-white border-b border-blue-500">
-                      <td className="py-2 px-4">Day 1</td>
-                      <td className="py-2 px-4">Your Daily Calorie Goal*</td>
-                    </tr>
-                    <tr className="bg-white border-b border-blue-500">
-                      <td className="py-2 px-4">Day 2</td>
-                      <td className="py-2 px-4">24-hour fasting</td>
-                    </tr>
-                    <tr className="bg-white border-b border-blue-500">
-                      <td className="py-2 px-4">Day 3</td>
-                      <td className="py-2 px-4">Your Daily Calorie Goal*</td>
-                    </tr>
-                    <tr className="bg-white border-b border-blue-500">
-                      <td className="py-2 px-4">Day 4</td>
-                      <td className="py-2 px-4">24-hour fasting</td>
-                    </tr>
-                    <tr className="bg-white border-b border-blue-500">
-                      <td className="py-2 px-4">Day 5</td>
-                      <td className="py-2 px-4">Your Daily Calorie Goal*</td>
-                    </tr>
-                    <tr className="bg-white border-b border-blue-500">
-                      <td className="py-2 px-4">Day 6</td>
-                      <td className="py-2 px-4">24-hour fasting</td>
-                    </tr>
-                    <tr className="bg-white border-b border-blue-500">
-                      <td className="py-2 px-4">Day 7</td>
-                      <td className="py-2 px-4">Your Daily Calorie Goal*</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </>
-            ) : (
-              <>
-                <div className="font-bold">
-                  <p className="my-0">Please aim to eat:</p>
-                  <h2 className="text-gradient my-0">{tdee} kcal per day.</h2>
-                  <p>
-                    You should eat one to three meals per day in a 8-hour
-                    window. Choose the preferred times below.
-                  </p>
-                </div>
-                <table className="w-full border-collapse border border-blue-500 max-w-xl mt-16 mx-auto">
-                  <thead>
-                    <tr className="bg-blue-500">
-                      <th className="py-2 px-4 text-white text-left">
-                        Preferred times
-                      </th>
-                      <th className="py-2 px-4 text-white text-left">
-                        Eating timeframe
-                      </th>
-                      <th className="py-2 px-4 text-white text-left">
-                        Fasting timeframe
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr className="bg-white border-b border-blue-500">
-                      <td className="py-2 px-4">Early in day</td>
-                      <td className="py-2 px-4">8 AM - 4 PM</td>
-                      <td className="py-2 px-4">4 PM - 8 AM next day</td>
-                    </tr>
-                    <tr className="bg-white border-b border-blue-500">
-                      <td className="py-2 px-4">Later in day</td>
-                      <td className="py-2 px-4">3 PM - 11 PM</td>
-                      <td className="py-2 px-4">11 PM - 7 AM next day</td>
-                    </tr>
-                    <tr className="bg-white border-b border-blue-500">
-                      <td className="py-2 px-4">Standard</td>
-                      <td className="py-2 px-4">Noon - 8 PM</td>
-                      <td className="py-2 px-4">8 PM - Noon next day</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </>
-            )}
-          </div>
+          </>
         ) : (
           <div className="flex flex-col">
             <p className="text-lg text-red-600">

@@ -443,18 +443,42 @@ export default function SugarCalculator() {
       {/* RESULTS */}
       <div ref={resultRef} className="group mx-auto group flex flex-col">
         {tdee > 0 ? (
-          <div className="flex flex-col">
-            <h2>Your recommended sugar intake per day is:&nbsp;</h2>
-            <span>According to American Heart Association (AHA):</span>
-            <h2 className="text-gradient mt-0">
-              {gender === "male" ? (tdee * 0.07) / 4 : (tdee * 0.05) / 4} grams
-              per day.
+          <>
+            <h2 className="font-normal text-center">
+              <strong>Your results:</strong>
             </h2>
-            <span>According to World Health Organization (WHO):</span>
-            <h2 className="text-gradient mt-0">
-              {(tdee * 0.1) / 4} grams per day.
-            </h2>
-          </div>
+            <div className="flex w-full justify-center items-center py-2 rounded-3xl bg-gray-200 to-gray-200">
+              <div className="md:max-w-md m-11 p-5 bg-white rounded-3xl">
+                <h3 className="my-6">
+                  🍬 According to WHO:
+                  <span className="text-gradient">
+                    {" "}
+                    {Math.round((tdee * 0.1) / 4)}{" "}
+                  </span>
+                  grams per day.
+                </h3>
+                <h3 className="my-6">
+                  🍦 According to AHA:
+                  <span className="text-gradient">
+                    {" "}
+                    {gender === "male"
+                      ? Math.round((tdee * 0.07) / 4)
+                      : Math.round((tdee * 0.05) / 4)}{" "}
+                  </span>
+                  grams per day.
+                </h3>
+                <p className="block pt-5 text-sm font-semibold text-gray-500">
+                  <strong>World Health Organization&apos;s</strong> recommends
+                  less than 10% of total energy intake from
+                </p>
+                <p className="block pt-1 text-sm font-semibold text-gray-500">
+                  <strong>The American Heart Association&apos;s</strong>{" "}
+                  recommendation for limiting added sugars to no more than 5%
+                  calories per day for women and 7% calories per day for men
+                </p>
+              </div>
+            </div>
+          </>
         ) : (
           <div className="flex flex-col">
             <p className="text-lg text-red-600">

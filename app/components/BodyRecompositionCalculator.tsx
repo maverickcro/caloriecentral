@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
-import CustomButton from "./CustomButton"; // Assuming you have a CustomButton component
+import CustomButton from "./CustomButton";
 import { activityLevels } from "../../lib/data";
 import GoToTop from "./GoToTop";
 
@@ -411,24 +411,26 @@ export default function BodyRecompositionCalculator() {
             <h2 className="font-normal text-center">
               <strong>Your results:</strong>
             </h2>
-            <div className="flex flex-col md:flex-row w-full justify-center items-center py-8 bg-gray-200 to-gray-200">
+            <div className="flex flex-col md:flex-row w-full justify-center items-center py-2 rounded-3xl bg-gray-200 to-gray-200">
               <div className="w-1/2 m-11 p-5 bg-white rounded-3xl">
-                <h2 className="my-6">🤾‍♀️Training days:</h2>
+                <h2 className="my-6">🤾‍♀️ Training days:</h2>
                 <h3 className="text-gradient font-bold my-0">
-                  {Math.round(trainingDaysTotalCalories)} kcal
+                  🍴 {Math.round(trainingDaysTotalCalories)} kcal
                 </h3>
-                <p className="my-0">Carbs: {Math.round(trainingCarbs)}g</p>
-                <p className="my-0">Protein: {Math.round(trainingProtein)}g</p>
-                <p className="my-0">Fat: {Math.round(trainingFat)}g</p>
+                <p className="my-0">🥔 Carbs: {Math.round(trainingCarbs)}g</p>
+                <p className="my-0">
+                  🥩 Protein: {Math.round(trainingProtein)}g
+                </p>
+                <p className="my-0">🥜 Fat: {Math.round(trainingFat)}g</p>
               </div>
               <div className="w-1/2 m-11 p-5 bg-white rounded-3xl">
-                <h2 className="my-6">😴Rest days:</h2>
+                <h2 className="my-6">😴 Rest days:</h2>
                 <h3 className="text-gradient font-bold my-0">
-                  {Math.round(restDaysTotalCalories)} kcal
+                  🍴 {Math.round(restDaysTotalCalories)} kcal
                 </h3>
-                <p className="my-0">Carbs: {Math.round(restCarbs)}g</p>
-                <p className="my-0">Protein: {Math.round(restProtein)}g</p>
-                <p className="my-0">Fat: {Math.round(restFat)}g</p>
+                <p className="my-0">🥔 Carbs: {Math.round(restCarbs)}g</p>
+                <p className="my-0">🥩 Protein: {Math.round(restProtein)}g</p>
+                <p className="my-0">🥜 Fat: {Math.round(restFat)}g</p>
               </div>
             </div>
           </>

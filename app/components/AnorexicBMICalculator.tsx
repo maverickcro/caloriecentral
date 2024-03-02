@@ -262,47 +262,58 @@ export default function AnorexicBMICalculator() {
       <div ref={resultRef} className="group mx-auto group flex py-12 flex-col">
         {bmi > 0 ? (
           <>
-            <h1
-              className={`text-gradient mb-0 ${bmi > 0 ? "visible" : "hidden"}`}
-            >
-              Your BMI is:{" "}
-              <span className="text-gradient">{Math.round(bmi)}</span> kg/m²
-            </h1>
-            <p
-              className={`text-lg ${
-                bmi < 18.5
-                  ? "text-red-600"
-                  : bmi < 25
-                  ? "text-green-600"
-                  : bmi < 30
-                  ? "text-orange-500"
-                  : bmi < 35
-                  ? "text-orange-600"
-                  : bmi < 40
-                  ? "text-orange-700"
-                  : "text-red-700"
-              }`}
-            >
-              Your Body Mass Index (BMI) suggests that you are in the{" "}
-              <span className="font-semibold">
-                {bmi < 16
-                  ? "extremely underweight"
-                  : bmi < 16.9
-                  ? "underweight (risk of anorexia)"
-                  : bmi < 18.5
-                  ? "underweight"
-                  : bmi < 25
-                  ? "normal"
-                  : bmi < 30
-                  ? "overweight"
-                  : bmi < 35
-                  ? "obese (Class I)"
-                  : bmi < 40
-                  ? "obese (Class II - severe)"
-                  : "obese (Class III - very severe)"}
-              </span>{" "}
-              weight category for your height.
-            </p>
+            <h2 className="font-normal text-center">
+              <strong>Your results:</strong>
+            </h2>
+            <div className="flex w-full justify-center items-center py-2 rounded-3xl bg-gray-200 to-gray-200">
+              <div className="md:max-w-md m-11 p-5 bg-white rounded-3xl">
+                <h3 className="my-6">
+                  🏋️Your BMI is{" "}
+                  <span className="text-gradient">{Math.round(bmi)}</span>{" "}
+                  kg/m².
+                </h3>
+                <p
+                  className={`block pt-5 text-sm font-semibold ${
+                    bmi < 18.5
+                      ? "text-red-600"
+                      : bmi < 25
+                      ? "text-green-600"
+                      : bmi < 30
+                      ? "text-orange-500"
+                      : bmi < 35
+                      ? "text-orange-600"
+                      : bmi < 40
+                      ? "text-orange-700"
+                      : "text-red-700"
+                  }`}
+                >
+                  Your Body Mass Index (BMI) suggests that you are in the{" "}
+                  <span className="font-semibold">
+                    {bmi < 16
+                      ? "extremely underweight"
+                      : bmi < 16.9
+                      ? "underweight (risk of anorexia)"
+                      : bmi < 18.5
+                      ? "underweight"
+                      : bmi < 25
+                      ? "normal"
+                      : bmi < 30
+                      ? "overweight"
+                      : bmi < 35
+                      ? "obese (Class I)"
+                      : bmi < 40
+                      ? "obese (Class II - severe)"
+                      : "obese (Class III - very severe)"}
+                  </span>{" "}
+                  weight category for your height.
+                </p>
+                <p className="block pt-1 text-sm font-semibold text-gray-500">
+                  This BMI result is <strong>not</strong> an official medical
+                  diagnosis. For a full assessment and health advice, please
+                  <strong> consult</strong> a healthcare professional.
+                </p>
+              </div>
+            </div>
           </>
         ) : (
           <p className="text-lg text-red-600">
@@ -310,11 +321,6 @@ export default function AnorexicBMICalculator() {
           </p>
         )}
 
-        <p className="italic text-sm mt-2">
-          This BMI result is not an official medical diagnosis. For a full
-          assessment and health advice, please consult a healthcare
-          professional.
-        </p>
         <p className=" text-black">
           Your Body Mass Index (BMI) is a starting point to help understand your
           body weight compared to your height. Here&apos;s what your BMI might

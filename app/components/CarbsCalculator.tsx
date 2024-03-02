@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
-import CustomButton from "./CustomButton"; // Assuming you have a CustomButton component
+import CustomButton from "./CustomButton";
 import { activityLevels } from "../../lib/data";
 import GoToTop from "./GoToTop";
 
@@ -446,50 +446,55 @@ export default function CarbsCalculator() {
       {/* RESULTS */}
       <div ref={resultRef} className="group mx-auto group flex flex-col">
         {tdee > 0 ? (
-          <div className="flex flex-col">
-            <h2>Your recommended carbs intake per day is:&nbsp;</h2>
-            <span>
-              {goal === "1" ? (
-                <span>
-                  Since your goal is <strong>weight loss</strong>, that would
-                  mean a calorie deficit of {deficitPerday(deficitLevel)} kcal
-                  per day. Your <strong>daily</strong> carbs intake should be:
-                </span>
-              ) : goal === "2" ? (
-                <span>
-                  Since your goal is to <strong>maintain</strong> your current
-                  weight, your <strong>daily</strong> carbs intake should be:
-                </span>
-              ) : (
-                <span>
-                  Since your goal is <strong>weight gain</strong>, that would
-                  mean a calorie surplus of {deficitPerday(deficitLevel)} kcal
-                  per day. Your <strong>daily</strong> carbs intake should be:
-                </span>
-              )}
-            </span>
-
-            <h1 className="text-gradient mt-0">{Math.round(carbs)}g.</h1>
-            <span>According to The Institute of Medicine:</span>
-            <h2 className="text-gradient mt-0">
-              {Math.round((tdee * 0.4) / 4)}g - {Math.round((tdee * 0.65) / 4)}g
+          <>
+            <h2 className="font-normal text-center">
+              <strong>Your results:</strong>
             </h2>
-            <span>
-              According to Food and Agriculture Organization and the World
-              Health Organization:
-            </span>
-            <h2 className="text-gradient mt-0">
-              {Math.round((tdee * 0.55) / 4)}g - {Math.round((tdee * 0.75) / 4)}
-              g
-            </h2>
-            <span>with sugar intake of maximum of:</span>
-            <h2 className="text-gradient mt-0">
-              {Math.round((tdee * 0.1) / 4)}g
-            </h2>
-
-            <span>Your total daily calories should be:</span>
-            <h2 className="text-gradient mt-0">{Math.round(tdee)} kcal.</h2>
-          </div>
+            <div className="flex w-full justify-center items-center py-2 rounded-3xl bg-gray-200 to-gray-200">
+              <div className="md:max-w-md m-11 p-5 bg-white rounded-3xl">
+                <h3 className="my-6">
+                  💪 For{" "}
+                  <span className="text-gradient">
+                    {goal === "1"
+                      ? "Weight loss"
+                      : goal === "2"
+                      ? "Weight maintenance"
+                      : "Weight gain"}
+                  </span>
+                </h3>
+                <h3 className="my-6">
+                  🥔{" "}
+                  <span className="text-gradient">
+                    {Math.round(deficitPerday(deficitLevel))}
+                  </span>{" "}
+                  grams per day
+                </h3>
+                <h3 className="my-0">
+                  🍴 with a{" "}
+                  <span className="text-gradient">{Math.round(tdee)}</span> kcal
+                  diet.
+                </h3>
+                <p className="block pt-5 text-sm font-semibold text-gray-500">
+                  {`According to The Institute of Medicine: ${Math.round(
+                    (tdee * 0.4) / 4
+                  )} - ${Math.round((tdee * 0.65) / 4)} grams per day.`}
+                </p>
+                <p className="block pt-1 text-sm font-semibold text-gray-500">
+                  {`According to Food and Agriculture Organization and the World
+              Health Organization: ${Math.round(
+                (tdee * 0.55) / 4
+              )} - ${Math.round((tdee * 0.75) / 4)} grams per day.`}
+                </p>
+                <h3 className="my-0">
+                  🍬 with sugar limit of:{" "}
+                  <span className="text-gradient">
+                    {Math.round((tdee * 0.1) / 4)}
+                  </span>{" "}
+                  grams per day.
+                </h3>
+              </div>
+            </div>
+          </>
         ) : (
           <div className="flex flex-col">
             <p className="text-lg text-red-600">
