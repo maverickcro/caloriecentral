@@ -3,9 +3,45 @@ import CalculatorCard from "./components/CalculatorCard";
 import CustomButton from "./components/CustomButton";
 import LandingPagePosts from "./components/LandingPagePosts";
 import AboutMeSection from "./components/AboutMeSection";
+import Head from "next/head";
+
+export const metadata = {
+  title: "Home - CaloriePal",
+  description:
+    "Macros? Calories? Weight? Calculate calories, manage your fasting and achieve your health and fitness goals with CaloriePal.",
+  keywords: [
+    "fitness calculators",
+    "macros calculator",
+    "calorie tracking",
+    "weight management tools",
+    "protein intake calculator",
+    "carbs intake guide",
+    "fat consumption calculator",
+    "daily sugar limit tool",
+    "TDEE calculation",
+    "calorie deficit strategies",
+    "body recomposition macros",
+    "health nutrition calculators",
+    "fasting benefits calculator",
+    "anorexia BMI assessment",
+    "Subway sandwich nutrition",
+  ],
+};
+
 export default function Home() {
   return (
     <main className="mt-6 mx-auto px-6 max-w-4xl">
+      <Head>
+        <title>CaloriePal - Your Ultimate Calorie Management Tool</title>
+        <meta
+          name="description"
+          content="Discover the easiest way to track your calories, manage your diet, and achieve your health and fitness goals with CaloriePal."
+        />
+        <meta
+          name="keywords"
+          content="calorie tracking, diet management, fitness goals, health improvement, nutritional information, meal planning, calorie counting app, weight loss tool, health and fitness, calorie management tool"
+        />
+      </Head>
       <h1 className="text-2xl  md:text-4xl text-center font-bold text-gradient mb-2">
         take the guesswork out of dieting
       </h1>
