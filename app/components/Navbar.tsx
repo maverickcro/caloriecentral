@@ -12,19 +12,19 @@ export default function Navbar() {
             CaloriePal
           </Link>
         </h1>
-        <div className="flex flex-row justify-center sm:justify-evenly sm:items-center gap-4 text-black text-base lg:text-2xl">
+        <div className="flex flex-row justify-center sm:justify-evenly sm:items-center gap-4 text-black text-base">
           <Link
             className="logo-animation font-bold no-underline navbar-link"
             href="/calculators"
           >
             Calculators
           </Link>
-          {/* <Link
+          <Link
             className="logo-animation font-bold no-underline navbar-link"
             href="/posts"
           >
             Blog
-          </Link> */}
+          </Link>
           <Link
             className="logo-animation font-bold no-underline navbar-link"
             href="/about"

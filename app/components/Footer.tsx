@@ -41,6 +41,12 @@ export default function Footer() {
           >
             Contact
           </Link>
+          <Link
+            className="logo-animation font-bold no-underline navbar-link"
+            href="https://paypal.me/caloriepal?country.x=DE&locale.x=de_DE"
+          >
+            ☕ Buy me a coffee
+          </Link>
         </div>
 
         {/* Copyright */}

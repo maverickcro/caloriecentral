@@ -101,10 +101,10 @@ export default function TDEECalculator() {
 
   return (
     <section className="my-6 mx-auto max-w-4xl">
-      <div className="bg-gray-200 to-gray-200 py-16 px-2">
+      <div className="bg-gray-200 rounded-3xl to-gray-200 py-8 md:py-16 px-2">
         <div className="grid w-full grid-cols-1 place-items-center space-y-6">
           {/* measurement system */}
-          <div className="group relative w-[70%]">
+          <div className="w-full relative px-6 md:w-[70%]">
             <label
               htmlFor="3"
               className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -136,7 +136,7 @@ export default function TDEECalculator() {
             </div>
           </div>
           {/* age */}
-          <div className="group relative w-[70%]">
+          <div className="w-full relative px-6 md:w-[70%]">
             <label
               htmlFor="3"
               className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -154,7 +154,7 @@ export default function TDEECalculator() {
             />
           </div>
           {/* gender */}
-          <div className="group relative w-[70%]">
+          <div className="w-full relative px-6 md:w-[70%]">
             <label
               htmlFor="3"
               className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -186,7 +186,7 @@ export default function TDEECalculator() {
             </div>
           </div>
           {/* weight */}
-          <div className="group w-[70%]">
+          <div className="w-full relative px-6 md:w-[70%]">
             <label
               htmlFor="9"
               className="inline-block w-full text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -208,7 +208,7 @@ export default function TDEECalculator() {
             </div>
           </div>
           {/* height */}
-          <div className="group w-[70%]">
+          <div className="w-full relative px-6 md:w-[70%]">
             <label
               htmlFor="9"
               className="inline-block w-full text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -266,7 +266,7 @@ export default function TDEECalculator() {
             )}
           </div>
           {/* bodyFat */}
-          <div className="group w-[70%]">
+          <div className="w-full relative px-6 md:w-[70%]">
             <label
               htmlFor="9"
               className="inline-block w-full text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -289,7 +289,7 @@ export default function TDEECalculator() {
             </div>
           </div>
           {/* activity */}
-          <div className="group w-[70%]">
+          <div className="w-full relative px-6 md:w-[70%]">
             <label
               htmlFor="10"
               className="inline-block w-full text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -312,7 +312,7 @@ export default function TDEECalculator() {
               ))}
             </div>
           </div>
-          <div className="group w-[70%]">
+          <div className="w-full relative px-6 md:w-[70%]">
             <CustomButton
               type="finish"
               onClick={handleSubmit}
@@ -326,7 +326,7 @@ export default function TDEECalculator() {
           </div>
         </div>
       </div>
-      <div ref={resultRef} className="group mx-auto group flex flex-col">
+      <div ref={resultRef} className="w-full mx-auto flex flex-col">
         {tdee > 0 ? (
           <>
             <h2 className="font-normal text-center">

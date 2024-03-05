@@ -130,10 +130,10 @@ export default function ProteinCalculator() {
   };
   return (
     <section className="my-6 mx-auto max-w-4xl">
-      <div className="bg-gray-200 to-gray-200 py-16 px-2">
+      <div className="bg-gray-200 rounded-3xl to-gray-200 py-8 md:py-16 px-2">
         <div className="grid w-full grid-cols-1 place-items-center space-y-6">
           {/* measurement system */}
-          <div className="relative w-full  md:w-[70%]">
+          <div className="relative w-full px-6 md:w-[70%]">
             <label
               htmlFor="3"
               className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -165,7 +165,7 @@ export default function ProteinCalculator() {
             </div>
           </div>
           {/* age */}
-          <div className="relative w-full  md:w-[70%]">
+          <div className="relative w-full px-6 md:w-[70%]">
             <label
               htmlFor="3"
               className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -183,7 +183,7 @@ export default function ProteinCalculator() {
             />
           </div>
           {/* gender */}
-          <div className="relative w-full  md:w-[70%]">
+          <div className="relative w-full px-6 md:w-[70%]">
             <label
               htmlFor="3"
               className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -215,7 +215,7 @@ export default function ProteinCalculator() {
             </div>
           </div>
           {/* weight */}
-          <div className="w-full  md:w-[70%]">
+          <div className="w-full px-6 md:w-[70%]">
             <label
               htmlFor="9"
               className="inline-block w-full text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -237,7 +237,7 @@ export default function ProteinCalculator() {
             </div>
           </div>
           {/* height */}
-          <div className="w-full  md:w-[70%]">
+          <div className="w-full px-6 md:w-[70%]">
             <label
               htmlFor="9"
               className="inline-block w-full text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -295,7 +295,7 @@ export default function ProteinCalculator() {
             )}
           </div>
           {/* bodyFat */}
-          <div className="w-full  md:w-[70%]">
+          <div className="w-full px-6 md:w-[70%]">
             <label
               htmlFor="9"
               className="inline-block w-full text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -315,7 +315,7 @@ export default function ProteinCalculator() {
             </div>
           </div>
           {/* activity */}
-          <div className="w-full  md:w-[70%]">
+          <div className="w-full px-6 md:w-[70%]">
             <label
               htmlFor="10"
               className="inline-block w-full text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -343,7 +343,7 @@ export default function ProteinCalculator() {
             </span>
           </div>
           {/* goal */}
-          <div className="relative w-full  md:w-[70%]">
+          <div className="relative w-full px-6 md:w-[70%]">
             <label
               htmlFor="3"
               className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -386,7 +386,7 @@ export default function ProteinCalculator() {
             </div>
           </div>
           {(goal === "1" || goal === "3") && (
-            <div className="group relative w-[70%]">
+            <div className="group relative px-6 md:w-[70%]">
               <label
                 htmlFor="3"
                 className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -431,7 +431,7 @@ export default function ProteinCalculator() {
               </div>
             </div>
           )}
-          <div className="group w-[70%]">
+          <div className="w-full px-6 md:w-[70%]">
             <CustomButton
               type="finish"
               onClick={handleSubmit}

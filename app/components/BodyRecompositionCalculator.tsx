@@ -154,10 +154,10 @@ export default function BodyRecompositionCalculator() {
   };
   return (
     <section className="my-6 mx-auto max-w-4xl">
-      <div className="bg-gray-200 to-gray-200 py-16 px-2">
+      <div className="bg-gray-200 rounded-3xl to-gray-200 py-8 md:py-16 px-2">
         <div className="grid w-full grid-cols-1 place-items-center space-y-6">
           {/* measurement system */}
-          <div className="group relative w-[70%]">
+          <div className="relative w-full px-6 md:w-[70%]">
             <label
               htmlFor="3"
               className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -189,7 +189,7 @@ export default function BodyRecompositionCalculator() {
             </div>
           </div>
           {/* age */}
-          <div className="group relative w-[70%]">
+          <div className="relative w-full px-6 md:w-[70%]">
             <label
               htmlFor="3"
               className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -207,7 +207,7 @@ export default function BodyRecompositionCalculator() {
             />
           </div>
           {/* gender */}
-          <div className="group relative w-[70%]">
+          <div className="relative w-full px-6 md:w-[70%]">
             <label
               htmlFor="3"
               className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -239,7 +239,7 @@ export default function BodyRecompositionCalculator() {
             </div>
           </div>
           {/* weight */}
-          <div className="group w-[70%]">
+          <div className="w-full px-6 md:w-[70%]">
             <label
               htmlFor="9"
               className="inline-block w-full text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -261,7 +261,7 @@ export default function BodyRecompositionCalculator() {
             </div>
           </div>
           {/* height */}
-          <div className="group w-[70%]">
+          <div className="w-full px-6 md:w-[70%]">
             <label
               htmlFor="9"
               className="inline-block w-full text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -319,7 +319,7 @@ export default function BodyRecompositionCalculator() {
             )}
           </div>
           {/* bodyFat */}
-          <div className="group w-[70%]">
+          <div className="w-full px-6 md:w-[70%]">
             <label
               htmlFor="9"
               className="inline-block w-full text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -339,7 +339,7 @@ export default function BodyRecompositionCalculator() {
             </div>
           </div>
           {/* activity */}
-          <div className="group w-[70%]">
+          <div className="w-full px-6 md:w-[70%]">
             <div className="relative flex flex-col items-center">
               <p className="inline-block w-full text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400">
                 The optimal number of workouts is 2-4 weight exercise workouts
@@ -348,7 +348,7 @@ export default function BodyRecompositionCalculator() {
             </div>
           </div>
           {/* recompGoal */}
-          <div className="group relative w-[70%]">
+          <div className="relative w-full px-6 md:w-[70%]">
             <label
               htmlFor="3"
               className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -390,7 +390,7 @@ export default function BodyRecompositionCalculator() {
               </button>
             </div>
           </div>
-          <div className="group w-[70%]">
+          <div className="w-full px-6 md:w-[70%]">
             <CustomButton
               type="finish"
               onClick={handleSubmit}
@@ -411,8 +411,8 @@ export default function BodyRecompositionCalculator() {
             <h2 className="font-normal text-center">
               <strong>Your results:</strong>
             </h2>
-            <div className="flex flex-col md:flex-row w-full justify-center items-center py-2 rounded-3xl bg-gray-200 to-gray-200">
-              <div className="w-1/2 m-11 p-5 bg-white rounded-3xl">
+            <div className="flex flex-col lg:flex-row w-full justify-center items-center py-2 rounded-3xl bg-gray-200 to-gray-200">
+              <div className="w-[80%] md:w-1/2 mt-11 mb-5 md:m-11 p-5 bg-white rounded-3xl">
                 <h2 className="my-6">🤾‍♀️ Training days:</h2>
                 <h3 className="text-gradient font-bold my-0">
                   🍴 {Math.round(trainingDaysTotalCalories)} kcal
@@ -423,7 +423,7 @@ export default function BodyRecompositionCalculator() {
                 </p>
                 <p className="my-0">🥜 Fat: {Math.round(trainingFat)}g</p>
               </div>
-              <div className="w-1/2 m-11 p-5 bg-white rounded-3xl">
+              <div className="w-[80%] md:w-1/2 mt-5 mb-11 md:m-11 p-5 bg-white rounded-3xl">
                 <h2 className="my-6">😴 Rest days:</h2>
                 <h3 className="text-gradient font-bold my-0">
                   🍴 {Math.round(restDaysTotalCalories)} kcal

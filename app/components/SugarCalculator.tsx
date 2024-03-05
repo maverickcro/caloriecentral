@@ -126,10 +126,10 @@ export default function SugarCalculator() {
 
   return (
     <section className="my-6 mx-auto max-w-4xl">
-      <div className="bg-gray-200 to-gray-200 py-16 px-2">
+      <div className="bg-gray-200 rounded-3xl to-gray-200 py-8 md:py-16 px-2">
         <div className="grid w-full grid-cols-1 place-items-center space-y-6">
           {/* measurement system */}
-          <div className="group relative w-[70%]">
+          <div className="w-full relative px-6 md:w-[70%]">
             <label
               htmlFor="3"
               className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -161,7 +161,7 @@ export default function SugarCalculator() {
             </div>
           </div>
           {/* age */}
-          <div className="group relative w-[70%]">
+          <div className="w-full relative px-6 md:w-[70%]">
             <label
               htmlFor="3"
               className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -179,7 +179,7 @@ export default function SugarCalculator() {
             />
           </div>
           {/* gender */}
-          <div className="group relative w-[70%]">
+          <div className="w-full relative px-6 md:w-[70%]">
             <label
               htmlFor="3"
               className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -211,7 +211,7 @@ export default function SugarCalculator() {
             </div>
           </div>
           {/* weight */}
-          <div className="group w-[70%]">
+          <div className="w-full relative px-6 md:w-[70%]">
             <label
               htmlFor="9"
               className="inline-block w-full text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -233,7 +233,7 @@ export default function SugarCalculator() {
             </div>
           </div>
           {/* height */}
-          <div className="group w-[70%]">
+          <div className="w-full relative px-6 md:w-[70%]">
             <label
               htmlFor="9"
               className="inline-block w-full text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -291,7 +291,7 @@ export default function SugarCalculator() {
             )}
           </div>
           {/* bodyFat */}
-          <div className="group w-[70%]">
+          <div className="w-full relative px-6 md:w-[70%]">
             <label
               htmlFor="9"
               className="inline-block w-full text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -314,7 +314,7 @@ export default function SugarCalculator() {
             </div>
           </div>
           {/* activity */}
-          <div className="group w-[70%]">
+          <div className="w-full  px-6 md:w-[70%]">
             <label
               htmlFor="10"
               className="inline-block w-full text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -325,7 +325,7 @@ export default function SugarCalculator() {
               {activityLevels.map((activity, index) => (
                 <div
                   key={index}
-                  className={`p-2 m-2 mb-0 w-full  border rounded-md cursor-pointer text-black ${
+                  className={`p-2 m-2 mb-0 w-full text-base border rounded-md cursor-pointer text-black ${
                     activityLevel.label === activity.label
                       ? "border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 text-white hover:text-white"
                       : "border-gray-300 hover:border-blue-500 hover:bg-gradient-to-br hover:from-purple-600 hover:to-blue-500 hover:text-white"
@@ -336,9 +336,13 @@ export default function SugarCalculator() {
                 </div>
               ))}
             </div>
+            <span className="block pt-1 text-xs font-semibold text-gray-500">
+              We consider each exercise as a 30 minutes minimum of elevated
+              heart rate activity.
+            </span>
           </div>
           {/* goal */}
-          <div className="group relative w-[70%]">
+          <div className="w-full relative px-6 md:w-[70%]">
             <label
               htmlFor="3"
               className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -381,7 +385,7 @@ export default function SugarCalculator() {
             </div>
           </div>
           {(goal === "1" || goal === "3") && (
-            <div className="group relative w-[70%]">
+            <div className="w-full relative px-6 md:w-[70%]">
               <label
                 htmlFor="3"
                 className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -426,7 +430,7 @@ export default function SugarCalculator() {
               </div>
             </div>
           )}
-          <div className="group w-[70%]">
+          <div className="w-full relative px-6 md:w-[70%]">
             <CustomButton
               type="finish"
               onClick={handleSubmit}

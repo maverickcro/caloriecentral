@@ -18,6 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
+        suppressHydrationWarning={true}
         className="bg-gray-100"
         style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}
       >
