@@ -37,13 +37,14 @@ export default function Calculator() {
       <CalculatorComponent />
       <span className="text-sm">
         Reference:{" "}
-        <Link
-          rel="nofollow"
+        <a
+          target="_blank"
+          rel="noopener noreferrer nofollow"
           href="https://www.subway.com/en-us/-/media/northamerica/usa/nutrition/nutritiondocuments/us_nutrition_june2023"
         >
           June 2023, Subway U.S Nutrition Information - Official PDF with
           nutritional values and calories in bread, protein, sauces and sides.
-        </Link>
+        </a>
       </span>
       <AboutMeSection />
     </section>

@@ -44,14 +44,15 @@ export default function Calculator() {
         <span className="font-bold text-sm">References:</span>
         <ul className="text-sm">
           <li>
-            <Link
-              rel="nofollow"
-              href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8837073/://www.ahajournals.org/doi/full/10.1161/01.cir.0000019552.77778.04"
+            <a
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8837073/"
             >
               Toppino, Federica, et al. &quot;Body Mass Index Specifiers in
               Anorexia Nervosa: Anything below the &apos;Extreme&apos;?&quot;
               Journal of Clinical Medicine, vol. 11, no. 3, 2022, p. 542.
-            </Link>
+            </a>
           </li>
         </ul>
       </section>

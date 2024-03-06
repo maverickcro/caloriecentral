@@ -43,19 +43,21 @@ export default function Calculator() {
         <span className="font-bold text-sm">References:</span>
         <ul className="text-sm">
           <li>
-            <Link
-              rel="nofollow"
+            <a
+              target="_blank"
+              rel="noopener noreferrer nofollow"
               href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7021351/"
             >
               National Library of Medicine - Welton S, Minty R, O&apos;Driscoll
               T, Willms H, Poirier D, Madden S, Kelly L. Intermittent fasting
               and weight loss: Systematic review. Can Fam Physician. 2020
               Feb;66(2):117-125. PMID: 32060194; PMCID: PMC7021351.
-            </Link>
+            </a>
           </li>
           <li>
-            <Link
-              rel="nofollow"
+            <a
+              target="_blank"
+              rel="noopener noreferrer nofollow"
               href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10098946/"
             >
               National Library of Medicine - Elortegui Pascual P, Rolands MR,
@@ -65,17 +67,18 @@ export default function Calculator() {
               for weight loss. Obesity (Silver Spring). 2023 Feb;31 Suppl
               1(Suppl 1):9-21. doi: 10.1002/oby.23568. Epub 2022 Nov 8. PMID:
               36349432; PMCID: PMC10098946.
-            </Link>
+            </a>
           </li>
           <li>
-            <Link
-              rel="nofollow"
+            <a
+              target="_blank"
+              rel="noopener noreferrer nofollow"
               href="https://pubmed.ncbi.nlm.nih.gov/34633860/"
             >
               National Library of Medicine - EVarady, K. A., Cienfuegos, S.,
               Ezpeleta, M., & Gabel, K. (2021). Cardiometabolic benefits of
               intermittent fasting. Annual Review of Nutrition, 41, 333-361
-            </Link>
+            </a>
           </li>
         </ul>
       </section>

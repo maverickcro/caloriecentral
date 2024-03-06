@@ -50,18 +50,20 @@ export default function Calculator() {
         <span className="font-bold text-sm">References:</span>
         <ul className="text-sm">
           <li>
-            <Link
-              rel="nofollow"
+            <a
+              target="_blank"
+              rel="noopener noreferrer nofollow"
               href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8017325/"
             >
               Kim JY. Optimal Diet Strategies for Weight Loss and Weight Loss
               Maintenance. J Obes Metab Syndr. 2021 Mar 30;30(1):20-31. doi:
               10.7570/jomes20065. PMID: 33107442; PMCID: PMC8017325.
-            </Link>
+            </a>
           </li>
           <li>
-            <Link
-              rel="nofollow"
+            <a
+              target="_blank"
+              rel="noopener noreferrer nofollow"
               href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3447534/"
             >
               Finkler E, Heymsfield SB, St-Onge MP. Rate of weight loss can be
@@ -69,16 +71,17 @@ export default function Calculator() {
               J Acad Nutr Diet. 2012 Jan;112(1):75-80. doi:
               10.1016/j.jada.2011.08.034. Epub 2011 Oct 27. PMID: 22717178;
               PMCID: PMC3447534.
-            </Link>
+            </a>
           </li>
           <li>
-            <Link
-              rel="nofollow"
+            <a
+              target="_blank"
+              rel="noopener noreferrer nofollow"
               href="https://www.nih.gov/news-events/nih-research-matters/weight-loss-depends-less-calories-not-nutrient-mix"
             >
               National Institutes of Health(NIH). Weight Loss Depends on Less
               Calories, Not Nutrient Mix. March 2, 2009.
-            </Link>
+            </a>
           </li>
         </ul>
       </section>

@@ -45,17 +45,19 @@ export default function Calculator() {
         <span className="font-bold text-sm">References:</span>
         <ul className="text-sm">
           <li>
-            <Link
-              rel="nofollow"
+            <a
+              target="_blank"
+              rel="noopener noreferrer nofollow"
               href="https://www.healthline.com/nutrition/body-recomposition"
             >
               Kubala, J. (2023, January 27). Body Recomposition: Lose Fat and
               Gain Muscle at the Same Time. Healthline.
-            </Link>
+            </a>
           </li>
           <li>
-            <Link
-              rel="nofollow"
+            <a
+              target="_blank"
+              rel="noopener noreferrer nofollow"
               href="https://europepmc.org/article/med/35019903"
             >
               Ribeiro AS, Pereira LC, Schoenfeld BJ, et al. Moderate and Higher
@@ -63,7 +65,7 @@ export default function Calculator() {
               Performing Resistance Training. Medicine and Science in Sports and
               Exercise. 2022 May;54(5):807-813. DOI:
               10.1249/mss.0000000000002855. PMID: 35019903.
-            </Link>
+            </a>
           </li>
         </ul>
       </section>

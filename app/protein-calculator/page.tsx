@@ -42,8 +42,9 @@ export default function Calculator() {
         <span className="font-bold text-sm">References:</span>
         <ul className="text-sm">
           <li>
-            <Link
-              rel="nofollow"
+            <a
+              target="_blank"
+              rel="noopener noreferrer nofollow"
               href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6492513/"
             >
               Richter M, Baerlocher K, Bauer JM, Elmadfa I, Heseker H,
@@ -52,29 +53,35 @@ export default function Calculator() {
               Intake of Protein. Ann Nutr Metab. 2019;74(3):242-250. doi:
               10.1159/000499374. Epub 2019 Mar 22. PMID: 30904906; PMCID:
               PMC6492513.
-            </Link>
+            </a>
           </li>
           <li>
-            <Link rel="nofollow" href="https://bjsm.bmj.com/content/52/6/376">
+            <a
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              href="https://bjsm.bmj.com/content/52/6/376"
+            >
               Morton RW, Murphy KT, McKellar SR, et alA systematic review,
               meta-analysis and meta-regression of the effect of protein
               supplementation on resistance training-induced gains in muscle
               mass and strength in healthy adultsBritish Journal of Sports
               Medicine 2018;52:376-384.
-            </Link>
+            </a>
           </li>
           <li>
-            <Link
-              rel="nofollow"
+            <a
+              target="_blank"
+              rel="noopener noreferrer nofollow"
               href="https://retractionwatch.com/2021/02/12/eleven-papers-corrected-after-nutrition-prof-fails-to-disclose-patent-company-ties/"
             >
               Eleven papers corrected after nutrition prof fails to disclose
               patent, company ties
-            </Link>
+            </a>
           </li>
           <li>
-            <Link
-              rel="nofollow"
+            <a
+              target="_blank"
+              rel="noopener noreferrer nofollow"
               href="https://pubmed.ncbi.nlm.nih.gov/28698222/"
             >
               2018 - Morton RW, Murphy KT, McKellar SR, Schoenfeld BJ,
@@ -85,49 +92,53 @@ export default function Calculator() {
               healthy adults. Br J Sports Med. 2018 Mar;52(6):376-384. doi:
               10.1136/bjsports-2017-097608. Epub 2017 Jul 11. Erratum in: Br J
               Sports Med. 2020 Oct;54(19):e7. PMID: 28698222; PMCID: PMC5867436.
-            </Link>
+            </a>
           </li>
           <li>
-            <Link
-              rel="nofollow"
+            <a
+              target="_blank"
+              rel="noopener noreferrer nofollow"
               href="https://pubmed.ncbi.nlm.nih.gov/22150425/"
             >
               2011 - Phillips SM, Van Loon LJ. Dietary protein for athletes:
               from requirements to optimum adaptation. J Sports Sci. 2011;29
               Suppl 1:S29-38. doi: 10.1080/02640414.2011.619204. PMID: 22150425.
-            </Link>
+            </a>
           </li>
           <li>
-            <Link
-              rel="nofollow"
+            <a
+              target="_blank"
+              rel="noopener noreferrer nofollow"
               href="https://pubmed.ncbi.nlm.nih.gov/17111010/"
             >
               Hartman JW, Moore DR, Phillips SM. Resistance training reduces
               whole-body protein turnover and improves net protein retention in
               untrained young males. Appl Physiol Nutr Metab. 2006
               Oct;31(5):557-64. doi: 10.1139/h06-031. PMID: 17111010.
-            </Link>
+            </a>
           </li>
           <li>
-            <Link
-              rel="nofollow"
+            <a
+              target="_blank"
+              rel="noopener noreferrer nofollow"
               href="https://pubmed.ncbi.nlm.nih.gov/18577776/"
             >
               2007 - Phillips SM, Moore DR, Tang JE. A critical examination of
               dietary protein requirements, benefits, and excesses in athletes.
               Int J Sport Nutr Exerc Metab. 2007 Aug;17 Suppl:S58-76. doi:
               10.1123/ijsnem.17.s1.s58. PMID: 18577776.
-            </Link>
+            </a>
           </li>
           <li>
-            <Link
-              rel="nofollow"
+            <a
+              target="_blank"
+              rel="noopener noreferrer nofollow"
               href="https://pubmed.ncbi.nlm.nih.gov/15212752/"
             >
               2004 - Phillips SM. Protein requirements and supplementation in
               strength sports. Nutrition. 2004 Jul-Aug;20(7-8):689-95. doi:
               10.1016/j.nut.2004.04.009. PMID: 15212752.
-            </Link>
+            </a>
           </li>
         </ul>
       </section>

@@ -40,8 +40,9 @@ export default function Calculator() {
         <span className="font-bold text-sm">References:</span>
         <ul className="text-sm">
           <li>
-            <Link
-              rel="nofollow"
+            <a
+              target="_blank"
+              rel="noopener noreferrer nofollow"
               href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5577766/"
             >
               Liu AG, Ford NA, Hu FB, Zelman KM, Mozaffarian D, Kris-Etherton
@@ -49,11 +50,12 @@ export default function Calculator() {
               and taking action to reduce consumer confusion. Nutr J. 2017 Aug
               30;16(1):53. doi: 10.1186/s12937-017-0271-4. PMID: 28854932;
               PMCID: PMC5577766.
-            </Link>
+            </a>
           </li>
           <li>
-            <Link
-              rel="nofollow"
+            <a
+              target="_blank"
+              rel="noopener noreferrer nofollow"
               href="https://medlineplus.gov/ency/patientinstructions/000838.htm"
             >
               A.D.A.M. Medical Encyclopedia [Internet]. Stefania Manetti, RD/N,
@@ -61,7 +63,7 @@ export default function Calculator() {
               San Jose, CA. Review provided by VeriMed Healthcare Network. Also
               reviewed by David C. Dugdale, MD, Medical Director, Brenda
               Conaway, Editorial Director, and the A.D.A.M. Editorial team.
-            </Link>
+            </a>
           </li>
         </ul>
       </section>

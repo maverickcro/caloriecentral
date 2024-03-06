@@ -42,33 +42,36 @@ export default function Calculator() {
         <span className="font-bold text-sm">References:</span>
         <ul className="text-sm">
           <li>
-            <Link
-              rel="nofollow"
+            <a
+              target="_blank"
+              rel="noopener noreferrer nofollow"
               href="https://pubmed.ncbi.nlm.nih.gov/16004827/"
             >
               Manore MM. Exercise and the Institute of Medicine recommendations
               for nutrition. Curr Sports Med Rep. 2005 Aug;4(4):193-8. doi:
               10.1097/01.csmr.0000306206.72186.00. PMID: 16004827.
-            </Link>
+            </a>
           </li>
           <li>
-            <Link
-              rel="nofollow"
+            <a
+              target="_blank"
+              rel="noopener noreferrer nofollow"
               href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4224210/"
             >
               Slavin J, Carlson J. Carbohydrates. Adv Nutr. 2014 Nov
               14;5(6):760-1. doi: 10.3945/an.114.006163. PMID: 25398736; PMCID:
               PMC4224210.
-            </Link>
+            </a>
           </li>
           <li>
-            <Link
-              rel="nofollow"
+            <a
+              target="_blank"
+              rel="noopener noreferrer nofollow"
               href="https://www.ncbi.nlm.nih.gov/books/NBK459280/"
             >
               Julie E. Holesh; Sanah Aslam; Andrew Martin. Physiology,
               Carbohydrates. 2023 May 12;
-            </Link>
+            </a>
           </li>
         </ul>
       </section>

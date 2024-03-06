@@ -43,24 +43,26 @@ export default function Calculator() {
         <span className="font-bold text-sm">References:</span>
         <ul className="text-sm">
           <li>
-            <Link
-              rel="nofollow"
+            <a
+              target="_blank"
+              rel="noopener noreferrer nofollow"
               href="https://pubmed.ncbi.nlm.nih.gov/7942572/"
             >
               Schulz LO, Schoeller DA. A compilation of total daily energy
               expenditures and body weights in healthy adults. Am J Clin Nutr.
               1994 Nov;60(5):676-81. doi: 10.1093/ajcn/60.5.676. PMID: 7942572.
-            </Link>
+            </a>
           </li>
           <li>
-            <Link
-              rel="nofollow"
+            <a
+              target="_blank"
+              rel="noopener noreferrer nofollow"
               href="https://pubmed.ncbi.nlm.nih.gov/8878356/"
             >
               Tappy L. Thermic effect of food and sympathetic nervous system
               activity in humans. Reprod Nutr Dev. 1996;36(4):391-7. doi:
               10.1051/rnd:19960405. PMID: 8878356.
-            </Link>
+            </a>
           </li>
         </ul>
       </section>
