@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+  // output: "export", KORISTI KAD ZELIS BUILDATI SITEMAP
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

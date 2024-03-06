@@ -2,6 +2,24 @@ import React from "react";
 import Posts from "../components/Posts";
 import AboutMeSection from "../components/AboutMeSection";
 
+export const metadata = {
+  title: "Blog",
+  description:
+    "Simplifying Nutrition and Calories. Small choices that make a Big Impact",
+  keywords: [
+    "fast food nutrition",
+    "calorie counts",
+    "healthy dining options",
+    "dieting tips",
+    "weight loss",
+    "weight gain",
+    "understanding macros",
+    "healthy eating",
+    "nutrition guides",
+    "calorie management",
+  ],
+};
+
 export default function PostList() {
   return (
     <main className="mt-6 mx-auto px-6 max-w-4xl ">
