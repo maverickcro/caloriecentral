@@ -68,6 +68,9 @@ export default function CalorieDeficitCalculator() {
       measurementSystem === "metric"
         ? heightCm
         : heightFeet * 30.48 + heightInches * 2.54;
+    measurementSystem === "imperial" &&
+      heightInches > 11 &&
+      setHeightInches(11);
     let weightInKg =
       measurementSystem === "metric" ? weight : weight * 0.453592;
     let BMR =
@@ -134,14 +137,14 @@ export default function CalorieDeficitCalculator() {
       <div className="bg-gray-200 rounded-3xl to-gray-200 py-8 md:py-16 px-2">
         <div className="grid w-full grid-cols-1 place-items-center space-y-6">
           {/* measurement system */}
-          <div className="relative w-full px-6 md:w-[70%]">
+          <div className="w-full relative px-3 md:w-[70%]">
             <label
               htmlFor="3"
               className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
             >
               Measurement System
             </label>
-            <div className="relative flex flex-row items-center">
+            <div className="w-full relative flex flex-row items-center">
               <button
                 onClick={() => setMeasurementSystem("imperial")}
                 className={`w-1/2 h-10 rounded-md text-xs font-semibold transition-all duration-200 ease-in-out ${
@@ -165,26 +168,8 @@ export default function CalorieDeficitCalculator() {
               </button>
             </div>
           </div>
-          {/* age */}
-          <div className="relative  w-full  px-6 md:w-[70%]">
-            <label
-              htmlFor="3"
-              className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
-            >
-              Age
-            </label>
-            <input
-              value={age}
-              id="3"
-              min="1"
-              max="100"
-              type="number"
-              onChange={(e: any) => setAge(e.target.value)}
-              className="peer h-10 w-full rounded-md bg-gray-50 px-4 font-thin outline-none drop-shadow-sm transition-all duration-200 ease-in-out focus:bg-white focus:drop-shadow-lg"
-            />
-          </div>
           {/* gender */}
-          <div className="relative w-full  px-6 md:w-[70%]">
+          <div className="w-full relative px-3 md:w-[70%]">
             <label
               htmlFor="3"
               className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -215,30 +200,62 @@ export default function CalorieDeficitCalculator() {
               </button>
             </div>
           </div>
-          {/* weight */}
-          <div className="w-full  px-6 md:w-[70%]">
-            <label
-              htmlFor="9"
-              className="inline-block w-full text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
-            >
-              Weight
-            </label>
-            <div className="relative flex items-center">
-              <input
-                value={weight}
-                id="9"
-                type="number"
-                min="1"
-                onChange={(e: any) => setWeight(e.target.value)}
-                className="peer relative h-10 w-full rounded-md bg-gray-50 pl-20 pr-4 font-thin outline-none drop-shadow-sm transition-all duration-200 ease-in-out focus:bg-white focus:drop-shadow-lg"
-              />
-              <button className="absolute h-10 w-16 rounded-l-md  text-xs font-semibold border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 text-white">
-                {measurementSystem === "metric" ? "kg" : "lbs"}
-              </button>
+          {/* age and weight */}
+          <div className="w-full relative px-3 md:w-[70%]">
+            <div className="flex items-center space-x-2">
+              {/* age */}
+              <div className="relative w-1/2">
+                <label
+                  htmlFor="3"
+                  className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+                >
+                  Age
+                </label>
+                <div className="relative flex items-center">
+                  <input
+                    value={age}
+                    id="3"
+                    min="0"
+                    max="100"
+                    type="number"
+                    onChange={(e: any) => setAge(e.target.value)}
+                    className={`peer h-10 w-full pl-[4.5rem] rounded-md bg-gray-50 px-4 font-thin outline-none drop-shadow-sm transition-all duration-200 ease-in-out focus:bg-white focus:drop-shadow-lg ${
+                      !(age > 0) && "shadow-lg shadow-blue-400"
+                    }`}
+                  />
+                  <button className="absolute h-10 w-16 rounded-l-md  text-xs font-semibold border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 text-white">
+                    {"years"}
+                  </button>
+                </div>
+              </div>
+              {/* weight */}
+              <div className="relative w-1/2">
+                <label
+                  htmlFor="9"
+                  className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+                >
+                  Weight
+                </label>
+                <div className="relative flex items-center">
+                  <input
+                    value={weight}
+                    id="9"
+                    type="number"
+                    min="1"
+                    onChange={(e: any) => setWeight(e.target.value)}
+                    className={`peer h-10 w-full pl-[4.5rem] rounded-md bg-gray-50 px-4 font-thin outline-none drop-shadow-sm transition-all duration-200 ease-in-out focus:bg-white focus:drop-shadow-lg ${
+                      !(weight > 0) && "shadow-lg shadow-blue-400"
+                    }`}
+                  />
+                  <button className="absolute h-10 w-16 rounded-l-md  text-xs font-semibold border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 text-white">
+                    {measurementSystem === "metric" ? "kg" : "lbs"}
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
           {/* height */}
-          <div className=" w-full  px-6 md:w-[70%]">
+          <div className="w-full relative px-3 md:w-[70%]">
             <label
               htmlFor="9"
               className="inline-block w-full text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -253,7 +270,9 @@ export default function CalorieDeficitCalculator() {
                   min="40"
                   type="number"
                   onChange={(e: any) => setHeightCm(e.target.value)}
-                  className="peer relative h-10 w-full rounded-md bg-gray-50 pl-20 pr-4 font-thin outline-none drop-shadow-sm transition-all duration-200 ease-in-out focus:bg-white focus:drop-shadow-lg"
+                  className={`peer h-10 w-full pl-[4.5rem] rounded-md bg-gray-50 px-4 font-thin outline-none drop-shadow-sm transition-all duration-200 ease-in-out focus:bg-white focus:drop-shadow-lg ${
+                    !(heightCm > 0) && "shadow-lg shadow-blue-400"
+                  }`}
                 />
                 <button className="absolute h-10 w-16 rounded-l-md  text-xs font-semibold border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 text-white">
                   cm
@@ -270,7 +289,9 @@ export default function CalorieDeficitCalculator() {
                     max="8"
                     placeholder="1-8"
                     onChange={(e: any) => setHeightFeet(e.target.value)}
-                    className="peer relative h-10 w-full rounded-md bg-gray-50 pl-20 pr-4 font-thin outline-none drop-shadow-sm transition-all duration-200 ease-in-out focus:bg-white focus:drop-shadow-lg"
+                    className={`peer h-10 w-full pl-[4.5rem] rounded-md bg-gray-50 px-4 font-thin outline-none drop-shadow-sm transition-all duration-200 ease-in-out focus:bg-white focus:drop-shadow-lg ${
+                      !(heightFeet > 0) && "shadow-lg shadow-blue-400"
+                    }`}
                   />
                   <button className="absolute left-0 h-10 w-16 rounded-l-md  text-xs font-semibold border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 text-white">
                     feet
@@ -286,7 +307,9 @@ export default function CalorieDeficitCalculator() {
                     max="11"
                     placeholder="0-11"
                     onChange={(e: any) => setHeightInches(e.target.value)}
-                    className="peer relative h-10 w-full rounded-md bg-gray-50 pl-20 pr-4 font-thin outline-none drop-shadow-sm transition-all duration-200 ease-in-out focus:bg-white focus:drop-shadow-lg"
+                    className={`peer h-10 w-full pl-[4.5rem] rounded-md bg-gray-50 px-4 font-thin outline-none drop-shadow-sm transition-all duration-200 ease-in-out focus:bg-white focus:drop-shadow-lg ${
+                      heightInches > 11 && "shadow-lg shadow-blue-400"
+                    }`}
                   />
                   <button className="absolute left-0 h-10 w-16 rounded-l-md  text-xs font-semibold border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 text-white">
                     inches
@@ -296,7 +319,7 @@ export default function CalorieDeficitCalculator() {
             )}
           </div>
           {/* activity */}
-          <div className="w-full  px-6 md:w-[70%]">
+          <div className="w-full  px-3 md:w-[70%]">
             <label
               htmlFor="10"
               className="inline-block w-full text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -320,7 +343,7 @@ export default function CalorieDeficitCalculator() {
             </div>
           </div>
           {/* deficitLevel */}
-          <div className="group relative  w-full  px-6 md:w-[70%]">
+          <div className="group relative  w-full  px-3 md:w-[70%]">
             <label
               htmlFor="3"
               className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -363,7 +386,7 @@ export default function CalorieDeficitCalculator() {
             </div>
           </div>
           {/* weight goal*/}
-          <div className="w-full  px-6 md:w-[70%]">
+          <div className="w-full px-3 md:w-[70%]">
             <label
               htmlFor="10"
               className="inline-block w-full text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -384,7 +407,7 @@ export default function CalorieDeficitCalculator() {
               </button>
             </div>
           </div>
-          <div className="group w-full px-6 md:w-[70%]">
+          <div className="group w-full px-3 md:w-[70%]">
             <CustomButton
               type="finish"
               onClick={handleSubmit}
