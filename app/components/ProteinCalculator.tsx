@@ -726,8 +726,12 @@ export default function ProteinCalculator() {
         <p>
           When building muscle, <strong>1.6 grams per kg</strong> or{" "}
           <strong>0.72 grams per pound</strong> of body weight daily. But{" "}
-          <strong>don&apos;t worry</strong> too much about numbers. Always try
-          to have regular meals with protein sources like{" "}
+          <strong>don&apos;t worry</strong> too much about numbers. It
+          doesn&apos;t need to be perfect.
+        </p>
+        <p>
+          {" "}
+          Try to have regular meals with protein sources like{" "}
           <strong>meat, tofu, cheese, eggs</strong> etc. With this tactic you
           will ensure a constant protein intake which is permentantly
           sustainable. As always, be <strong>consistent</strong> in your

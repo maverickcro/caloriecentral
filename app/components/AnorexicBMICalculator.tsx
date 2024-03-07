@@ -6,7 +6,6 @@ import GoToTop from "./GoToTop";
 export default function AnorexicBMICalculator() {
   const resultRef = useRef<HTMLDivElement>(null);
   const [age, setAge] = useState(0);
-  const [gender, setGender] = useState("male"); // default to male
   const [weight, setWeight] = useState(0);
   const [heightCm, setHeightCm] = useState(0);
   const [heightFeet, setHeightFeet] = useState(0);
@@ -21,7 +20,6 @@ export default function AnorexicBMICalculator() {
   useEffect(() => {
     // Load all values from localStorage
     const savedAge = localStorage.getItem("age");
-    const savedGender = localStorage.getItem("gender");
     const savedWeight = localStorage.getItem("weight");
     const savedHeightCm = localStorage.getItem("heightCm");
     const savedHeightFeet = localStorage.getItem("heightFeet");
@@ -29,7 +27,6 @@ export default function AnorexicBMICalculator() {
     const savedMeasurementSystem = localStorage.getItem("measurementSystem");
 
     if (savedAge) setAge(Number(savedAge));
-    if (savedGender) setGender(savedGender);
     if (savedWeight) setWeight(Number(savedWeight));
     if (savedHeightCm) setHeightCm(Number(savedHeightCm));
     if (savedHeightFeet) setHeightFeet(Number(savedHeightFeet));
@@ -67,7 +64,6 @@ export default function AnorexicBMICalculator() {
     setBmi(calculatedBmi);
     setCalculated(true);
     localStorage.setItem("age", age.toString());
-    localStorage.setItem("gender", gender);
     localStorage.setItem("weight", weight.toString());
     localStorage.setItem("heightCm", heightCm.toString());
     localStorage.setItem("heightFeet", heightFeet.toString());
@@ -85,6 +81,15 @@ export default function AnorexicBMICalculator() {
     <section className="my-6 mx-auto max-w-4xl">
       <div className="bg-gray-200 rounded-3xl to-gray-200 py-8 md:py-16 px-2">
         <div className="grid w-full grid-cols-1 place-items-center space-y-6">
+          {/* gender */}
+          <div className="w-full px-3 md:w-[70%]">
+            <div className="relative flex flex-col items-center">
+              <p className="inline-block w-full text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400">
+                BMI calculation is gender neutral. Same formula applies to
+                biological males and females.
+              </p>
+            </div>
+          </div>
           {/* measurement system */}
           <div className="w-full relative px-3 md:w-[70%]">
             <label
@@ -114,38 +119,6 @@ export default function AnorexicBMICalculator() {
                 }`}
               >
                 Metric
-              </button>
-            </div>
-          </div>
-          {/* gender */}
-          <div className="w-full relative px-3 md:w-[70%]">
-            <label
-              htmlFor="3"
-              className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
-            >
-              Biological Sex
-            </label>
-            <div className="relative flex flex-row items-center">
-              <button
-                onClick={() => setGender("female")}
-                className={`w-1/2 h-10 rounded-md text-xs font-semibold transition-all duration-200 ease-in-out ${
-                  gender === "female"
-                    ? "border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 text-white"
-                    : "bg-blue-200 group-hover:bg-blue-400 text-black"
-                }`}
-              >
-                Female
-              </button>
-              &nbsp;
-              <button
-                onClick={() => setGender("male")}
-                className={`w-1/2 h-10 rounded-md text-xs font-semibold transition-all duration-200 ease-in-out ${
-                  gender === "male"
-                    ? "border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 text-white"
-                    : "bg-blue-200 group-hover:bg-blue-400 text-black"
-                }`}
-              >
-                Male
               </button>
             </div>
           </div>
