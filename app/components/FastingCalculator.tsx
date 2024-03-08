@@ -372,7 +372,7 @@ export default function FastingCalculator() {
             <h2 className="font-normal text-center">
               <strong>Your results:</strong>
             </h2>
-            <div className="flex w-full justify-center items-center py-2 rounded-3xl bg-gray-200 to-gray-200">
+            <div className="flex w-full justify-center items-center py-2 rounded-3xl animated-background bg-gray-200 to-gray-200">
               <div className="md:max-w-lg m-11 p-5 bg-white rounded-3xl">
                 <div className="flex flex-col">
                   <h3 className="my-6">

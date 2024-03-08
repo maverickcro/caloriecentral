@@ -102,7 +102,7 @@ export default function TDEECalculator() {
 
   return (
     <section className="my-6 mx-auto max-w-4xl">
-      <div className="bg-gray-200 rounded-3xl to-gray-200 py-8 md:py-16 px-2">
+      <div className="bg-gray-200 rounded-3xl to-gray-400 py-8 md:py-16 px-2">
         <div className="grid w-full grid-cols-1 place-items-center space-y-6">
           {/* measurement system */}
           <div className="w-full relative px-3 md:w-[70%]">
@@ -350,8 +350,11 @@ export default function TDEECalculator() {
             <h2 className="font-normal text-center">
               <strong>Your results:</strong>
             </h2>
-            <div className="flex w-full justify-center items-center py-2 rounded-3xl bg-gray-200 to-gray-200">
-              <div className="md:max-w-md m-11 p-5 bg-white rounded-3xl">
+            <div
+              className="flex w-full justify-center items-center py-2 rounded-3xl animated-background
+             "
+            >
+              <div className="md:max-w-md m-11 p-5 bg-white rounded-3xl shadow-[rgba(0,_0,_0,_0.4)_0px_60px_40px_-7px]">
                 <h3 className="my-6">
                   💪Your TDEE is{" "}
                   <span className="text-gradient">{Math.round(tdee)}</span>{" "}

@@ -30,7 +30,7 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <main className="mt-6 mx-auto px-6 max-w-4xl">
+    <main className="mt-2 mx-auto px-6 max-w-4xl">
       <Head>
         <title>CaloriePal - Your Ultimate Calorie Management Tool</title>
         <meta
@@ -42,9 +42,17 @@ export default function Home() {
           content="calorie tracking, diet management, fitness goals, health improvement, nutritional information, meal planning, calorie counting app, weight loss tool, health and fitness, calorie management tool"
         />
       </Head>
-      <h1 className="text-2xl  md:text-4xl text-center font-bold text-gradient mb-2">
-        take the guesswork out of dieting
-      </h1>
+      <div className="animated-background rounded-3xl h-[40vh] mb-10">
+        <h1 className="text-2xl md:text-4xl text-center font-bold text-white mb-2">
+          Welcome to CaloriePal
+        </h1>
+        <p className="block pt-1 text-center text-white">
+          Your favourite Fitness companion
+        </p>
+      </div>
+      <h2 className="text-xl md:text-2xl leading-10 text-center font-bold text-gradient mb-2">
+        Take the Guesswork out of Dieting
+      </h2>
       <span className="block pt-1 text-base text-center">
         Target your weight goals with precision. Our calculators make it simple
         to track and adjust your macros for balanced nutrition.

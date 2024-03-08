@@ -28,15 +28,23 @@ export const metadata = {
 export default function PostList() {
   return (
     <main className="mt-6 mx-auto px-6 max-w-4xl text-center">
-      <h1 className="mt-12 mb-16 text-2xl  md:text-4xl  text-black">
+      <div className="animated-background rounded-3xl h-[40vh] mb-10">
+        <h1 className="text-2xl md:text-4xl text-center font-bold text-white mb-2">
+          Calculators
+        </h1>
+        <p className="block pt-1 text-center text-white">
+          Get the numbers that matter.
+        </p>
+      </div>
+      <h2 className="mt-12 mb-16 text-2xl  md:text-4xl  text-black">
         Macros?&nbsp;
         <span className="font-bold text-gradient">Calories?</span>
-        &nbsp;Weight?&nbsp; We Have All Kinds Of{" "}
+        &nbsp;Weight?&nbsp;We Have All Kinds Of{" "}
         <span className="font-bold text-gradient">Calculators</span>.
-      </h1>
-      <h1 className="text-gradient text-2xl  md:text-4xl font-bold mb-2">
+      </h2>
+      <h2 className="text-gradient text-2xl  md:text-4xl font-bold mb-2">
         macros and calories calculators
-      </h1>
+      </h2>
       <span className="block pt-1 text-base">
         This group of calculators simplifies diet tracking for health and
         fitness, offering easy management of daily macros and sugar intake.

@@ -33,11 +33,6 @@ html,
 body {
   height: 100%;
   scroll-behavior: smooth;
-  /* background-image: url(/white-sample-background.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed; */
 }
 
 #__next {
@@ -69,6 +64,7 @@ h1 {
   animation: fadeInDown 0.5s ease-out forwards;
 }
 
+/* STRONG UNDERLINE STYLE */
 strong {
   position: relative;
   font-weight: 400;
@@ -86,4 +82,43 @@ strong::after {
   background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/664131/underline.svg");
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+/* ANIMATED BACKGROUND */
+.animated-background {
+  text-align: center;
+  flex: 1;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    45deg,
+    #3e97f0,
+    #4c9ef0 25%,
+    #639ad8 40%,
+    #a972b5 60%,
+    #b362a6 75%,
+    #ba55d3 100%
+  );
+  background-size: 150% 150%;
+  animation: gradient 3s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 25% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 75% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
