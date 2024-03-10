@@ -4,17 +4,17 @@ import {
   breadOptions,
   cheeseOptions,
   meatOptions,
-  breadLength,
   sauceOptions,
   extraOptions,
 } from "../../lib/data";
 import CustomButton from "./CustomButton";
 import GoToTop from "./GoToTop";
 import Link from "next/link";
+import Dropdown from "./Dropdown";
 
 export default function Calculator() {
-  const buttonRef = useRef<HTMLDivElement>(null);
-  const [step, setStep] = useState(1);
+  const resultRef = useRef<HTMLDivElement>(null);
+  const [calculated, setCalculated] = useState(false);
   const [selectedBread, setSelectedBread] = useState<Option>({
     title: "",
     kcal: 0,
@@ -29,182 +29,119 @@ export default function Calculator() {
     carbs: 0,
     fats: 0,
   });
-  const [selectedCheese, setSelectedCheese] = useState<Option>({
-    title: "",
-    kcal: 0,
-    protein: 0,
-    carbs: 0,
-    fats: 0,
-  });
-  const [selectedMeat, setSelectedMeat] = useState<Option>({
-    title: "",
-    kcal: 0,
-    protein: 0,
-    carbs: 0,
-    fats: 0,
-  });
-  const [selectedSauce, setSelectedSauce] = useState<Option>({
-    title: "",
-    kcal: 0,
-    protein: 0,
-    carbs: 0,
-    fats: 0,
-  });
-  const [selectedExtras, setSelectedExtras] = useState<Option[]>([]);
-  const handleNext = () => {
-    window.scrollTo(0, 0);
-    setStep(step + 1);
-  };
+  const [selectedCheese, setSelectedCheese] = useState<Option[]>([
+    {
+      title: "",
+      kcal: 0,
+      protein: 0,
+      carbs: 0,
+      fats: 0,
+    },
+  ]);
+  const [selectedMeat, setSelectedMeat] = useState<Option[]>([
+    {
+      title: "",
+      kcal: 0,
+      protein: 0,
+      carbs: 0,
+      fats: 0,
+    },
+  ]);
+  const [selectedSauce, setSelectedSauce] = useState<Option[]>([
+    {
+      title: "",
+      kcal: 0,
+      protein: 0,
+      carbs: 0,
+      fats: 0,
+    },
+  ]);
+  const [selectedExtras, setSelectedExtras] = useState<Option[]>([
+    {
+      title: "",
+      kcal: 0,
+      protein: 0,
+      carbs: 0,
+      fats: 0,
+    },
+  ]);
 
-  const handlePrevious = () => {
-    setStep(step - 1);
-  };
+  const isValid: boolean =
+    selectedBread.title !== "" &&
+    selectedBreadLength.title !== "" &&
+    selectedCheese.length > 0 &&
+    selectedCheese[0].title !== "" &&
+    selectedMeat.length > 0 &&
+    selectedMeat[0].title !== "" &&
+    selectedSauce.length > 0 &&
+    selectedSauce[0].title !== "" &&
+    selectedExtras.length > 0 &&
+    selectedExtras[0].title !== "";
+  console.log(
+    selectedBread,
+    selectedBreadLength,
+    selectedCheese,
+    selectedMeat,
+    selectedSauce,
+    selectedExtras
+  );
+  const [totalCalories, setTotalCalories] = useState<number>(0);
+  const [totalProtein, setTotalProtein] = useState<number>(0);
+  const [totalCarbs, setTotalCarbs] = useState<number>(0);
+  const [totalFats, setTotalFats] = useState<number>(0);
 
-  const handleSelectExtra = (extra: Option) => {
-    // Check if "No that's all" is the selected extra
-    if (extra.title === "No that's all!") {
-      // Set selectedExtras to only contain "No that's all!"
-      setSelectedExtras([extra]);
-    } else {
-      // If any other extra is selected, check if "No that's all!" is currently selected
-      if (selectedExtras.some((e) => e.title === "No that's all!")) {
-        // If so, replace it with the newly selected extra
-        setSelectedExtras([extra]);
-      } else {
-        // If "No that's all" is not selected, toggle the selected state of the extra
-        if (selectedExtras.some((e) => e.title === extra.title)) {
-          // Remove the extra if it's already selected
-          setSelectedExtras(
-            selectedExtras.filter((e) => e.title !== extra.title)
-          );
-        } else {
-          // Add the extra to the selectedExtras
-          setSelectedExtras([...selectedExtras, extra]);
-        }
-      }
+  useEffect(() => {
+    if (calculated && resultRef.current) {
+      resultRef.current.scrollIntoView({ behavior: "smooth" });
+      setCalculated(false); // Reset to false after scrolling
     }
-  };
+  }, [calculated]);
 
-  const getCaloriesAndMacros = () => {
+  const getCaloriesAndMacros = (event: any) => {
+    event.preventDefault();
     let totalCalories: number = 0;
     let totalProtein: number = 0;
     let totalCarbs: number = 0;
     let totalFats: number = 0;
-    if (
-      selectedBread.kcal &&
-      selectedCheese.kcal &&
-      selectedMeat.kcal &&
-      (selectedSauce.kcal || selectedSauce.kcal === 0) &&
-      selectedExtras.length > 0
-    ) {
-      totalCalories =
-        selectedBread.kcal +
-        selectedCheese.kcal +
-        selectedMeat.kcal +
-        selectedSauce.kcal;
-      totalProtein =
-        selectedBread.protein +
-        selectedCheese.protein +
-        selectedMeat.protein +
-        selectedSauce.protein;
-      totalCarbs =
-        selectedBread.carbs +
-        selectedCheese.carbs +
-        selectedMeat.carbs +
-        selectedSauce.carbs;
-      totalFats =
-        selectedBread.fats +
-        selectedCheese.fats +
-        selectedMeat.fats +
-        selectedSauce.fats;
 
-      selectedExtras.map((extra: Option) => {
-        extra.kcal && (totalCalories = totalCalories + extra.kcal);
-        totalProtein = totalProtein + extra.protein;
-        totalCarbs = totalCarbs + extra.carbs;
-        totalFats = totalFats + extra.fats;
+    // Start by adding the values from selectedBread
+    if (selectedBread) {
+      totalCalories += selectedBread.kcal || 0;
+      totalProtein += selectedBread.protein || 0;
+      totalCarbs += selectedBread.carbs || 0;
+      totalFats += selectedBread.fats || 0;
+    }
+
+    // Function to add up values from each selection array
+    const addNutritionalValues = (selection: Option[]) => {
+      selection.forEach((item) => {
+        totalCalories += item.kcal || 0;
+        totalProtein += item.protein || 0;
+        totalCarbs += item.carbs || 0;
+        totalFats += item.fats || 0;
       });
-      if (selectedBreadLength.title === "Footlong") {
-        totalCalories = totalCalories * 2;
-        totalProtein = totalProtein * 2;
-        totalCarbs = totalCarbs * 2;
-        totalFats = totalFats * 2;
-      }
+    };
+
+    // Add values from other selections if they are not empty
+    if (selectedCheese.length > 0) addNutritionalValues(selectedCheese);
+    if (selectedMeat.length > 0) addNutritionalValues(selectedMeat);
+    // Assuming selectedSauce can now be an array as well
+    if (selectedSauce.length > 0) addNutritionalValues(selectedSauce);
+    if (selectedExtras.length > 0) addNutritionalValues(selectedExtras);
+
+    // If the bread length indicates a Footlong, double the totals
+    if (selectedBreadLength && selectedBreadLength.title === "Footlong") {
+      totalCalories *= 2;
+      totalProtein *= 2;
+      totalCarbs *= 2;
+      totalFats *= 2;
     }
 
-    return (
-      <>
-        <p className="text-2xl font-bold text-gradient__orange">
-          Nutritional facts:
-        </p>
-        <ul>
-          <li>
-            Total calories:{" "}
-            <span className="text-gradient">{totalCalories} kcal</span>
-          </li>
-          <li>Protein: {totalProtein} g</li>
-          <li>Carbs: {totalCarbs} g</li>
-          <li>Fats: {totalFats} g</li>
-        </ul>
-      </>
-    );
-  };
-
-  useEffect(() => {
-    if (buttonRef.current) {
-      const yOffset = -window.innerHeight / 2; // Scroll to 50% of the viewport height
-      const y =
-        buttonRef.current.getBoundingClientRect().top +
-        window.pageYOffset +
-        yOffset;
-
-      window.scrollTo({ top: y, behavior: "smooth" });
-    }
-  }, [
-    selectedBread,
-    selectedCheese,
-    selectedMeat,
-    selectedSauce,
-    selectedExtras,
-    selectedBreadLength,
-  ]);
-
-  const getCompleteOrder = () => {
-    return (
-      <>
-        <p className="text-2xl font-bold text-gradient__orange">
-          Your complete Subway order:
-        </p>
-        <ul>
-          <li>
-            {isNormalBread
-              ? `${selectedBreadLength.title} ${selectedBread.title}`
-              : `${selectedBread.title}`}
-            &nbsp;&nbsp;
-          </li>
-          <li>
-            {selectedCheese.title}&nbsp;Cheese&nbsp;and&nbsp;
-            {selectedMeat.title}
-            &nbsp;Sub
-          </li>
-          {selectedSauce && selectedSauce.title !== "No sauce" && (
-            <li>with&nbsp;{selectedSauce.title}&nbsp;Sauce</li>
-          )}
-          {selectedExtras.length > 0 &&
-            selectedExtras[0].title !== "No that's all!" && (
-              <li>
-                {selectedExtras.map((extra, index) => (
-                  <span key={index}>
-                    {extra.title}
-                    {index < selectedExtras.length - 1 ? ", " : ""}
-                  </span>
-                ))}
-                &nbsp;on the side
-              </li>
-            )}
-        </ul>
-      </>
-    );
+    setTotalCalories(totalCalories);
+    setTotalProtein(totalProtein);
+    setTotalCarbs(totalCarbs);
+    setTotalFats(totalFats);
+    setCalculated(true);
   };
 
   const finish = () => {
@@ -216,27 +153,9 @@ export default function Calculator() {
       fats: 0,
     });
     setSelectedExtras([]);
-    setSelectedSauce({
-      title: "",
-      kcal: 0,
-      protein: 0,
-      carbs: 0,
-      fats: 0,
-    });
-    setSelectedMeat({
-      title: "",
-      kcal: 0,
-      protein: 0,
-      carbs: 0,
-      fats: 0,
-    });
-    setSelectedCheese({
-      title: "",
-      kcal: 0,
-      protein: 0,
-      carbs: 0,
-      fats: 0,
-    });
+    setSelectedSauce([]);
+    setSelectedMeat([]);
+    setSelectedCheese([]);
     setSelectedBreadLength({
       title: "",
       kcal: 0,
@@ -244,7 +163,6 @@ export default function Calculator() {
       carbs: 0,
       fats: 0,
     });
-    setStep(1);
   };
   const isNormalBread: boolean =
     selectedBread.title === "Artisan Flatbread" ||
@@ -254,262 +172,172 @@ export default function Calculator() {
     selectedBread.title === "Jalapeño Cheddar Bread";
   return (
     <section className="my-6 mx-auto max-w-4xl">
-      {isNormalBread
-        ? step < 7 && <p className="font-bold text-gradient">Step {step}/6</p>
-        : step < 6 && <p className="font-bold text-gradient">Step {step}/5</p>}
-      {}
-      {step == 6 && isNormalBread && (
-        <div>
-          <p className="text-2xl text-black">
-            Which sub size did you get? Please choose below.
-          </p>
-          <div className="lg:min-h-[40vh] my-[20px]">
-            {breadLength.map((bread, index) => (
-              <div
-                key={index}
-                className={`p-2  m-2 mb-0 border rounded-md cursor-pointer text-black ${
-                  selectedBreadLength.title === bread.title
-                    ? "border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 text-white hover:text-white"
-                    : "border-gray-300 hover:border-blue-500 hover:bg-gradient-to-br hover:from-purple-600 hover:to-blue-500 hover:text-white"
-                }`}
-                onClick={() =>
-                  setSelectedBreadLength({
-                    ...bread,
-                    protein: 0,
-                    carbs: 0,
-                    fats: 0,
-                  })
-                }
-              >
-                {bread.title}
-              </div>
-            ))}
-          </div>
-
-          <div ref={buttonRef} className="my-2">
-            <CustomButton type="previous" onClick={handlePrevious} />
-            <CustomButton
-              type="next"
-              onClick={() => handleNext()}
-              disabled={selectedBreadLength.title === ""}
-            />
-          </div>
-          {!selectedBreadLength.title ? (
-            <p style={{ color: "red" }}>Choose your option</p>
-          ) : (
-            <p style={{ color: "green" }}>You can click Next now.</p>
-          )}
-        </div>
-      )}
-      {step == 1 && (
-        <div>
-          <p className="text-2xl font-bold text-black">
-            Please choose your bread option.
-          </p>
-          <div className="min-h-[40vh] my-[30px]">
-            {breadOptions.map((bread, index) => (
-              <div
-                key={index}
-                className={`p-2  m-2 mb-0 border rounded-md cursor-pointer text-black ${
-                  selectedBread.title === bread.title
-                    ? "border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 text-white hover:text-white"
-                    : "border-gray-300 hover:border-blue-500 hover:bg-gradient-to-br hover:from-purple-600 hover:to-blue-500 hover:text-white"
-                }`}
-                onClick={() => setSelectedBread(bread)}
-              >
-                {bread.title} - {bread.kcal} kcal
-              </div>
-            ))}
-          </div>
-
-          <div className="my-2">
-            <CustomButton
-              type="previous"
-              onClick={handlePrevious}
-              disabled={true}
-            />
-            <CustomButton
-              type="next"
-              onClick={() => handleNext()}
-              disabled={selectedBread.title === ""}
-            />
-          </div>
-          {!selectedBread.title ? (
-            <p style={{ color: "red" }}>Choose your option</p>
-          ) : (
-            <p style={{ color: "green" }}>You can click Next now.</p>
-          )}
-        </div>
-      )}
-      {step == 2 && (
-        <div>
-          <p className="text-2xl font-bold text-black">
-            Please choose your cheese option.
-          </p>
-          <div className="min-h-[40vh] my-[30px]">
-            {cheeseOptions.map((cheese, index) => (
-              <div
-                key={index}
-                className={`p-2  m-2 mb-0 border rounded-md cursor-pointer text-black ${
-                  selectedCheese.title === cheese.title
-                    ? "border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 text-white hover:text-white"
-                    : "border-gray-300 hover:border-blue-500 hover:bg-gradient-to-br hover:from-purple-600 hover:to-blue-500 hover:text-white"
-                }`}
-                onClick={() => setSelectedCheese(cheese)}
-              >
-                {cheese.title} - {cheese.kcal} kcal
-              </div>
-            ))}
-          </div>
-          <div ref={buttonRef} className="my-2">
-            <CustomButton type="previous" onClick={handlePrevious} />
-            <CustomButton
-              type="next"
-              onClick={() => handleNext()}
-              disabled={selectedCheese.title === ""}
-            />
-          </div>
-          {!selectedCheese.title ? (
-            <p style={{ color: "red" }}>Choose your option</p>
-          ) : (
-            <p style={{ color: "green" }}>You can click Next now.</p>
-          )}
-        </div>
-      )}
-      {step == 3 && (
-        <div>
-          <p className="text-2xl font-bold text-black">
-            Please choose your protein option.
-          </p>
-          <div className="min-h-[40vh] my-[30px]">
-            {meatOptions.map((meat, index) => (
-              <div
-                key={index}
-                className={`p-2  m-2 border rounded-md cursor-pointer text-black ${
-                  selectedMeat.title === meat.title
-                    ? "border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 text-white hover:text-white"
-                    : "border-gray-300 hover:border-blue-500 hover:bg-gradient-to-br hover:from-purple-600 hover:to-blue-500 hover:text-white"
-                }`}
-                onClick={() => setSelectedMeat(meat)}
-              >
-                {meat.title} - {meat.kcal} kcal
-              </div>
-            ))}
-          </div>
-          <div ref={buttonRef} className="my-2">
-            <CustomButton type="previous" onClick={handlePrevious} />
-            <CustomButton
-              type="next"
-              onClick={() => handleNext()}
-              disabled={selectedMeat.title === ""}
-            />
-          </div>
-          {!selectedMeat.title ? (
-            <p style={{ color: "red" }}>Choose your option</p>
-          ) : (
-            <p style={{ color: "green" }}>You can click Next now.</p>
-          )}
-        </div>
-      )}
-      {step == 4 && (
-        <div>
-          <p className="text-2xl font-bold text-black">
-            Which sauce did you get?
-          </p>
-          <div className="min-h-[40vh] my-[30px]">
-            {sauceOptions.map((sauce, index) => (
-              <div
-                key={index}
-                className={`p-2  m-2 border rounded-md cursor-pointer text-black ${
-                  selectedSauce.title === sauce.title
-                    ? "border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 text-white hover:text-white"
-                    : "border-gray-300 hover:border-blue-500 hover:bg-gradient-to-br hover:from-purple-600 hover:to-blue-500 hover:text-white"
-                }`}
-                onClick={() => setSelectedSauce(sauce)}
-              >
-                {sauce.title} - {sauce.kcal} kcal
-              </div>
-            ))}
-          </div>
-          <div ref={buttonRef} className="my-2">
-            <CustomButton type="previous" onClick={handlePrevious} />
-            <CustomButton
-              type="next"
-              onClick={() => handleNext()}
-              disabled={selectedSauce.title === ""}
-            />
-          </div>
-          {!selectedSauce.title ? (
-            <p style={{ color: "red" }}>Choose your option</p>
-          ) : (
-            <p style={{ color: "green" }}>You can click Next now.</p>
-          )}
-        </div>
-      )}
-      {step == 5 && (
-        <div>
-          <p className="text-2xl font-bold text-black">
-            Anything extra with your sub? You can choose{" "}
-            <span className="text-gradient__orange">multiple</span> options.
-          </p>
-          <div className="min-h-[40vh] my-[30px]">
-            {extraOptions.map((extra, index) => (
-              <div
-                key={index}
-                className={`p-2 m-2 border rounded-md cursor-pointer text-black ${
-                  selectedExtras.some((e) => e.title === extra.title)
-                    ? "border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 text-white hover:text-white"
-                    : "border-gray-300 hover:border-blue-500 hover:bg-gradient-to-br hover:from-purple-600 hover:to-blue-500 hover:text-white"
-                }`}
-                onClick={() => handleSelectExtra(extra)}
-              >
-                {extra.title} - {extra.kcal} kcal
-              </div>
-            ))}
-          </div>
-          <div ref={buttonRef} className="my-2">
-            <CustomButton type="previous" onClick={handlePrevious} />
-            <CustomButton
-              type="next"
-              onClick={() => handleNext()}
-              disabled={selectedExtras.length === 0}
-            />
-          </div>
-          <p style={{ color: "green" }}>
-            Click Next when you selected your option(s).
-          </p>
-        </div>
-      )}
-      {isNormalBread
-        ? step == 7 && (
-            <div>
-              {getCompleteOrder()}
-              {getCaloriesAndMacros()}
-              <div className="my-2">
-                <CustomButton type="previous" onClick={handlePrevious} />
-                <CustomButton
-                  type="finish"
-                  onClick={finish}
-                  label="Reset to default"
-                />
-              </div>
+      <div className="bg-gray-200 rounded-3xl to-gray-400 py-8 md:py-16 px-2">
+        <div className="grid w-full grid-cols-1 place-items-center space-y-6">
+          <h2 className="font-normal text-center my-0">
+            <strong>Subway Calculator</strong>
+          </h2>
+          <div className="w-full relative px-3 md:w-[70%]">
+            <label
+              htmlFor="3"
+              className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+            >
+              Bread/Wrap
+            </label>
+            <div className="w-full">
+              <Dropdown items={breadOptions} selectItems={setSelectedBread} />
             </div>
-          )
-        : step == 6 && (
-            <div>
-              {getCompleteOrder()}
-              {getCaloriesAndMacros()}
-              <div className="my-2">
-                <CustomButton type="previous" onClick={handlePrevious} />
-                <CustomButton
-                  type="finish"
-                  onClick={finish}
-                  label="Reset to default"
-                />
+          </div>
+          {isNormalBread && (
+            <div className="w-full relative px-3 md:w-[70%]">
+              <label
+                htmlFor="3"
+                className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+              >
+                Bread size
+              </label>
+              <div className="w-full relative flex flex-row items-center">
+                <button
+                  onClick={() =>
+                    setSelectedBreadLength({
+                      title: "6-inch",
+                      protein: 0,
+                      carbs: 0,
+                      fats: 0,
+                    })
+                  }
+                  className={`w-1/2 h-10 rounded-md text-xs font-semibold transition-all duration-200 ease-in-out ${
+                    selectedBreadLength.title === "6-inch"
+                      ? "border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 text-white"
+                      : "bg-blue-200 group-hover:bg-blue-400 text-black"
+                  }`}
+                >
+                  6-inch
+                </button>
+                &nbsp;
+                <button
+                  onClick={() =>
+                    setSelectedBreadLength({
+                      title: "Footlong",
+                      protein: 0,
+                      carbs: 0,
+                      fats: 0,
+                    })
+                  }
+                  className={`w-1/2 h-10 rounded-md text-xs font-semibold transition-all duration-200 ease-in-out ${
+                    selectedBreadLength.title === "Footlong"
+                      ? "border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 text-white"
+                      : "bg-blue-200 group-hover:bg-blue-400 text-black"
+                  }`}
+                >
+                  Footlong
+                </button>
               </div>
             </div>
           )}
-      <div className="group mx-auto group flex flex-col">
+          <div className="w-full relative px-3 md:w-[70%]">
+            <label
+              htmlFor="3"
+              className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+            >
+              Cheese
+            </label>
+            <div className="w-full">
+              <Dropdown
+                items={cheeseOptions}
+                selectItems={setSelectedCheese}
+                multiple={true}
+              />
+            </div>
+          </div>
+          <div className="w-full relative px-3 md:w-[70%]">
+            <label
+              htmlFor="3"
+              className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+            >
+              Protein
+            </label>
+            <div className="w-full">
+              <Dropdown
+                items={meatOptions}
+                selectItems={setSelectedMeat}
+                multiple={true}
+              />
+            </div>
+          </div>
+          <div className="w-full relative px-3 md:w-[70%]">
+            <label
+              htmlFor="3"
+              className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+            >
+              Sauce
+            </label>
+            <div className="w-full">
+              <Dropdown
+                items={sauceOptions}
+                selectItems={setSelectedSauce}
+                multiple={true}
+                specialItem={true}
+              />
+            </div>
+          </div>
+          <div className="w-full relative px-3 md:w-[70%]">
+            <label
+              htmlFor="3"
+              className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+            >
+              Extras
+            </label>
+            <div className="w-full">
+              <Dropdown
+                items={extraOptions}
+                selectItems={setSelectedExtras}
+                multiple={true}
+                specialItem={true}
+              />
+            </div>
+          </div>
+          <div className="w-full px-3 relative md:w-[70%]">
+            <CustomButton
+              type="finish"
+              onClick={getCaloriesAndMacros}
+              label="Calculate"
+              className="w-full"
+              disabled={!isValid}
+            />
+            <span className="block pt-1 text-xs font-semibold text-gray-500">
+              {isValid === true ? "" : `Please input the missing values. `}
+            </span>
+          </div>
+        </div>
+      </div>
+      <div ref={resultRef} className="w-full mx-auto flex flex-col">
+        {totalCalories > 0 ? (
+          <>
+            <h2 className="font-normal text-center">
+              <strong>Your results:</strong>
+            </h2>
+            <div className="flex w-full justify-center items-center py-2 rounded-3xl animated-background bg-gray-200 to-gray-200">
+              <div className="w-[80%] md:w-[300px] text-left m-11 p-7 bg-white rounded-3xl shadow-[rgba(0,_0,_0,_0.4)_0px_60px_40px_-7px]">
+                <p className="block font-bold text-gray-800 mt-0">
+                  Your meal has:
+                </p>
+                <h3 className="text-gradient font-bold my-0">
+                  🍴{Math.round(totalCalories)} kcal
+                </h3>
+                <p className="my-0">🥩 Protein: {Math.round(totalProtein)}g</p>
+                <p className="my-0">🥔 Carbs: {Math.round(totalCarbs)}g</p>
+                <p className="my-0">🥜 Fat: {Math.round(totalFats)}g</p>
+              </div>
+            </div>
+          </>
+        ) : (
+          <div className="flex flex-col">
+            <p className="text-lg text-red-600">
+              Please do the calculation above first.
+            </p>
+          </div>
+        )}
         <p>
           I created this Subway Calorie Calculator with the knowledge I gained
           while working at Subway. I&apos;ve double-checked the calorie count
