@@ -166,9 +166,6 @@ export default function Calculator() {
     <section className="my-6 mx-auto max-w-4xl">
       <div className="bg-gray-200 rounded-3xl to-gray-400 py-8 md:py-16 px-2">
         <div className="grid w-full grid-cols-1 place-items-center space-y-6">
-          <h2 className="font-normal text-center my-0">
-            <strong>Subway Calculator</strong>
-          </h2>
           <div className="w-full relative px-3 md:w-[70%]">
             <label
               htmlFor="3"
@@ -331,19 +328,20 @@ export default function Calculator() {
           </div>
         )}
         <p>
-          I created this Subway Calorie Calculator with the knowledge I gained
-          while working at Subway. I&apos;ve double-checked the calorie count
-          and weight for all the options, from breads to proteins, sauces to
-          cookies. I wanted to make sure that this calculator is as accurate and
-          helpful as possible because I truly value the fresh, tasty food Subway
-          offers. I&apos;m excited to share this with everyone who loves Subway
-          and is mindful of their calorie intake.
+          I created this Subway Calorie Calculator with the knowledge I gained{" "}
+          <strong>while working</strong> at Subway. I&apos;ve{" "}
+          <strong>double-checked</strong> the calorie count and weight for all
+          the options, from breads to proteins, sauces to cookies. I wanted to
+          make sure that this calculator is as accurate and helpful as possible
+          because I truly value the fresh, tasty food Subway offers. I&apos;m
+          excited to share this with everyone who loves Subway and is mindful of
+          their calorie intake.
         </p>
         <p>
           Calories are like fuel for your body. The amount you need each day can
-          vary, but generally, adults need between 1,500 to 2,500 calories
-          daily. Here&apos;s a quick guide to understanding how a Subway meal
-          fits into your calorie goals:
+          vary, but generally, adults need between{" "}
+          <strong>1,500 to 2,500</strong> calories daily. Here&apos;s a quick
+          guide to understanding how a Subway meal fits into your calorie goals:
         </p>
         <ul>
           <li>
