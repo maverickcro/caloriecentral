@@ -3,7 +3,6 @@ import CalculatorCard from "./components/CalculatorCard";
 import CustomButton from "./components/CustomButton";
 import LandingPagePosts from "./components/LandingPagePosts";
 import AboutMeSection from "./components/AboutMeSection";
-import Head from "next/head";
 
 export const metadata = {
   title: "Home - CaloriePal",
@@ -29,19 +28,31 @@ export const metadata = {
 };
 
 export default function Home() {
+  let jsonLd = {
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    name: "CaloriePal - Your Ultimate Calorie Management Tool",
+    description:
+      "Discover the easiest way to track your calories, manage your diet, and achieve your health and fitness goals with CaloriePal.",
+    author: {
+      "@type": "Person",
+      name: "Marko S",
+      url: "https://www.linkedin.com/in/marko-stjepanovic-163574151/",
+    },
+    url: "https://www.calorie-pal.com",
+    mainEntityOfPage: {
+      "@type": "WebSite",
+      name: "CaloriePal",
+      url: "https://www.calorie-pal.com",
+    },
+  };
+
   return (
     <main className="mt-2 mx-auto px-6 max-w-4xl">
-      <Head>
-        <title>CaloriePal - Your Ultimate Calorie Management Tool</title>
-        <meta
-          name="description"
-          content="Discover the easiest way to track your calories, manage your diet, and achieve your health and fitness goals with CaloriePal."
-        />
-        <meta
-          name="keywords"
-          content="calorie tracking, diet management, fitness goals, health improvement, nutritional information, meal planning, calorie counting app, weight loss tool, health and fitness, calorie management tool"
-        />
-      </Head>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="animated-background rounded-3xl h-[40vh] mb-10">
         <h1 className="text-2xl md:text-4xl text-center font-bold text-white mb-2">
           Welcome to CaloriePal

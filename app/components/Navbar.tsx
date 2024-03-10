@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ToggleMode from "./ToggleMode";
 
 export default function Navbar() {
   return (
@@ -31,6 +32,7 @@ export default function Navbar() {
           >
             About
           </Link>
+          <ToggleMode />
         </div>
       </div>
     </nav>
