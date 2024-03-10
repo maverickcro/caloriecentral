@@ -23,7 +23,7 @@ export default function Calculator() {
     fats: 0,
   });
   const [selectedBreadLength, setSelectedBreadLength] = useState<Option>({
-    title: "",
+    title: "Footlong",
     kcal: 0,
     protein: 0,
     carbs: 0,
@@ -77,14 +77,6 @@ export default function Calculator() {
     selectedSauce[0].title !== "" &&
     selectedExtras.length > 0 &&
     selectedExtras[0].title !== "";
-  console.log(
-    selectedBread,
-    selectedBreadLength,
-    selectedCheese,
-    selectedMeat,
-    selectedSauce,
-    selectedExtras
-  );
   const [totalCalories, setTotalCalories] = useState<number>(0);
   const [totalProtein, setTotalProtein] = useState<number>(0);
   const [totalCarbs, setTotalCarbs] = useState<number>(0);

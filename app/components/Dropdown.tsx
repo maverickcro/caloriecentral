@@ -81,14 +81,13 @@ const Dropdown = ({
       }
     }
   };
-
   return (
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={toggleDropdown}
         className="text-base text-gray-800 bg-white border border-gray-300 rounded-md py-2 px-4 w-full text-left hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 overflow-hidden"
       >
-        <div className="truncate pr-10">
+        <div className={`truncate pr-10 ${selectedItems !== "" && ""} `}>
           {multiple
             ? Array.isArray(selectedItems) && selectedItems.length > 0
               ? selectedItems
@@ -123,13 +122,13 @@ const Dropdown = ({
         </span>
       </button>
       {isOpen && (
-        <div className="absolute z-10 w-full bg-white shadow-lg max-h-60 overflow-auto border border-gray-300 rounded-md">
+        <div className="absolute z-10 w-full bg-white shadow-lg max-h-80 overflow-auto border border-gray-300 rounded-md">
           <ul className="my-1 px-2">
             {items.map((item: any, index: number) => (
               <li
                 key={index}
-                className={`list-none my-1 py-0 hover:bg-gray-100 cursor-pointer ${
-                  multiple && selectedItems.includes(item) ? "bg-gray-200" : ""
+                className={`list-none my-1 py-0 cursor-pointer ${
+                  multiple && selectedItems.includes(item) ? "bg-gray-300" : ""
                 }`}
                 onClick={
                   specialItem
@@ -137,7 +136,7 @@ const Dropdown = ({
                     : () => handleItemClick(item)
                 }
               >
-                <span className="text-gradient">
+                <span className="text-gradient text-base font-bold">
                   {item.title} - {item.kcal} kcal
                 </span>
                 <span className="block pt-1 pb-2 text-sm font-semibold text-gray-500 border-b border-gray-300">

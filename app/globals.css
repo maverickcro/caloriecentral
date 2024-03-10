@@ -16,6 +16,14 @@
   line-height: 1.5;
 }
 
+.gradient-text {
+  background: linear-gradient(90deg, #4ca5ff, #b573f8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline;
+}
+
 .blog-post:hover h2 {
   background: linear-gradient(90deg, #4ca5ff, #b573f8);
   background-clip: text;
