@@ -25,7 +25,7 @@ export default function Posts() {
             key={post.id}
             className="group flex flex-col blog-post bg-white shadow-md overflow-hidden transform transition-transform duration-300 ease-in-out hover:scale-[1.03]"
           >
-            <div className="relative w-full h-48 cursor-pointer">
+            <div className="relative w-full h-64 cursor-pointer">
               <Image
                 src={post.featuredImage}
                 alt={post.title}
@@ -68,7 +68,7 @@ export default function Posts() {
             key={post.id}
             className="group flex flex-col blog-post bg-white shadow-md overflow-hidden transform transition-transform duration-300 ease-in-out hover:scale-[1.03]"
           >
-            <div className="relative w-full h-48 cursor-pointer">
+            <div className="relative w-full h-64 cursor-pointer">
               <Image
                 src={post.featuredImage}
                 alt={post.title}
