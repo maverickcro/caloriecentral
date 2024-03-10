@@ -258,7 +258,9 @@ export default function AnorexicBMICalculator() {
         {bmi > 0 ? (
           <>
             <h2 className="font-normal text-center">
-              <strong>Your results:</strong>
+              <strong className="text-black dark:text-white">
+                Your results:
+              </strong>
             </h2>
             <div className="flex w-full justify-center items-center py-2 rounded-3xl animated-background bg-gray-200 to-gray-200">
               <div className="md:max-w-md m-11 p-5 bg-white rounded-3xl shadow-[rgba(0,_0,_0,_0.4)_0px_60px_40px_-7px]">
@@ -303,9 +305,15 @@ export default function AnorexicBMICalculator() {
                   weight category for your height.
                 </p>
                 <p className="block pt-1 text-sm font-semibold text-gray-500">
-                  This BMI result is <strong>not</strong> an official medical
-                  diagnosis. For a full assessment and health advice, please
-                  <strong> consult</strong> a healthcare professional.
+                  This BMI result is{" "}
+                  <strong className="text-black dark:text-white">not</strong> an
+                  official medical diagnosis. For a full assessment and health
+                  advice, please
+                  <strong className="text-black dark:text-white">
+                    {" "}
+                    consult
+                  </strong>{" "}
+                  a healthcare professional.
                 </p>
               </div>
             </div>
@@ -351,15 +359,21 @@ export default function AnorexicBMICalculator() {
             </tr>
           </tbody>
         </table>
-        <h2>Understanding BMI in Anorexia Nervosa</h2>
+        <h2 className="text-black dark:text-white">
+          Understanding BMI in Anorexia Nervosa
+        </h2>
         <div>
           <p className=" text-black">
             When considering anorexia nervosa (AN), a{" "}
-            <strong>BMI result is more than just a number</strong>—it&apos;s a
-            window into an individual&apos;s health that requires careful
-            interpretation. While BMI specifiers offer a framework for
+            <strong className="text-black dark:text-white">
+              BMI result is more than just a number
+            </strong>
+            —it&apos;s a window into an individual&apos;s health that requires
+            careful interpretation. While BMI specifiers offer a framework for
             identifying AN, recent studies suggest that they{" "}
-            <strong>may not fully capture the severity of the condition</strong>
+            <strong className="text-black dark:text-white">
+              may not fully capture the severity of the condition
+            </strong>
             , especially in hospital settings where patients often present with
             extremely low BMI.
           </p>
@@ -369,19 +383,24 @@ export default function AnorexicBMICalculator() {
           </p>
           <ul>
             <li>
-              <strong>A BMI below 15 suggests a severe condition</strong> that
-              requires immediate medical attention.
+              <strong className="text-black dark:text-white">
+                A BMI below 15 suggests a severe condition
+              </strong>{" "}
+              that requires immediate medical attention.
             </li>
             <li>
               Those with a BMI between 13.6 and 14.99 fall into a critical
               category, often requiring{" "}
-              <strong>hospitalization for intensive care</strong>.
+              <strong className="text-black dark:text-white">
+                hospitalization for intensive care
+              </strong>
+              .
             </li>
             <li>
               A new proposed category, &quot;very extreme&quot; AN, with a BMI ≤
               13.5, doesn&apos;t necessarily indicate a distinct clinical group
               from those with slightly higher BMIs. Yet, it signals a{" "}
-              <strong>
+              <strong className="text-black dark:text-white">
                 need for immediate and specialized medical intervention
               </strong>
               .
@@ -390,25 +409,32 @@ export default function AnorexicBMICalculator() {
 
           <p className=" text-black">
             It&apos;s important to note that while a{" "}
-            <strong>low BMI is a significant health risk</strong>, it
-            doesn&apos;t always correlate with the intensity of eating disorder
-            psychopathology. This disconnect suggests that{" "}
-            <strong>BMI alone isn&apos;t a complete measure</strong> of an
-            individual&apos;s experience with AN.
+            <strong className="text-black dark:text-white">
+              low BMI is a significant health risk
+            </strong>
+            , it doesn&apos;t always correlate with the intensity of eating
+            disorder psychopathology. This disconnect suggests that{" "}
+            <strong className="text-black dark:text-white">
+              BMI alone isn&apos;t a complete measure
+            </strong>{" "}
+            of an individual&apos;s experience with AN.
           </p>
 
           <p className=" text-black">
             While BMI is a crucial tool for assessing the physical aspect of AN,
             it&apos;s only part of the picture. The treatment and recovery
-            journey for those with AN <strong>varies significantly</strong> and
-            goes beyond just achieving a healthy BMI.&nbsp;
-            <strong>
+            journey for those with AN{" "}
+            <strong className="text-black dark:text-white">
+              varies significantly
+            </strong>{" "}
+            and goes beyond just achieving a healthy BMI.&nbsp;
+            <strong className="text-black dark:text-white">
               A holistic approach to treatment that addresses both physical and
               mental health is essential for recovery
             </strong>
             .
           </p>
-          <h2>How to calculate BMI?</h2>
+          <h2 className="text-black dark:text-white">How to calculate BMI?</h2>
           <p>
             To calculate your BMI (Body Mass Index), which helps understand if
             your weight is in a healthy range for your height, follow these easy
@@ -441,7 +467,10 @@ export default function AnorexicBMICalculator() {
           Please remember, this text is for informational purposes only and
           should not replace professional medical advice. If you suspect that
           you or someone else is experiencing symptoms of anorexia,{" "}
-          <strong>seek help from a healthcare provider immediately</strong>.
+          <strong className="text-black dark:text-white">
+            seek help from a healthcare provider immediately
+          </strong>
+          .
         </span>
       </div>
       <GoToTop />

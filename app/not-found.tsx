@@ -16,12 +16,16 @@ export default function Calculator() {
     <main>
       <section className="mt-6 mx-auto px-6 prose  max-w-4xl prose-xl prose-slate">
         <h1 className="text-gradient__orange">Did you type the wrong url?</h1>
-        <p className="text-black">
+        <p className="text-black dark:text-white">
           The page you are looking for might have been removed, had its name
           changed, or is temporarily unavailable.
         </p>
-        <p className="text-black">
-          You can <Link href="/">Return Home</Link> or check out these:
+        <p className="text-black dark:text-white">
+          You can{" "}
+          <Link className="text-black dark:text-white" href="/">
+            Return Home
+          </Link>{" "}
+          or check out these:
         </p>
       </section>
       <section className="mt-6 mx-auto px-6 max-w-4xl">

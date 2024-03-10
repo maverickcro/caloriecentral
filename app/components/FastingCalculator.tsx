@@ -370,7 +370,9 @@ export default function FastingCalculator() {
         {tdee > 0 ? (
           <>
             <h2 className="font-normal text-center">
-              <strong>Your results:</strong>
+              <strong className="text-black dark:text-white">
+                Your results:
+              </strong>
             </h2>
             <div className="flex w-full justify-center items-center py-2 rounded-3xl animated-background bg-gray-200 to-gray-200">
               <div className="md:max-w-lg m-11 p-5 bg-white rounded-3xl">
@@ -586,7 +588,9 @@ export default function FastingCalculator() {
             </p>
           </div>
         )}
-        <h2>Intermittent Fasting for Weight Loss</h2>
+        <h2 className="text-black dark:text-white">
+          Intermittent Fasting for Weight Loss
+        </h2>
         <p>
           Intermittent Fasting (IF) has become a key player in weight
           management. The principle is simple: alternate periods of fasting with
@@ -607,7 +611,9 @@ export default function FastingCalculator() {
             can vary.
           </li>
         </ul>
-        <h2>Overview of Fasting Methods</h2>
+        <h2 className="text-black dark:text-white">
+          Overview of Fasting Methods
+        </h2>
         <table className="w-full border-collapse border border-blue-500 max-w-xl mt-16 mx-auto">
           <thead>
             <tr className="bg-blue-500">
@@ -667,7 +673,9 @@ export default function FastingCalculator() {
             </tr>
           </tbody>
         </table>
-        <h2>Which fasting method is the best for weight loss?</h2>
+        <h2 className="text-black dark:text-white">
+          Which fasting method is the best for weight loss?
+        </h2>
         <p>
           A recent meta-analysis has compared three popular intermittent fasting
           (IF) methods: Alternate Day Fasting (ADF), the 5:2 diet, and
@@ -677,20 +685,28 @@ export default function FastingCalculator() {
 
         <ul>
           <li>
-            <strong>Effectiveness Compared to Traditional Diets:</strong> The IF
-            methods showed similar weight loss effectiveness compared to
+            <strong className="text-black dark:text-white">
+              Effectiveness Compared to Traditional Diets:
+            </strong>{" "}
+            The IF methods showed similar weight loss effectiveness compared to
             traditional caloric restriction, making them a compelling
             alternative for those seeking new diet strategies.
           </li>
           <li>
-            <strong>Ranking the Fasting Methods:</strong> The study found ADF to
-            be the most effective for weight loss, followed by traditional
-            calorie-restricted diets, with TRE in last place.
+            <strong className="text-black dark:text-white">
+              Ranking the Fasting Methods:
+            </strong>{" "}
+            The study found ADF to be the most effective for weight loss,
+            followed by traditional calorie-restricted diets, with TRE in last
+            place.
           </li>
           <li>
-            <strong>Compliance Rates:</strong> Short-term adherence to IF diets
-            started strong, with compliance rates above 80%, indicating an
-            initial ease of adoption for participants.
+            <strong className="text-black dark:text-white">
+              Compliance Rates:
+            </strong>{" "}
+            Short-term adherence to IF diets started strong, with compliance
+            rates above 80%, indicating an initial ease of adoption for
+            participants.
           </li>
         </ul>
 
@@ -706,57 +722,81 @@ export default function FastingCalculator() {
           .
         </p>
 
-        <h2>Will I be hungry on fasting days?</h2>
+        <h2 className="text-black dark:text-white">
+          Will I be hungry on fasting days?
+        </h2>
         <p>
           Reports state that the first 10 days on the every-other-day diet are
           the most challenging. Calorie-free beverages, such as unsweetened tea,
-          may help offset hunger. Here are some <strong>tips</strong> for you:
+          may help offset hunger. Here are some{" "}
+          <strong className="text-black dark:text-white">tips</strong> for you:
         </p>
         <ul>
           <li>
-            <strong>Hydrate Strategically:</strong> Keep water intake high to
-            curb hunger. Spicing it up with a slice of lemon or cucumber can
-            make it more enjoyable, and electrolytes can help maintain balance.
+            <strong className="text-black dark:text-white">
+              Hydrate Strategically:
+            </strong>{" "}
+            Keep water intake high to curb hunger. Spicing it up with a slice of
+            lemon or cucumber can make it more enjoyable, and electrolytes can
+            help maintain balance.
           </li>
           <li>
-            <strong>Nourish with Nutrients:</strong> Incorporate a diet rich in
-            fiber and proteins like legumes, lean meats, and greens.
-            They&apos;re your allies in keeping hunger at bay and stabilizing
-            energy levels.
+            <strong className="text-black dark:text-white">
+              Nourish with Nutrients:
+            </strong>{" "}
+            Incorporate a diet rich in fiber and proteins like legumes, lean
+            meats, and greens. They&apos;re your allies in keeping hunger at bay
+            and stabilizing energy levels.
           </li>
           <li>
-            <strong>Smart Snacking:</strong> Choose whole foods over processed
-            snacks. Foods with a low glycemic index maintain your blood sugar
-            levels and fend off the cravings.
+            <strong className="text-black dark:text-white">
+              Smart Snacking:
+            </strong>{" "}
+            Choose whole foods over processed snacks. Foods with a low glycemic
+            index maintain your blood sugar levels and fend off the cravings.
           </li>
           <li>
-            <strong>Build Up Gradually:</strong> Ease into fasting by starting
-            with shorter periods and then extending them. This helps your body
-            adapt without overwhelming it.
+            <strong className="text-black dark:text-white">
+              Build Up Gradually:
+            </strong>{" "}
+            Ease into fasting by starting with shorter periods and then
+            extending them. This helps your body adapt without overwhelming it.
           </li>
           <li>
-            <strong>Engage Your Mind:</strong> Stay occupied with activities
-            like reading, walking, or a new hobby. It&apos;s not just about
-            passing time but enriching your life while fasting.
+            <strong className="text-black dark:text-white">
+              Engage Your Mind:
+            </strong>{" "}
+            Stay occupied with activities like reading, walking, or a new hobby.
+            It&apos;s not just about passing time but enriching your life while
+            fasting.
           </li>
           <li>
-            <strong>Stay Positive and Consistent:</strong> Remember that
-            perseverance is key. It&apos;s normal to have an adjustment period,
-            so keep a positive mindset and be consistent with your routine.
+            <strong className="text-black dark:text-white">
+              Stay Positive and Consistent:
+            </strong>{" "}
+            Remember that perseverance is key. It&apos;s normal to have an
+            adjustment period, so keep a positive mindset and be consistent with
+            your routine.
           </li>
           <li>
-            <strong>Listen to Your Body:</strong> Pay attention to what your
-            body is telling you. If you feel unwell, it&apos;s okay to adjust
-            your fasting plan. Health comes first.
+            <strong className="text-black dark:text-white">
+              Listen to Your Body:
+            </strong>{" "}
+            Pay attention to what your body is telling you. If you feel unwell,
+            it&apos;s okay to adjust your fasting plan. Health comes first.
           </li>
           <li>
-            <strong>Seek Community Support:</strong> Join online forums or local
-            groups practicing intermittent fasting. Sharing experiences and tips
-            can be incredibly motivating.
+            <strong className="text-black dark:text-white">
+              Seek Community Support:
+            </strong>{" "}
+            Join online forums or local groups practicing intermittent fasting.
+            Sharing experiences and tips can be incredibly motivating.
           </li>
         </ul>
 
-        <h2>Do I still fast once I’m ready to maintain my weight?</h2>
+        <h2 className="text-black dark:text-white">
+          Do I still fast once I’m ready to maintain my weight?
+        </h2>
         <p>
           Some plans, such as the every-other-day diet, also include a weight
           maintenance phase, which involves increasing the number of calories on
@@ -765,42 +805,65 @@ export default function FastingCalculator() {
           or health requirements, it may benefit them to seek consultation with
           a doctor or dietitian before starting a restrictive diet.
         </p>
-        <h2>Can I eat or drink something without breaking the fast?</h2>
+        <h2 className="text-black dark:text-white">
+          Can I eat or drink something without breaking the fast?
+        </h2>
         <ul>
           <li>
-            <strong>Stay Hydrated:</strong> Plain water is your best bet to
-            avoid breaking your fast and staying hydrated.
+            <strong className="text-black dark:text-white">
+              Stay Hydrated:
+            </strong>{" "}
+            Plain water is your best bet to avoid breaking your fast and staying
+            hydrated.
           </li>
           <li>
-            <strong>Coffee and Tea:</strong> Enjoy these beverages without sugar
-            to keep the fast intact. A splash of milk may be acceptable for some
-            fasting protocols, but it&apos;s best to stick to black to be safe.
+            <strong className="text-black dark:text-white">
+              Coffee and Tea:
+            </strong>{" "}
+            Enjoy these beverages without sugar to keep the fast intact. A
+            splash of milk may be acceptable for some fasting protocols, but
+            it&apos;s best to stick to black to be safe.
           </li>
           <li>
-            <strong>Savory Broths:</strong> Bone or vegetable broths can offer
-            comfort without a significant calorie intake, but ensure
-            they&apos;re free of solid bits.
+            <strong className="text-black dark:text-white">
+              Savory Broths:
+            </strong>{" "}
+            Bone or vegetable broths can offer comfort without a significant
+            calorie intake, but ensure they&apos;re free of solid bits.
           </li>
           <li>
-            <strong>Pickles for Crunch:</strong> A pickle can be a low-calorie,
-            satisfying snack. Just check the label for added sugars.
+            <strong className="text-black dark:text-white">
+              Pickles for Crunch:
+            </strong>{" "}
+            A pickle can be a low-calorie, satisfying snack. Just check the
+            label for added sugars.
           </li>
           <li>
-            <strong>Zero-Calorie Drinks:</strong> Diet sodas are often
-            considered acceptable, but they can trigger a craving response in
-            some people.
+            <strong className="text-black dark:text-white">
+              Zero-Calorie Drinks:
+            </strong>{" "}
+            Diet sodas are often considered acceptable, but they can trigger a
+            craving response in some people.
           </li>
           <li>
-            <strong>Citrus Twist:</strong> Adding a splash of lemon juice to
-            water is fine, as long as it&apos;s just a small amount.
+            <strong className="text-black dark:text-white">
+              Citrus Twist:
+            </strong>{" "}
+            Adding a splash of lemon juice to water is fine, as long as
+            it&apos;s just a small amount.
           </li>
           <li>
-            <strong>Apple Cider Vinegar:</strong> A bit diluted in water can aid
-            digestion and won&apos;t break a fast.
+            <strong className="text-black dark:text-white">
+              Apple Cider Vinegar:
+            </strong>{" "}
+            A bit diluted in water can aid digestion and won&apos;t break a
+            fast.
           </li>
           <li>
-            <strong>Chew Thoughtfully:</strong> Sugar-free gum can keep your
-            mouth busy without adding calories.
+            <strong className="text-black dark:text-white">
+              Chew Thoughtfully:
+            </strong>{" "}
+            Sugar-free gum can keep your mouth busy without adding calories.
           </li>
         </ul>
       </div>

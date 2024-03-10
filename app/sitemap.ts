@@ -9,7 +9,7 @@
 //       priority: 1,
 //     },
 //     {
-//       url: "https://calorie-pal.com/posts",
+//       url: "https://calorie-pal.com/blog",
 //       lastModified: new Date(),
 //       changeFrequency: "monthly",
 //       priority: 0.8,

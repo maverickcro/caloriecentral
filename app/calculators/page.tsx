@@ -36,7 +36,7 @@ export default function PostList() {
           Get the numbers that matter.
         </p>
       </div>
-      <h2 className="mt-12 mb-16 text-2xl  md:text-4xl  text-black">
+      <h2 className="mt-12 mb-16 text-2xl  md:text-4xl  text-black dark:text-white">
         Macros?&nbsp;
         <span className="font-bold text-gradient">Calories?</span>
         &nbsp;Weight?&nbsp;We Have All Kinds Of{" "}

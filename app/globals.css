@@ -130,3 +130,8 @@ strong::after {
     background-position: 0% 50%;
   }
 }
+
+p,
+ul li {
+  @apply text-black dark:text-white;
+}

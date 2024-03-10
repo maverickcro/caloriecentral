@@ -33,17 +33,27 @@ export default function Calculator() {
         <span className="block pt-1 text-xs font-semibold text-gray-500">
           Updated: Feb 11, 2024
         </span>
-        <p className="text-black">
+        <p className="text-black dark:text-white">
           Calorie Deficit Calculator is here as a{" "}
-          <strong>weight loss predictor</strong>, or{" "}
-          <strong>weight loss estimator</strong>. This is one of the most useful
-          tools out there to get that motivation and feel of certainity that you
-          will reach your goals of losing weight.
+          <strong className="text-black dark:text-white">
+            weight loss predictor
+          </strong>
+          , or{" "}
+          <strong className="text-black dark:text-white">
+            weight loss estimator
+          </strong>
+          . This is one of the most useful tools out there to get that
+          motivation and feel of certainity that you will reach your goals of
+          losing weight.
         </p>
         <p>
-          It will tell you <strong>how many calories</strong> to eat and an{" "}
-          <strong>estimated date</strong> of reaching your goal weight based on
-          your goals! :)
+          It will tell you{" "}
+          <strong className="text-black dark:text-white">
+            how many calories
+          </strong>{" "}
+          to eat and an{" "}
+          <strong className="text-black dark:text-white">estimated date</strong>{" "}
+          of reaching your goal weight based on your goals! :)
         </p>
 
         <CalculatorComponent />

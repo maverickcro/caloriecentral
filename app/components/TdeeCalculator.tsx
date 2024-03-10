@@ -348,7 +348,9 @@ export default function TDEECalculator() {
         {tdee > 0 ? (
           <>
             <h2 className="font-normal text-center">
-              <strong>Your results:</strong>
+              <strong className="text-black dark:text-white">
+                Your results:
+              </strong>
             </h2>
             <div
               className="flex w-full justify-center items-center py-2 rounded-3xl animated-background
@@ -361,12 +363,20 @@ export default function TDEECalculator() {
                   kcal.
                 </h3>
                 <p className="block pt-5 text-sm font-semibold text-gray-500">
-                  You need this many calories to <strong>maintain</strong> your
-                  weight.
+                  You need this many calories to{" "}
+                  <strong className="text-black dark:text-white">
+                    maintain
+                  </strong>{" "}
+                  your weight.
                 </p>
                 <p className="block pt-1 text-sm font-semibold text-gray-500">
-                  To <strong>lose weight</strong>, aim for a calorie intake{" "}
-                  <strong>below</strong> this number.
+                  To{" "}
+                  <strong className="text-black dark:text-white">
+                    lose weight
+                  </strong>
+                  , aim for a calorie intake{" "}
+                  <strong className="text-black dark:text-white">below</strong>{" "}
+                  this number.
                 </p>
                 <h3 className="my-6">
                   🍴 Find out more with our{" "}
@@ -383,27 +393,39 @@ export default function TDEECalculator() {
             <p>Based on your TDEE, here are some additional insights:</p>
             <ul>
               <li>
-                <strong>Macronutrient Breakdown:</strong> For balanced
-                nutrition, target approximately 50% of your calories from
-                carbohydrates, 20% from proteins, and 30% from fats.
+                <strong className="text-black dark:text-white">
+                  Macronutrient Breakdown:
+                </strong>{" "}
+                For balanced nutrition, target approximately 50% of your
+                calories from carbohydrates, 20% from proteins, and 30% from
+                fats.
               </li>
               <li>
-                <strong>Weekly Caloric Deficit:</strong> Aiming for a deficit of
-                3500 kcal can lead to a weight loss of approximately 1 pound per
-                week.
+                <strong className="text-black dark:text-white">
+                  Weekly Caloric Deficit:
+                </strong>{" "}
+                Aiming for a deficit of 3500 kcal can lead to a weight loss of
+                approximately 1 pound per week.
               </li>
               <li>
-                <strong>Activity Adjustment:</strong> Remember, if your activity
-                level changes, so does your TDEE. Re-calculate accordingly.
+                <strong className="text-black dark:text-white">
+                  Activity Adjustment:
+                </strong>{" "}
+                Remember, if your activity level changes, so does your TDEE.
+                Re-calculate accordingly.
               </li>
             </ul>
             <p>
               In other words, if you eat{" "}
-              <strong>{Math.round(tdee)} kcal</strong> daily with your activity
-              level, you will <strong>maintain</strong> your current weight. It
-              helps you figure out how many calories to eat, whether you want to
-              maintain your current weight, become stronger, or lose some
-              weight. It&apos;s like having a map for your food journey.
+              <strong className="text-black dark:text-white">
+                {Math.round(tdee)} kcal
+              </strong>{" "}
+              daily with your activity level, you will{" "}
+              <strong className="text-black dark:text-white">maintain</strong>{" "}
+              your current weight. It helps you figure out how many calories to
+              eat, whether you want to maintain your current weight, become
+              stronger, or lose some weight. It&apos;s like having a map for
+              your food journey.
             </p>
           </>
         ) : (
@@ -414,34 +436,46 @@ export default function TDEECalculator() {
           </div>
         )}
 
-        <h2>TDEE Calculator for Weight loss?</h2>
+        <h2 className="text-black dark:text-white">
+          TDEE Calculator for Weight loss?
+        </h2>
 
         <p>
           Imagine you&apos;re the 185-pound individual who just burned around{" "}
-          <strong>400 calories</strong> on a vigorous 30-minute bike ride.
-          That&apos;s an impressive effort! Now consider a large slice of
-          pepperoni pizza that can easily contain the same amount of calories.
-          Consuming that slice would effectively <strong>cancel out</strong> all
+          <strong className="text-black dark:text-white">400 calories</strong>{" "}
+          on a vigorous 30-minute bike ride. That&apos;s an impressive effort!
+          Now consider a large slice of pepperoni pizza that can easily contain
+          the same amount of calories. Consuming that slice would effectively{" "}
+          <strong className="text-black dark:text-white">cancel out</strong> all
           the hard work you just put in on your bike.
         </p>
 
         <p>
-          The truth is, it&apos;s much <strong>quicker and easier</strong> to
-          consume calories than it is to burn them off. This is why paying
+          The truth is, it&apos;s much{" "}
+          <strong className="text-black dark:text-white">
+            quicker and easier
+          </strong>{" "}
+          to consume calories than it is to burn them off. This is why paying
           attention to your diet is so crucial when trying to lose weight. You
           can unknowingly eat hundreds of calories in just a few minutes, which
           might take over an hour of intense exercise to burn off.
         </p>
 
         <p>
-          Use this calculator for <strong>faster weight loss</strong>. Calories
-          are important. At best, be mindful that if you eat{" "}
-          <strong>more</strong> than your TDEE you <strong>will</strong> gain
-          weight. At best combine workouts with less empty calories and keep
-          them under your TDEE.
+          Use this calculator for{" "}
+          <strong className="text-black dark:text-white">
+            faster weight loss
+          </strong>
+          . Calories are important. At best, be mindful that if you eat{" "}
+          <strong className="text-black dark:text-white">more</strong> than your
+          TDEE you <strong className="text-black dark:text-white">will</strong>{" "}
+          gain weight. At best combine workouts with less empty calories and
+          keep them under your TDEE.
         </p>
 
-        <h2>How We Calculate Your TDEE</h2>
+        <h2 className="text-black dark:text-white">
+          How We Calculate Your TDEE
+        </h2>
 
         <p>
           Our TDEE calculator starts with something called BMR—that&apos;s like
@@ -452,32 +486,48 @@ export default function TDEECalculator() {
         </p>
         <ul>
           <li>
-            <strong>Starting with the Basics:</strong> Your Basal Metabolic Rate
-            (BMR) is like the idle power your body needs, similar to how a
-            parked car still uses fuel to run the radio.
+            <strong className="text-black dark:text-white">
+              Starting with the Basics:
+            </strong>{" "}
+            Your Basal Metabolic Rate (BMR) is like the idle power your body
+            needs, similar to how a parked car still uses fuel to run the radio.
           </li>
           <li>
-            <strong>Height and Weight:</strong> We first convert your height to
-            centimeters and your weight to kilograms, even if you use pounds and
-            feet.
+            <strong className="text-black dark:text-white">
+              Height and Weight:
+            </strong>{" "}
+            We first convert your height to centimeters and your weight to
+            kilograms, even if you use pounds and feet.
           </li>
           <li>
-            <strong>Lean Body Mass:</strong> If you know your body fat
-            percentage, we fine-tune the calculations to focus on the lean part
-            of your weight—that&apos;s everything in your body minus the fat.
+            <strong className="text-black dark:text-white">
+              Lean Body Mass:
+            </strong>{" "}
+            If you know your body fat percentage, we fine-tune the calculations
+            to focus on the lean part of your weight—that&apos;s everything in
+            your body minus the fat.
           </li>
           <li>
-            <strong>Gender Matters:</strong> Men and women burn energy
-            differently, so we adjust the formula based on your biological sex.
+            <strong className="text-black dark:text-white">
+              Gender Matters:
+            </strong>{" "}
+            Men and women burn energy differently, so we adjust the formula
+            based on your biological sex.
           </li>
           <li>
-            <strong>Age Adjustments:</strong> As we age, our metabolism changes,
-            so we factor in your age for a precise number.
+            <strong className="text-black dark:text-white">
+              Age Adjustments:
+            </strong>{" "}
+            As we age, our metabolism changes, so we factor in your age for a
+            precise number.
           </li>
           <li>
-            <strong>Active Lifestyle:</strong> Whether you&apos;re a couch
-            potato or a fitness freak, we multiply your BMR by your activity
-            level to find out how many calories you burn on a typical day.
+            <strong className="text-black dark:text-white">
+              Active Lifestyle:
+            </strong>{" "}
+            Whether you&apos;re a couch potato or a fitness freak, we multiply
+            your BMR by your activity level to find out how many calories you
+            burn on a typical day.
           </li>
         </ul>
 
@@ -487,7 +537,9 @@ export default function TDEECalculator() {
           combined with your physical activity.
         </p>
 
-        <h2>Tips for Making the Most of Your TDEE</h2>
+        <h2 className="text-black dark:text-white">
+          Tips for Making the Most of Your TDEE
+        </h2>
 
         <ul>
           <li>
@@ -506,9 +558,11 @@ export default function TDEECalculator() {
 
         <p>
           Remember, your TDEE is a starting point. With this information you
-          push your fitness goals <strong>further</strong>! Here are some other
-          calculators that <strong>will</strong> help you with your weight loss,
-          muscle gain, macros and much more.
+          push your fitness goals{" "}
+          <strong className="text-black dark:text-white">further</strong>! Here
+          are some other calculators that{" "}
+          <strong className="text-black dark:text-white">will</strong> help you
+          with your weight loss, muscle gain, macros and much more.
         </p>
       </div>
       <GoToTop />

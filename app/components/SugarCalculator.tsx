@@ -468,7 +468,9 @@ export default function SugarCalculator() {
         {tdee > 0 ? (
           <>
             <h2 className="font-normal text-center">
-              <strong>Your results:</strong>
+              <strong className="text-black dark:text-white">
+                Your results:
+              </strong>
             </h2>
             <div className="flex w-full justify-center items-center py-2 rounded-3xl animated-background bg-gray-200 to-gray-200">
               <div className="md:max-w-md m-11 p-5 bg-white rounded-3xl shadow-[rgba(0,_0,_0,_0.4)_0px_60px_40px_-7px]">
@@ -491,11 +493,15 @@ export default function SugarCalculator() {
                   grams per day.
                 </h3>
                 <p className="block pt-5 text-sm font-semibold text-gray-500">
-                  <strong>World Health Organization&apos;s</strong> recommends
-                  less than 10% of total energy intake from
+                  <strong className="text-black dark:text-white">
+                    World Health Organization&apos;s
+                  </strong>{" "}
+                  recommends less than 10% of total energy intake from
                 </p>
                 <p className="block pt-1 text-sm font-semibold text-gray-500">
-                  <strong>The American Heart Association&apos;s</strong>{" "}
+                  <strong className="text-black dark:text-white">
+                    The American Heart Association&apos;s
+                  </strong>{" "}
                   recommendation for limiting added sugars to no more than 5%
                   calories per day for women and 7% calories per day for men
                 </p>
@@ -510,25 +516,33 @@ export default function SugarCalculator() {
           </div>
         )}
         <p className=" text-black">
-          Sugar <strong>only gives you calories</strong> and no other good
-          nutrients. To make your diet healthier and not eat too many calories,
-          it&apos;s important to not let sugary foods take the place of foods
-          that are good for you or make you eat more calories than you need.{" "}
+          Sugar{" "}
+          <strong className="text-black dark:text-white">
+            only gives you calories
+          </strong>{" "}
+          and no other good nutrients. To make your diet healthier and not eat
+          too many calories, it&apos;s important to not let sugary foods take
+          the place of foods that are good for you or make you eat more calories
+          than you need.{" "}
         </p>
-        <h2>Why this much?</h2>
+        <h2 className="text-black dark:text-white">Why this much?</h2>
         <p className=" text-black">
-          <strong>The American Heart Association&apos;s</strong> recommendation
-          for limiting added sugars to no more than 5% calories per day for
-          women and 7% calories per day for men is based on the concept of
-          discretionary calories.
+          <strong className="text-black dark:text-white">
+            The American Heart Association&apos;s
+          </strong>{" "}
+          recommendation for limiting added sugars to no more than 5% calories
+          per day for women and 7% calories per day for men is based on the
+          concept of discretionary calories.
         </p>
         <p className=" text-black">
-          <strong>World Health Organization&apos;s</strong> on the other side,
-          recommends less than 10% of total energy intake from free sugars but
-          ideally less than 5% of total energy intake for additional health
-          benefits.
+          <strong className="text-black dark:text-white">
+            World Health Organization&apos;s
+          </strong>{" "}
+          on the other side, recommends less than 10% of total energy intake
+          from free sugars but ideally less than 5% of total energy intake for
+          additional health benefits.
         </p>
-        <h2>Daily Caloric Intake: </h2>
+        <h2 className="text-black dark:text-white">Daily Caloric Intake: </h2>
         <ul>
           <li>
             For Women: The average daily caloric intake for women can vary based
@@ -545,7 +559,7 @@ export default function SugarCalculator() {
           The lower end is for sedentary lifestyle, while the higher end is for
           those who are more active.
         </p>
-        <h2>How much sugar?</h2>
+        <h2 className="text-black dark:text-white">How much sugar?</h2>
         <p className=" text-black">
           We&apos;ve calculated your Total Daily Energy Expenditure (TDEE) based
           on your personal details like gender, height, weight, and activity

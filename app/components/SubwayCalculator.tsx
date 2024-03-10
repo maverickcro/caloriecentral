@@ -304,7 +304,9 @@ export default function Calculator() {
         {totalCalories > 0 ? (
           <>
             <h2 className="font-normal text-center">
-              <strong>Your results:</strong>
+              <strong className="text-black dark:text-white">
+                Your results:
+              </strong>
             </h2>
             <div className="flex w-full justify-center items-center py-2 rounded-3xl animated-background bg-gray-200 to-gray-200">
               <div className="w-[80%] md:w-[300px] text-left m-11 p-7 bg-white rounded-3xl shadow-[rgba(0,_0,_0,_0.4)_0px_60px_40px_-7px]">
@@ -329,41 +331,54 @@ export default function Calculator() {
         )}
         <p>
           I created this Subway Calorie Calculator with the knowledge I gained{" "}
-          <strong>while working</strong> at Subway. I&apos;ve{" "}
-          <strong>double-checked</strong> the calorie count and weight for all
-          the options, from breads to proteins, sauces to cookies. I wanted to
-          make sure that this calculator is as accurate and helpful as possible
-          because I truly value the fresh, tasty food Subway offers. I&apos;m
-          excited to share this with everyone who loves Subway and is mindful of
-          their calorie intake.
+          <strong className="text-black dark:text-white">while working</strong>{" "}
+          at Subway. I&apos;ve{" "}
+          <strong className="text-black dark:text-white">double-checked</strong>{" "}
+          the calorie count and weight for all the options, from breads to
+          proteins, sauces to cookies. I wanted to make sure that this
+          calculator is as accurate and helpful as possible because I truly
+          value the fresh, tasty food Subway offers. I&apos;m excited to share
+          this with everyone who loves Subway and is mindful of their calorie
+          intake.
         </p>
         <p>
           Calories are like fuel for your body. The amount you need each day can
           vary, but generally, adults need between{" "}
-          <strong>1,500 to 2,500</strong> calories daily. Here&apos;s a quick
-          guide to understanding how a Subway meal fits into your calorie goals:
+          <strong className="text-black dark:text-white">1,500 to 2,500</strong>{" "}
+          calories daily. Here&apos;s a quick guide to understanding how a
+          Subway meal fits into your calorie goals:
         </p>
         <ul>
           <li>
-            <strong>Light Meals:</strong> Under 800 calories - ideal for smaller
-            appetites or weight loss goals, making up about 40% of a
-            2,000-calorie daily diet.
+            <strong className="text-black dark:text-white">Light Meals:</strong>{" "}
+            Under 800 calories - ideal for smaller appetites or weight loss
+            goals, making up about 40% of a 2,000-calorie daily diet.
           </li>
           <li>
-            <strong>Regular Meals:</strong> 800 - 1,300 calories - suitable for
-            an average adult, accounting for 40-65% of daily calorie intake,
-            especially if you&apos;re moderately active.
+            <strong className="text-black dark:text-white">
+              Regular Meals:
+            </strong>{" "}
+            800 - 1,300 calories - suitable for an average adult, accounting for
+            40-65% of daily calorie intake, especially if you&apos;re moderately
+            active.
           </li>
           <li>
-            <strong>Hearty Meals:</strong> Over 1,300 calories - perfect for
-            those with a very active lifestyle, providing a substantial part of
-            your energy needs. If you are not so active though, this might be
-            <strong> too many </strong> calories in one meal.
+            <strong className="text-black dark:text-white">
+              Hearty Meals:
+            </strong>{" "}
+            Over 1,300 calories - perfect for those with a very active
+            lifestyle, providing a substantial part of your energy needs. If you
+            are not so active though, this might be
+            <strong className="text-black dark:text-white">
+              {" "}
+              too many{" "}
+            </strong>{" "}
+            calories in one meal.
           </li>
         </ul>
         <p>
           If you are interested how many calories you need per day use our{" "}
-          <strong>FREE </strong>
+          <strong className="text-black dark:text-white">FREE </strong>
           tool and find out in seconds:{" "}
           <Link href="/tdee-calculator">Calorie Calculator</Link>
         </p>
@@ -378,29 +393,39 @@ export default function Calculator() {
           and how much you need per day use our&nbsp;
           <Link href="/macro-calculator">Macros Calculator</Link>
         </p>{" "}
-        <h2>Is Subway Healthy?</h2>
+        <h2 className="text-black dark:text-white">Is Subway Healthy?</h2>
         <p>
           Many of you ask,{" "}
-          <strong>&quot;Are Subway sandwiches healthy?&quot;</strong> or even
-          <strong>&quot;Is Subway bad for you?&quot;</strong>. It&apos;s a good
-          question! Subway offers a lot of choices, and how healthy they are can
-          depend on what you pick. Some options are packed with veggies and lean
-          proteins, which are great for you. But some choices might have more
-          calories and fat, especially if you add lots of cheese and sauces.
+          <strong className="text-black dark:text-white">
+            &quot;Are Subway sandwiches healthy?&quot;
+          </strong>{" "}
+          or even
+          <strong className="text-black dark:text-white">
+            &quot;Is Subway bad for you?&quot;
+          </strong>
+          . It&apos;s a good question! Subway offers a lot of choices, and how
+          healthy they are can depend on what you pick. Some options are packed
+          with veggies and lean proteins, which are great for you. But some
+          choices might have more calories and fat, especially if you add lots
+          of cheese and sauces.
         </p>
         <p>
           Although less calories doesn&apos;t necessairly means healthy and
           right nutrition for you, we prepared some general calorie information
           you would be interested in.
         </p>
-        <h2>Subway Bread: Counting the Calories</h2>
+        <h2 className="text-black dark:text-white">
+          Subway Bread: Counting the Calories
+        </h2>
         <p>
           Choosing the right bread for your Subway sandwich can affect the
           calorie count, especially if you&apos;re comparing a footlong to a
           6-inch or a wrap. Here are some choices:
         </p>
         <p>
-          <strong>Lower Calorie Bread Options:</strong>
+          <strong className="text-black dark:text-white">
+            Lower Calorie Bread Options:
+          </strong>
         </p>
         <ul>
           <li>Mini Artisan Italian Bread: 130 kcal</li>
@@ -409,7 +434,9 @@ export default function Calculator() {
           <li>Hearty Multigrain Bread: 200 kcal</li>
         </ul>
         <p>
-          <strong>Higher Calorie Bread Options:</strong>
+          <strong className="text-black dark:text-white">
+            Higher Calorie Bread Options:
+          </strong>
         </p>
         <ul>
           <li>Artisan Flatbread: 220 kcal</li>
@@ -417,13 +444,17 @@ export default function Calculator() {
           <li>Jalapeño Cheddar Bread: 230 kcal</li>
           <li>Wrap: 300 kcal</li>
         </ul>
-        <h2>Subway Cheese: Low vs. High Calorie Choices</h2>
+        <h2 className="text-black dark:text-white">
+          Subway Cheese: Low vs. High Calorie Choices
+        </h2>
         <p>
           Adding cheese to your sandwich? Some cheeses add more calories than
           others. Here&apos;s a quick guide:
         </p>
         <p>
-          <strong>Lower Calorie Cheese Options:</strong>
+          <strong className="text-black dark:text-white">
+            Lower Calorie Cheese Options:
+          </strong>
         </p>
         <ul>
           <li>American: 40 kcal</li>
@@ -431,7 +462,9 @@ export default function Calculator() {
           <li>Mozzarella, Shredded: 45 kcal</li>
         </ul>
         <p>
-          <strong>Higher Calorie Cheese Options:</strong>
+          <strong className="text-black dark:text-white">
+            Higher Calorie Cheese Options:
+          </strong>
         </p>
         <ul>
           <li>Monterey Cheddar, Shredded: 50 kcal</li>
@@ -439,13 +472,17 @@ export default function Calculator() {
           <li>Provolone: 50 kcal</li>
           <li>Swiss: 60 kcal</li>
         </ul>
-        <h2>Subway Meats: Lean vs. Rich Calorie Counts</h2>
+        <h2 className="text-black dark:text-white">
+          Subway Meats: Lean vs. Rich Calorie Counts
+        </h2>
         <p>
           Meats can be the most varying part of the calorie count on your Subway
           sandwich. Choose wisely:
         </p>
         <p>
-          <strong>Leaner Protein Options:</strong>
+          <strong className="text-black dark:text-white">
+            Leaner Protein Options:
+          </strong>
         </p>
         <ul>
           <li>Black Forest Ham: 70 kcal</li>
@@ -453,7 +490,9 @@ export default function Calculator() {
           <li>Grilled Chicken: 80 kcal</li>
         </ul>
         <p>
-          <strong>Richer Calorie Protein Options:</strong>
+          <strong className="text-black dark:text-white">
+            Richer Calorie Protein Options:
+          </strong>
         </p>
         <ul>
           <li>All-American Club Meats: 140 kcal</li>
@@ -461,13 +500,17 @@ export default function Calculator() {
           <li>Tuna: 250 kcal</li>
           <li>Spicy Italian Meats: 250 kcal</li>
         </ul>
-        <h2>Subway Cookies and Sides: Sweet Treats and Calorie Facts</h2>
+        <h2 className="text-black dark:text-white">
+          Subway Cookies and Sides: Sweet Treats and Calorie Facts
+        </h2>
         <p>
           Thinking about a sweet end to your meal or some extras on the side?
           Here&apos;s how they stack up in calories:
         </p>
         <p>
-          <strong>Cookie Choices:</strong>
+          <strong className="text-black dark:text-white">
+            Cookie Choices:
+          </strong>
         </p>
         <ul>
           <li>Chocolate Chip Cookie: 210 kcal</li>
@@ -475,7 +518,9 @@ export default function Calculator() {
           <li>Oatmeal Raisin Cookie: 200 kcal</li>
         </ul>
         <p>
-          <strong>Other Side Options:</strong>
+          <strong className="text-black dark:text-white">
+            Other Side Options:
+          </strong>
         </p>
         <ul>
           <li>Applesauce: 70 kcal</li>
@@ -487,7 +532,9 @@ export default function Calculator() {
           Remember, if you&apos;re watching your calorie intake, you might want
           to skip or share a cookie, and go for lighter sides like applesauce.
         </p>
-        <h2>High and Low Calorie Subway Toppings</h2>
+        <h2 className="text-black dark:text-white">
+          High and Low Calorie Subway Toppings
+        </h2>
         <p>
           Keep in mind that the right Subway toppings can really change the
           calorie count of your sandwich. Picking low-calorie veggies can make
@@ -495,7 +542,9 @@ export default function Calculator() {
           than you might expect.
         </p>
         <p>
-          <strong>Some good low-calorie choices include:</strong>
+          <strong className="text-black dark:text-white">
+            Some good low-calorie choices include:
+          </strong>
         </p>
         <ul>
           <li>Cucumbers</li>
@@ -504,7 +553,9 @@ export default function Calculator() {
           <li>Red onions</li>
         </ul>
         <p>
-          <strong>Watch out for high-calorie toppings like:</strong>
+          <strong className="text-black dark:text-white">
+            Watch out for high-calorie toppings like:
+          </strong>
         </p>
         <ul>
           <li>Chipotle sauce (70 kcal)</li>

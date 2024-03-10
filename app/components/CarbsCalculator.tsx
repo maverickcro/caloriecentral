@@ -467,7 +467,9 @@ export default function CarbsCalculator() {
         {tdee > 0 ? (
           <>
             <h2 className="font-normal text-center">
-              <strong>Your results:</strong>
+              <strong className="text-black dark:text-white">
+                Your results:
+              </strong>
             </h2>
             <div className="flex w-full justify-center items-center py-2 rounded-3xl animated-background bg-gray-200 to-gray-200">
               <div className="md:max-w-md m-11 p-5 bg-white rounded-3xl shadow-[rgba(0,_0,_0,_0.4)_0px_60px_40px_-7px]">
@@ -524,114 +526,164 @@ export default function CarbsCalculator() {
           depends on various factors, including your total daily energy
           expenditure (TDEE).
         </p>
-        <h2>Why this much?</h2>
+        <h2 className="text-black dark:text-white">Why this much?</h2>
         <ul>
           <li>
-            <strong>Guidelines by The Institute of Medicine:</strong> They
-            recommend that carbohydrates should make up{" "}
-            <strong>40% to 65%</strong> of your total daily calories. This range
-            ensures adequate energy while supporting overall health.
+            <strong className="text-black dark:text-white">
+              Guidelines by The Institute of Medicine:
+            </strong>{" "}
+            They recommend that carbohydrates should make up{" "}
+            <strong className="text-black dark:text-white">40% to 65%</strong>{" "}
+            of your total daily calories. This range ensures adequate energy
+            while supporting overall health.
           </li>
           <li>
-            <strong>
+            <strong className="text-black dark:text-white">
               Recommendations by the Food and Agriculture Organization and the
               World Health Organization:
             </strong>{" "}
-            A slightly higher intake, between <strong>55% and 75%</strong> of
-            your TDEE, is advised to meet your body&apos;s energy needs and
+            A slightly higher intake, between{" "}
+            <strong className="text-black dark:text-white">55% and 75%</strong>{" "}
+            of your TDEE, is advised to meet your body&apos;s energy needs and
             support bodily functions.
           </li>
           <li>
-            <strong>Sugar Intake:</strong> It&apos;s crucial to limit added
-            sugars, with a maximum recommendation of <strong>10%</strong> of
-            your total daily calories. This helps manage blood sugar levels and
+            <strong className="text-black dark:text-white">
+              Sugar Intake:
+            </strong>{" "}
+            It&apos;s crucial to limit added sugars, with a maximum
+            recommendation of{" "}
+            <strong className="text-black dark:text-white">10%</strong> of your
+            total daily calories. This helps manage blood sugar levels and
             reduces the risk of metabolic diseases.
           </li>
         </ul>
 
-        <h2>Why Follow These Recommendations?</h2>
+        <h2 className="text-black dark:text-white">
+          Why Follow These Recommendations?
+        </h2>
         <p>
-          <strong>Energy Maintenance:</strong> Carbs provide the fuel your body
-          needs for daily activities and maintaining energy levels.
+          <strong className="text-black dark:text-white">
+            Energy Maintenance:
+          </strong>{" "}
+          Carbs provide the fuel your body needs for daily activities and
+          maintaining energy levels.
         </p>
         <p>
-          <strong>Health Benefits:</strong> A balanced carb intake supports
-          brain function, aids in digestive health, and helps regulate blood
-          sugar.
+          <strong className="text-black dark:text-white">
+            Health Benefits:
+          </strong>{" "}
+          A balanced carb intake supports brain function, aids in digestive
+          health, and helps regulate blood sugar.
         </p>
         <p>
-          <strong>Disease Prevention:</strong> Proper carbohydrate management
-          can lower the risk of diabetes, heart disease, and obesity.
+          <strong className="text-black dark:text-white">
+            Disease Prevention:
+          </strong>{" "}
+          Proper carbohydrate management can lower the risk of diabetes, heart
+          disease, and obesity.
         </p>
 
-        <h2>Tips for Healthy Carb Consumption</h2>
+        <h2 className="text-black dark:text-white">
+          Tips for Healthy Carb Consumption
+        </h2>
         <ul>
           <li>
-            <strong>Choose Wisely:</strong> Opt for whole, unprocessed carbs
-            like fruits, vegetables, and whole grains over refined sugars and
-            flours.
+            <strong className="text-black dark:text-white">
+              Choose Wisely:
+            </strong>{" "}
+            Opt for whole, unprocessed carbs like fruits, vegetables, and whole
+            grains over refined sugars and flours.
           </li>
           <li>
-            <strong>Monitor Portions:</strong> Keep an eye on portion sizes to
-            stay within your recommended daily intake.
+            <strong className="text-black dark:text-white">
+              Monitor Portions:
+            </strong>{" "}
+            Keep an eye on portion sizes to stay within your recommended daily
+            intake.
           </li>
           <li>
-            <strong>Balance Your Diet:</strong> Combine carbohydrates with
-            proteins and healthy fats for a well-rounded diet.
+            <strong className="text-black dark:text-white">
+              Balance Your Diet:
+            </strong>{" "}
+            Combine carbohydrates with proteins and healthy fats for a
+            well-rounded diet.
           </li>
         </ul>
 
-        <h2>Carbs are not scary! Do not avoid them.</h2>
+        <h2 className="text-black dark:text-white">
+          Carbs are not scary! Do not avoid them.
+        </h2>
         <p>
           It&apos;s a common misconception that carbohydrates are the enemy of a
           healthy diet. However, the truth is that{" "}
-          <strong>carbs are essential</strong> for energy, brain function, and
-          even weight management. The key is to choose{" "}
-          <strong>healthy sources</strong> of carbohydrates, such as whole
-          grains, fruits, and vegetables, which provide vital nutrients and
-          fiber. This fiber aids in digestion and can help you feel fuller
-          longer, preventing overeating. So, instead of avoiding carbs, focus on
-          incorporating the right kinds into your diet to fuel your body and
-          support overall health.
+          <strong className="text-black dark:text-white">
+            carbs are essential
+          </strong>{" "}
+          for energy, brain function, and even weight management. The key is to
+          choose{" "}
+          <strong className="text-black dark:text-white">
+            healthy sources
+          </strong>{" "}
+          of carbohydrates, such as whole grains, fruits, and vegetables, which
+          provide vital nutrients and fiber. This fiber aids in digestion and
+          can help you feel fuller longer, preventing overeating. So, instead of
+          avoiding carbs, focus on incorporating the right kinds into your diet
+          to fuel your body and support overall health.
         </p>
-        <h2>How much carbs for weight loss and weight gain?</h2>
+        <h2 className="text-black dark:text-white">
+          How much carbs for weight loss and weight gain?
+        </h2>
         <p>
           When it comes to adjusting your weight, understanding your
-          carbohydrate intake is crucial. For <strong>weight loss</strong>,
+          carbohydrate intake is crucial. For{" "}
+          <strong className="text-black dark:text-white">weight loss</strong>,
           focusing on a diet lower in calories but rich in nutrients is key.
           Reducing simple carbs like sugar and opting for complex carbs can help
           create a calorie deficit while keeping you satiated. Aim for carbs to
-          make up <strong>40% to 50%</strong> of your total caloric intake,
-          emphasizing foods with a low glycemic index to avoid spikes in blood
-          sugar.
+          make up{" "}
+          <strong className="text-black dark:text-white">40% to 50%</strong> of
+          your total caloric intake, emphasizing foods with a low glycemic index
+          to avoid spikes in blood sugar.
         </p>
         <ul>
           <li>
-            <strong>Whole Grains:</strong> Quinoa, barley, and whole grain
-            pasta.
+            <strong className="text-black dark:text-white">
+              Whole Grains:
+            </strong>{" "}
+            Quinoa, barley, and whole grain pasta.
           </li>
           <li>
-            <strong>Vegetables:</strong> Leafy greens, carrots, and broccoli.
+            <strong className="text-black dark:text-white">Vegetables:</strong>{" "}
+            Leafy greens, carrots, and broccoli.
           </li>
           <li>
-            <strong>Legumes:</strong> Lentils, chickpeas, and black beans.
+            <strong className="text-black dark:text-white">Legumes:</strong>{" "}
+            Lentils, chickpeas, and black beans.
           </li>
           <li>
-            <strong>Fruits:</strong> Apples, berries, and pears.
+            <strong className="text-black dark:text-white">Fruits:</strong>{" "}
+            Apples, berries, and pears.
           </li>
           <li>
-            <strong>Nuts and Seeds:</strong> Almonds, walnuts, and flaxseeds.
+            <strong className="text-black dark:text-white">
+              Nuts and Seeds:
+            </strong>{" "}
+            Almonds, walnuts, and flaxseeds.
           </li>
           <li>
-            <strong>Dairy:</strong> Greek yogurt and cottage cheese.
+            <strong className="text-black dark:text-white">Dairy:</strong> Greek
+            yogurt and cottage cheese.
           </li>
         </ul>
 
         <p>
-          Conversely, for <strong>weight gain</strong>, increasing your
-          carbohydrate intake can help achieve a calorie surplus needed for
-          muscle growth and weight gain. Targeting <strong>55% to 65%</strong>{" "}
-          of your calories from carbs, including more starchy vegetables, whole
+          Conversely, for{" "}
+          <strong className="text-black dark:text-white">weight gain</strong>,
+          increasing your carbohydrate intake can help achieve a calorie surplus
+          needed for muscle growth and weight gain. Targeting{" "}
+          <strong className="text-black dark:text-white">55% to 65%</strong> of
+          your calories from carbs, including more starchy vegetables, whole
           grains, and legumes, can provide the extra energy required. Remember,
           balancing these with proteins and healthy fats is essential for
           healthy weight gain.
@@ -639,21 +691,31 @@ export default function CarbsCalculator() {
         <h3>Some supplements to support your diet:</h3>
         <ul>
           <li>
-            <strong>Protein Powders:</strong> Whey, pea, or hemp protein can
-            help keep you full and support muscle maintenance during weight
-            loss.
+            <strong className="text-black dark:text-white">
+              Protein Powders:
+            </strong>{" "}
+            Whey, pea, or hemp protein can help keep you full and support muscle
+            maintenance during weight loss.
           </li>
           <li>
-            <strong>Fiber Supplements:</strong> Psyllium husk or glucomannan to
-            help with fullness and improve digestion.
+            <strong className="text-black dark:text-white">
+              Fiber Supplements:
+            </strong>{" "}
+            Psyllium husk or glucomannan to help with fullness and improve
+            digestion.
           </li>
           <li>
-            <strong>Green Tea Extract:</strong> Known for its
-            metabolism-boosting properties.
+            <strong className="text-black dark:text-white">
+              Green Tea Extract:
+            </strong>{" "}
+            Known for its metabolism-boosting properties.
           </li>
           <li>
-            <strong>Omega-3 Supplements:</strong> Fish oil or algal oil to
-            support heart health and potentially aid in weight management.
+            <strong className="text-black dark:text-white">
+              Omega-3 Supplements:
+            </strong>{" "}
+            Fish oil or algal oil to support heart health and potentially aid in
+            weight management.
           </li>
         </ul>
       </div>

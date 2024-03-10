@@ -430,7 +430,9 @@ export default function BodyRecompositionCalculator() {
         {tdee > 0 ? (
           <>
             <h2 className="font-normal text-center">
-              <strong>Your results:</strong>
+              <strong className="text-black dark:text-white">
+                Your results:
+              </strong>
             </h2>
             <div className="flex flex-col lg:flex-row w-full justify-center items-center py-2 rounded-3xl bg-gray-200 to-gray-200">
               <div className="w-[80%] md:w-1/2 mt-11 mb-5 md:m-11 p-5 bg-white rounded-3xl">
@@ -463,66 +465,101 @@ export default function BodyRecompositionCalculator() {
           </div>
         )}
         <p>
-          <strong>Body recomposition</strong>, a game-changer in fitness that
-          allows you to <strong>burn fat</strong> and{" "}
-          <strong>build muscle </strong>
+          <strong className="text-black dark:text-white">
+            Body recomposition
+          </strong>
+          , a game-changer in fitness that allows you to{" "}
+          <strong className="text-black dark:text-white">burn fat</strong> and{" "}
+          <strong className="text-black dark:text-white">build muscle </strong>
           at the same time. This approach goes beyond the scale, focusing on
           improving body shape and muscle tone through a blend of targeted{" "}
-          <strong>resistance training</strong> and a{" "}
-          <strong>high-protein diet</strong>. It reshapes your body and elevates
-          your health, all without extreme dieting or exhaustive workouts.
+          <strong className="text-black dark:text-white">
+            resistance training
+          </strong>{" "}
+          and a{" "}
+          <strong className="text-black dark:text-white">
+            high-protein diet
+          </strong>
+          . It reshapes your body and elevates your health, all without extreme
+          dieting or exhaustive workouts.
         </p>
-        <h2>Why this much?</h2>
+        <h2 className="text-black dark:text-white">Why this much?</h2>
         <p>
           Curious about{" "}
-          <strong>why the numbers stack up the way they do</strong> on your{" "}
-          <strong>body recomposition calculator</strong>? It&apos;s a finely
-          tuned balance!
+          <strong className="text-black dark:text-white">
+            why the numbers stack up the way they do
+          </strong>{" "}
+          on your{" "}
+          <strong className="text-black dark:text-white">
+            body recomposition calculator
+          </strong>
+          ? It&apos;s a finely tuned balance!
         </p>
         <p>
-          On <strong>training days</strong>, you need a boost in energy to fuel
-          those intense workouts—that&apos;s where the higher carbs come in,
-          making up 40% of your calorie intake. We don&apos;t skimp on the
-          proteins, either; they&apos;re crucial for muscle repair. Then,
-          there&apos;s a healthy dose of fats to keep your hormone levels in
-          check.
+          On{" "}
+          <strong className="text-black dark:text-white">training days</strong>,
+          you need a boost in energy to fuel those intense workouts—that&apos;s
+          where the higher carbs come in, making up 40% of your calorie intake.
+          We don&apos;t skimp on the proteins, either; they&apos;re crucial for
+          muscle repair. Then, there&apos;s a healthy dose of fats to keep your
+          hormone levels in check.
         </p>
         <p>
-          On <strong>rest days</strong>, we dial down the carbs to 30% and let
-          proteins take the lead, supporting muscle growth even when you&apos;re
-          not lifting. Every gram and calorie is calculated to optimize your
-          body recomp, targeting the sweet spot between{" "}
-          <strong>muscle gain</strong> and
-          <strong> fat loss</strong>. It&apos;s not just about eating more or
-          less; it&apos;s about eating right for your body&apos;s specific needs
-          during the muscle-building journey.
+          On <strong className="text-black dark:text-white">rest days</strong>,
+          we dial down the carbs to 30% and let proteins take the lead,
+          supporting muscle growth even when you&apos;re not lifting. Every gram
+          and calorie is calculated to optimize your body recomp, targeting the
+          sweet spot between{" "}
+          <strong className="text-black dark:text-white">muscle gain</strong>{" "}
+          and
+          <strong className="text-black dark:text-white"> fat loss</strong>.
+          It&apos;s not just about eating more or less; it&apos;s about eating
+          right for your body&apos;s specific needs during the muscle-building
+          journey.
         </p>
-        <h2>Steps to Get the Muscle and Lose the Fat</h2>
+        <h2 className="text-black dark:text-white">
+          Steps to Get the Muscle and Lose the Fat
+        </h2>
         <p>It&apos;s simpler than you think.</p>
         <ul>
           <li>
-            <strong>Do your calculation:</strong> I&apos;ve done the math so you
-            know exactly how much to eat.
+            <strong className="text-black dark:text-white">
+              Do your calculation:
+            </strong>{" "}
+            I&apos;ve done the math so you know exactly how much to eat.
           </li>
           <li>
-            <strong>Protein is Key:</strong> More protein on rest days means
-            more muscle repair.
+            <strong className="text-black dark:text-white">
+              Protein is Key:
+            </strong>{" "}
+            More protein on rest days means more muscle repair.
           </li>
           <li>
-            <strong>Do not skip your workouts:</strong> Aim to do at least 2, at
-            best 3-4 per week. Resistance training in the gym, body training in
-            the park or at home. Make it work the best for you.
+            <strong className="text-black dark:text-white">
+              Do not skip your workouts:
+            </strong>{" "}
+            Aim to do at least 2, at best 3-4 per week. Resistance training in
+            the gym, body training in the park or at home. Make it work the best
+            for you.
           </li>
           <li>
-            <strong>Stay consistant:</strong> Probably the most important part.
-            Find the right motivation, find a training partner.{" "}
-            <strong>Have a clear goal</strong>.
+            <strong className="text-black dark:text-white">
+              Stay consistant:
+            </strong>{" "}
+            Probably the most important part. Find the right motivation, find a
+            training partner.{" "}
+            <strong className="text-black dark:text-white">
+              Have a clear goal
+            </strong>
+            .
           </li>
         </ul>
         <p>
           Trust the plan, see the change, and feel great doing it. Come back
           every two weeks and do your calculation again for an updated plan.{" "}
-          <strong>I truly believe in you.</strong>
+          <strong className="text-black dark:text-white">
+            I truly believe in you.
+          </strong>
         </p>
       </div>
       <GoToTop />

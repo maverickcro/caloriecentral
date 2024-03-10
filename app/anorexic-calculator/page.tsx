@@ -33,7 +33,7 @@ export default function Calculator() {
         <span className="block pt-1 text-xs font-semibold text-gray-500">
           Updated: Jan 22, 2024
         </span>
-        <p className=" text-black">
+        <p className=" text-black dark:text-white">
           Accurately assess your health with our Anorexia BMI Calculator, a
           critical resource for identifying potential anorexia nervosa based on
           BMI. It&apos;s a vital first step towards awareness and seeking

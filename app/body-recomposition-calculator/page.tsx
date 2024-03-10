@@ -33,12 +33,16 @@ export default function Calculator() {
         <span className="block pt-1 text-xs font-semibold text-gray-500">
           Updated: Feb 22, 2024
         </span>
-        <p className="text-black">
+        <p className="text-black dark:text-white">
           When I was starting my fitness journey, this was the first thing that
-          piqued my interest. <strong>Body recomp</strong> gave the best
-          results. I was able to simultaneously{" "}
-          <strong>lose fat and build muscle</strong>. This calculator will
-          advise you on your macros, both training and rest days.
+          piqued my interest.{" "}
+          <strong className="text-black dark:text-white">Body recomp</strong>{" "}
+          gave the best results. I was able to simultaneously{" "}
+          <strong className="text-black dark:text-white">
+            lose fat and build muscle
+          </strong>
+          . This calculator will advise you on your macros, both training and
+          rest days.
         </p>
 
         <CalculatorComponent />

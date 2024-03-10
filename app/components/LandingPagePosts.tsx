@@ -1,4 +1,4 @@
-import { getSortedPostsData } from "@/lib/posts";
+import { getSortedPostsData } from "@/lib/blog";
 import getFormattedDate from "@/lib/getFormattedDate";
 import Link from "next/link";
 import Image from "next/image";
@@ -20,7 +20,7 @@ export default function Posts() {
       <div className="grid gap-2 sm:grid-cols-2 md:grid-cols-3 md:gap-6 py-12">
         {posts.map((post) => (
           <Link
-            href={`/posts/${post.id}`}
+            href={`/blog/${post.id}`}
             passHref
             key={post.id}
             className="group flex flex-col blog-post bg-white shadow-md overflow-hidden transform transition-transform duration-300 ease-in-out hover:scale-[1.03]"

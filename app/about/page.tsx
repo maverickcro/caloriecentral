@@ -23,14 +23,19 @@ export default function About() {
   return (
     <main className="mt-6 mx-auto px-6 prose max-w-4xl prose-xl prose-slate">
       <h1 className="font-bold text-gradient mb-2">About CaloriePal</h1>
-      <div className="text-black">
+      <div className="text-black dark:text-white">
         <p>
-          Welcome to <strong>CaloriePal</strong> - your go-to hub for
-          demystifying calorie management and achieving your fitness milestones.
-          I&apos;m <strong>Marko</strong>, the founder of this blog, and my
-          mission is simple: empower you to reach your health goals, whether
-          it&apos;s losing weight, gaining muscle, or simply leading a{" "}
-          <strong>healthier lifestyle.</strong>
+          Welcome to{" "}
+          <strong className="text-black dark:text-white">CaloriePal</strong> -
+          your go-to hub for demystifying calorie management and achieving your
+          fitness milestones. I&apos;m{" "}
+          <strong className="text-black dark:text-white">Marko</strong>, the
+          founder of this blog, and my mission is simple: empower you to reach
+          your health goals, whether it&apos;s losing weight, gaining muscle, or
+          simply leading a{" "}
+          <strong className="text-black dark:text-white">
+            healthier lifestyle.
+          </strong>
         </p>
         <ProfilePic />
         <p>
@@ -42,7 +47,8 @@ export default function About() {
         </p>
         <br />
         <p>
-          That&apos;s precisely why I created <strong>CaloriePal</strong>. To
+          That&apos;s precisely why I created{" "}
+          <strong className="text-black dark:text-white">CaloriePal</strong>. To
           share with you the effective, practical approaches to dieting that
           have worked for me and many others. Here, we don&apos;t just count
           calories—we understand them. And with that understanding comes the
@@ -52,11 +58,14 @@ export default function About() {
         <p>
           So, whether you&apos;re here to find out the best way to manage your
           calorie intake or to seek advice on a balanced diet,{" "}
-          <strong>CaloriePal</strong> is here to guide you. It&apos;s time to
-          say goodbye to confusing diet trends and hello to clear, actionable
-          information that&apos;ll help you{" "}
-          <strong>make informed decisions about your nutrition</strong>.
-          Let&apos;s embark on this journey together!
+          <strong className="text-black dark:text-white">CaloriePal</strong> is
+          here to guide you. It&apos;s time to say goodbye to confusing diet
+          trends and hello to clear, actionable information that&apos;ll help
+          you{" "}
+          <strong className="text-black dark:text-white">
+            make informed decisions about your nutrition
+          </strong>
+          . Let&apos;s embark on this journey together!
         </p>
       </div>
     </main>

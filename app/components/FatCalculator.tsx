@@ -466,7 +466,9 @@ export default function FatCalculator() {
         {tdee > 0 ? (
           <>
             <h2 className="font-normal text-center">
-              <strong>Your results:</strong>
+              <strong className="text-black dark:text-white">
+                Your results:
+              </strong>
             </h2>
             <div className="flex w-full justify-center items-center py-2 rounded-3xl animated-background bg-gray-200 to-gray-200">
               <div className="md:max-w-md m-11 p-5 bg-white rounded-3xl shadow-[rgba(0,_0,_0,_0.4)_0px_60px_40px_-7px]">
@@ -495,8 +497,11 @@ export default function FatCalculator() {
                   )} - ${Math.round((tdee * 0.35) / 9)} grams per day.`}
                 </p>
                 <p className="block pt-1 text-sm font-semibold text-gray-500">
-                  But, when it comes to <strong>saturated fats</strong>, maximum
-                  of: {Math.round((tdee * 0.1) / 9)} grams per day.
+                  But, when it comes to{" "}
+                  <strong className="text-black dark:text-white">
+                    saturated fats
+                  </strong>
+                  , maximum of: {Math.round((tdee * 0.1) / 9)} grams per day.
                 </p>
               </div>
             </div>
@@ -508,19 +513,24 @@ export default function FatCalculator() {
             </p>
           </div>
         )}
-        <h2>Why this much?</h2>
+        <h2 className="text-black dark:text-white">Why this much?</h2>
         <p>
           Understanding the right amount of dietary fat, particularly for total
           and saturated fat intake, is crucial for maintaining good health.
-          According to the <strong>World Health Organization (WHO)</strong>,
-          adults should aim for a total fat intake that constitutes{" "}
-          <strong>20-35%</strong> of their total daily calories. This
-          recommendation is supported by evidence suggesting that this range
-          supports adequate energy, essential fatty acids, and fat-soluble
-          vitamin consumption without promoting weight gain associated with
-          higher fat diets.
+          According to the{" "}
+          <strong className="text-black dark:text-white">
+            World Health Organization (WHO)
+          </strong>
+          , adults should aim for a total fat intake that constitutes{" "}
+          <strong className="text-black dark:text-white">20-35%</strong> of
+          their total daily calories. This recommendation is supported by
+          evidence suggesting that this range supports adequate energy,
+          essential fatty acids, and fat-soluble vitamin consumption without
+          promoting weight gain associated with higher fat diets.
         </p>
-        <h2>Recommended Fat Intake for Adults</h2>
+        <h2 className="text-black dark:text-white">
+          Recommended Fat Intake for Adults
+        </h2>
         <table className="w-full border-collapse border border-blue-500 max-w-xl mt-16 mx-auto">
           <thead>
             <tr className="bg-blue-500">
@@ -568,17 +578,24 @@ export default function FatCalculator() {
           Limit is a general advice - no percentage because of lack of
           supporting evidence, keep it low.
         </span>
-        <h2>You absolutely need fat - do not avoid it!</h2>
+        <h2 className="text-black dark:text-white">
+          You absolutely need fat - do not avoid it!
+        </h2>
         <p>
           Hey there! Let&apos;s chat about why fat is actually a friend, not a
           foe, in our diets. Did you know that fat is key for{" "}
-          <strong>absorbing vitamins</strong> like A, D, E, and K? Yep, without
-          a bit of fat, our bodies wouldn&apos;t be able to soak up these
-          vitamins that are crucial for things like keeping your vision sharp
-          and your bones strong.
+          <strong className="text-black dark:text-white">
+            absorbing vitamins
+          </strong>{" "}
+          like A, D, E, and K? Yep, without a bit of fat, our bodies
+          wouldn&apos;t be able to soak up these vitamins that are crucial for
+          things like keeping your vision sharp and your bones strong.
         </p>
         <p>
-          Plus, fats bring to the table <strong>essential fatty acids</strong>
+          Plus, fats bring to the table{" "}
+          <strong className="text-black dark:text-white">
+            essential fatty acids
+          </strong>
           —those are the good guys that your body can&apos;t make by itself but
           really needs for everything from brain health to keeping your skin
           glowing. Totally cutting out fat might leave you missing out on these
@@ -587,24 +604,28 @@ export default function FatCalculator() {
         <p>These are the ones you look for:</p>
         <ul>
           <li>
-            <strong>Omega-3 and Omega-6 fatty acids</strong> - These unsaturated
-            fats are superheroes for your heart, helping to lower
-            &quot;bad&quot; cholesterol.
+            <strong className="text-black dark:text-white">
+              Omega-3 and Omega-6 fatty acids
+            </strong>{" "}
+            - These unsaturated fats are superheroes for your heart, helping to
+            lower &quot;bad&quot; cholesterol.
           </li>
           <li>
             Found in plant oils, nuts, fish, and some eggs, they&apos;re an
             essential part of a balanced diet.
           </li>
         </ul>
-        <h2>Which ones are bad then?</h2>
+        <h2 className="text-black dark:text-white">Which ones are bad then?</h2>
         <h3>Saturated Fats: Not So Friendly</h3>
         <p>
           Saturated fats are the ones to watch. They&apos;re found in a variety
           of foods we often enjoy, but too much can lead to increased
           &quot;bad&quot; LDL cholesterol, putting us at risk for heart disease.
           The goal? Keep them to{" "}
-          <strong>less than 10% of daily calories</strong>. Here&apos;s where
-          they lurk:
+          <strong className="text-black dark:text-white">
+            less than 10% of daily calories
+          </strong>
+          . Here&apos;s where they lurk:
         </p>
         <ul>
           <li>Meaty delights like fatty cuts and processed products</li>
@@ -615,9 +636,13 @@ export default function FatCalculator() {
         <p>
           Trans fats take the &quot;unhealthy&quot; crown, known to wreak havoc
           on heart health. While less common, they&apos;re still around, and
-          keeping them <strong>below 1% of total calories</strong> is crucial.
-          Get really good with <strong>food labels</strong> to avoid these
-          hidden foes.
+          keeping them{" "}
+          <strong className="text-black dark:text-white">
+            below 1% of total calories
+          </strong>{" "}
+          is crucial. Get really good with{" "}
+          <strong className="text-black dark:text-white">food labels</strong> to
+          avoid these hidden foes.
         </p>
 
         <p>
@@ -626,46 +651,58 @@ export default function FatCalculator() {
           can be a heart-healthy game-changer. Let&apos;s eat smart and take
           care of our hearts!
         </p>
-        <h2>In simplest terms</h2>
+        <h2 className="text-black dark:text-white">In simplest terms</h2>
         <p>
-          <strong>Good Fats:</strong>
+          <strong className="text-black dark:text-white">Good Fats:</strong>
         </p>
         <ul>
           <li>
-            <strong>Unsaturated Fats:</strong> These are your heart-healthy
-            heroes. Found in plants and fish, they help lower bad cholesterol
-            levels and are crucial for overall health. They come in two main
-            types:
+            <strong className="text-black dark:text-white">
+              Unsaturated Fats:
+            </strong>{" "}
+            These are your heart-healthy heroes. Found in plants and fish, they
+            help lower bad cholesterol levels and are crucial for overall
+            health. They come in two main types:
             <ul>
               <li>
-                <strong>Monounsaturated Fats:</strong> Think olive oil,
-                avocados, and some nuts like almonds and peanuts.
+                <strong className="text-black dark:text-white">
+                  Monounsaturated Fats:
+                </strong>{" "}
+                Think olive oil, avocados, and some nuts like almonds and
+                peanuts.
               </li>
               <li>
-                <strong>Polyunsaturated Fats:</strong> These include omega-3 and
-                omega-6 fatty acids found in fish like salmon, as well as in
-                flaxseeds and walnuts.
+                <strong className="text-black dark:text-white">
+                  Polyunsaturated Fats:
+                </strong>{" "}
+                These include omega-3 and omega-6 fatty acids found in fish like
+                salmon, as well as in flaxseeds and walnuts.
               </li>
             </ul>
           </li>
         </ul>
 
         <p>
-          <strong>Not-So-Good Fats:</strong>
+          <strong className="text-black dark:text-white">
+            Not-So-Good Fats:
+          </strong>
         </p>
         <ul>
           <li>
-            <strong>Saturated Fats:</strong> Found in animal products and some
-            tropical oils, they can raise your bad cholesterol levels and
-            increase the risk of heart disease if consumed in excess. Foods high
-            in saturated fats include red meat, butter, cheese, and ice cream.
+            <strong className="text-black dark:text-white">
+              Saturated Fats:
+            </strong>{" "}
+            Found in animal products and some tropical oils, they can raise your
+            bad cholesterol levels and increase the risk of heart disease if
+            consumed in excess. Foods high in saturated fats include red meat,
+            butter, cheese, and ice cream.
           </li>
           <li>
-            <strong>Trans Fats:</strong> The worst type of fats for your heart,
-            trans fats are found in some processed foods and can increase bad
-            cholesterol while decreasing good cholesterol. They&apos;re often
-            listed as &quot;partially hydrogenated oils&quot; on ingredient
-            labels.
+            <strong className="text-black dark:text-white">Trans Fats:</strong>{" "}
+            The worst type of fats for your heart, trans fats are found in some
+            processed foods and can increase bad cholesterol while decreasing
+            good cholesterol. They&apos;re often listed as &quot;partially
+            hydrogenated oils&quot; on ingredient labels.
           </li>
         </ul>
       </div>

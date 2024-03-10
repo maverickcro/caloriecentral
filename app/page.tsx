@@ -128,7 +128,7 @@ export default function Home() {
       </div>
       {/* <LandingPagePosts />
       <div className="w-full flex justify-center pb-12">
-        <Link href="/posts">
+        <Link href="/blog">
           <CustomButton type={"gradient"} label="VIEW ALL POSTS" />
         </Link>
       </div> */}
