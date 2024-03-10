@@ -481,7 +481,7 @@ export default function FatCalculator() {
                   </span>
                 </h3>
                 <h3 className="my-6">
-                  🥜 <span className="text-gradient">{Math.round(Fat)}</span>{" "}
+                  🥑 <span className="text-gradient">{Math.round(Fat)}</span>{" "}
                   grams per day
                 </h3>
                 <h3 className="my-0">

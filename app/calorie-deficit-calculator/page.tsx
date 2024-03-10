@@ -91,7 +91,7 @@ export default function Calculator() {
             title="Protein Intake Calculator"
             href="/protein-calculator"
             description="Calculate the optimal protein intake wheter you are on a weight loss, maintain weight or want to build muscle."
-            src="/protein-calculator.png"
+            src="/protein-calculator.jpg"
             alt="Protein Intake Calculator"
           />
           {/* <CalculatorCard

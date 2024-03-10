@@ -316,7 +316,7 @@ export default function Calculator() {
                 </h3>
                 <p className="my-0">🥩 Protein: {Math.round(totalProtein)}g</p>
                 <p className="my-0">🥔 Carbs: {Math.round(totalCarbs)}g</p>
-                <p className="my-0">🥜 Fat: {Math.round(totalFats)}g</p>
+                <p className="my-0">🥑 Fat: {Math.round(totalFats)}g</p>
               </div>
             </div>
           </>

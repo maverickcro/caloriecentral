@@ -442,7 +442,7 @@ export default function BodyRecompositionCalculator() {
                 <p className="my-0">
                   🥩 Protein: {Math.round(trainingProtein)}g
                 </p>
-                <p className="my-0">🥜 Fat: {Math.round(trainingFat)}g</p>
+                <p className="my-0">🥑 Fat: {Math.round(trainingFat)}g</p>
               </div>
               <div className="w-[80%] md:w-1/2 mt-5 mb-11 md:m-11 p-5 bg-white rounded-3xl">
                 <h2 className="my-6">😴 Rest days:</h2>
@@ -451,7 +451,7 @@ export default function BodyRecompositionCalculator() {
                 </h3>
                 <p className="my-0">🥔 Carbs: {Math.round(restCarbs)}g</p>
                 <p className="my-0">🥩 Protein: {Math.round(restProtein)}g</p>
-                <p className="my-0">🥜 Fat: {Math.round(restFat)}g</p>
+                <p className="my-0">🥑 Fat: {Math.round(restFat)}g</p>
               </div>
             </div>
           </>
