@@ -156,7 +156,7 @@ export default function BodyRecompositionCalculator() {
   };
   return (
     <section className="my-6 mx-auto max-w-4xl">
-      <div className="bg-gray-200 rounded-3xl to-gray-200 py-8 md:py-16 px-2">
+      <div className="bg-gray-300 dark:bg-slate-900 rounded-3xl to-gray-200 py-8 md:py-16 px-2">
         <div className="grid w-full grid-cols-1 place-items-center space-y-6">
           {/* measurement system */}
           <div className="w-full relative px-3 md:w-[70%]">

@@ -21,7 +21,7 @@ export default function RootLayout({
       <body
         suppressHydrationWarning={true}
         className={`
-         bg-gray-100 dark:bg-slate-900 duration-200`}
+         bg-gray-200 dark:bg-slate-950 duration-200`}
         style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
