@@ -1,29 +1,40 @@
 "use client";
 import { useEffect, useState } from "react";
-import { FaSun, FaMoon } from "react-icons/fa";
 import { useTheme } from "next-themes";
 
 export default function ToggleMode() {
   const [mounted, setMounted] = useState(false);
+
   const { theme, setTheme } = useTheme();
 
+  useEffect(() => {
+    const hours = new Date().getHours();
+    const newTheme = hours > 7 && hours < 20 ? "light" : "dark";
+    setTheme(newTheme);
+  }, [setTheme]);
+
+  // Ensure correct theme is set on mount
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  if (!mounted) {
-    return null;
-  }
+  if (!mounted) return null;
+
+  const toggleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
+  console.log(theme);
   return (
-    <button
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="flex items-center justify-center rounded-md focus:outline-none"
-    >
-      {theme === "light" ? (
-        <FaSun className="text-black text-xl" />
-      ) : (
-        <FaMoon className="text-white text-xl" />
-      )}
-    </button>
+    <div className="toggle-container">
+      <input
+        id="toggle"
+        className="toggle"
+        type="checkbox"
+        onChange={toggleTheme}
+        checked={theme === "dark"}
+        // aria-label for accessibility
+        aria-label="Toggle dark mode"
+      />
+    </div>
   );
 }
