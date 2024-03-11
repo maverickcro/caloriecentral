@@ -688,7 +688,9 @@ export default function CarbsCalculator() {
           balancing these with proteins and healthy fats is essential for
           healthy weight gain.
         </p>
-        <h3>Some supplements to support your diet:</h3>
+        <h3 className="text-black dark:text-white">
+          Some supplements to support your diet:
+        </h3>
         <ul>
           <li>
             <strong className="text-black dark:text-white">

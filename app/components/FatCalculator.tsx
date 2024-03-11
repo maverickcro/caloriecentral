@@ -2,6 +2,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import CustomButton from "./CustomButton";
 import { activityLevels } from "../../lib/data";
+import GoToTop from "./GoToTop";
 
 export default function FatCalculator() {
   const resultRef = useRef<HTMLDivElement>(null);
@@ -498,10 +499,8 @@ export default function FatCalculator() {
                 </p>
                 <p className="block pt-1 text-sm font-semibold text-gray-500">
                   But, when it comes to{" "}
-                  <strong className="text-black dark:text-white">
-                    saturated fats
-                  </strong>
-                  , maximum of: {Math.round((tdee * 0.1) / 9)} grams per day.
+                  <strong className="text-black">saturated fats</strong>,
+                  maximum of: {Math.round((tdee * 0.1) / 9)} grams per day.
                 </p>
               </div>
             </div>
@@ -574,7 +573,7 @@ export default function FatCalculator() {
             </tr>
           </tbody>
         </table>
-        <span>
+        <span className="text-black dark:text-white">
           Limit is a general advice - no percentage because of lack of
           supporting evidence, keep it low.
         </span>
@@ -616,7 +615,9 @@ export default function FatCalculator() {
           </li>
         </ul>
         <h2 className="text-black dark:text-white">Which ones are bad then?</h2>
-        <h3>Saturated Fats: Not So Friendly</h3>
+        <h3 className="text-black dark:text-white">
+          Saturated Fats: Not So Friendly
+        </h3>
         <p>
           Saturated fats are the ones to watch. They&apos;re found in a variety
           of foods we often enjoy, but too much can lead to increased
@@ -632,7 +633,9 @@ export default function FatCalculator() {
           <li>Dairy darlings, including butter, ghee, and certain cheeses</li>
           <li>Tempting treats like ice cream, cakes, and biscuits</li>
         </ul>
-        <h3>Trans Fats: The Real Culprits</h3>
+        <h3 className="text-black dark:text-white">
+          Trans Fats: The Real Culprits
+        </h3>
         <p>
           Trans fats take the &quot;unhealthy&quot; crown, known to wreak havoc
           on heart health. While less common, they&apos;re still around, and
@@ -706,6 +709,7 @@ export default function FatCalculator() {
           </li>
         </ul>
       </div>
+      <GoToTop />
     </section>
   );
 }

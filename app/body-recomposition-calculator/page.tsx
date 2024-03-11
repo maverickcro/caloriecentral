@@ -46,11 +46,14 @@ export default function Calculator() {
         </p>
 
         <CalculatorComponent />
-        <span className="font-bold text-sm">References:</span>
+        <span className="font-bold text-sm text-black dark:text-white">
+          References:
+        </span>
         <ul className="text-sm">
           <li>
             <a
               target="_blank"
+              className="text-black dark:text-white"
               rel="noopener noreferrer nofollow"
               href="https://www.healthline.com/nutrition/body-recomposition"
             >
@@ -61,6 +64,7 @@ export default function Calculator() {
           <li>
             <a
               target="_blank"
+              className="text-black dark:text-white"
               rel="noopener noreferrer nofollow"
               href="https://europepmc.org/article/med/35019903"
             >

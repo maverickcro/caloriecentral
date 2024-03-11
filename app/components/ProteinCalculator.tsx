@@ -656,7 +656,9 @@ export default function ProteinCalculator() {
             critical when in a calorie deficit.
           </li>
         </ul>
-        <h3>Do I need one gram of protein per pound?</h3>
+        <h3 className="text-black dark:text-white">
+          Do I need one gram of protein per pound?
+        </h3>
         <p>
           It&apos;s almost impossible to find a scientific research on this
           topic without this guy in the past 20 years. He had his fingers in
@@ -692,7 +694,7 @@ export default function ProteinCalculator() {
           . He was a founder of a popular whey protein for elderly people and
           athletes.
         </p>
-        <h3 className="mb-16">
+        <h3 className="mb-16 text-black dark:text-white">
           The same guy telling you to eat more protein is directly profiting
           from selling you the protein.
         </h3>

@@ -33,7 +33,7 @@ export default function Calculator() {
         <span className="block pt-1 text-xs font-semibold text-gray-500">
           Updated: Jan 22, 2024
         </span>
-        <p className=" text-black dark:text-white">
+        <p className="text-black dark:text-white">
           Accurately assess your health with our Anorexia BMI Calculator, a
           critical resource for identifying potential anorexia nervosa based on
           BMI. It&apos;s a vital first step towards awareness and seeking
@@ -41,12 +41,15 @@ export default function Calculator() {
         </p>
 
         <CalculatorComponent />
-        <span className="font-bold text-sm">References:</span>
+        <span className="font-bold text-sm text-black dark:text-white">
+          References:
+        </span>
         <ul className="text-sm">
           <li>
             <a
               target="_blank"
               rel="noopener noreferrer nofollow"
+              className=" text-black dark:text-white"
               href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8837073/"
             >
               Toppino, Federica, et al. &quot;Body Mass Index Specifiers in

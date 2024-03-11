@@ -33,17 +33,20 @@ export default function Calculator() {
         <span className="block pt-1 text-xs font-semibold text-gray-500">
           Updated: Feb 24, 2024
         </span>
-        <p className="text-black">
+        <p className="text-black dark:text-white">
           We will calculate how much protein you need per day or at least should
           be taking during weight loss, maintenance or muscle building.
         </p>
 
         <CalculatorComponent />
-        <span className="font-bold text-sm">References:</span>
+        <span className="font-bold text-sm text-black dark:text-white">
+          References:
+        </span>
         <ul className="text-sm">
           <li>
             <a
               target="_blank"
+              className="text-black dark:text-white"
               rel="noopener noreferrer nofollow"
               href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6492513/"
             >
@@ -58,6 +61,7 @@ export default function Calculator() {
           <li>
             <a
               target="_blank"
+              className="text-black dark:text-white"
               rel="noopener noreferrer nofollow"
               href="https://bjsm.bmj.com/content/52/6/376"
             >
@@ -71,6 +75,7 @@ export default function Calculator() {
           <li>
             <a
               target="_blank"
+              className="text-black dark:text-white"
               rel="noopener noreferrer nofollow"
               href="https://retractionwatch.com/2021/02/12/eleven-papers-corrected-after-nutrition-prof-fails-to-disclose-patent-company-ties/"
             >
@@ -81,6 +86,7 @@ export default function Calculator() {
           <li>
             <a
               target="_blank"
+              className="text-black dark:text-white"
               rel="noopener noreferrer nofollow"
               href="https://pubmed.ncbi.nlm.nih.gov/28698222/"
             >
@@ -97,6 +103,7 @@ export default function Calculator() {
           <li>
             <a
               target="_blank"
+              className="text-black dark:text-white"
               rel="noopener noreferrer nofollow"
               href="https://pubmed.ncbi.nlm.nih.gov/22150425/"
             >
@@ -108,6 +115,7 @@ export default function Calculator() {
           <li>
             <a
               target="_blank"
+              className="text-black dark:text-white"
               rel="noopener noreferrer nofollow"
               href="https://pubmed.ncbi.nlm.nih.gov/17111010/"
             >
@@ -120,6 +128,7 @@ export default function Calculator() {
           <li>
             <a
               target="_blank"
+              className="text-black dark:text-white"
               rel="noopener noreferrer nofollow"
               href="https://pubmed.ncbi.nlm.nih.gov/18577776/"
             >
@@ -132,6 +141,7 @@ export default function Calculator() {
           <li>
             <a
               target="_blank"
+              className="text-black dark:text-white"
               rel="noopener noreferrer nofollow"
               href="https://pubmed.ncbi.nlm.nih.gov/15212752/"
             >

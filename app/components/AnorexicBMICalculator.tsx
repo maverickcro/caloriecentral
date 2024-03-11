@@ -305,15 +305,11 @@ export default function AnorexicBMICalculator() {
                   weight category for your height.
                 </p>
                 <p className="block pt-1 text-sm font-semibold text-gray-500">
-                  This BMI result is{" "}
-                  <strong className="text-black dark:text-white">not</strong> an
-                  official medical diagnosis. For a full assessment and health
-                  advice, please
-                  <strong className="text-black dark:text-white">
-                    {" "}
-                    consult
-                  </strong>{" "}
-                  a healthcare professional.
+                  This BMI result is <strong className="text-black">not</strong>{" "}
+                  an official medical diagnosis. For a full assessment and
+                  health advice, please
+                  <strong className="text-black"> consult</strong> a healthcare
+                  professional.
                 </p>
               </div>
             </div>
@@ -324,7 +320,7 @@ export default function AnorexicBMICalculator() {
           </p>
         )}
 
-        <p className=" text-black">
+        <p className=" text-black dark:text-white">
           Your Body Mass Index (BMI) is a starting point to help understand your
           body weight compared to your height. Here&apos;s what your BMI might
           indicate:
@@ -363,7 +359,7 @@ export default function AnorexicBMICalculator() {
           Understanding BMI in Anorexia Nervosa
         </h2>
         <div>
-          <p className=" text-black">
+          <p className=" text-black dark:text-white">
             When considering anorexia nervosa (AN), a{" "}
             <strong className="text-black dark:text-white">
               BMI result is more than just a number
@@ -377,7 +373,7 @@ export default function AnorexicBMICalculator() {
             , especially in hospital settings where patients often present with
             extremely low BMI.
           </p>
-          <p className=" text-black">
+          <p className=" text-black dark:text-white">
             Here&apos;s a snapshot of what BMI levels might indicate for those
             with AN:
           </p>
@@ -407,7 +403,7 @@ export default function AnorexicBMICalculator() {
             </li>
           </ul>
 
-          <p className=" text-black">
+          <p className=" text-black dark:text-white">
             It&apos;s important to note that while a{" "}
             <strong className="text-black dark:text-white">
               low BMI is a significant health risk
@@ -420,7 +416,7 @@ export default function AnorexicBMICalculator() {
             of an individual&apos;s experience with AN.
           </p>
 
-          <p className=" text-black">
+          <p className=" text-black dark:text-white">
             While BMI is a crucial tool for assessing the physical aspect of AN,
             it&apos;s only part of the picture. The treatment and recovery
             journey for those with AN{" "}
@@ -463,7 +459,7 @@ export default function AnorexicBMICalculator() {
             category or if you have strong reason to consider reaching for help.
           </p>
         </div>
-        <span className="italic text-sm py-6">
+        <span className="italic text-sm py-6 text-black dark:text-white">
           Please remember, this text is for informational purposes only and
           should not replace professional medical advice. If you suspect that
           you or someone else is experiencing symptoms of anorexia,{" "}

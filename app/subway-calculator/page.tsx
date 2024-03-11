@@ -34,17 +34,20 @@ export default function Calculator() {
         <span className="block pt-1 text-xs font-semibold text-gray-500">
           Updated: Mar 9, 2024
         </span>
-        <p className="text-black">
+        <p className="text-black dark:text-white">
           We will show you important nutritional facts about your meal.
         </p>
         <CalculatorComponent />
-        <span className="font-bold text-sm">Reference:</span>
+        <span className="font-bold text-sm text-black dark:text-white">
+          Reference:
+        </span>
         <ul className="text-sm">
           <li>
             <a
               target="_blank"
               rel="noopener noreferrer nofollow"
               href="https://www.subway.com/en-ca/menunutrition/nutrition"
+              className="text-black dark:text-white"
             >
               June 2023, Subway U.S Nutrition Information - Official PDF with
               nutritional values and calories in bread, protein, sauces and

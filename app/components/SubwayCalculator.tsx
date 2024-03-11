@@ -316,9 +316,15 @@ export default function Calculator() {
                 <h3 className="text-gradient font-bold my-0">
                   🍴{Math.round(totalCalories)} kcal
                 </h3>
-                <p className="my-0">🥩 Protein: {Math.round(totalProtein)}g</p>
-                <p className="my-0">🥔 Carbs: {Math.round(totalCarbs)}g</p>
-                <p className="my-0">🥑 Fat: {Math.round(totalFats)}g</p>
+                <p className="my-0 text-black">
+                  🥩 Protein: {Math.round(totalProtein)}g
+                </p>
+                <p className="my-0 text-black">
+                  🥔 Carbs: {Math.round(totalCarbs)}g
+                </p>
+                <p className="my-0 text-black">
+                  🥑 Fat: {Math.round(totalFats)}g
+                </p>
               </div>
             </div>
           </>

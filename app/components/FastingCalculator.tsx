@@ -625,7 +625,7 @@ export default function FastingCalculator() {
           </thead>
           <tbody>
             <tr>
-              <td className="py-2 px-4 border border-gray-300">
+              <td className="py-2 px-4 border border-gray-300 text-black dark:text-white">
                 16/8 Split Diet
               </td>
               <td className="py-2 px-4 border border-gray-300">
@@ -637,7 +637,7 @@ export default function FastingCalculator() {
               </td>
             </tr>
             <tr>
-              <td className="py-2 px-4 border border-gray-300">
+              <td className="py-2 px-4 border border-gray-300text-black dark:text-white">
                 5/2 Split Diet
               </td>
               <td className="py-2 px-4 border border-gray-300">
@@ -654,7 +654,7 @@ export default function FastingCalculator() {
               </td>
             </tr>
             <tr>
-              <td className="py-2 px-4 border border-gray-300">
+              <td className="py-2 px-4 border border-gray-300 text-black dark:text-white">
                 Alternate Day Fasting
               </td>
               <td className="py-2 px-4 border border-gray-300">

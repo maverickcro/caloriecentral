@@ -493,13 +493,13 @@ export default function SugarCalculator() {
                   grams per day.
                 </h3>
                 <p className="block pt-5 text-sm font-semibold text-gray-500">
-                  <strong className="text-black dark:text-white">
+                  <strong className="text-black">
                     World Health Organization&apos;s
                   </strong>{" "}
                   recommends less than 10% of total energy intake from
                 </p>
                 <p className="block pt-1 text-sm font-semibold text-gray-500">
-                  <strong className="text-black dark:text-white">
+                  <strong className="text-black">
                     The American Heart Association&apos;s
                   </strong>{" "}
                   recommendation for limiting added sugars to no more than 5%
@@ -515,7 +515,7 @@ export default function SugarCalculator() {
             </p>
           </div>
         )}
-        <p className=" text-black">
+        <p className=" text-black dark:text-white">
           Sugar{" "}
           <strong className="text-black dark:text-white">
             only gives you calories
@@ -526,7 +526,7 @@ export default function SugarCalculator() {
           than you need.{" "}
         </p>
         <h2 className="text-black dark:text-white">Why this much?</h2>
-        <p className=" text-black">
+        <p className=" text-black dark:text-white">
           <strong className="text-black dark:text-white">
             The American Heart Association&apos;s
           </strong>{" "}
@@ -534,7 +534,7 @@ export default function SugarCalculator() {
           per day for women and 7% calories per day for men is based on the
           concept of discretionary calories.
         </p>
-        <p className=" text-black">
+        <p className=" text-black dark:text-white">
           <strong className="text-black dark:text-white">
             World Health Organization&apos;s
           </strong>{" "}
@@ -560,35 +560,35 @@ export default function SugarCalculator() {
           those who are more active.
         </p>
         <h2 className="text-black dark:text-white">How much sugar?</h2>
-        <p className=" text-black">
+        <p className=" text-black dark:text-white">
           We&apos;ve calculated your Total Daily Energy Expenditure (TDEE) based
           on your personal details like gender, height, weight, and activity
           level. This number is crucial because it tells us how many calories
           you need daily to maintain your current weight, whether you are super
           active or not so much.
         </p>
-        <p className=" text-black">
+        <p className="text-black dark:text-white">
           Here&apos;s the easy part: once we have your TDEE, we use it to figure
           out your ideal daily sugar intake. We stick to recommendations from
           reliable sources like the American Heart Association (AHA) and the
           World Health Organization (WHO) for this.
         </p>
         <ul>
-          <li>
+          <li className="text-black dark:text-white">
             For Women: The AHA suggests keeping added sugars to about 5% of your
             total daily calories.
           </li>
-          <li>
+          <li className="text-black dark:text-white">
             For Men: The AHA recommends a slightly higher allowance, up to 7% of
             your daily calories.
           </li>
-          <li>
+          <li className="text-black dark:text-white">
             General Guideline: The WHO advises that no matter your gender,
             keeping added sugars under 10% of your daily calories is a good
             health practice.
           </li>
         </ul>
-        <p className=" text-black">
+        <p className=" text-black dark:text-white">
           So, if your TDEE is around 2000 calories, a woman should aim for no
           more than 100 calories from sugar (that&apos;s roughly 25 grams or 6
           teaspoons). A man can go up to about 140 calories from sugar (around

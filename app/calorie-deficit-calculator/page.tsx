@@ -46,7 +46,7 @@ export default function Calculator() {
           motivation and feel of certainity that you will reach your goals of
           losing weight.
         </p>
-        <p>
+        <p className="text-black dark:text-white">
           It will tell you{" "}
           <strong className="text-black dark:text-white">
             how many calories
@@ -57,11 +57,14 @@ export default function Calculator() {
         </p>
 
         <CalculatorComponent />
-        <span className="font-bold text-sm">References:</span>
+        <span className="font-bold text-sm text-black dark:text-white">
+          References:
+        </span>
         <ul className="text-sm">
           <li>
             <a
               target="_blank"
+              className="text-black dark:text-white"
               rel="noopener noreferrer nofollow"
               href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8017325/"
             >
@@ -73,6 +76,7 @@ export default function Calculator() {
           <li>
             <a
               target="_blank"
+              className="text-black dark:text-white"
               rel="noopener noreferrer nofollow"
               href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3447534/"
             >
@@ -86,6 +90,7 @@ export default function Calculator() {
           <li>
             <a
               target="_blank"
+              className="text-black dark:text-white"
               rel="noopener noreferrer nofollow"
               href="https://www.nih.gov/news-events/nih-research-matters/weight-loss-depends-less-calories-not-nutrient-mix"
             >

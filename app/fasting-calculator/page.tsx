@@ -33,18 +33,21 @@ export default function Calculator() {
         <span className="block pt-1 text-xs font-semibold text-gray-500">
           Updated: Jan 20, 2024
         </span>
-        <p className="text-black">
+        <p className="text-black dark:text-white">
           Intermittent fasting has become increasingly popular for various
           reasons, and people fast for different goals. Weight loss, health
           benefits and much more. Let&apos;s calculate the calories behind it.
         </p>
 
         <CalculatorComponent />
-        <span className="font-bold text-sm">References:</span>
+        <span className="font-bold text-sm text-black dark:text-white">
+          References:
+        </span>
         <ul className="text-sm">
           <li>
             <a
               target="_blank"
+              className="text-black dark:text-white"
               rel="noopener noreferrer nofollow"
               href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7021351/"
             >
@@ -57,6 +60,7 @@ export default function Calculator() {
           <li>
             <a
               target="_blank"
+              className="text-black dark:text-white"
               rel="noopener noreferrer nofollow"
               href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10098946/"
             >
@@ -72,6 +76,7 @@ export default function Calculator() {
           <li>
             <a
               target="_blank"
+              className="text-black dark:text-white"
               rel="noopener noreferrer nofollow"
               href="https://pubmed.ncbi.nlm.nih.gov/34633860/"
             >

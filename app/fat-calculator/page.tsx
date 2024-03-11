@@ -31,17 +31,20 @@ export default function Calculator() {
         <span className="block pt-1 text-xs font-semibold text-gray-500">
           Updated: Feb 2, 2024
         </span>
-        <p className="text-black">
+        <p className="text-black dark:text-white">
           We will calculate how much fat you need per day or at least should be
           taking during weight loss, maintenance or weight gain.
         </p>
 
         <CalculatorComponent />
-        <span className="font-bold text-sm">References:</span>
+        <span className="font-bold text-sm text-black dark:text-white">
+          References:
+        </span>
         <ul className="text-sm">
           <li>
             <a
               target="_blank"
+              className="text-black dark:text-white"
               rel="noopener noreferrer nofollow"
               href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5577766/"
             >
@@ -55,6 +58,7 @@ export default function Calculator() {
           <li>
             <a
               target="_blank"
+              className="text-black dark:text-white"
               rel="noopener noreferrer nofollow"
               href="https://medlineplus.gov/ency/patientinstructions/000838.htm"
             >

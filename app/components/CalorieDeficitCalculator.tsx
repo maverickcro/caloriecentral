@@ -465,14 +465,14 @@ export default function CalorieDeficitCalculator() {
             </p>
           </div>
         )}
-        <p>
+        <p className="text-black dark:text-white">
           Calorie deficit is the most important factor when it comes to weight
           loss. If you are not in caloric deficit, you will{" "}
           <strong className="text-black dark:text-white">not</strong> lose
           weight - simple as that.
         </p>
         <h2 className="text-black dark:text-white">Why this much?</h2>
-        <p>
+        <p className="text-black dark:text-white">
           Calculator accurately determines how many calories you need to consume
           per day in order to get to your weight goal. We recommend going for{" "}
           <strong className="text-black dark:text-white">
@@ -497,7 +497,7 @@ export default function CalorieDeficitCalculator() {
           </strong>{" "}
           kcal per day?
         </h2>
-        <p>
+        <p className="text-black dark:text-white">
           First, we asked for some basic information which helped us determine
           your <strong className="text-black dark:text-white">TDEE</strong>,
           which stands for{" "}
@@ -511,7 +511,7 @@ export default function CalorieDeficitCalculator() {
           </strong>{" "}
           kcal per day.
         </p>
-        <p>
+        <p className="text-black dark:text-white">
           Now, given we have your TDEE, we asked you how much weight you want to
           lose per week. Since one{" "}
           <strong className="text-black dark:text-white">
@@ -523,7 +523,7 @@ export default function CalorieDeficitCalculator() {
           </strong>{" "}
           kcal, it is pretty straightforward to convert that into calories.
         </p>
-        <p>
+        <p className="text-black dark:text-white">
           That means we have a number goal of calories we want to lose per week.
           If you divide it by the number of days per week, you will get your{" "}
           <strong className="text-black dark:text-white">
@@ -531,9 +531,11 @@ export default function CalorieDeficitCalculator() {
           </strong>
           . Just subtract it from your TDEE and that&apos;s it!
         </p>
-        <h3>Weight loss calculation example</h3>
+        <h3 className="text-black dark:text-white">
+          Weight loss calculation example
+        </h3>
         {measurementSystem === "metric" ? (
-          <p>
+          <p className="text-black dark:text-white">
             For instance, if your TDEE is{" "}
             <strong className="text-black dark:text-white">2500</strong> kcal
             per day and you want to lose{" "}
@@ -548,7 +550,7 @@ export default function CalorieDeficitCalculator() {
             (2500 - 550 kcal).
           </p>
         ) : (
-          <p>
+          <p className="text-black dark:text-white">
             For example, if your TDEE is{" "}
             <strong className="text-black dark:text-white">2500</strong> kcal
             per day and you want to lose{" "}
@@ -570,15 +572,17 @@ export default function CalorieDeficitCalculator() {
               <strong className="text-black dark:text-white">{goalDays}</strong>{" "}
               days for your goal weight?
             </h2>
-            <p>
+            <p className="text-black dark:text-white">
               We use similar logic as with goal calories above. We subtract your
               goal weight from your current weight. Then that difference is
               converted to calories. When we divide those calories by your daily
               deficit, we get the number of days needed to reach your goal.
             </p>
-            <h3>Weight loss date estimation example</h3>
+            <h3 className="text-black dark:text-white">
+              Weight loss date estimation example
+            </h3>
             {measurementSystem === "metric" ? (
-              <p>
+              <p className="text-black dark:text-white">
                 For example, if you want to lose{" "}
                 <strong className="text-black dark:text-white">5 kg</strong>,
                 and one kilogram is equivalent to{" "}
@@ -597,7 +601,7 @@ export default function CalorieDeficitCalculator() {
                 to reach your goal (38,500 kcal / 500 kcal per day).
               </p>
             ) : (
-              <p>
+              <p className="text-black dark:text-white">
                 For instance, if your aim is to lose{" "}
                 <strong className="text-black dark:text-white">
                   10 pounds
@@ -626,25 +630,25 @@ export default function CalorieDeficitCalculator() {
             calorie deficit
           </strong>
         </h2>
-        <p>
+        <p className="text-black dark:text-white">
           You read it right. When we talk about straight weight loss, you{" "}
           <strong className="text-black dark:text-white">WILL</strong> lose
           weight if you eat less.{" "}
         </p>
-        <p>
+        <p className="text-black dark:text-white">
           In a study by NIH&apos;s NHLBI, 811 adults followed four different
           heart-healthy diets, all aimed at reducing calorie intake. Key
           findings include:
         </p>
         <ul>
-          <li>
+          <li className="text-black dark:text-white">
             All diets led to{" "}
             <strong className="text-black dark:text-white">
               similar weight loss
             </strong>
             , regardless of macronutrient composition.
           </li>
-          <li>
+          <li className="text-black dark:text-white">
             Participants saw an average weight loss of{" "}
             <strong className="text-black dark:text-white">
               13 pounds in 6 months
@@ -655,7 +659,7 @@ export default function CalorieDeficitCalculator() {
             </strong>
             .
           </li>
-          <li>
+          <li className="text-black dark:text-white">
             Weight loss was accompanied by a{" "}
             <strong className="text-black dark:text-white">
               1 to 3 inch reduction in waist size
@@ -663,8 +667,10 @@ export default function CalorieDeficitCalculator() {
             .
           </li>
         </ul>
-        <p>Reference to that study is in the bottom of the page.</p>
-        <p>
+        <p className="text-black dark:text-white">
+          Reference to that study is in the bottom of the page.
+        </p>
+        <p className="text-black dark:text-white">
           These diets, varying from low to high fat and protein content, proved
           that as long as you consume fewer calories than you burn, weight loss
           occurs. However, while the specifics of your diet may not impact your
@@ -675,7 +681,7 @@ export default function CalorieDeficitCalculator() {
         <h2 className="text-black dark:text-white">
           Most important thing for weight loss
         </h2>
-        <p>
+        <p className="text-black dark:text-white">
           Following a structured plan that encompasses a calorie deficit, as
           evidenced by scientific research, maximizes the potential for
           effective and sustainable weight loss. The most important thing is to

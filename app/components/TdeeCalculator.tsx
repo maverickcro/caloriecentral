@@ -364,19 +364,12 @@ export default function TDEECalculator() {
                 </h3>
                 <p className="block pt-5 text-sm font-semibold text-gray-500">
                   You need this many calories to{" "}
-                  <strong className="text-black dark:text-white">
-                    maintain
-                  </strong>{" "}
-                  your weight.
+                  <strong className="text-black">maintain</strong> your weight.
                 </p>
                 <p className="block pt-1 text-sm font-semibold text-gray-500">
-                  To{" "}
-                  <strong className="text-black dark:text-white">
-                    lose weight
-                  </strong>
-                  , aim for a calorie intake{" "}
-                  <strong className="text-black dark:text-white">below</strong>{" "}
-                  this number.
+                  To <strong className="text-black">lose weight</strong>, aim
+                  for a calorie intake{" "}
+                  <strong className="text-black">below</strong> this number.
                 </p>
                 <h3 className="my-6">
                   🍴 Find out more with our{" "}
