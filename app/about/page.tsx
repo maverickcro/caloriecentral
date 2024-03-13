@@ -15,7 +15,7 @@ export const metadata = {
     "balanced diet importance",
     "calorie counting explained",
     "nutrition decision making",
-    "diet trends demystified",
+    "diet trends",
   ],
 };
 
