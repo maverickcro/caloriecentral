@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { ThemeProvider } from "./theme-provider";
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from '@vercel/analytics/react';
 
 export const metadata = {
   title: {
@@ -30,6 +31,8 @@ export default function RootLayout({
           <div style={{ flex: 1 }}>{children}</div>
           <Footer />
         </ThemeProvider>
+        <Analytics />      
+        <SpeedInsights />
       </body>
     </html>
   );
