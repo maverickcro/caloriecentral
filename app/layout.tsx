@@ -2,6 +2,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { ThemeProvider } from "./theme-provider";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata = {
   title: {
