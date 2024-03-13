@@ -6,4 +6,4 @@ Allow: /
 Host: calorie-pal.com
 
 # Sitemaps
-Sitemap: calorie-pal.com/sitemap.xml
+Sitemap: https://calorie-pal.com/sitemap.xml
