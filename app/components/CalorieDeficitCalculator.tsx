@@ -330,10 +330,10 @@ export default function CalorieDeficitCalculator() {
               {activityLevels.map((activity, index) => (
                 <div
                   key={index}
-                  className={`p-2 m-2 mb-0 w-full text-base border rounded-md cursor-pointer text-black dark:text-white ${
+                  className={`p-2 m-2 mb-0 w-full text-base border rounded-md cursor-pointer text-black ${
                     activityLevel.label === activity.label
                       ? "border-blue-500 bg-gradient-to-br from-purple-600 to-blue-500 text-white hover:text-white"
-                      : "border-gray-300 bg-white dark:text-black hover:border-blue-500 hover:bg-gradient-to-br hover:from-purple-600 hover:to-blue-500 hover:text-white"
+                      : "border-gray-300 bg-white text-black hover:border-blue-500 hover:bg-gradient-to-br hover:from-purple-600 hover:to-blue-500 hover:text-white"
                   }`}
                   onClick={() => setActivityLevel(activity)}
                 >
