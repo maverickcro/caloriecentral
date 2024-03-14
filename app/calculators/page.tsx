@@ -27,7 +27,7 @@ export const metadata = {
 
 export default function PostList() {
   return (
-    <main className="mt-2 mx-auto px-6 max-w-4xl text-center">
+    <main className="mt-10 md:mt-6 mx-auto px-6 max-w-4xl text-center">
       <div className="animated-background rounded-3xl h-[40vh] mb-10">
         <h1 className="text-2xl md:text-4xl text-center font-bold text-white mb-2">
           Calculators

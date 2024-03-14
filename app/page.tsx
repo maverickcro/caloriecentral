@@ -48,7 +48,7 @@ export default function Home() {
   };
 
   return (
-    <main className="mt-2 mx-auto px-6 max-w-4xl">
+    <main className="mt-10 md:mt-6 mx-auto px-6 max-w-4xl">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
