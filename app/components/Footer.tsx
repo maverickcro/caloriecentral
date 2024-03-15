@@ -5,11 +5,11 @@ export default function Footer() {
     <footer className=" text-black dark:text-white bg-gray-100 dark:bg-slate-900 p-4">
       <div className="prose prose-lg mx-auto flex flex-col items-center">
         {/* Logo */}
-        <h1 className="text-3xl font-bold text-gradient grid place-content-center mb-4">
+        <p className="text-3xl font-bold text-gradient grid place-content-center mb-4">
           <Link href="/" className="no-underline hover:text-black/50">
             CaloriePal
           </Link>
-        </h1>
+        </p>
 
         <p className="text-center text-xs mt-2 mb-4 text-black dark:text-white">
           FDA compliance: the information on this website has not been evaluated
