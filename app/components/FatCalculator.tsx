@@ -3,6 +3,7 @@ import React, { useState, useRef, useEffect } from "react";
 import CustomButton from "./CustomButton";
 import { activityLevels } from "../../lib/data";
 import GoToTop from "./GoToTop";
+import Image from "next/image";
 
 export default function FatCalculator() {
   const resultRef = useRef<HTMLDivElement>(null);
@@ -137,7 +138,7 @@ export default function FatCalculator() {
           <div className="w-full relative px-3 md:w-[70%]">
             <label
               htmlFor="3"
-              className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+              className="block w-full pb-1 text-sm font-medium text-gray-500 dark:text-white transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
             >
               Measurement System
             </label>
@@ -169,7 +170,7 @@ export default function FatCalculator() {
           <div className="w-full relative px-3 md:w-[70%]">
             <label
               htmlFor="3"
-              className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+              className="block w-full pb-1 text-sm font-medium text-gray-500 dark:text-white transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
             >
               Biological Sex
             </label>
@@ -204,7 +205,7 @@ export default function FatCalculator() {
               <div className="relative w-1/2">
                 <label
                   htmlFor="3"
-                  className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+                  className="block w-full pb-1 text-sm font-medium text-gray-500 dark:text-white transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
                 >
                   Age
                 </label>
@@ -229,7 +230,7 @@ export default function FatCalculator() {
               <div className="relative w-1/2">
                 <label
                   htmlFor="9"
-                  className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+                  className="block w-full pb-1 text-sm font-medium text-gray-500 dark:text-white transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
                 >
                   Weight
                 </label>
@@ -255,7 +256,7 @@ export default function FatCalculator() {
           <div className="w-full relative px-3 md:w-[70%]">
             <label
               htmlFor="9"
-              className="inline-block w-full text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+              className="inline-block w-full text-sm font-medium text-gray-500 dark:text-white transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
             >
               Height
             </label>
@@ -319,7 +320,7 @@ export default function FatCalculator() {
           <div className="w-full relative px-3 md:w-[70%]">
             <label
               htmlFor="9"
-              className="inline-block w-full text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+              className="inline-block w-full text-sm font-medium text-gray-500 dark:text-white transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
             >
               Body fat (optional)
             </label>
@@ -339,7 +340,7 @@ export default function FatCalculator() {
           <div className="w-full relative px-3 md:w-[70%]">
             <label
               htmlFor="10"
-              className="inline-block w-full text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+              className="inline-block w-full text-sm font-medium text-gray-500 dark:text-white transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
             >
               Activity level
             </label>
@@ -363,7 +364,7 @@ export default function FatCalculator() {
           <div className="w-full  relative px-3 md:w-[70%]">
             <label
               htmlFor="3"
-              className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+              className="block w-full pb-1 text-sm font-medium text-gray-500 dark:text-white transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
             >
               What is your goal?
             </label>
@@ -406,7 +407,7 @@ export default function FatCalculator() {
             <div className="w-full  relative px-3 md:w-[70%]">
               <label
                 htmlFor="3"
-                className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+                className="block w-full pb-1 text-sm font-medium text-gray-500 dark:text-white transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
               >
                 {goal === "1"
                   ? "How much weight you want to lose per week?"
@@ -456,7 +457,7 @@ export default function FatCalculator() {
               className="w-full"
               disabled={!isValid}
             />
-            <span className="block pt-1 text-xs font-semibold text-gray-500">
+            <span className="block pt-1 text-xs font-semibold text-gray-500 dark:text-white">
               {isValid == true ? "" : `Please input the missing values. `}
             </span>
           </div>
@@ -472,7 +473,7 @@ export default function FatCalculator() {
               </strong>
             </h2>
             <div className="flex w-full justify-center items-center py-2 rounded-3xl animated-background bg-gray-200 to-gray-200">
-              <div className="md:max-w-md m-11 p-5 bg-white rounded-3xl shadow-[rgba(0,_0,_0,_0.4)_0px_60px_40px_-7px]">
+              <div className="results md:max-w-md m-3 md:m-11 p-5 bg-white rounded-3xl shadow-[rgba(0,_0,_0,_0.4)_0px_60px_40px_-7px]">
                 <h3 className="my-6">
                   💪 For{" "}
                   <span className="text-gradient">
@@ -530,49 +531,54 @@ export default function FatCalculator() {
         <h2 className="text-black dark:text-white">
           Recommended Fat Intake for Adults
         </h2>
-        <table className="w-full border-collapse border border-blue-500 max-w-xl mt-16 mx-auto">
-          <thead>
-            <tr className="bg-blue-500">
-              <th className="py-2 px-4 text-white text-left">Organization</th>
-              <th className="py-2 px-4 text-white text-left">Total Fat</th>
-              <th className="py-2 px-4 text-white text-left">Saturated Fat</th>
-              <th className="py-2 px-4 text-white text-left">Trans Fat</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr className="bg-white border-b border-blue-500">
-              <td className="py-2 px-4">World Health Organization</td>
-              <td className="py-2 px-4">20-35%</td>
-              <td className="py-2 px-4">{`<10%`}</td>
-              <td className="py-2 px-4">{`<1%`}</td>
-            </tr>
-            <tr className="bg-white border-b border-blue-500">
-              <td className="py-2 px-4">
-                Food and Nutrition Board, Institute of Medicine
-              </td>
-              <td className="py-2 px-4">20-35%</td>
-              <td className="py-2 px-4">Limit</td>
-              <td className="py-2 px-4">Limit</td>
-            </tr>
-            <tr className="bg-white border-b border-blue-500">
-              <td className="py-2 px-4">
-                United States Department of Health and Human Services and United
-                States Department of Agriculture
-              </td>
-              <td className="py-2 px-4">Limit</td>
-              <td className="py-2 px-4">{`<10%`}</td>
-              <td className="py-2 px-4">Limit</td>
-            </tr>
-            <tr className="bg-white border-b border-blue-500">
-              <td className="py-2 px-4">
-                American Heart Association/American College of Cardiology
-              </td>
-              <td className="py-2 px-4">5-6%</td>
-              <td className="py-2 px-4">Limit</td>
-              <td className="py-2 px-4">Limit</td>
-            </tr>
-          </tbody>
-        </table>
+        <div className="overflow-x-auto">
+          <table className="w-full border-collapse border border-blue-500 max-w-xl mt-8 mx-auto">
+            <thead>
+              <tr className="bg-blue-500">
+                <th className="py-2 px-4 text-white text-left">Organization</th>
+                <th className="py-2 px-4 text-white text-left">Total Fat</th>
+                <th className="py-2 px-4 text-white text-left">
+                  Saturated Fat
+                </th>
+                <th className="py-2 px-4 text-white text-left">Trans Fat</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="bg-white border-b border-blue-500">
+                <td className="py-2 px-4">World Health Organization</td>
+                <td className="py-2 px-4">20-35%</td>
+                <td className="py-2 px-4">{`<10%`}</td>
+                <td className="py-2 px-4">{`<1%`}</td>
+              </tr>
+              <tr className="bg-white border-b border-blue-500">
+                <td className="py-2 px-4">
+                  Food and Nutrition Board, Institute of Medicine
+                </td>
+                <td className="py-2 px-4">20-35%</td>
+                <td className="py-2 px-4">Limit</td>
+                <td className="py-2 px-4">Limit</td>
+              </tr>
+              <tr className="bg-white border-b border-blue-500">
+                <td className="py-2 px-4">
+                  United States Department of Health and Human Services and
+                  United States Department of Agriculture
+                </td>
+                <td className="py-2 px-4">Limit</td>
+                <td className="py-2 px-4">{`<10%`}</td>
+                <td className="py-2 px-4">Limit</td>
+              </tr>
+              <tr className="bg-white border-b border-blue-500">
+                <td className="py-2 px-4">
+                  American Heart Association/American College of Cardiology
+                </td>
+                <td className="py-2 px-4">5-6%</td>
+                <td className="py-2 px-4">Limit</td>
+                <td className="py-2 px-4">Limit</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
         <span className="text-black dark:text-white">
           Limit is a general advice - no percentage because of lack of
           supporting evidence, keep it low.
@@ -590,6 +596,20 @@ export default function FatCalculator() {
           wouldn&apos;t be able to soak up these vitamins that are crucial for
           things like keeping your vision sharp and your bones strong.
         </p>
+        <Image
+          src={"/fats-image-one.jpg"}
+          alt={`Fats for weight loss, weight gain or maintenance`}
+          width={400}
+          height={200}
+          style={{ objectFit: "cover", marginTop: "0", width: "100%" }}
+          className="mb-0"
+        />
+        <span className="block text-sm font-semibold text-gray-500">
+          Image source:{" "}
+          <a href="https://unsplash.com" className="text-black dark:text-white">
+            unsplash.com
+          </a>
+        </span>
         <p>
           Plus, fats bring to the table{" "}
           <strong className="text-black dark:text-white">
@@ -647,7 +667,23 @@ export default function FatCalculator() {
           <strong className="text-black dark:text-white">food labels</strong> to
           avoid these hidden foes.
         </p>
-
+        <Image
+          src={"/good-bad-fats.jpg"}
+          alt={`Good and bad fats illustration`}
+          width={400}
+          height={200}
+          style={{ objectFit: "cover", marginTop: "0", width: "100%" }}
+          className="mb-0"
+        />
+        <span className="block text-sm font-semibold text-gray-500">
+          Image source:{" "}
+          <a
+            href="https://stock.adobe.com/"
+            className="text-black dark:text-white"
+          >
+            stock.adobe.com
+          </a>
+        </span>
         <p>
           So, while keeping an eye on fats, remember it’s the type that counts.
           Swapping out the not-so-great ones with beneficial unsaturated fats

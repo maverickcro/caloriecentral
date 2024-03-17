@@ -26,14 +26,21 @@ export const metadata = {
 export default function Calculator() {
   return (
     <main>
-      <section className="mt-6 mx-auto px-6 prose  max-w-4xl prose-xl prose-slate">
+      <section className="mt-6 calculator-layout mx-auto px-6 prose  max-w-4xl prose-xl prose-slate">
         <h1 className="font-bold text-gradient mb-0">Fat Intake Calculator</h1>
         <span className="block pt-1 text-xs font-semibold text-gray-500">
-          Updated: Feb 2, 2024
+          Updated: Mar 17, 2024
         </span>
         <p className="text-black dark:text-white">
-          We will calculate how much fat you need per day or at least should be
-          taking during weight loss, maintenance or weight gain.
+          Knowing the right amount of fats to consume daily can be helpful in
+          achieving and maintaining your weight loss, weight gain, or weight
+          maintenance goals.{" "}
+        </p>
+        <p className="text-black dark:text-white">
+          By understanding your individual fat needs, you can make sure that
+          your diet is customized to your body&apos;s unique requirements.
+          Calculating the appropriate amount of fats to consume is{" "}
+          <strong className="text-black dark:text-white">essential</strong>.
         </p>
 
         <CalculatorComponent />
@@ -44,7 +51,7 @@ export default function Calculator() {
           <li>
             <a
               target="_blank"
-              className="text-black dark:text-white"
+              className="text-sm text-black dark:text-white"
               rel="noopener noreferrer nofollow"
               href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5577766/"
             >
@@ -58,7 +65,7 @@ export default function Calculator() {
           <li>
             <a
               target="_blank"
-              className="text-black dark:text-white"
+              className="text-sm text-black dark:text-white"
               rel="noopener noreferrer nofollow"
               href="https://medlineplus.gov/ency/patientinstructions/000838.htm"
             >

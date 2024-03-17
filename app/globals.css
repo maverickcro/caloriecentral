@@ -175,3 +175,44 @@ ul li {
   justify-content: center;
   align-items: center;
 }
+
+/* -----------CALCULATOR FONT SIZES */
+
+.calculator-layout h1 {
+  font-size: 2.4rem;
+}
+.calculator-layout h2 {
+  font-size: 1.9rem;
+}
+.calculator-layout p {
+  font-size: 18px;
+}
+.calculator-layout li {
+  font-size: 18px;
+}
+
+.results {
+  text-align: left;
+}
+
+.results h3 {
+  font-size: 1.3rem;
+}
+
+@media (min-width: 480px) {
+  .calculator-layout h1 {
+    font-size: 3rem;
+  }
+  .calculator-layout h2 {
+    font-size: 2.8rem;
+  }
+  .calculator-layout p {
+    font-size: 20px;
+  }
+  .calculator-layout li {
+    font-size: 20px;
+  }
+  .results h3 {
+    font-size: 1.5rem;
+  }
+}

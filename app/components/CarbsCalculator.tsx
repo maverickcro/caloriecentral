@@ -3,6 +3,7 @@ import React, { useState, useRef, useEffect } from "react";
 import CustomButton from "./CustomButton";
 import { activityLevels } from "../../lib/data";
 import GoToTop from "./GoToTop";
+import Image from "next/image";
 
 export default function CarbsCalculator() {
   const resultRef = useRef<HTMLDivElement>(null);
@@ -137,7 +138,7 @@ export default function CarbsCalculator() {
           <div className="w-full relative px-3 md:w-[70%]">
             <label
               htmlFor="3"
-              className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+              className="block w-full pb-1 text-sm font-medium text-gray-500 dark:text-white transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
             >
               Measurement System
             </label>
@@ -169,7 +170,7 @@ export default function CarbsCalculator() {
           <div className="w-full relative px-3 md:w-[70%]">
             <label
               htmlFor="3"
-              className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+              className="block w-full pb-1 text-sm font-medium text-gray-500 dark:text-white transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
             >
               Biological Sex
             </label>
@@ -204,7 +205,7 @@ export default function CarbsCalculator() {
               <div className="relative w-1/2">
                 <label
                   htmlFor="3"
-                  className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+                  className="block w-full pb-1 text-sm font-medium text-gray-500 dark:text-white transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
                 >
                   Age
                 </label>
@@ -229,7 +230,7 @@ export default function CarbsCalculator() {
               <div className="relative w-1/2">
                 <label
                   htmlFor="9"
-                  className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+                  className="block w-full pb-1 text-sm font-medium text-gray-500 dark:text-white transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
                 >
                   Weight
                 </label>
@@ -255,7 +256,7 @@ export default function CarbsCalculator() {
           <div className="w-full relative px-3 md:w-[70%]">
             <label
               htmlFor="9"
-              className="inline-block w-full text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+              className="inline-block w-full text-sm font-medium text-gray-500 dark:text-white transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
             >
               Height
             </label>
@@ -319,7 +320,7 @@ export default function CarbsCalculator() {
           <div className="w-full relative px-3 md:w-[70%]">
             <label
               htmlFor="9"
-              className="inline-block w-full text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+              className="inline-block w-full text-sm font-medium text-gray-500 dark:text-white transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
             >
               Body fat (optional)
             </label>
@@ -339,7 +340,7 @@ export default function CarbsCalculator() {
           <div className="w-full relative px-3 md:w-[70%]">
             <label
               htmlFor="10"
-              className="inline-block w-full text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+              className="inline-block w-full text-sm font-medium text-gray-500 dark:text-white transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
             >
               Activity level
             </label>
@@ -363,7 +364,7 @@ export default function CarbsCalculator() {
           <div className="group relative w-full px-3 md:w-[70%]">
             <label
               htmlFor="3"
-              className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+              className="block w-full pb-1 text-sm font-medium text-gray-500 dark:text-white transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
             >
               What is your goal?
             </label>
@@ -406,7 +407,7 @@ export default function CarbsCalculator() {
             <div className="group relative w-full px-3 md:w-[70%]">
               <label
                 htmlFor="3"
-                className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+                className="block w-full pb-1 text-sm font-medium text-gray-500 dark:text-white transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
               >
                 {goal === "1"
                   ? "How much weight you want to lose per week?"
@@ -456,7 +457,7 @@ export default function CarbsCalculator() {
               className="w-full"
               disabled={!isValid}
             />
-            <span className="block pt-1 text-xs font-semibold text-gray-500">
+            <span className="block pt-1 text-xs font-semibold text-gray-500 dark:text-white">
               {isValid == true ? "" : `Please input the missing values. `}
             </span>
           </div>
@@ -472,7 +473,7 @@ export default function CarbsCalculator() {
               </strong>
             </h2>
             <div className="flex w-full justify-center items-center py-2 rounded-3xl animated-background bg-gray-200 to-gray-200">
-              <div className="md:max-w-md m-11 p-5 bg-white rounded-3xl shadow-[rgba(0,_0,_0,_0.4)_0px_60px_40px_-7px]">
+              <div className="results md:max-w-md m-3 md:m-11 p-5 bg-white rounded-3xl shadow-[rgba(0,_0,_0,_0.4)_0px_60px_40px_-7px]">
                 <h3 className="my-6">
                   💪 For{" "}
                   <span className="text-gradient">
@@ -554,8 +555,10 @@ export default function CarbsCalculator() {
             It&apos;s crucial to limit added sugars, with a maximum
             recommendation of{" "}
             <strong className="text-black dark:text-white">10%</strong> of your
-            total daily calories. This helps manage blood sugar levels and
-            reduces the risk of metabolic diseases.
+            total daily calories. Keeping sugars low helps manage blood sugar
+            levels, reduces the risk of metabolic diseases and you reduce{" "}
+            <strong className="text-black dark:text-white">empty</strong>{" "}
+            calories.
           </li>
         </ul>
 
@@ -627,16 +630,36 @@ export default function CarbsCalculator() {
           </strong>{" "}
           of carbohydrates, such as whole grains, fruits, and vegetables, which
           provide vital nutrients and fiber. This fiber aids in digestion and
-          can help you feel fuller longer, preventing overeating. So, instead of
-          avoiding carbs, focus on incorporating the right kinds into your diet
-          to fuel your body and support overall health.
+          can help you feel{" "}
+          <strong className="text-black dark:text-white">fuller</strong> longer,
+          preventing overeating. So, instead of avoiding carbs, focus on
+          incorporating the right kinds into your diet to fuel your body and
+          support overall health.
         </p>
+        <Image
+          src={"/carbs-image-one.jpg"}
+          alt={`Carbohydrates for weight loss, weight gain or maintenance`}
+          width={400}
+          height={200}
+          style={{ objectFit: "cover", marginTop: "0", width: "100%" }}
+          className="mb-0"
+        />
+        <span className="block text-sm font-semibold text-gray-500">
+          Image source:{" "}
+          <a href="https://unsplash.com" className="text-black dark:text-white">
+            unsplash.com
+          </a>
+        </span>
         <h2 className="text-black dark:text-white">
           How much carbs for weight loss and weight gain?
         </h2>
         <p>
           When it comes to adjusting your weight, understanding your
-          carbohydrate intake is crucial. For{" "}
+          carbohydrate intake is crucial.
+        </p>
+        <h3 className="text-black dark:text-white">Weight loss</h3>
+        <p>
+          For{" "}
           <strong className="text-black dark:text-white">weight loss</strong>,
           focusing on a diet lower in calories but rich in nutrients is key.
           Reducing simple carbs like sugar and opting for complex carbs can help
@@ -676,7 +699,21 @@ export default function CarbsCalculator() {
             yogurt and cottage cheese.
           </li>
         </ul>
-
+        <Image
+          src={"/carbs-image-two.jpg"}
+          alt={`Bread as a carbohydrate source`}
+          width={400}
+          height={200}
+          style={{ objectFit: "cover", marginTop: "0", width: "100%" }}
+          className="mb-0"
+        />
+        <span className="block text-sm font-semibold text-gray-500">
+          Image source:{" "}
+          <a href="https://unsplash.com" className="text-black dark:text-white">
+            unsplash.com
+          </a>
+        </span>
+        <h3 className="text-black dark:text-white">Weight gain</h3>
         <p>
           Conversely, for{" "}
           <strong className="text-black dark:text-white">weight gain</strong>,
