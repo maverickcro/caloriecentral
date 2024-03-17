@@ -12,6 +12,9 @@ export const metadata = {
   description: {
     template: "%s",
   },
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 export default function RootLayout({
   children,

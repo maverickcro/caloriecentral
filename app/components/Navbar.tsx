@@ -42,7 +42,7 @@ export default function Navbar() {
             Calculators
           </Link>
           <Link
-            className="logo-animation font-bold no-underline navbar-link text-black dark:text-white text-sm md:text-base"
+            className="disabled logo-animation font-bold no-underline navbar-link text-black dark:text-white text-sm md:text-base"
             href="/blog"
           >
             Blog
