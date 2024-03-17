@@ -16,14 +16,19 @@ export default function AboutMeSection() {
           />
           <h2 className="text-2xl font-semibold">Marko S.</h2>
           <p className="mt-3 mb-4">
-            Welcome! I&apos;m Marko, a former soccer enthusiast turned tech
-            geek. Transitioning from sports to a tech career, I noticed the toll
-            a sedentary lifestyle took on my health. After gaining unwanted
-            weight, I delved into the world of nutrition, discovering the power
-            of caloric balance. Losing 15 pounds and gaining muscle, I&apos;ve
-            learned that effective dieting isn&apos;t about
-            restrictions—it&apos;s about understanding and enjoying food. Join
-            me as I share insights on smart eating without the guilt.
+            Hi👋, I&apos;m Marko. After starting corporate life, I never had
+            time for anything. Every day was the same, I would work for 10
+            hours, ate mostly junk food and fitness became a foreign word. I was
+            too lazy to do anything about it because I felt I had more important
+            things to do. After a couple of years, my sedentary lifestyle took a
+            toll on my health. I haven&apos;t played many sports, had a terrible
+            diet, and had no idea about healthy habits. I took matters into my
+            own hands, started working out, and improved my diet. A good plan
+            was all it took. I&apos;ve lost 15 pounds, gained some muscle and
+            now I feel better than ever. I made it my addiction. As a software
+            developer, I decided to make some essential calculators from the
+            knowledge I learned through my journey, as well as some additional
+            ones. I truly hope they will help you as well 🙏.
           </p>
           <div className="flex space-x-4 justify-center">
             <Link

@@ -1,5 +1,8 @@
 import React from "react";
 import ProfilePic from "../components/ProfilePic";
+import Link from "next/link";
+import CustomButton from "../components/CustomButton";
+import CalculatorCard from "../components/CalculatorCard";
 
 export const metadata = {
   title: "About",
@@ -22,46 +25,62 @@ export const metadata = {
 export default function About() {
   return (
     <main className="mt-6 mx-auto px-6 prose max-w-4xl prose-xl prose-slate">
-      <h1 className="font-bold text-gradient mb-2">About CaloriePal</h1>
-      <div className="text-black dark:text-white">
+      <h1 className="font-bold text-gradient mb-2 text-[2.4rem] sm:text-[3rem]">
+        About CaloriePal
+      </h1>
+      <div className="text-black dark:text-white text-[18px] sm:text-[20px]">
         <p>
           Welcome to{" "}
-          <strong className="text-black dark:text-white">CaloriePal</strong> -
-          your go-to hub for demystifying calorie management and achieving your
-          fitness milestones. I&apos;m{" "}
-          <strong className="text-black dark:text-white">Marko</strong>, the
-          founder of this blog, and my mission is simple: empower you to reach
-          your health goals, whether it&apos;s losing weight, gaining muscle, or
-          simply leading a{" "}
+          <strong className="text-black dark:text-white">CaloriePal</strong>{" "}
+          where our mission is simple: empower you to reach your health goals,
+          whether it&apos;s losing weight, gaining muscle, or simply leading a{" "}
           <strong className="text-black dark:text-white">
             healthier lifestyle.
           </strong>
         </p>
         <ProfilePic />
         <p>
-          My own battle with weight gain during a demanding career in Computer
-          Science made me realize the importance of maintaining a balanced diet
-          amidst a busy schedule. The transformation in my health and mood after
-          taking charge of my calorie intake was profound. It wasn&apos;t just
-          about losing pounds; it was about gaining a new perspective on life.
+          Hi, I&apos;m Marko!👋 For years, my life was just work, work, work. As
+          a software developer, I spent long hours at the computer, snacking on
+          whatever was quick and easy (spoiler: it wasn&apos;t salads).
+          Exercise? That word wasn&apos;t in my vocabulary unless I was
+          programming it into an app.
         </p>
         <br />
         <p>
-          That&apos;s precisely why I created{" "}
-          <strong className="text-black dark:text-white">CaloriePal</strong>. To
-          share with you the effective, practical approaches to dieting that
-          have worked for me and many others. Here, we don&apos;t just count
-          calories—we understand them. And with that understanding comes the
-          freedom to enjoy food, to tailor diets that don&apos;t feel like
-          punishment, and to truly enjoy the journey towards better health.
+          It wasn&apos;t until I noticed how this lifestyle was{" "}
+          <strong className="text-black dark:text-white">
+            dragging me down
+          </strong>{" "}
+          that I decided to make a change. I started working out a bit at a
+          time, figuring out how to eat better, and surprisingly, I began to
+          enjoy it. I lost 15 pounds, started seeing some muscle definition, and
+          most importantly, I felt energized and ready to take on the world.
         </p>
         <p>
-          So, whether you&apos;re here to find out the best way to manage your
-          calorie intake or to seek advice on a balanced diet,{" "}
-          <strong className="text-black dark:text-white">CaloriePal</strong> is
-          here to guide you. It&apos;s time to say goodbye to confusing diet
-          trends and hello to clear, actionable information that&apos;ll help
-          you{" "}
+          This journey led me to create CaloriePal. It&apos;s my way of
+          combining tech with my newfound fitness knowledge to help folks like
+          you and me find a healthier way of life. Here you&apos;ll find
+          practical tools to track your{" "}
+          <strong className="text-black dark:text-white">
+            eating and exercise
+          </strong>
+          .
+        </p>
+        <div className="w-full flex justify-center py-6">
+          <Link href="/calculators">
+            <CustomButton type={"gradient"} label="VIEW ALL CALCULATORS" />
+          </Link>
+        </div>
+        <p>
+          {" "}
+          These are the very{" "}
+          <strong className="text-black dark:text-white">
+            calculators
+          </strong>{" "}
+          that helped me get on track, and I hope they&apos;ll do the same for
+          you. So stick around, explore the calculators, and let&apos;s get to a
+          healthier place together🙏 . Welcome to CaloriePal! We will help you{" "}
           <strong className="text-black dark:text-white">
             make informed decisions about your nutrition
           </strong>
