@@ -673,7 +673,7 @@ export default function SugarCalculator() {
           </li>
         </ul>
         <h3 className="text-black dark:text-white">
-          Two Weeks Weight Loss: One pound!
+          Two Weeks Weight Loss: Two pounds!
         </h3>
         <p>
           If you consume these kinds of sugary items daily, you could be
