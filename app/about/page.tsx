@@ -84,7 +84,7 @@ export default function About() {
           <strong className="text-black dark:text-white">
             make informed decisions about your nutrition
           </strong>
-          . Let&apos;s embark on this journey together!
+          .
         </p>
       </div>
     </main>

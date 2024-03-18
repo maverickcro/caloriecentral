@@ -3,6 +3,7 @@ import React, { useState, useRef, useEffect, useCallback } from "react";
 import CustomButton from "./CustomButton";
 import GoToTop from "./GoToTop";
 import { activityLevels } from "../../lib/data";
+import Image from "next/image";
 
 export default function SugarCalculator() {
   const resultRef = useRef<HTMLDivElement>(null);
@@ -134,7 +135,7 @@ export default function SugarCalculator() {
           <div className="w-full relative px-3 md:w-[70%]">
             <label
               htmlFor="3"
-              className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+              className="block w-full pb-1 text-sm font-medium text-gray-500 dark:text-white transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
             >
               Measurement System
             </label>
@@ -166,7 +167,7 @@ export default function SugarCalculator() {
           <div className="w-full relative px-3 md:w-[70%]">
             <label
               htmlFor="3"
-              className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+              className="block w-full pb-1 text-sm font-medium text-gray-500 dark:text-white transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
             >
               Biological Sex
             </label>
@@ -201,7 +202,7 @@ export default function SugarCalculator() {
               <div className="relative w-1/2">
                 <label
                   htmlFor="3"
-                  className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+                  className="block w-full pb-1 text-sm font-medium text-gray-500 dark:text-white transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
                 >
                   Age
                 </label>
@@ -226,7 +227,7 @@ export default function SugarCalculator() {
               <div className="relative w-1/2">
                 <label
                   htmlFor="9"
-                  className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+                  className="block w-full pb-1 text-sm font-medium text-gray-500 dark:text-white transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
                 >
                   Weight
                 </label>
@@ -252,7 +253,7 @@ export default function SugarCalculator() {
           <div className="w-full relative px-3 md:w-[70%]">
             <label
               htmlFor="9"
-              className="inline-block w-full text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+              className="inline-block w-full text-sm font-medium text-gray-500 dark:text-white transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
             >
               Height
             </label>
@@ -316,7 +317,7 @@ export default function SugarCalculator() {
           <div className="w-full relative px-3 md:w-[70%]">
             <label
               htmlFor="9"
-              className="inline-block w-full text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+              className="inline-block w-full text-sm font-medium text-gray-500 dark:text-white transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
             >
               Body fat (optional)
             </label>
@@ -336,7 +337,7 @@ export default function SugarCalculator() {
           <div className="w-full relative px-3 md:w-[70%]">
             <label
               htmlFor="10"
-              className="inline-block w-full text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+              className="inline-block w-full text-sm font-medium text-gray-500 dark:text-white transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
             >
               Activity level
             </label>
@@ -360,7 +361,7 @@ export default function SugarCalculator() {
           <div className="w-full relative px-3 md:w-[70%]">
             <label
               htmlFor="3"
-              className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+              className="block w-full pb-1 text-sm font-medium text-gray-500 dark:text-white transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
             >
               What is your goal?
             </label>
@@ -403,7 +404,7 @@ export default function SugarCalculator() {
             <div className="w-full relative px-3 md:w-[70%]">
               <label
                 htmlFor="3"
-                className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+                className="block w-full pb-1 text-sm font-medium text-gray-500 dark:text-white transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
               >
                 {goal === "1"
                   ? "How much weight you want to lose per week?"
@@ -453,7 +454,7 @@ export default function SugarCalculator() {
               className="w-full"
               disabled={!isValid}
             />
-            <span className="block pt-1 text-xs font-semibold text-gray-500">
+            <span className="block pt-1 text-xs font-semibold text-gray-500 dark:text-white">
               {isValid == true ? "" : `Please input the missing values. `}
             </span>
           </div>
@@ -469,7 +470,7 @@ export default function SugarCalculator() {
               </strong>
             </h2>
             <div className="flex w-full justify-center items-center py-2 rounded-3xl animated-background bg-gray-200 to-gray-200">
-              <div className="md:max-w-md m-11 p-5 bg-white rounded-3xl shadow-[rgba(0,_0,_0,_0.4)_0px_60px_40px_-7px]">
+              <div className="results md:max-w-md m-3 md:m-11 p-5 bg-white rounded-3xl shadow-[rgba(0,_0,_0,_0.4)_0px_60px_40px_-7px]">
                 <h3 className="my-6">
                   🍬 According to WHO:
                   <span className="text-gradient">
@@ -538,28 +539,13 @@ export default function SugarCalculator() {
           from free sugars but ideally less than 5% of total energy intake for
           additional health benefits.
         </p>
-        <h2 className="text-black dark:text-white">Daily Caloric Intake: </h2>
-        <ul>
-          <li>
-            For Women: The average daily caloric intake for women can vary based
-            on age, activity level, and overall health, but it generally ranges
-            from 1,800 to 2,400 calories per day.
-          </li>
-          <li>
-            For Men: Similarly, for men, the average daily caloric intake ranges
-            from 2,200 to 3,000 calories per day, with the range depending on
-            activity level and age.
-          </li>
-        </ul>
-        <p>
-          The lower end is for sedentary lifestyle, while the higher end is for
-          those who are more active.
-        </p>
-        <h2 className="text-black dark:text-white">How much sugar?</h2>
+        <h2 className="text-black dark:text-white">
+          How We Calculated Your Sugar Intake?
+        </h2>
         <p className=" text-black dark:text-white">
           We&apos;ve calculated your Total Daily Energy Expenditure (TDEE) based
           on your personal details like gender, height, weight, and activity
-          level. This number is crucial because it tells us how many calories
+          level. This number is essential because it tells us how many calories
           you need daily to maintain your current weight, whether you are super
           active or not so much.
         </p>
@@ -569,26 +555,142 @@ export default function SugarCalculator() {
           reliable sources like the American Heart Association (AHA) and the
           World Health Organization (WHO) for this.
         </p>
-        <ul>
-          <li className="text-black dark:text-white">
-            For Women: The AHA suggests keeping added sugars to about 5% of your
-            total daily calories.
-          </li>
-          <li className="text-black dark:text-white">
-            For Men: The AHA recommends a slightly higher allowance, up to 7% of
-            your daily calories.
-          </li>
-          <li className="text-black dark:text-white">
-            General Guideline: The WHO advises that no matter your gender,
-            keeping added sugars under 10% of your daily calories is a good
-            health practice.
-          </li>
-        </ul>
         <p className=" text-black dark:text-white">
           So, if your TDEE is around 2000 calories, a woman should aim for no
           more than 100 calories from sugar (that&apos;s roughly 25 grams or 6
           teaspoons). A man can go up to about 140 calories from sugar (around
           35 grams or 8.75 teaspoons).
+        </p>
+        <h2 className="text-black dark:text-white">
+          What Happens When You Quit Sugar?
+        </h2>
+        <p>
+          When you give up sugar for a short period of time, the impact on your
+          body is quite significant. If you manage to do it for a couple of days
+          you can <strong className="text-black dark:text-white">surely</strong>{" "}
+          do it for longer. Here are some things you can expect:
+        </p>
+        <ul>
+          <li>
+            <strong className="text-black dark:text-white">Weight loss</strong>{" "}
+            is almost guaranteed as you will skip on empty calories.
+          </li>
+          <li>Eye, brain, artery, and kidney health could improve.</li>
+          <li>
+            You might find yourself getting up less at night to use the
+            bathroom.
+          </li>
+          <li>
+            Expect a boost in your{" "}
+            <strong className="text-black dark:text-white">energy</strong>{" "}
+            levels.
+          </li>
+          <li>Hunger between meals could become less frequent.</li>
+          <li>
+            You may notice a decrease in joint stiffness, pain, and{" "}
+            <strong className="text-black dark:text-white">inflammation</strong>
+            .
+          </li>
+          <li>
+            Your <strong className="text-black dark:text-white">skin</strong>{" "}
+            could clear up, looking healthier.
+          </li>
+          <li>
+            Better regulation of{" "}
+            <strong className="text-black dark:text-white">insulin</strong> and
+            blood sugar levels is possible.
+          </li>
+        </ul>
+        <p>
+          Try it for two weeks and let us know what you noticed. Try to replace
+          these donuts with some fruit. Do it for{" "}
+          <strong className="text-black dark:text-white">yourself</strong>.
+        </p>
+        <Image
+          src={"/sugar.jpg"}
+          alt={`Sugar intake calculator`}
+          width={400}
+          height={200}
+          style={{ objectFit: "cover", marginTop: "0", width: "100%" }}
+          className="mb-0"
+        />
+        <span className="block text-sm font-semibold text-gray-500">
+          Image source:{" "}
+          <a href="https://unsplash.com" className="text-black dark:text-white">
+            unsplash.com
+          </a>
+        </span>
+        <h2 className="text-black dark:text-white">
+          No sugar for weight loss:{" "}
+        </h2>
+        <ul>
+          <li>
+            For Women: The average daily caloric intake for women generally
+            ranges from{" "}
+            <strong className="text-black dark:text-white">
+              1,800 to 2,400
+            </strong>{" "}
+            calories per day.
+          </li>
+          <li>
+            For Men: Similarly, for men, the average daily caloric intake ranges
+            from{" "}
+            <strong className="text-black dark:text-white">
+              2,200 to 3,000
+            </strong>{" "}
+            calories per day.
+          </li>
+        </ul>
+        <p>
+          Now, imagine if you eliminated the calories from sugar. You might not
+          believe how many calories you consume from sugars alone.
+        </p>
+        <ul>
+          <li>
+            Average soda can: About{" "}
+            <strong className="text-black dark:text-white">150</strong> calories
+            from sugar.
+          </li>
+          <li>
+            Typical chocolate bar: Roughly{" "}
+            <strong className="text-black dark:text-white">200-300</strong>{" "}
+            calories, mostly from sugar.
+          </li>
+          <li>
+            Store-bought iced tea: Approximately{" "}
+            <strong className="text-black dark:text-white">90</strong> calories
+            from sugar.
+          </li>
+          <li>
+            A serving of flavored yogurt: Around{" "}
+            <strong className="text-black dark:text-white">80</strong> calories
+            from sugar.
+          </li>
+          <li>
+            One scoop of ice cream: Could be{" "}
+            <strong className="text-black dark:text-white">100 or more</strong>{" "}
+            calories from sugar.
+          </li>
+        </ul>
+        <h3 className="text-black dark:text-white">
+          Two Weeks Weight Loss: One pound!
+        </h3>
+        <p>
+          If you consume these kinds of sugary items daily, you could be
+          ingesting an extra{" "}
+          <strong className="text-black dark:text-white">500 to 700</strong>{" "}
+          calories or more per day. By eliminating these sugary foods and
+          drinks, you can create a substantial calorie deficit. Since one pound
+          of fat is equivalent to about{" "}
+          <strong className="text-black dark:text-white">3,500</strong>{" "}
+          calories, cutting out these sugars could lead to a loss of about one
+          pound per week, provided your other eating habits and physical
+          activity levels remain the same.
+        </p>
+        <p>
+          Sugars are not just in sweets; they&apos;re also hidden in many
+          processed foods like sauces, bread, and even salad dressings. So, make
+          sure to read food labels.
         </p>
       </div>
       <GoToTop />
