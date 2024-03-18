@@ -26,18 +26,17 @@ export const metadata = {
 export default function Calculator() {
   return (
     <main>
-      <section className="mt-6 mx-auto px-6 prose  max-w-4xl prose-xl prose-slate">
+      <section className="mt-6 calculator-layout mx-auto px-6 prose  max-w-4xl prose-xl prose-slate">
         <h1 className="font-bold text-gradient mb-0">
           Anorexic BMI Calculator
         </h1>
         <span className="block pt-1 text-xs font-semibold text-gray-500">
-          Updated: Jan 22, 2024
+          Updated: Mar 18, 2024
         </span>
         <p className="text-black dark:text-white">
-          Accurately assess your health with our Anorexia BMI Calculator, a
-          critical resource for identifying potential anorexia nervosa based on
-          BMI. It&apos;s a vital first step towards awareness and seeking
-          appropriate care.
+          Get the idea of which BMI is anorexic, from physical aspect. Calculate
+          your BMI in order to identify a potential anorexia nervosa with our
+          Anorexic BMI Calculator.
         </p>
 
         <CalculatorComponent />
@@ -49,7 +48,7 @@ export default function Calculator() {
             <a
               target="_blank"
               rel="noopener noreferrer nofollow"
-              className=" text-black dark:text-white"
+              className=" text-sm text-black dark:text-white"
               href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8837073/"
             >
               Toppino, Federica, et al. &quot;Body Mass Index Specifiers in
