@@ -411,13 +411,7 @@ export default function AnorexicBMICalculator() {
             className="mb-0"
           />
           <span className="block text-sm font-semibold text-gray-500">
-            Image source:{" "}
-            <a
-              href="https://unsplash.com"
-              className="text-black dark:text-white"
-            >
-              unsplash.com
-            </a>
+            Image source: unsplash.com
           </span>
           <p className=" text-black dark:text-white">
             Also, note that while a{" "}

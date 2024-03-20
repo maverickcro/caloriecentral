@@ -645,10 +645,7 @@ export default function CarbsCalculator() {
           className="mb-0"
         />
         <span className="block text-sm font-semibold text-gray-500">
-          Image source:{" "}
-          <a href="https://unsplash.com" className="text-black dark:text-white">
-            unsplash.com
-          </a>
+          Image source: unsplash.com
         </span>
         <h2 className="text-black dark:text-white">
           How much carbs for weight loss and weight gain?
@@ -708,10 +705,7 @@ export default function CarbsCalculator() {
           className="mb-0"
         />
         <span className="block text-sm font-semibold text-gray-500">
-          Image source:{" "}
-          <a href="https://unsplash.com" className="text-black dark:text-white">
-            unsplash.com
-          </a>
+          Image source: unsplash.com
         </span>
         <h3 className="text-black dark:text-white">Weight gain</h3>
         <p>
