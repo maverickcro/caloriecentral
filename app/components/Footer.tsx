@@ -10,17 +10,6 @@ export default function Footer() {
             CaloriePal
           </Link>
         </p>
-
-        <p className="text-center text-xs mt-2 mb-4 text-black dark:text-white">
-          FDA compliance: the information on this website has not been evaluated
-          by the Food & Drug Administration or any other medical body. We do not
-          aim to diagnose, treat, cure or prevent any illness or disease.
-          Information is shared for educational purposes only. You must consult
-          your doctor before acting on any content on this website, especially
-          if you are pregnant, nursing, taking medication, or have a medical
-          condition.
-        </p>
-
         <div className="flex justify-center space-x-4 mb-4">
           <Link
             href="/disclaimer
