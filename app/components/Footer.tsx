@@ -42,17 +42,6 @@ export default function Footer() {
             Contact
           </Link>
         </div>
-        <div className="flex flex-col justify-center items-center space-x-4 mb-4">
-          <span className="block pt-1 text-sm font-semibold text-gray-500 dark:text-gray-200">
-            Like what you see? Consider supporting
-          </span>
-          <Link
-            className="logo-animation font-bold no-underline navbar-link text-black dark:text-white"
-            href="https://paypal.me/caloriepal?country.x=DE&locale.x=de_DE"
-          >
-            ☕ Buy me a coffee
-          </Link>
-        </div>
 
         {/* Copyright */}
         <div className="text-center text-xs text-black dark:text-white">
