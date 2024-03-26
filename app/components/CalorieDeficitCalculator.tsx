@@ -140,7 +140,7 @@ export default function CalorieDeficitCalculator() {
           <div className="w-full relative px-3 md:w-[70%]">
             <label
               htmlFor="3"
-              className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+              className="block w-full pb-1 text-sm font-medium text-gray-500 dark:text-white transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
             >
               Measurement System
             </label>
@@ -172,7 +172,7 @@ export default function CalorieDeficitCalculator() {
           <div className="w-full relative px-3 md:w-[70%]">
             <label
               htmlFor="3"
-              className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+              className="block w-full pb-1 text-sm font-medium text-gray-500 dark:text-white transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
             >
               Biological Sex
             </label>
@@ -207,7 +207,7 @@ export default function CalorieDeficitCalculator() {
               <div className="relative w-1/2">
                 <label
                   htmlFor="3"
-                  className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+                  className="block w-full pb-1 text-sm font-medium text-gray-500 dark:text-white transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
                 >
                   Age
                 </label>
@@ -232,7 +232,7 @@ export default function CalorieDeficitCalculator() {
               <div className="relative w-1/2">
                 <label
                   htmlFor="9"
-                  className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+                  className="block w-full pb-1 text-sm font-medium text-gray-500 dark:text-white transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
                 >
                   Weight
                 </label>
@@ -258,7 +258,7 @@ export default function CalorieDeficitCalculator() {
           <div className="w-full relative px-3 md:w-[70%]">
             <label
               htmlFor="9"
-              className="inline-block w-full text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+              className="inline-block w-full text-sm font-medium text-gray-500 dark:text-white transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
             >
               Height
             </label>
@@ -322,7 +322,7 @@ export default function CalorieDeficitCalculator() {
           <div className="w-full relative px-3 md:w-[70%]">
             <label
               htmlFor="10"
-              className="inline-block w-full text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+              className="inline-block w-full text-sm font-medium text-gray-500 dark:text-white transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
             >
               Activity level
             </label>
@@ -346,7 +346,7 @@ export default function CalorieDeficitCalculator() {
           <div className="group relative  w-full  px-3 md:w-[70%]">
             <label
               htmlFor="3"
-              className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+              className="block w-full pb-1 text-sm font-medium text-gray-500 dark:text-white transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
             >
               How much weight you want to lose per week?
             </label>
@@ -389,7 +389,7 @@ export default function CalorieDeficitCalculator() {
           <div className="w-full px-3 md:w-[70%]">
             <label
               htmlFor="10"
-              className="inline-block w-full text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+              className="inline-block w-full text-sm font-medium text-gray-500 dark:text-white transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
             >
               Weight Goal
             </label>
@@ -415,7 +415,7 @@ export default function CalorieDeficitCalculator() {
               className="w-full"
               disabled={!isValid}
             />
-            <span className="block pt-1 text-xs font-semibold text-gray-500">
+            <span className="block pt-1 text-xs font-semibold text-gray-500 dark:text-white">
               {isValid == true ? "" : `Please input the missing values. `}
             </span>
           </div>
@@ -431,7 +431,7 @@ export default function CalorieDeficitCalculator() {
               </strong>
             </h2>
             <div className="flex w-full justify-center items-center py-2 rounded-3xl animated-background bg-gray-200 to-gray-200">
-              <div className="md:max-w-lg m-11 p-5 bg-white rounded-3xl">
+              <div className="results md:max-w-md m-3 md:m-11 p-5 bg-white rounded-3xl">
                 <h3 className="my-6">
                   💪 For{" "}
                   <span className="text-gradient">{deficitWeight()}</span> loss

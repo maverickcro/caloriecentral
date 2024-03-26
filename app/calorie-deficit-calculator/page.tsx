@@ -26,12 +26,12 @@ export const metadata = {
 export default function Calculator() {
   return (
     <main>
-      <section className="mt-6 mx-auto px-6 prose  max-w-4xl prose-xl prose-slate">
+      <section className="mt-6 calculator-layout mx-auto px-6 prose  max-w-4xl prose-xl prose-slate">
         <h1 className="font-bold text-gradient mb-0">
           Calorie Deficit Calculator
         </h1>
         <span className="block pt-1 text-xs font-semibold text-gray-500">
-          Updated: Feb 11, 2024
+          Updated: Mar 27, 2024
         </span>
         <p className="text-black dark:text-white">
           Calorie Deficit Calculator is here as a{" "}
@@ -64,7 +64,7 @@ export default function Calculator() {
           <li>
             <a
               target="_blank"
-              className="text-black dark:text-white"
+              className="text-sm text-black dark:text-white"
               rel="noopener noreferrer nofollow"
               href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8017325/"
             >
@@ -76,7 +76,7 @@ export default function Calculator() {
           <li>
             <a
               target="_blank"
-              className="text-black dark:text-white"
+              className="text-sm text-black dark:text-white"
               rel="noopener noreferrer nofollow"
               href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3447534/"
             >
@@ -90,7 +90,7 @@ export default function Calculator() {
           <li>
             <a
               target="_blank"
-              className="text-black dark:text-white"
+              className="text-sm text-black dark:text-white"
               rel="noopener noreferrer nofollow"
               href="https://www.nih.gov/news-events/nih-research-matters/weight-loss-depends-less-calories-not-nutrient-mix"
             >
