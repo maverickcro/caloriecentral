@@ -128,7 +128,7 @@ export default function BodyRecompositionCalculator() {
 
     let fatGramsRest: number = fatCaloriesRest / 9; // per gram of fat
     let carbsGramsRest: number = carbsCaloriesRest / 4; // per gram of carbs
-    let proteinGramsRest: number = proteinCaloriesRest / 4; // adjusted protein for rest days (since it's higher)
+    let proteinGramsRest: number = proteinCaloriesRest / 4; // adjusted protein for rest days (since it&apos;s higher)
 
     // Set state with the new values
     setTrainingDaysTotalCalories(Number(trainingDaysCalories));
@@ -566,7 +566,7 @@ export default function BodyRecompositionCalculator() {
   <li><strong className="text-black dark:text-white">Carbohydrates:</strong> Lowered to <strong className="text-black dark:text-white">30%</strong> of your calorie intake as your body is less active and requires less energy.</li>
 </ul>
 
-<p>Eat more <a className="text-black dark:text-white" href="/protein-calculator">protein</a> and less <a className="text-black dark:text-white" href="/carbs-calculator">carbs</a> when you're not working out. Your muscles need protein to repair on your off days. Increase carbs only on your workout days when you're burning them off.</p>
+<p>Eat more <a className="text-black dark:text-white" href="/protein-calculator">protein</a> and less <a className="text-black dark:text-white" href="/carbs-calculator">carbs</a> when you&apos;re not working out. Your muscles need protein to repair on your off days. Increase carbs only on your workout days when you&apos;re burning them off.</p>
         <h2 className="text-black dark:text-white">
               Have a clear goal
             </h2>
