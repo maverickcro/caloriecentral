@@ -26,12 +26,12 @@ export const metadata = {
 export default function Calculator() {
   return (
     <main>
-      <section className="mt-6 mx-auto px-6 prose  max-w-4xl prose-xl prose-slate">
+      <section className="mt-6 calculator-layout mx-auto px-6 prose  max-w-4xl prose-xl prose-slate">
         <h1 className="font-bold text-gradient mb-0">
           Body Recomposition Calculator
         </h1>
         <span className="block pt-1 text-xs font-semibold text-gray-500">
-          Updated: Feb 22, 2024
+          Updated: Mar 26, 2024
         </span>
         <p className="text-black dark:text-white">
           When I was starting my fitness journey, this was the first thing that
@@ -53,7 +53,7 @@ export default function Calculator() {
           <li>
             <a
               target="_blank"
-              className="text-black dark:text-white"
+              className="text-sm text-black dark:text-white"
               rel="noopener noreferrer nofollow"
               href="https://www.healthline.com/nutrition/body-recomposition"
             >
@@ -64,7 +64,7 @@ export default function Calculator() {
           <li>
             <a
               target="_blank"
-              className="text-black dark:text-white"
+              className="text-sm text-black dark:text-white"
               rel="noopener noreferrer nofollow"
               href="https://europepmc.org/article/med/35019903"
             >

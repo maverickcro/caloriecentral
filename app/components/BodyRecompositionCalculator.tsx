@@ -1,8 +1,8 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 import CustomButton from "./CustomButton";
-import { activityLevels } from "../../lib/data";
 import GoToTop from "./GoToTop";
+import Image from "next/image";
 
 export default function BodyRecompositionCalculator() {
   const resultRef = useRef<HTMLDivElement>(null);
@@ -162,7 +162,7 @@ export default function BodyRecompositionCalculator() {
           <div className="w-full relative px-3 md:w-[70%]">
             <label
               htmlFor="3"
-              className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+              className="block w-full pb-1 text-sm font-medium text-gray-500 dark:text-white transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
             >
               Measurement System
             </label>
@@ -194,7 +194,7 @@ export default function BodyRecompositionCalculator() {
           <div className="w-full relative px-3 md:w-[70%]">
             <label
               htmlFor="3"
-              className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+              className="block w-full pb-1 text-sm font-medium text-gray-500 dark:text-white transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
             >
               Biological Sex
             </label>
@@ -229,7 +229,7 @@ export default function BodyRecompositionCalculator() {
               <div className="relative w-1/2">
                 <label
                   htmlFor="3"
-                  className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+                  className="block w-full pb-1 text-sm font-medium text-gray-500 dark:text-white transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
                 >
                   Age
                 </label>
@@ -254,7 +254,7 @@ export default function BodyRecompositionCalculator() {
               <div className="relative w-1/2">
                 <label
                   htmlFor="9"
-                  className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+                  className="block w-full pb-1 text-sm font-medium text-gray-500 dark:text-white transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
                 >
                   Weight
                 </label>
@@ -280,7 +280,7 @@ export default function BodyRecompositionCalculator() {
           <div className="w-full relative px-3 md:w-[70%]">
             <label
               htmlFor="9"
-              className="inline-block w-full text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+              className="inline-block w-full text-sm font-medium text-gray-500 dark:text-white transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
             >
               Height
             </label>
@@ -344,7 +344,7 @@ export default function BodyRecompositionCalculator() {
           <div className="w-full relative px-3 md:w-[70%]">
             <label
               htmlFor="9"
-              className="inline-block w-full text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+              className="inline-block w-full text-sm font-medium text-gray-500 dark:text-white transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
             >
               Body fat (optional)
             </label>
@@ -362,7 +362,7 @@ export default function BodyRecompositionCalculator() {
           </div>
           <div className="w-full px-3 md:w-[70%]">
             <div className="relative flex flex-col items-center">
-              <p className="inline-block w-full text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400">
+              <p className="inline-block w-full text-sm font-medium text-gray-500 dark:text-white transition-all duration-200 ease-in-out group-focus-within:text-blue-400">
                 The optimal number of workouts is 2-4 weight exercise workouts
                 per week. Each workout should last at least 30 minutes.
               </p>
@@ -372,7 +372,7 @@ export default function BodyRecompositionCalculator() {
           <div className="relative w-full px-3 md:w-[70%]">
             <label
               htmlFor="3"
-              className="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+              className="block w-full pb-1 text-sm font-medium text-gray-500 dark:text-white transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
             >
               What is your goal?
             </label>
@@ -419,7 +419,7 @@ export default function BodyRecompositionCalculator() {
               className="w-full"
               disabled={!isValid}
             />
-            <span className="block pt-1 text-xs font-semibold text-gray-500">
+            <span className="block pt-1 text-xs font-semibold text-gray-500 dark:text-white">
               {isValid == true ? "" : `Please input the missing values. `}
             </span>
           </div>
@@ -435,7 +435,7 @@ export default function BodyRecompositionCalculator() {
               </strong>
             </h2>
             <div className="flex flex-col lg:flex-row w-full justify-center items-center py-2 rounded-3xl bg-gray-200 to-gray-200">
-              <div className="w-[80%] md:w-1/2 mt-11 mb-5 md:m-11 p-5 bg-white rounded-3xl">
+              <div className="results w-[80%] md:w-1/2 mt-11 mb-5 md:m-11 p-5 bg-white rounded-3xl">
                 <h2 className="my-6">🤾‍♀️ Training days:</h2>
                 <h3 className="text-gradient font-bold my-0">
                   🍴 {Math.round(trainingDaysTotalCalories)} kcal
@@ -495,17 +495,6 @@ export default function BodyRecompositionCalculator() {
         </p>
         <h2 className="text-black dark:text-white">Why this much?</h2>
         <p>
-          Curious about{" "}
-          <strong className="text-black dark:text-white">
-            why the numbers stack up the way they do
-          </strong>{" "}
-          on your{" "}
-          <strong className="text-black dark:text-white">
-            body recomposition calculator
-          </strong>
-          ? It&apos;s a finely tuned balance!
-        </p>
-        <p>
           On{" "}
           <strong className="text-black dark:text-white">training days</strong>,
           you need a boost in energy to fuel those intense workouts—that&apos;s
@@ -558,12 +547,29 @@ export default function BodyRecompositionCalculator() {
             </strong>{" "}
             Probably the most important part. Find the right motivation, find a
             training partner.{" "}
-            <strong className="text-black dark:text-white">
-              Have a clear goal
-            </strong>
-            .
           </li>
         </ul>
+        <h2 className="text-black dark:text-white">Body Recomposition Macros</h2>
+<p>During <strong className="text-black dark:text-white">body recomposition</strong>, macros play an enormous role. Macros, short for macronutrients, are the fats, proteins, and carbohydrates that your body needs in larger amounts to function properly and support muscle building and fat loss.</p>
+
+<h3 className="text-black dark:text-white">On Training Days:</h3>
+<ul>
+  <li><strong className="text-black dark:text-white">Protein:</strong> Very important for muscle repair and growth. A guideline is to consume protein at <strong className="text-black dark:text-white">1.6 grams</strong> per kilogram of body weight.</li>
+  <li><strong className="text-black dark:text-white">Fat:</strong> Important for hormone production. Fats should comprise around <strong className="text-black dark:text-white">30%</strong> of your calorie intake on these days.</li>
+  <li><strong className="text-black dark:text-white">Carbohydrates:</strong> They fuel your workouts and help with recovery. Aim for them to be <strong className="text-black dark:text-white">40%</strong> of your calorie intake post-workout.</li>
+</ul>
+
+<h3 className="text-black dark:text-white">On Rest Days:</h3>
+<ul>
+  <li><strong className="text-black dark:text-white">Protein:</strong> Still a priority, slightly higher on rest days to aid recovery, constituting the remaining calories after fats and carbs are accounted for.</li>
+  <li><strong className="text-black dark:text-white">Fat:</strong> Slightly increased to <strong className="text-black dark:text-white">30%</strong> of daily calorie intake, important for recovery processes.</li>
+  <li><strong className="text-black dark:text-white">Carbohydrates:</strong> Lowered to <strong className="text-black dark:text-white">30%</strong> of your calorie intake as your body is less active and requires less energy.</li>
+</ul>
+
+<p>Eat more <a className="text-black dark:text-white" href="/protein-calculator">protein</a> and less <a className="text-black dark:text-white" href="/carbs-calculator">carbs</a> when you're not working out. Your muscles need protein to repair on your off days. Increase carbs only on your workout days when you're burning them off.</p>
+        <h2 className="text-black dark:text-white">
+              Have a clear goal
+            </h2>
         <p>
           Trust the plan, see the change, and feel great doing it. Come back
           every two weeks and do your calculation again for an updated plan.{" "}
