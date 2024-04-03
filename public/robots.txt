@@ -1,5 +1,6 @@
 User-agent: Googlebot
 User-agent: *
 Allow: /
+Disallow: /macro-calculator
 Sitemap: https://calorie-pal.com/sitemap.xml
 Host: https://calorie-pal.com
