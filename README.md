@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Calorie-Pal
 
-## Getting Started
+Welcome to the GitHub repository for [Calorie-Pal](https://calorie-pal.com), your ultimate calorie management tool. Below you'll find links to the various calculators and resources that our website offers, along with a brief description of each.
 
-First, run the development server:
+## Calculators
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### [Main Page](https://calorie-pal.com)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The starting point of your fitness journey, providing access to all our calorie and nutrition calculators.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### [Calculators Overview](https://calorie-pal.com/calculators)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+A comprehensive list of our health and fitness calculators designed to help you meet your goals.
 
-## Learn More
+### [Carbs Calculator](https://calorie-pal.com/carbs-calculator)
 
-To learn more about Next.js, take a look at the following resources:
+Calculate your daily carbohydrate needs based on your specific goals and activity level.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### [Protein Calculator](https://calorie-pal.com/protein-calculator)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Find out how much protein you need to support your muscle building or weight loss journey.
 
-## Deploy on Vercel
+### [Sugar Calculator](https://calorie-pal.com/sugar-calculator)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Discover your maximum daily sugar intake to maintain a healthy diet and lifestyle.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### [Subway Calorie Calculator](https://calorie-pal.com/subway-calculator)
+
+Count the calories of your favorite Subway sandwiches and plan your meals effectively.
+
+### [TDEE Calculator](https://calorie-pal.com/tdee-calculator)
+
+Total Daily Energy Expenditure calculator to determine how many calories you burn per day.
+
+### [Calorie Deficit Calculator](https://calorie-pal.com/calorie-deficit-calculator)
+
+Calculate the calorie deficit needed to achieve your weight loss goals safely and effectively.
+
+### [Fasting Calculator](https://calorie-pal.com/fasting-calculator)
+
+Plan your fasting schedule and understand the calorie reduction for your fasting periods.
+
+### [Body Recomposition Calculator](https://calorie-pal.com/body-recomposition-calculator)
+
+Calculate the optimal balance of macronutrients for muscle gain and fat loss.
+
+### [Fat Calculator](https://calorie-pal.com/fat-calculator)
+
+Determine your daily fat intake to maintain a balanced diet for your specific needs.
+
+### [Anorexic Calculator](https://calorie-pal.com/anorexic-calculator)
+
+A sensitive and careful approach to help those struggling with anorexia understand their BMI and dietary needs.
+
+---
+
+Explore each calculator to gain better insights into your dietary and fitness regime, and how you can improve your health and well-being.
