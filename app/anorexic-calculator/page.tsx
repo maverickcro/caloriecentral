@@ -6,7 +6,7 @@ import CalculatorCard from "../components/CalculatorCard";
 import CustomButton from "../components/CustomButton";
 
 export const metadata = {
-  title: "Anorexic BMI Calculator",
+  title: "Anorexic BMI Calculator - CaloriePal",
   description:
     "Use our calculator to safely understand BMI related to anorexia for better health management.",
   keywords: [

@@ -6,7 +6,7 @@ import CustomButton from "../components/CustomButton";
 import AboutMeSection from "../components/AboutMeSection";
 
 export const metadata = {
-  title: "Carbs Intake Calculator",
+  title: "Carbs Intake Calculator - CaloriePal",
   description:
     "How many carbohydrates do you need? Easily calculate carbs for weight maintenance, weight loss, or gain with our calculator.",
   keywords: [

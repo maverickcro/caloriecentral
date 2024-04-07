@@ -6,7 +6,7 @@ import CalculatorCard from "../components/CalculatorCard";
 import CustomButton from "../components/CustomButton";
 
 export const metadata = {
-  title: "Fat Intake Calculator",
+  title: "Fat Intake Calculator - CaloriePal",
   description:
     "Calculate how much fat you need per day for weight loss or weight gain. Learn about good and bad fats and how important they are.",
   keywords: [

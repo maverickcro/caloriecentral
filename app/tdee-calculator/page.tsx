@@ -6,7 +6,7 @@ import CalculatorCard from "../components/CalculatorCard";
 import CustomButton from "../components/CustomButton";
 
 export const metadata = {
-  title: "TDEE Calculator",
+  title: "TDEE Calculator - CaloriePal",
   description:
     "Accurately calculate your Total Daily Energy Expenditure to measure how many calories your burn per day based on your activity.",
   keywords: [

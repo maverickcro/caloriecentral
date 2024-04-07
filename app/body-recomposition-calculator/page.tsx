@@ -6,7 +6,7 @@ import Link from "next/link";
 import CustomButton from "../components/CustomButton";
 
 export const metadata = {
-  title: "Body Recomposition Calculator",
+  title: "Body Recomposition Calculator - CaloriePal",
   description:
     "Maximize your fitness results with our Body Recomposition Calculator. Get personalized calorie advice for training and rest days to effectively lose fat and build muscle.",
   keywords: [

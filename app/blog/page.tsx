@@ -3,7 +3,7 @@ import Posts from "../components/Posts";
 import AboutMeSection from "../components/AboutMeSection";
 
 export const metadata = {
-  title: "Blog",
+  title: "Blog - CaloriePal",
   description:
     "Simplifying Nutrition and Calories. Small choices that make a Big Impact",
   keywords: [

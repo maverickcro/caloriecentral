@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FaFacebook, FaLinkedin } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -29,6 +30,22 @@ export default function Footer() {
             className="text-black/90 dark:text-white/90 no-underline navbar-link"
           >
             Contact
+          </Link>
+        </div>
+        <div className="flex space-x-4 justify-center">
+          <Link
+            href="https://www.facebook.com/caloriepaldotcom"
+            target="_blank"
+            rel="noopener"
+          >
+            <FaFacebook className="text-3xl text-blue-600" />
+          </Link>
+          <Link
+            href="https://linkedin.com/company/102860487/"
+            target="_blank"
+            rel="noopener"
+          >
+            <FaLinkedin className="text-3xl text-blue-600" />
           </Link>
         </div>
 

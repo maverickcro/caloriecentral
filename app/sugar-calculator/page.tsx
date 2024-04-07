@@ -6,7 +6,7 @@ import CalculatorCard from "../components/CalculatorCard";
 import CustomButton from "../components/CustomButton";
 
 export const metadata = {
-  title: "Sugar Intake Calculator",
+  title: "Sugar Intake Calculator - CaloriePal",
   description:
     "Calculate how much sugar you need per day for weight loss or weight gain. Limit calories from sugars with our free tool.",
   keywords: [

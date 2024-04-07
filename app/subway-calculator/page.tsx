@@ -7,7 +7,7 @@ import CustomButton from "../components/CustomButton";
 import CalculatorCard from "../components/CalculatorCard";
 
 export const metadata: Metadata = {
-  title: "Subway Sandwich Nutrition and Calorie Calculator 2024",
+  title: "Subway Sandwich Nutrition and Calorie Calculator 2024 - CaloriePal",
   description:
     "Calculate nutritional information and calories for your favorite Subway sandwiches and wraps with our 2024 updated tool.",
   keywords: [

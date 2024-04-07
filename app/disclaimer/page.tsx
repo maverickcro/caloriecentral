@@ -1,7 +1,7 @@
 import React from "react";
 
 export const metadata = {
-  title: "Disclaimer",
+  title: "Disclaimer - CaloriePal",
   description:
     "Read our disclaimer for understanding the scope of information provided by CaloriePal's website and its intended use.",
   keywords: [

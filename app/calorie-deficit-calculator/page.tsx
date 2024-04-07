@@ -6,7 +6,7 @@ import CustomButton from "../components/CustomButton";
 import AboutMeSection from "../components/AboutMeSection";
 
 export const metadata = {
-  title: "Calorie Deficit Calculator for Weight Loss Prediction",
+  title: "Calorie Deficit Calculator for Weight Loss Prediction - CaloriePal",
   description:
     "Use our Calorie Deficit Calculator as your weight loss predictor. Find out how many calories to eat and an estimated date for reaching your goal weight. Know when will you reach your wanted weight!",
   keywords: [

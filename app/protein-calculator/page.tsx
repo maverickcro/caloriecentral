@@ -6,7 +6,7 @@ import AboutMeSection from "../components/AboutMeSection";
 import CalculatorCard from "../components/CalculatorCard";
 
 export const metadata = {
-  title: "Protein Intake Calculator",
+  title: "Protein Intake Calculator - CaloriePal",
   description:
     "Calculate your daily protein intake for weight loss and muscle gain. Quick, easy tool for your diet and fitness goals.",
   keywords: [

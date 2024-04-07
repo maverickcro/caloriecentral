@@ -5,7 +5,7 @@ import CustomButton from "../components/CustomButton";
 import CalculatorCard from "../components/CalculatorCard";
 
 export const metadata = {
-  title: "About",
+  title: "About - CaloriePal",
   description:
     "CaloriePal: Your trusted companion for understanding calories and achieving your health goals faster and more effectively.",
   keywords: [

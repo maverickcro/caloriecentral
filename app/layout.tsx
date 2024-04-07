@@ -1,3 +1,5 @@
+"use client";
+import { usePathname } from "next/navigation";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -5,24 +7,18 @@ import { ThemeProvider } from "./theme-provider";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 
-export const metadata = {
-  title: {
-    template: "%s - CaloriePal",
-  },
-  description: {
-    template: "%s",
-  },
-  icons: {
-    icon: "/favicon.ico",
-  },
-};
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const pathname = usePathname();
+  const canonicalUrl = `https://calorie-pal.com${pathname}`;
   return (
     <html lang="en">
+      <head>
+        <link rel="canonical" href={canonicalUrl} />
+      </head>
       <body
         suppressHydrationWarning={true}
         className={`

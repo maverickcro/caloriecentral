@@ -6,7 +6,7 @@ import CalculatorCard from "../components/CalculatorCard";
 import CustomButton from "../components/CustomButton";
 
 export const metadata = {
-  title: "Fasting Calculator - Plan Intermittent Fasting",
+  title: "Fasting Calculator - Plan Intermittent Fasting - CaloriePal",
   description:
     "Plan and monitor your fasting schedule with our intuitive Fasting Calculator. Ideal for intermittent fasting, weight loss, and health improvement.",
   keywords: [

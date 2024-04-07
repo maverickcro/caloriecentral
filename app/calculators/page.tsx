@@ -3,7 +3,7 @@ import CalculatorCard from "../components/CalculatorCard";
 import AboutMeSection from "../components/AboutMeSection";
 
 export const metadata = {
-  title: "Free Calculators for Fitness Goals",
+  title: "Free Calculators for Fitness Goals - CaloriePal",
   description:
     "A range of free and easy to use calculators to support your fitness journey. Macros? Calories? Weight? Calculate everything.",
   keywords: [
