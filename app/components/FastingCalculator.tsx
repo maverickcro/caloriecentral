@@ -566,7 +566,7 @@ export default function FastingCalculator() {
                           <tr className="bg-white border-b border-blue-500">
                             <td className="py-2 px-4">Later in day</td>
                             <td className="py-2 px-4">3 PM - 11 PM</td>
-                            <td className="py-2 px-4">11 PM - 7 AM next day</td>
+                            <td className="py-2 px-4">11 PM - 3 PM next day</td>
                           </tr>
                           <tr className="bg-white border-b border-blue-500">
                             <td className="py-2 px-4">Standard</td>
