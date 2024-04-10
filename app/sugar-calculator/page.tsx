@@ -56,7 +56,7 @@ export default function Calculator() {
             <a
               target="_blank"
               className="text-sm text-black dark:text-white"
-              rel="noopener noreferrer nofollow"
+              rel="noopener noreferrer "
               href="https://www.ahajournals.org/doi/full/10.1161/01.cir.0000019552.77778.04"
             >
               2014 American Heart Association study on sugar intake - Sugar and
@@ -67,7 +67,7 @@ export default function Calculator() {
             <a
               target="_blank"
               className="text-sm text-black dark:text-white"
-              rel="noopener noreferrer nofollow"
+              rel="noopener noreferrer "
               href="https://www.heart.org/en/healthy-living/healthy-eating/eat-smart/sugar/how-much-sugar-is-too-much"
             >
               American Heart Association - How much sugar is too much?
@@ -77,7 +77,7 @@ export default function Calculator() {
             <a
               target="_blank"
               className="text-sm text-black dark:text-white"
-              rel="noopener noreferrer nofollow"
+              rel="noopener noreferrer "
               href="https://www.who.int/news-room/fact-sheets/detail/healthy-diet#:~:text=Less%20than%2010%25%20of%20total%20energy%20intake%20from%20free%20sugars,additional%20health%20benefits%20(7)."
             >
               World Health Association (WHO) - Healthy diet

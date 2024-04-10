@@ -47,7 +47,7 @@ export default function Calculator() {
           <li>
             <a
               target="_blank"
-              rel="noopener noreferrer nofollow"
+              rel="noopener noreferrer "
               className=" text-sm text-black dark:text-white"
               href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8837073/"
             >

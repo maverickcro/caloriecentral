@@ -52,7 +52,7 @@ export default function Calculator() {
             <a
               target="_blank"
               className="text-sm text-black dark:text-white"
-              rel="noopener noreferrer nofollow"
+              rel="noopener noreferrer "
               href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5577766/"
             >
               Liu AG, Ford NA, Hu FB, Zelman KM, Mozaffarian D, Kris-Etherton
@@ -66,7 +66,7 @@ export default function Calculator() {
             <a
               target="_blank"
               className="text-sm text-black dark:text-white"
-              rel="noopener noreferrer nofollow"
+              rel="noopener noreferrer "
               href="https://medlineplus.gov/ency/patientinstructions/000838.htm"
             >
               A.D.A.M. Medical Encyclopedia [Internet]. Stefania Manetti, RD/N,

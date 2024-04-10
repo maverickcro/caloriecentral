@@ -47,7 +47,7 @@ export default function Calculator() {
             <a
               target="_blank"
               className="text-black dark:text-white"
-              rel="noopener noreferrer nofollow"
+              rel="noopener noreferrer "
               href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6492513/"
             >
               Richter M, Baerlocher K, Bauer JM, Elmadfa I, Heseker H,
@@ -62,7 +62,7 @@ export default function Calculator() {
             <a
               target="_blank"
               className="text-black dark:text-white"
-              rel="noopener noreferrer nofollow"
+              rel="noopener noreferrer "
               href="https://bjsm.bmj.com/content/52/6/376"
             >
               Morton RW, Murphy KT, McKellar SR, et alA systematic review,
@@ -76,7 +76,7 @@ export default function Calculator() {
             <a
               target="_blank"
               className="text-black dark:text-white"
-              rel="noopener noreferrer nofollow"
+              rel="noopener noreferrer "
               href="https://retractionwatch.com/2021/02/12/eleven-papers-corrected-after-nutrition-prof-fails-to-disclose-patent-company-ties/"
             >
               Eleven papers corrected after nutrition prof fails to disclose
@@ -87,7 +87,7 @@ export default function Calculator() {
             <a
               target="_blank"
               className="text-black dark:text-white"
-              rel="noopener noreferrer nofollow"
+              rel="noopener noreferrer "
               href="https://pubmed.ncbi.nlm.nih.gov/28698222/"
             >
               2018 - Morton RW, Murphy KT, McKellar SR, Schoenfeld BJ,
@@ -104,7 +104,7 @@ export default function Calculator() {
             <a
               target="_blank"
               className="text-black dark:text-white"
-              rel="noopener noreferrer nofollow"
+              rel="noopener noreferrer "
               href="https://pubmed.ncbi.nlm.nih.gov/22150425/"
             >
               2011 - Phillips SM, Van Loon LJ. Dietary protein for athletes:
@@ -116,7 +116,7 @@ export default function Calculator() {
             <a
               target="_blank"
               className="text-black dark:text-white"
-              rel="noopener noreferrer nofollow"
+              rel="noopener noreferrer "
               href="https://pubmed.ncbi.nlm.nih.gov/17111010/"
             >
               Hartman JW, Moore DR, Phillips SM. Resistance training reduces
@@ -129,7 +129,7 @@ export default function Calculator() {
             <a
               target="_blank"
               className="text-black dark:text-white"
-              rel="noopener noreferrer nofollow"
+              rel="noopener noreferrer "
               href="https://pubmed.ncbi.nlm.nih.gov/18577776/"
             >
               2007 - Phillips SM, Moore DR, Tang JE. A critical examination of
@@ -142,7 +142,7 @@ export default function Calculator() {
             <a
               target="_blank"
               className="text-black dark:text-white"
-              rel="noopener noreferrer nofollow"
+              rel="noopener noreferrer "
               href="https://pubmed.ncbi.nlm.nih.gov/15212752/"
             >
               2004 - Phillips SM. Protein requirements and supplementation in

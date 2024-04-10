@@ -48,7 +48,7 @@ export default function Calculator() {
             <a
               target="_blank"
               className="text-black dark:text-white"
-              rel="noopener noreferrer nofollow"
+              rel="noopener noreferrer "
               href="https://pubmed.ncbi.nlm.nih.gov/7942572/"
             >
               Schulz LO, Schoeller DA. A compilation of total daily energy
@@ -60,7 +60,7 @@ export default function Calculator() {
             <a
               target="_blank"
               className="text-black dark:text-white"
-              rel="noopener noreferrer nofollow"
+              rel="noopener noreferrer "
               href="https://pubmed.ncbi.nlm.nih.gov/8878356/"
             >
               Tappy L. Thermic effect of food and sympathetic nervous system

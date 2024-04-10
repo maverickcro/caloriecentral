@@ -45,7 +45,7 @@ export default function Calculator() {
           <li>
             <a
               target="_blank"
-              rel="noopener noreferrer nofollow"
+              rel="noopener noreferrer "
               href="https://www.subway.com/en-ca/menunutrition/nutrition"
               className="text-black dark:text-white"
             >

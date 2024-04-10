@@ -48,7 +48,7 @@ export default function Calculator() {
             <a
               target="_blank"
               className="text-black dark:text-white"
-              rel="noopener noreferrer nofollow"
+              rel="noopener noreferrer "
               href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7021351/"
             >
               National Library of Medicine - Welton S, Minty R, O&apos;Driscoll
@@ -61,7 +61,7 @@ export default function Calculator() {
             <a
               target="_blank"
               className="text-black dark:text-white"
-              rel="noopener noreferrer nofollow"
+              rel="noopener noreferrer "
               href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10098946/"
             >
               National Library of Medicine - Elortegui Pascual P, Rolands MR,
@@ -77,7 +77,7 @@ export default function Calculator() {
             <a
               target="_blank"
               className="text-black dark:text-white"
-              rel="noopener noreferrer nofollow"
+              rel="noopener noreferrer "
               href="https://pubmed.ncbi.nlm.nih.gov/34633860/"
             >
               National Library of Medicine - EVarady, K. A., Cienfuegos, S.,

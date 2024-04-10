@@ -54,7 +54,7 @@ export default function Calculator() {
             <a
               target="_blank"
               className="text-sm text-black dark:text-white"
-              rel="noopener noreferrer nofollow"
+              rel="noopener noreferrer "
               href="https://pubmed.ncbi.nlm.nih.gov/16004827/"
             >
               Manore MM. Exercise and the Institute of Medicine recommendations
@@ -66,7 +66,7 @@ export default function Calculator() {
             <a
               target="_blank"
               className="text-sm text-black dark:text-white"
-              rel="noopener noreferrer nofollow"
+              rel="noopener noreferrer "
               href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4224210/"
             >
               Slavin J, Carlson J. Carbohydrates. Adv Nutr. 2014 Nov
@@ -78,7 +78,7 @@ export default function Calculator() {
             <a
               target="_blank"
               className="text-sm text-black dark:text-white"
-              rel="noopener noreferrer nofollow"
+              rel="noopener noreferrer "
               href="https://www.ncbi.nlm.nih.gov/books/NBK459280/"
             >
               Julie E. Holesh; Sanah Aslam; Andrew Martin. Physiology,

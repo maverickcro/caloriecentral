@@ -65,7 +65,7 @@ export default function Calculator() {
             <a
               target="_blank"
               className="text-sm text-black dark:text-white"
-              rel="noopener noreferrer nofollow"
+              rel="noopener noreferrer "
               href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8017325/"
             >
               Kim JY. Optimal Diet Strategies for Weight Loss and Weight Loss
@@ -77,7 +77,7 @@ export default function Calculator() {
             <a
               target="_blank"
               className="text-sm text-black dark:text-white"
-              rel="noopener noreferrer nofollow"
+              rel="noopener noreferrer "
               href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3447534/"
             >
               Finkler E, Heymsfield SB, St-Onge MP. Rate of weight loss can be
@@ -91,7 +91,7 @@ export default function Calculator() {
             <a
               target="_blank"
               className="text-sm text-black dark:text-white"
-              rel="noopener noreferrer nofollow"
+              rel="noopener noreferrer "
               href="https://www.nih.gov/news-events/nih-research-matters/weight-loss-depends-less-calories-not-nutrient-mix"
             >
               National Institutes of Health(NIH). Weight Loss Depends on Less

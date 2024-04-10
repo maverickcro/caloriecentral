@@ -54,7 +54,7 @@ export default function Calculator() {
             <a
               target="_blank"
               className="text-sm text-black dark:text-white"
-              rel="noopener noreferrer nofollow"
+              rel="noopener noreferrer "
               href="https://www.healthline.com/nutrition/body-recomposition"
             >
               Kubala, J. (2023, January 27). Body Recomposition: Lose Fat and
@@ -65,7 +65,7 @@ export default function Calculator() {
             <a
               target="_blank"
               className="text-sm text-black dark:text-white"
-              rel="noopener noreferrer nofollow"
+              rel="noopener noreferrer "
               href="https://europepmc.org/article/med/35019903"
             >
               Ribeiro AS, Pereira LC, Schoenfeld BJ, et al. Moderate and Higher
