@@ -3,5 +3,5 @@ Disallow: /macro-calculator
 
 User-agent: *
 Allow: /
-Sitemap: https://calorie-pal.com/sitemap.xml
-Host: https://calorie-pal.com
+Sitemap: https://www.calorie-pal.com/sitemap.xml
+Host: https://www.calorie-pal.com

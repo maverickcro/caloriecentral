@@ -3,51 +3,51 @@ import { MetadataRoute } from "next";
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: "https://calorie-pal.com",
+      url: "https://www.calorie-pal.com",
       lastModified: new Date(),
     },
     {
-      url: "https://calorie-pal.com/calculators",
+      url: "https://www.calorie-pal.com/calculators",
       lastModified: new Date(),
     },
     {
-      url: "https://calorie-pal.com/carbs-calculator",
+      url: "https://www.calorie-pal.com/carbs-calculator",
       lastModified: new Date(),
     },
     {
-      url: "https://calorie-pal.com/protein-calculator",
+      url: "https://www.calorie-pal.com/protein-calculator",
       lastModified: new Date(),
     },
     {
-      url: "https://calorie-pal.com/sugar-calculator",
+      url: "https://www.calorie-pal.com/sugar-calculator",
       lastModified: new Date(),
     },
     {
-      url: "https://calorie-pal.com/subway-calculator",
+      url: "https://www.calorie-pal.com/subway-calculator",
       lastModified: new Date(),
     },
     {
-      url: "https://calorie-pal.com/tdee-calculator",
+      url: "https://www.calorie-pal.com/tdee-calculator",
       lastModified: new Date(),
     },
     {
-      url: "https://calorie-pal.com/calorie-deficit-calculator",
+      url: "https://www.calorie-pal.com/calorie-deficit-calculator",
       lastModified: new Date(),
     },
     {
-      url: "https://calorie-pal.com/fasting-calculator",
+      url: "https://www.calorie-pal.com/fasting-calculator",
       lastModified: new Date(),
     },
     {
-      url: "https://calorie-pal.com/body-recomposition-calculator",
+      url: "https://www.calorie-pal.com/body-recomposition-calculator",
       lastModified: new Date(),
     },
     {
-      url: "https://calorie-pal.com/fat-calculator",
+      url: "https://www.calorie-pal.com/fat-calculator",
       lastModified: new Date(),
     },
     {
-      url: "https://calorie-pal.com/anorexic-calculator",
+      url: "https://www.calorie-pal.com/anorexic-calculator",
       lastModified: new Date(),
     },
   ];

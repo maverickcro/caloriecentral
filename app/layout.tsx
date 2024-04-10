@@ -13,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
-  const canonicalUrl = `https://calorie-pal.com${pathname}`;
+  const canonicalUrl = `https://www.calorie-pal.com${pathname}`;
   return (
     <html lang="en">
       <head>
