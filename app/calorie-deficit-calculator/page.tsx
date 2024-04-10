@@ -31,7 +31,7 @@ export default function Calculator() {
           Calorie Deficit Calculator
         </h1>
         <span className="block pt-1 text-xs font-semibold text-gray-500">
-          Updated: Mar 27, 2024
+          Updated: Apr 10, 2024
         </span>
         <p className="text-black dark:text-white">
           Calorie Deficit Calculator is here as a{" "}

@@ -31,7 +31,7 @@ export default function Calculator() {
           Body Recomposition Calculator
         </h1>
         <span className="block pt-1 text-xs font-semibold text-gray-500">
-          Updated: Mar 26, 2024
+          Updated: Apr 10, 2024
         </span>
         <p className="text-black dark:text-white">
           When I was starting my fitness journey, this was the first thing that

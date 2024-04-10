@@ -32,7 +32,7 @@ export default function Calculator() {
           Subway Calorie Calculator
         </h1>
         <span className="block pt-1 text-xs font-semibold text-gray-500">
-          Updated: Mar 9, 2024
+          Updated: Apr 10, 2024
         </span>
         <p className="text-black dark:text-white">
           We will show you important nutritional facts about your meal.

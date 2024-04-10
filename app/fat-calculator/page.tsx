@@ -29,7 +29,7 @@ export default function Calculator() {
       <section className="mt-6 calculator-layout mx-auto px-6 prose  max-w-4xl prose-xl prose-slate">
         <h1 className="font-bold text-gradient mb-0">Fat Intake Calculator</h1>
         <span className="block pt-1 text-xs font-semibold text-gray-500">
-          Updated: Mar 17, 2024
+          Updated: Apr 10, 2024
         </span>
         <p className="text-black dark:text-white">
           Knowing the right amount of fats to consume daily can be helpful in

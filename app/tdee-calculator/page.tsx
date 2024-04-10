@@ -29,7 +29,7 @@ export default function Calculator() {
       <section className="mt-6 mx-auto px-6 prose  max-w-4xl prose-xl prose-slate">
         <h1 className="font-bold text-gradient mb-0">TDEE Calculator</h1>
         <span className="block pt-1 text-xs font-semibold text-gray-500">
-          Updated: Feb 1, 2024
+          Updated: Apr 10, 2024
         </span>
         <p className="text-black dark:text-white">
           TDEE, or Total Daily Energy Expenditure, is a measure of how many

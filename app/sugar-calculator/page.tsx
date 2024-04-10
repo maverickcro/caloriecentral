@@ -31,7 +31,7 @@ export default function Calculator() {
           Sugar Intake Calculator
         </h1>
         <span className="block pt-1 text-xs font-semibold text-gray-500">
-          Updated: Mar 19, 2024
+          Updated: Apr 10, 2024
         </span>
         <p className="text-black dark:text-white">
           Excessive sugar consumption is directly linked to health risks,

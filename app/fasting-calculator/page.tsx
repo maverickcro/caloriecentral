@@ -31,7 +31,7 @@ export default function Calculator() {
           Intermittent Fasting Calculator
         </h1>
         <span className="block pt-1 text-xs font-semibold text-gray-500">
-          Updated: Jan 20, 2024
+          Updated: Apr 10, 2024
         </span>
         <p className="text-black dark:text-white">
           Intermittent fasting has become increasingly popular for various

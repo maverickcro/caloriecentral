@@ -81,9 +81,9 @@ export default function PostList() {
           alt="Sugar Calculator"
         />
       </div>
-      <h1 className="text-gradient text-2xl  md:text-4xl font-bold mb-2">
+      <h2 className="text-gradient text-2xl  md:text-4xl font-bold mb-2">
         weight management calculators
-      </h1>
+      </h2>
       <span className="block pt-1 text-base">
         These calculators are ideal for individuals aiming to lose, gain, or
         maintain weight. They provide insights into daily calorie needs,
@@ -112,9 +112,9 @@ export default function PostList() {
           alt="Body Recomposition Calculator"
         />
       </div>
-      <h1 className="text-gradient text-2xl  md:text-4xl font-bold mb-2">
+      <h2 className="text-gradient text-2xl  md:text-4xl font-bold mb-2">
         health and nutrition calculators
-      </h1>
+      </h2>
       <span className="block pt-1 text-base">
         This category includes calculators tailored for specific health-related
         contexts, like monitoring calories in fast-food meals, fasting periods,
