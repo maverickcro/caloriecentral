@@ -1,6 +1,4 @@
 import React from "react";
-import Posts from "../components/Posts";
-import AboutMeSection from "../components/AboutMeSection";
 
 export const metadata = {
   title: "Blog - CaloriePal",

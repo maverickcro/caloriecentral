@@ -42,12 +42,6 @@ export default function Navbar() {
             Calculators
           </Link>
           <Link
-            className="disabled logo-animation font-bold no-underline navbar-link text-black dark:text-white text-sm md:text-base"
-            href="/blog"
-          >
-            Blog
-          </Link>
-          <Link
             className="logo-animation font-bold no-underline navbar-link text-black dark:text-white text-sm md:text-base"
             href="/about"
           >
