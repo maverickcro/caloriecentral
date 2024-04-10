@@ -31,11 +31,12 @@ export default function Calculator() {
           Protein Intake Calculator
         </h1>
         <span className="block pt-1 text-xs font-semibold text-gray-500">
-          Updated: Feb 24, 2024
+          Updated: Apr 10, 2024
         </span>
         <p className="text-black dark:text-white">
           We will calculate how much protein you need per day or at least should
-          be taking during weight loss, maintenance or muscle building.
+          be taking during weight loss, maintenance or muscle building. With a
+          scientific proof.
         </p>
 
         <CalculatorComponent />
@@ -77,17 +78,6 @@ export default function Calculator() {
               target="_blank"
               className="text-black dark:text-white"
               rel="noopener noreferrer "
-              href="https://retractionwatch.com/2021/02/12/eleven-papers-corrected-after-nutrition-prof-fails-to-disclose-patent-company-ties/"
-            >
-              Eleven papers corrected after nutrition prof fails to disclose
-              patent, company ties
-            </a>
-          </li>
-          <li>
-            <a
-              target="_blank"
-              className="text-black dark:text-white"
-              rel="noopener noreferrer "
               href="https://pubmed.ncbi.nlm.nih.gov/28698222/"
             >
               2018 - Morton RW, Murphy KT, McKellar SR, Schoenfeld BJ,
@@ -98,56 +88,6 @@ export default function Calculator() {
               healthy adults. Br J Sports Med. 2018 Mar;52(6):376-384. doi:
               10.1136/bjsports-2017-097608. Epub 2017 Jul 11. Erratum in: Br J
               Sports Med. 2020 Oct;54(19):e7. PMID: 28698222; PMCID: PMC5867436.
-            </a>
-          </li>
-          <li>
-            <a
-              target="_blank"
-              className="text-black dark:text-white"
-              rel="noopener noreferrer "
-              href="https://pubmed.ncbi.nlm.nih.gov/22150425/"
-            >
-              2011 - Phillips SM, Van Loon LJ. Dietary protein for athletes:
-              from requirements to optimum adaptation. J Sports Sci. 2011;29
-              Suppl 1:S29-38. doi: 10.1080/02640414.2011.619204. PMID: 22150425.
-            </a>
-          </li>
-          <li>
-            <a
-              target="_blank"
-              className="text-black dark:text-white"
-              rel="noopener noreferrer "
-              href="https://pubmed.ncbi.nlm.nih.gov/17111010/"
-            >
-              Hartman JW, Moore DR, Phillips SM. Resistance training reduces
-              whole-body protein turnover and improves net protein retention in
-              untrained young males. Appl Physiol Nutr Metab. 2006
-              Oct;31(5):557-64. doi: 10.1139/h06-031. PMID: 17111010.
-            </a>
-          </li>
-          <li>
-            <a
-              target="_blank"
-              className="text-black dark:text-white"
-              rel="noopener noreferrer "
-              href="https://pubmed.ncbi.nlm.nih.gov/18577776/"
-            >
-              2007 - Phillips SM, Moore DR, Tang JE. A critical examination of
-              dietary protein requirements, benefits, and excesses in athletes.
-              Int J Sport Nutr Exerc Metab. 2007 Aug;17 Suppl:S58-76. doi:
-              10.1123/ijsnem.17.s1.s58. PMID: 18577776.
-            </a>
-          </li>
-          <li>
-            <a
-              target="_blank"
-              className="text-black dark:text-white"
-              rel="noopener noreferrer "
-              href="https://pubmed.ncbi.nlm.nih.gov/15212752/"
-            >
-              2004 - Phillips SM. Protein requirements and supplementation in
-              strength sports. Nutrition. 2004 Jul-Aug;20(7-8):689-95. doi:
-              10.1016/j.nut.2004.04.009. PMID: 15212752.
             </a>
           </li>
         </ul>

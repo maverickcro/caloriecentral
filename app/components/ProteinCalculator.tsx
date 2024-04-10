@@ -543,7 +543,7 @@ export default function ProteinCalculator() {
           </strong>
           , whether you are building muscle or on a weight loss.
         </p>
-        <h2 className="text-black dark:text-white">Why this much?</h2>
+        <h2 className="text-black dark:text-white">Why This Much?</h2>
         <p>
           We will provide you with our personal{" "}
           <strong className="text-black dark:text-white">unbiased</strong>{" "}
@@ -625,92 +625,8 @@ export default function ProteinCalculator() {
           </tbody>
         </table>
         <h2 className="text-black dark:text-white">
-          How much protein for muscle gain?
+          Daily Protein Intake Recommendation
         </h2>
-        <p>
-          You heard it over the years. One gram per pound of weight. Two grams
-          per kilogram. We gave you our recommendation and the global
-          recommendation ranges.
-        </p>
-        <p>
-          Based on the information from the{" "}
-          <strong className="text-black dark:text-white">latest</strong>{" "}
-          interview with Dr. Stuart Phillips, the{" "}
-          <strong className="text-black dark:text-white">
-            most cited scientist
-          </strong>{" "}
-          behind protein intake in the last 20 years:
-        </p>
-        <ul>
-          <li>
-            <strong className="text-black dark:text-white">
-              Protein Intake
-            </strong>
-            : For those looking to gain muscle while also losing fat, Phillips
-            suggests a protein intake of up to{" "}
-            <strong className="text-black dark:text-white">
-              (2-2.5 grams per kilogram)
-            </strong>{" "}
-            of body weight per day, distributed across approximately four meals.
-            This higher protein intake, particularly post-workout, may be more
-            critical when in a calorie deficit.
-          </li>
-        </ul>
-        <h3 className="text-black dark:text-white">
-          Do I need one gram of protein per pound?
-        </h3>
-        <p>
-          It&apos;s almost impossible to find a scientific research on this
-          topic without this guy in the past 20 years. He had his fingers in
-          everything. But here is a small breakdown over the years. You can find
-          every paper in references on the bottom of this calculator.
-        </p>
-        <ul>
-          <li>2004. they recommend 1.0 - 1.3g per kg</li>
-          <li>2007. they recommend 1.2 - 1.6g per kg</li>
-          <li>2011. they recommend 1.3 - 1.8g per kg</li>
-          <li>2018. they recommend 1.62 - 2.2g per kg</li>
-          <li>
-            Today they recommend{" "}
-            <strong className="text-black dark:text-white">
-              2.0 - 2.5g per kg
-            </strong>
-          </li>
-        </ul>
-        <p>
-          How did they go from{" "}
-          <strong className="text-black dark:text-white">
-            1 gram to 2.5 grams
-          </strong>{" "}
-          in just under 20 years? Well, maybe humans evolved? Better scientific
-          methods or something third? We kept digging further.
-        </p>
-        <p>
-          Apparently, just recently, 11 papers from Dr. Phillips were corrected
-          because of{" "}
-          <strong className="text-black dark:text-white">
-            conflicts of interest
-          </strong>
-          . He was a founder of a popular whey protein for elderly people and
-          athletes.
-        </p>
-        <h3 className="mb-16 text-black dark:text-white">
-          The same guy telling you to eat more protein is directly profiting
-          from selling you the protein.
-        </h3>
-        <p>
-          The word of mouth spreads really fast. Fitness industry and
-          influencers need their profits. It&apos;s easier to recommend 2 grams
-          to sell more, than keep it in normal limits. That is just{" "}
-          <strong className="text-black dark:text-white">
-            too much protein
-          </strong>
-          . It&apos;s not sustainable neither physically nor financially.
-        </p>
-        <h2 className="text-black dark:text-white">
-          Okay, again, how much protein do I actually need?
-        </h2>
-
         <p>
           The accompanying graph is derived from a{" "}
           <strong className="text-black dark:text-white">

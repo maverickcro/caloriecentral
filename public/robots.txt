@@ -1,5 +1,4 @@
 User-agent: Googlebot
-Disallow: /macro-calculator
 
 User-agent: *
 Allow: /

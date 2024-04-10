@@ -394,11 +394,6 @@ export default function Calculator() {
           quality of those calories - incorporating a mix of protein, vitamins,
           and minerals is important for a balanced diet.
         </p>
-        <p>
-          We got you covered there as well! If you are interested which macros
-          and how much you need per day use our&nbsp;
-          <Link href="/macro-calculator">Macros Calculator</Link>
-        </p>{" "}
         <h2 className="text-black dark:text-white">Is Subway Healthy?</h2>
         <p>
           Many of you ask,{" "}

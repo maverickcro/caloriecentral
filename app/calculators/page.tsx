@@ -51,13 +51,6 @@ export default function PostList() {
         Perfect for anyone focused on effective nutrition and weight control.
       </span>
       <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 py-12">
-        {/* <CalculatorCard
-          title="Macro Calculator"
-          href="/macro-calculator"
-          description="Optimize your protein, carbohydrate, and fat intake simultaneously for maximum muscle gain and fat loss."
-          src="/macro-calculator.png"
-          alt="Macro Calculator"
-        /> */}
         <CalculatorCard
           title="Protein Intake Calculator"
           href="/protein-calculator"
