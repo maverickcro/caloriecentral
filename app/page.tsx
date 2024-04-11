@@ -6,7 +6,7 @@ import AboutMeSection from "./components/AboutMeSection";
 import Head from "next/head";
 
 export const metadata = {
-  title: "Home - CaloriePal",
+  title: "CaloriePal - Calculate And Understand Calories",
   description:
     "Macros? Calories? Weight? Calculate calories, manage your fasting and achieve your health and fitness goals with CaloriePal.",
   keywords: [
