@@ -2,5 +2,5 @@ User-agent: Googlebot
 
 User-agent: *
 Allow: /
-Sitemap: https://www.calorie-pal.com/sitemap-index.xml
-Host: https://www.calorie-pal.com
+Sitemap: https://calorie-pal.com/sitemap-index.xml
+Host: https://calorie-pal.com

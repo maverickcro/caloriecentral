@@ -46,7 +46,7 @@ export default function Calculator() {
             <a
               target="_blank"
               rel="noopener noreferrer "
-              href="https://www.subway.com/en-ca/menunutrition/nutrition"
+              href="https://subway.com/en-ca/menunutrition/nutrition"
               className="text-black dark:text-white"
             >
               June 2023, Subway U.S Nutrition Information - Official PDF with

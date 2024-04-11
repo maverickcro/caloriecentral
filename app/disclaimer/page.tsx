@@ -27,7 +27,7 @@ export default function Disclaimer() {
       </span>
       <div className="text-base text-black">
         <p>
-          The information contained on https://www.calorie-pal.com (the
+          The information contained on https://calorie-pal.com (the
           &apos;Service&apos;) website is for general information purposes only.
         </p>
         <p>

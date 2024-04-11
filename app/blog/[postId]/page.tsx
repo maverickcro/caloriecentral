@@ -40,7 +40,7 @@ export default async function Post({ params }: { params: { postId: string } }) {
     await getPostData(postId);
 
   const pubDate = getFormattedDate(date);
-  const currentUrl = `https://www.calorie-pal.com/blog/${postId}`;
+  const currentUrl = `https://calorie-pal.com/blog/${postId}`;
 
   return (
     <main className="px-6 prose prose-xl mt-6 mx-auto max-w-4xl">

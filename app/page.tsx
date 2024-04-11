@@ -32,7 +32,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <link rel="canonical" href="https://www.calorie-pal.com" />
+        <link rel="canonical" href="https://calorie-pal.com" />
       </Head>
       <main className="mt-10 md:mt-6 mx-auto px-6 max-w-4xl">
         <div className="animated-background rounded-3xl h-[40vh] mb-10">
