@@ -13,25 +13,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
-  let canonicalUrl: string;
-  switch (pathname) {
-    case "/":
-      canonicalUrl = "https://www.calorie-pal.com/";
-      break;
-    case "/body-recomposition-calculator":
-      canonicalUrl =
-        "https://www.calorie-pal.com/body-recomposition-calculator";
-      break;
-    case "/sugar-calculator":
-      canonicalUrl = "https://www.calorie-pal.com/sugar-calculator";
-      break;
-    case "/anorexic-calculator":
-      canonicalUrl = "https://www.calorie-pal.com/anorexic-calculator";
-      break;
-    default:
-      canonicalUrl = `https://calorie-pal.com${pathname}`;
-      break;
-  }
+  let canonicalUrl: string;  
+  canonicalUrl = `https://calorie-pal.com${pathname}`;      
   console.log("canonicalUrl", canonicalUrl);
 
   return (
