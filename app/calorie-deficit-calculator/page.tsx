@@ -3,7 +3,6 @@ import CalculatorComponent from "../components/CalorieDeficitCalculator";
 import Link from "next/link";
 import CalculatorCard from "../components/CalculatorCard";
 import CustomButton from "../components/CustomButton";
-import AboutMeSection from "../components/AboutMeSection";
 
 export const metadata = {
   title: "Calorie Deficit Calculator for Weight Loss Prediction - CaloriePal",
@@ -124,7 +123,6 @@ export default function Calculator() {
           </Link>
         </div>
       </section>
-      <AboutMeSection />
     </main>
   );
 }

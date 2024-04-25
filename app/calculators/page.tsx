@@ -1,6 +1,5 @@
 import React from "react";
 import CalculatorCard from "../components/CalculatorCard";
-import AboutMeSection from "../components/AboutMeSection";
 
 export const metadata = {
   title: "Free Calculators for Fitness Goals - CaloriePal",
@@ -20,7 +19,6 @@ export const metadata = {
     "body recomposition macros",
     "health nutrition calculators",
     "fasting benefits calculator",
-    "anorexia BMI assessment",
     "Subway sandwich nutrition",
   ],
 };
@@ -98,11 +96,11 @@ export default function PostList() {
           alt="TDEE calculator"
         />
         <CalculatorCard
-          title="Calorie Deficit Calculator"
+          title="Weight Loss Calculator"
           href="/calorie-deficit-calculator"
-          description="Efficiently calculate your daily calorie needs for healthy weight management with our user-friendly Calorie Deficit Calculator."
+          description="Efficiently calculate your daily calorie needs for healthy weight management with our user-friendly Weight Loss Calculator."
           src="/calorie-deficit.png"
-          alt="Calorie Deficit Calculator"
+          alt="Weight Loss Calculator"
         />
         <CalculatorCard
           title="Body Recomposition Calculator"
@@ -110,34 +108,6 @@ export default function PostList() {
           description="Did you know you can BUILD muscle and BURN fat at the same time? Check calories and body recomposition macros here."
           src="/body-recomposition.png"
           alt="Body Recomposition Calculator"
-        />
-      </div>
-      <h2 className="text-gradient text-2xl  md:text-4xl font-bold mb-2">
-        health and nutrition calculators
-      </h2>
-      <span className="block pt-1 text-base">
-        This category includes calculators tailored for specific health-related
-        contexts, like monitoring calories in fast-food meals, fasting periods,
-        and assessing BMI in the context of anorexia.
-      </span>
-      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 py-12">
-        <CalculatorCard
-          title="Fasting Calculator"
-          href="/fasting-calculator"
-          description="Fasting is popular for various reasons: Weight loss, health
-          benefits and much more. Let's calculate the calories behind it."
-          src="/fasting-calculator.png"
-          alt="Fasting Calculator"
-        />
-        <CalculatorCard
-          title="Anorexic BMI Calculator"
-          href="/anorexic-calculator"
-          description="
-          Accurately assess your health with our Anorexia BMI Calculator, a
-          critical resource for identifying potential anorexia nervosa based on
-          BMI."
-          src="/anorexic-calculator.jpg"
-          alt="Anorexic BMI Calculator"
         />
         <CalculatorCard
           title="Subway Calorie Calculator"
@@ -147,7 +117,6 @@ export default function PostList() {
           alt="Subway calorie nutrition calculator"
         />
       </div>
-      <AboutMeSection />
     </main>
   );
 }

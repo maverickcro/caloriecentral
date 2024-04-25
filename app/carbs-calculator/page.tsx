@@ -3,7 +3,6 @@ import CalculatorComponent from "../components/CarbsCalculator";
 import Link from "next/link";
 import CalculatorCard from "../components/CalculatorCard";
 import CustomButton from "../components/CustomButton";
-import AboutMeSection from "../components/AboutMeSection";
 
 export const metadata = {
   title: "Carbs Intake Calculator - CaloriePal",
@@ -119,7 +118,6 @@ export default function Calculator() {
           </Link>
         </div>
       </section>
-      <AboutMeSection />
     </main>
   );
 }

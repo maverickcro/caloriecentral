@@ -1,7 +1,7 @@
 import React from "react";
 import CalculatorComponent from "../components/SubwayCalculator";
 import Link from "next/link";
-import AboutMeSection from "../components/AboutMeSection";
+
 import { Metadata } from "next";
 import CustomButton from "../components/CustomButton";
 import CalculatorCard from "../components/CalculatorCard";
@@ -87,7 +87,6 @@ export default function Calculator() {
           </Link>
         </div>
       </section>
-      <AboutMeSection />
     </main>
   );
 }

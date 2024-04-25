@@ -1,8 +1,6 @@
 import Link from "next/link";
 import CalculatorCard from "./components/CalculatorCard";
 import CustomButton from "./components/CustomButton";
-import LandingPagePosts from "./components/LandingPagePosts";
-import AboutMeSection from "./components/AboutMeSection";
 import Head from "next/head";
 
 export const metadata = {
@@ -23,7 +21,6 @@ export const metadata = {
     "body recomposition macros",
     "health nutrition calculators",
     "fasting benefits calculator",
-    "anorexia BMI assessment",
     "Subway sandwich nutrition",
   ],
 };
@@ -101,13 +98,6 @@ export default function Home() {
             <CustomButton type={"gradient"} label="VIEW ALL CALCULATORS" />
           </Link>
         </div>
-        {/* <LandingPagePosts />
-      <div className="w-full flex justify-center pb-12">
-        <Link href="/blog">
-          <CustomButton type={"gradient"} label="VIEW ALL POSTS" />
-        </Link>
-      </div> */}
-        <AboutMeSection />
       </main>
     </>
   );

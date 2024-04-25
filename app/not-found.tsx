@@ -2,7 +2,6 @@ import React from "react";
 import Link from "next/link";
 import CalculatorCard from "./components/CalculatorCard";
 import CustomButton from "./components/CustomButton";
-import AboutMeSection from "./components/AboutMeSection";
 
 export const metadata = {
   title: "Oops - Page not found ",
@@ -59,7 +58,6 @@ export default function Calculator() {
           </Link>
         </div>
       </section>
-      <AboutMeSection />
     </main>
   );
 }

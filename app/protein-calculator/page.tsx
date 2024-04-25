@@ -2,7 +2,7 @@ import React from "react";
 import CalculatorComponent from "../components/ProteinCalculator";
 import CustomButton from "../components/CustomButton";
 import Link from "next/link";
-import AboutMeSection from "../components/AboutMeSection";
+
 import CalculatorCard from "../components/CalculatorCard";
 
 export const metadata = {
@@ -123,7 +123,6 @@ export default function Calculator() {
           </Link>
         </div>
       </section>
-      <AboutMeSection />
     </main>
   );
 }
