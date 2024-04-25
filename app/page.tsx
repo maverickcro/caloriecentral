@@ -4,9 +4,9 @@ import CustomButton from "./components/CustomButton";
 import Head from "next/head";
 
 export const metadata = {
-  title: "CaloriePal - Calculate And Understand Calories",
+  title: "CalorieCentral - Calculate And Understand Calories",
   description:
-    "Macros? Calories? Weight? Calculate calories, manage your fasting and achieve your health and fitness goals with CaloriePal.",
+    "Macros? Calories? Weight? Calculate calories, manage your fasting and achieve your health and fitness goals with CalorieCentral.",
   keywords: [
     "fitness calculators",
     "macros calculator",
@@ -29,60 +29,45 @@ export default function Home() {
   return (
     <>
       <Head>
-        <link rel="canonical" href="https://calorie-pal.com" />
+        <link rel="canonical" href="https://caloriecentral.com" />
       </Head>
       <main className="mt-10 md:mt-6 mx-auto px-6 max-w-4xl">
-        <div className="animated-background rounded-3xl h-[40vh] mb-10">
+        <h1 className="mt-12 mb-16 text-2xl  md:text-4xl  text-black dark:text-white text-center">
+          Macros?&nbsp;
+          <span className="font-bold text-gradient">Calories?</span>
+          &nbsp;Weight?&nbsp;We Have All Kinds Of{" "}
+          <span className="font-bold text-gradient">Calculators</span>.
+        </h1>
+        <div className="animated-background rounded-3xl h-[30vh] mb-10">
           <h1 className="text-2xl md:text-4xl text-center font-bold text-white mb-2">
-            Welcome to CaloriePal
+            Take the Guesswork out of Dieting with Macro Calculators
           </h1>
           <p className="block pt-1 text-center text-white">
-            Your favourite Fitness companion
+            Our calculators make it simple to track and adjust your macros for
+            balanced nutrition.
           </p>
         </div>
-        <h2 className="text-xl md:text-2xl leading-10 text-center font-bold text-gradient mb-2">
-          Take the Guesswork out of Dieting
-        </h2>
-        <span className="block pt-1 text-base text-center">
-          Target your weight goals with precision. Our calculators make it
-          simple to track and adjust your macros for balanced nutrition.
-        </span>
-        <div className="grid gap-2 sm:grid-cols-2 md:grid-cols-3 md:gap-6 py-12">
-          <CalculatorCard
-            title="Subway Calorie Calculator"
-            href="/subway-calculator"
-            description="Calculate the nutrition of your favorite Subway sandwich."
-            src="/subway-calculator.jpg"
-            alt="Subway calorie nutrition calculator"
-          />
-          <CalculatorCard
-            title="TDEE Calculator"
-            href="/tdee-calculator"
-            description="Learn How Many Calories You Burn Every Day Just For Existing."
-            src="/tdee-calculator.png"
-            alt="TDEE calculator"
-          />
-          <CalculatorCard
-            title="Calorie Deficit Calculator"
-            href="/calorie-deficit-calculator"
-            description="Efficiently calculate your daily calorie needs for healthy weight management."
-            src="/calorie-deficit.png"
-            alt="Calorie Deficit Calculator"
-          />
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 py-12">
           <CalculatorCard
             title="Protein Intake Calculator"
             href="/protein-calculator"
             description="Calculate the optimal protein intake wheter you are on a weight loss, maintain weight or want to build muscle."
-            src="/protein-calculator.jpg"
+            src="/protein-calculator.png"
             alt="Protein Intake Calculator"
           />
           <CalculatorCard
-            title="Fasting Calculator"
-            href="/fasting-calculator"
-            description="Fasting is popular for various reasons: Weight loss, health
-          benefits and much more. Let's calculate the calories behind it."
-            src="/fasting-calculator.png"
-            alt="Fasting Calculator"
+            title="Carbs Intake Calculator"
+            href="/carbs-calculator"
+            description="Calculate the optimal carbs intake wheter you are on a weight loss, maintain weight or want to gain weight."
+            src="/carbs-calculator.png"
+            alt="Carbs Intake Calculator"
+          />
+          <CalculatorCard
+            title="Fat Intake Calculator"
+            href="/fat-calculator"
+            description="Calculate the optimal fat intake wheter you are on a weight loss, maintain weight or want to gain weight."
+            src="/fat-calculator.png"
+            alt="Fat Intake Calculator"
           />
           <CalculatorCard
             title="Sugar Calculator"
@@ -93,10 +78,45 @@ export default function Home() {
             alt="Sugar Calculator"
           />
         </div>
-        <div className="w-full flex justify-center pb-12">
-          <Link href="/calculators">
-            <CustomButton type={"gradient"} label="VIEW ALL CALCULATORS" />
-          </Link>
+        <div className="animated-background rounded-3xl h-[30vh] mb-10">
+          <h1 className="text-2xl md:text-4xl text-center font-bold text-white mb-2">
+            Weight Management Calculators
+          </h1>
+          <p className="block pt-1 text-center text-white">
+            These calculators are ideal for individuals aiming to lose, gain, or
+            maintain weight. They provide insights into daily calorie needs,
+            deficits for weight loss, and body composition changes.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 py-12">
+          <CalculatorCard
+            title="TDEE Calculator"
+            href="/tdee-calculator"
+            description="Learn How Many Calories You Burn Every Day Just For Existing."
+            src="/tdee-calculator.png"
+            alt="TDEE calculator"
+          />
+          <CalculatorCard
+            title="Weight Loss Calculator"
+            href="/weight-loss-calculator"
+            description="Efficiently calculate your daily calorie needs for healthy weight management with our user-friendly Weight Loss Calculator."
+            src="/weight-loss-calculator.png"
+            alt="Weight Loss Calculator"
+          />
+          <CalculatorCard
+            title="Body Recomposition Calculator"
+            href="/body-recomposition-calculator"
+            description="Did you know you can BUILD muscle and BURN fat at the same time? Check calories and body recomposition macros here."
+            src="/body-recomposition-calculator.png"
+            alt="Body Recomposition Calculator"
+          />
+          <CalculatorCard
+            title="Subway Calorie Calculator"
+            href="/subway-calculator"
+            description="Calculate the nutrition of your favorite Subway sandwich."
+            src="/subway-calculator.jpg"
+            alt="Subway calorie nutrition calculator"
+          />
         </div>
       </main>
     </>

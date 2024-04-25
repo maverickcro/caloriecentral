@@ -7,7 +7,8 @@ import CustomButton from "../components/CustomButton";
 import CalculatorCard from "../components/CalculatorCard";
 
 export const metadata: Metadata = {
-  title: "Subway Sandwich Nutrition and Calorie Calculator 2024 - CaloriePal",
+  title:
+    "Subway Sandwich Nutrition and Calorie Calculator 2024 - CalorieCentral",
   description:
     "Calculate nutritional information and calories for your favorite Subway sandwiches and wraps with our 2024 updated tool.",
   keywords: [
@@ -62,7 +63,7 @@ export default function Calculator() {
             title="Protein Intake Calculator"
             href="/protein-calculator"
             description="Calculate the optimal protein intake wheter you are on a weight loss, maintain weight or want to build muscle."
-            src="/protein-calculator.jpg"
+            src="/protein-calculator.png"
             alt="Protein Intake Calculator"
           />
           <CalculatorCard
@@ -79,12 +80,6 @@ export default function Calculator() {
             src="/fat-calculator.png"
             alt="Fat Intake Calculator"
           />
-        </div>
-
-        <div className="w-full flex justify-center pb-12">
-          <Link href="/calculators">
-            <CustomButton type={"gradient"} label="VIEW ALL CALCULATORS" />
-          </Link>
         </div>
       </section>
     </main>

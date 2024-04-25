@@ -5,11 +5,11 @@ import CalculatorCard from "../components/CalculatorCard";
 import CustomButton from "../components/CustomButton";
 
 export const metadata = {
-  title: "Calorie Deficit Calculator for Weight Loss Prediction - CaloriePal",
+  title: "Weight Loss Calculator for Weight Loss Prediction - CalorieCentral",
   description:
-    "Use our Calorie Deficit Calculator as your weight loss predictor. Find out how many calories to eat and an estimated date for reaching your goal weight. Know when will you reach your wanted weight!",
+    "Use our Weight Loss Calculator as your weight loss predictor. Find out how many calories to eat and an estimated date for reaching your goal weight. Know when will you reach your wanted weight!",
   keywords: [
-    "calorie deficit calculator",
+    "Weight Loss Calculator",
     "weight loss predictor",
     "calorie calculator for weight loss",
     "weight loss estimator",
@@ -26,14 +26,12 @@ export default function Calculator() {
   return (
     <main>
       <section className="mt-6 calculator-layout mx-auto px-6 prose  max-w-4xl prose-xl prose-slate">
-        <h1 className="font-bold text-gradient mb-0">
-          Calorie Deficit Calculator
-        </h1>
+        <h1 className="font-bold text-gradient mb-0">Weight Loss Calculator</h1>
         <span className="block pt-1 text-xs font-semibold text-gray-500">
           Updated: Apr 10, 2024
         </span>
         <p className="text-black dark:text-white">
-          Calorie Deficit Calculator is here as a{" "}
+          Weight Loss Calculator is here as a{" "}
           <strong className="text-black dark:text-white">
             weight loss predictor
           </strong>
@@ -105,22 +103,16 @@ export default function Calculator() {
             title="Protein Intake Calculator"
             href="/protein-calculator"
             description="Calculate the optimal protein intake wheter you are on a weight loss, maintain weight or want to build muscle."
-            src="/protein-calculator.jpg"
+            src="/protein-calculator.png"
             alt="Protein Intake Calculator"
           />
           <CalculatorCard
             title="Body Recomposition Calculator"
             href="/body-recomposition-calculator"
             description="Did you know you can BUILD muscle and BURN fat at the same time? Check calories and body recomposition macros here."
-            src="/body-recomposition.png"
+            src="/body-recomposition-calculator.png"
             alt="Body Recomposition Calculator"
           />
-        </div>
-
-        <div className="w-full flex justify-center pb-12">
-          <Link href="/calculators">
-            <CustomButton type={"gradient"} label="VIEW ALL CALCULATORS" />
-          </Link>
         </div>
       </section>
     </main>

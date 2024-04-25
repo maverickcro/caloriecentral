@@ -374,10 +374,10 @@ export default function TDEECalculator() {
                 <h3 className="my-6">
                   🍴 Find out more with our{" "}
                   <Link
-                    href="/calorie-deficit-calculator"
+                    href="/weight-loss-calculator"
                     className="logo-animation text-gradient"
                   >
-                    Calorie Deficit Calculator
+                    Weight Loss Calculator
                   </Link>
                   .
                 </h3>

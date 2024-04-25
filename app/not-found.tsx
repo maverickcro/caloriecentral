@@ -37,25 +37,19 @@ export default function Calculator() {
             alt="Subway calorie nutrition calculator"
           />
           <CalculatorCard
-            title="Calorie Deficit Calculator"
-            href="/calorie-deficit-calculator"
+            title="Weight Loss Calculator"
+            href="/weight-loss-calculator"
             description="Estimate how many calories you need to eat LESS per day to have your GOAL weight until a certain DATE."
-            src="/calorie-deficit.png"
-            alt="Calorie Deficit Calculator"
+            src="/weight-loss-calculator.png"
+            alt="Weight Loss Calculator"
           />
           <CalculatorCard
             title="Body Recomposition Calculator"
             href="/body-recomposition-calculator"
             description="Did you know you can BUILD muscle and BURN fat at the same time? Calculate calories here!"
-            src="/body-recomposition.png"
+            src="/body-recomposition-calculator.png"
             alt="Body Recomposition Calculator"
           />
-        </div>
-
-        <div className="w-full flex justify-center pb-12">
-          <Link href="/calculators">
-            <CustomButton type={"gradient"} label="VIEW ALL CALCULATORS" />
-          </Link>
         </div>
       </section>
     </main>

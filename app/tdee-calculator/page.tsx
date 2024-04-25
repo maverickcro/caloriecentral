@@ -1,12 +1,9 @@
 import React from "react";
 import CalculatorComponent from "../components/TdeeCalculator";
-import Link from "next/link";
-
 import CalculatorCard from "../components/CalculatorCard";
-import CustomButton from "../components/CustomButton";
 
 export const metadata = {
-  title: "TDEE Calculator - CaloriePal",
+  title: "TDEE Calculator - CalorieCentral",
   description:
     "Accurately calculate your Total Daily Energy Expenditure to measure how many calories your burn per day based on your activity.",
   keywords: [
@@ -73,25 +70,26 @@ export default function Calculator() {
       <section className="mt-6 mx-auto px-6 max-w-4xl">
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 py-12">
           <CalculatorCard
-            title="Calorie Deficit Calculator"
-            href="/calorie-deficit-calculator"
+            title="Weight Loss Calculator"
+            href="/weight-loss-calculator"
             description="Estimate how many calories you need to eat LESS per day to have your GOAL weight until a certain DATE."
-            src="/calorie-deficit.png"
-            alt="Calorie Deficit Calculator"
+            src="/weight-loss-calculator.png"
+            alt="Weight Loss Calculator"
           />
           <CalculatorCard
             title="Body Recomposition Calculator"
             href="/body-recomposition-calculator"
             description="Did you know you can BUILD muscle and BURN fat at the same time? Calculate calories here!"
-            src="/body-recomposition.png"
+            src="/body-recomposition-calculator.png"
             alt="Body Recomposition Calculator"
           />
-        </div>
-
-        <div className="w-full flex justify-center pb-12">
-          <Link href="/calculators">
-            <CustomButton type={"gradient"} label="VIEW ALL CALCULATORS" />
-          </Link>
+          <CalculatorCard
+            title="Fat Intake Calculator"
+            href="/fat-calculator"
+            description="Calculate the optimal fat intake wheter you are on a weight loss, maintain weight or want to gain weight."
+            src="/fat-calculator.png"
+            alt="Fat Intake Calculator"
+          />
         </div>
       </section>
     </main>

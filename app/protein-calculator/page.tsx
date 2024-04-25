@@ -6,7 +6,7 @@ import Link from "next/link";
 import CalculatorCard from "../components/CalculatorCard";
 
 export const metadata = {
-  title: "Protein Intake Calculator - CaloriePal",
+  title: "Protein Intake Calculator - CalorieCentral",
   description:
     "Calculate your daily protein intake for weight loss and muscle gain. Quick, easy tool for your diet and fitness goals.",
   keywords: [
@@ -115,12 +115,6 @@ export default function Calculator() {
             src="/sugar-calculator.png"
             alt="Sugar Calculator"
           />
-        </div>
-
-        <div className="w-full flex justify-center pb-12">
-          <Link href="/calculators">
-            <CustomButton type={"gradient"} label="VIEW ALL CALCULATORS" />
-          </Link>
         </div>
       </section>
     </main>

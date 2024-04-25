@@ -5,7 +5,7 @@ import Link from "next/link";
 import CustomButton from "../components/CustomButton";
 
 export const metadata = {
-  title: "Body Recomposition Calculator - CaloriePal",
+  title: "Body Recomposition Calculator - CalorieCentral",
   description:
     "Maximize your fitness results with our Body Recomposition Calculator. Get personalized calorie advice for training and rest days to effectively lose fat and build muscle.",
   keywords: [
@@ -86,18 +86,12 @@ export default function Calculator() {
             alt="TDEE calculator"
           />
           <CalculatorCard
-            title="Calorie Deficit Calculator"
-            href="/calorie-deficit-calculator"
-            description="Efficiently calculate your daily calorie needs for healthy weight management with our user-friendly Calorie Deficit Calculator."
-            src="/calorie-deficit.png"
-            alt="Calorie Deficit Calculator"
+            title="Weight Loss Calculator"
+            href="/weight-loss-calculator"
+            description="Efficiently calculate your daily calorie needs for healthy weight management with our user-friendly Weight Loss Calculator."
+            src="/weight-loss-calculator.png"
+            alt="Weight Loss Calculator"
           />
-        </div>
-
-        <div className="w-full flex justify-center pb-12">
-          <Link href="/calculators">
-            <CustomButton type={"gradient"} label="VIEW ALL CALCULATORS" />
-          </Link>
         </div>
       </section>
     </main>

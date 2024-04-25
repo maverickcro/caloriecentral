@@ -6,7 +6,7 @@ import CalculatorCard from "../components/CalculatorCard";
 import CustomButton from "../components/CustomButton";
 
 export const metadata = {
-  title: "Fat Intake Calculator - CaloriePal",
+  title: "Fat Intake Calculator - CalorieCentral",
   description:
     "Calculate how much fat you need per day for weight loss or weight gain. Learn about good and bad fats and how important they are.",
   keywords: [
@@ -84,7 +84,7 @@ export default function Calculator() {
             title="Protein Intake Calculator"
             href="/protein-calculator"
             description="Calculate the optimal protein intake wheter you are on a weight loss, maintain weight or want to build muscle."
-            src="/protein-calculator.jpg"
+            src="/protein-calculator.png"
             alt="Protein Intake Calculator"
           />
           <CalculatorCard
@@ -102,12 +102,6 @@ export default function Calculator() {
             src="/sugar-calculator.png"
             alt="Sugar Calculator"
           />
-        </div>
-
-        <div className="w-full flex justify-center pb-12">
-          <Link href="/calculators">
-            <CustomButton type={"gradient"} label="VIEW ALL CALCULATORS" />
-          </Link>
         </div>
       </section>
     </main>

@@ -26,27 +26,15 @@ export default function Navbar() {
       }`}
     >
       <div className="prose max-w-4xl prose-xl mx-auto flex justify-between items-center flex-row h-[100%]">
-        <p className="text-lg sm:text-3xl font-bold grid mb-0">
+        <p className="text-2xl font-bold grid mb-0">
           <Link
             href="/"
             className="logo-animation font-bold text-gradient no-underline"
           >
-            CaloriePal
+            CalorieCentral
           </Link>
         </p>
         <div className="flex flex-row justify-center items-center sm:justify-evenly sm:items-center gap-4 text-base">
-          <Link
-            className="logo-animation font-bold no-underline navbar-link text-black dark:text-white text-sm md:text-base"
-            href="/calculators"
-          >
-            Calculators
-          </Link>
-          <Link
-            className="logo-animation font-bold no-underline navbar-link text-black dark:text-white text-sm md:text-base"
-            href="/about"
-          >
-            About
-          </Link>
           <ToggleMode />
         </div>
       </div>
