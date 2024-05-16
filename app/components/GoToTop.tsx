@@ -33,7 +33,7 @@ export default function GoToTop() {
       {isVisible && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-4 right-4 p-3 rounded-full shadow-lg"
+          className="fixed bottom-4 right-4 p-3 rounded-full shadow-lg z-50"
           style={{ background: "linear-gradient(90deg, #4ca5ff, #b573f8)" }}
           aria-label="Go to top"
         >

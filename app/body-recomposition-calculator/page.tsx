@@ -79,13 +79,6 @@ export default function Calculator() {
       <section className="mt-6 mx-auto px-6 max-w-4xl">
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 py-12">
           <CalculatorCard
-            title="TDEE Calculator"
-            href="/tdee-calculator"
-            description="Learn How Many Calories You Burn Every Day Just For Existing."
-            src="/tdee-calculator.png"
-            alt="TDEE calculator"
-          />
-          <CalculatorCard
             title="Weight Loss Calculator"
             href="/weight-loss-calculator"
             description="Efficiently calculate your daily calorie needs for healthy weight management with our user-friendly Weight Loss Calculator."

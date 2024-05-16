@@ -48,13 +48,13 @@ export default function Home() {
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 py-12">
-          <CalculatorCard
+          {/* <CalculatorCard
             title="Protein Intake Calculator"
             href="/protein-calculator"
             description="Calculate the optimal protein intake wheter you are on a weight loss, maintain weight or want to build muscle."
             src="/protein-calculator.png"
             alt="Protein Intake Calculator"
-          />
+          /> */}
           <CalculatorCard
             title="Carbs Intake Calculator"
             href="/carbs-calculator"
@@ -90,13 +90,6 @@ export default function Home() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 py-12">
           <CalculatorCard
-            title="TDEE Calculator"
-            href="/tdee-calculator"
-            description="Learn How Many Calories You Burn Every Day Just For Existing."
-            src="/tdee-calculator.png"
-            alt="TDEE calculator"
-          />
-          <CalculatorCard
             title="Weight Loss Calculator"
             href="/weight-loss-calculator"
             description="Efficiently calculate your daily calorie needs for healthy weight management with our user-friendly Weight Loss Calculator."
@@ -114,7 +107,7 @@ export default function Home() {
             title="Subway Calorie Calculator"
             href="/subway-calculator"
             description="Calculate the nutrition of your favorite Subway sandwich."
-            src="/subway-calculator.jpg"
+            src="/subway-calculator.png"
             alt="Subway calorie nutrition calculator"
           />
         </div>

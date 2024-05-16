@@ -88,13 +88,13 @@ export default function Calculator() {
       </section>
       <section className="mt-6 mx-auto px-6 max-w-4xl">
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 py-12">
-          <CalculatorCard
+          {/* <CalculatorCard
             title="Protein Intake Calculator"
             href="/protein-calculator"
             description="Calculate the optimal protein intake wheter you are on a weight loss, maintain weight or want to build muscle."
             src="/protein-calculator.png"
             alt="Protein Intake Calculator"
-          />
+          /> */}
           <CalculatorCard
             title="Fat Intake Calculator"
             href="/fat-calculator"

@@ -33,7 +33,7 @@ export default function Calculator() {
             title="Subway Calorie Calculator"
             href="/subway-calculator"
             description="Calculate the nutrition of your favorite Subway sandwich."
-            src="/subway-calculator.jpg"
+            src="/subway-calculator.png"
             alt="Subway calorie nutrition calculator"
           />
           <CalculatorCard

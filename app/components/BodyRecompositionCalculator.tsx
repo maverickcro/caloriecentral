@@ -549,27 +549,78 @@ export default function BodyRecompositionCalculator() {
             training partner.{" "}
           </li>
         </ul>
-        <h2 className="text-black dark:text-white">Body Recomposition Macros</h2>
-<p>During <strong className="text-black dark:text-white">body recomposition</strong>, macros play an enormous role. Macros, short for macronutrients, are the fats, proteins, and carbohydrates that your body needs in larger amounts to function properly and support muscle building and fat loss.</p>
-
-<h3 className="text-black dark:text-white">On Training Days:</h3>
-<ul>
-  <li><strong className="text-black dark:text-white">Protein:</strong> Very important for muscle repair and growth. A guideline is to consume protein at <strong className="text-black dark:text-white">1.6 grams</strong> per kilogram of body weight.</li>
-  <li><strong className="text-black dark:text-white">Fat:</strong> Important for hormone production. Fats should comprise around <strong className="text-black dark:text-white">30%</strong> of your calorie intake on these days.</li>
-  <li><strong className="text-black dark:text-white">Carbohydrates:</strong> They fuel your workouts and help with recovery. Aim for them to be <strong className="text-black dark:text-white">40%</strong> of your calorie intake post-workout.</li>
-</ul>
-
-<h3 className="text-black dark:text-white">On Rest Days:</h3>
-<ul>
-  <li><strong className="text-black dark:text-white">Protein:</strong> Still a priority, slightly higher on rest days to aid recovery, constituting the remaining calories after fats and carbs are accounted for.</li>
-  <li><strong className="text-black dark:text-white">Fat:</strong> Slightly increased to <strong className="text-black dark:text-white">30%</strong> of daily calorie intake, important for recovery processes.</li>
-  <li><strong className="text-black dark:text-white">Carbohydrates:</strong> Lowered to <strong className="text-black dark:text-white">30%</strong> of your calorie intake as your body is less active and requires less energy.</li>
-</ul>
-
-<p>Eat more <a className="text-black dark:text-white" href="/protein-calculator">protein</a> and less <a className="text-black dark:text-white" href="/carbs-calculator">carbs</a> when you&apos;re not working out. Your muscles need protein to repair on your off days. Increase carbs only on your workout days when you&apos;re burning them off.</p>
         <h2 className="text-black dark:text-white">
-              Have a clear goal
-            </h2>
+          Body Recomposition Macros
+        </h2>
+        <p>
+          During{" "}
+          <strong className="text-black dark:text-white">
+            body recomposition
+          </strong>
+          , macros play an enormous role. Macros, short for macronutrients, are
+          the fats, proteins, and carbohydrates that your body needs in larger
+          amounts to function properly and support muscle building and fat loss.
+        </p>
+
+        <h3 className="text-black dark:text-white">On Training Days:</h3>
+        <ul>
+          <li>
+            <strong className="text-black dark:text-white">Protein:</strong>{" "}
+            Very important for muscle repair and growth. A guideline is to
+            consume protein at{" "}
+            <strong className="text-black dark:text-white">1.6 grams</strong>{" "}
+            per kilogram of body weight.
+          </li>
+          <li>
+            <strong className="text-black dark:text-white">Fat:</strong>{" "}
+            Important for hormone production. Fats should comprise around{" "}
+            <strong className="text-black dark:text-white">30%</strong> of your
+            calorie intake on these days.
+          </li>
+          <li>
+            <strong className="text-black dark:text-white">
+              Carbohydrates:
+            </strong>{" "}
+            They fuel your workouts and help with recovery. Aim for them to be{" "}
+            <strong className="text-black dark:text-white">40%</strong> of your
+            calorie intake post-workout.
+          </li>
+        </ul>
+
+        <h3 className="text-black dark:text-white">On Rest Days:</h3>
+        <ul>
+          <li>
+            <strong className="text-black dark:text-white">Protein:</strong>{" "}
+            Still a priority, slightly higher on rest days to aid recovery,
+            constituting the remaining calories after fats and carbs are
+            accounted for.
+          </li>
+          <li>
+            <strong className="text-black dark:text-white">Fat:</strong>{" "}
+            Slightly increased to{" "}
+            <strong className="text-black dark:text-white">30%</strong> of daily
+            calorie intake, important for recovery processes.
+          </li>
+          <li>
+            <strong className="text-black dark:text-white">
+              Carbohydrates:
+            </strong>{" "}
+            Lowered to{" "}
+            <strong className="text-black dark:text-white">30%</strong> of your
+            calorie intake as your body is less active and requires less energy.
+          </li>
+        </ul>
+
+        <p>
+          Eat more protein and less{" "}
+          <a className="text-black dark:text-white" href="/carbs-calculator">
+            carbs
+          </a>{" "}
+          when you&apos;re not working out. Your muscles need protein to repair
+          on your off days. Increase carbs only on your workout days when
+          you&apos;re burning them off.
+        </p>
+        <h2 className="text-black dark:text-white">Have a clear goal</h2>
         <p>
           Trust the plan, see the change, and feel great doing it. Come back
           every two weeks and do your calculation again for an updated plan.{" "}

@@ -382,12 +382,7 @@ export default function Calculator() {
             calories in one meal.
           </li>
         </ul>
-        <p>
-          If you are interested how many calories you need per day use our{" "}
-          <strong className="text-black dark:text-white">FREE </strong>
-          tool and find out in seconds:{" "}
-          <Link href="/tdee-calculator">Calorie Calculator</Link>
-        </p>
+
         <p>
           Choosing meals that match your lifestyle and nutritional needs is
           essential. It&apos;s not only about how many calories, but also the
