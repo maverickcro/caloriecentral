@@ -32,7 +32,7 @@ export default function Navbar() {
               href="/"
               className="logo-animation font-bold text-gradient no-underline"
             >
-              CalorieCentral
+              CCentral
             </Link>
           </p>
         </div>

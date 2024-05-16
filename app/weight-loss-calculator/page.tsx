@@ -2,7 +2,6 @@ import React from "react";
 import CalculatorComponent from "../components/CalorieDeficitCalculator";
 import Link from "next/link";
 import CalculatorCard from "../components/CalculatorCard";
-import CustomButton from "../components/CustomButton";
 
 export const metadata = {
   title: "Weight Loss Calculator for Weight Loss Prediction - CalorieCentral",

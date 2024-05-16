@@ -607,7 +607,7 @@ export default function SugarCalculator() {
           <strong className="text-black dark:text-white">yourself</strong>.
         </p>
         <Image
-          src={"/sugar-calculator.jpg"}
+          src={"/sugar-calculator.png"}
           alt={`Sugar intake calculator`}
           width={400}
           height={200}
